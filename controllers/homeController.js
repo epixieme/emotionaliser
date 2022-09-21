@@ -3,7 +3,7 @@
 // HOMEPAGE CONTROLLER
 // ******************************************
 
-require("../models/database"); // controller talks to the model and view, router and renders to the browser - middle man
+ 
 // const Category = require("../models/Category"); // get the Category js file from models dir
 // const Emotion = require("../models/Emotion"); // get the Emotion js file from models dir
 

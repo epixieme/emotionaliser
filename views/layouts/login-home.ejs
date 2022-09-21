@@ -3,10 +3,9 @@
 <!-- this talks to controller -->
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth box-sizing: border-box;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,8 +17,9 @@
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,800;0,900;1,800;1,900&family=Sintony&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sintony&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
 <!-- Font Awesome Link -->
 <link
 rel="stylesheet"
@@ -27,25 +27,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
 crossorigin="anonymous"
 />
-<link rel="stylesheet" href="/output.css">
-<script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-<script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
-
-
+    <link rel="stylesheet" href="/output.css">
     <title> placeholder </title>
 </head>
-<body class="" x-data>
+<body class="">
 <!-- header -->
-    <%- include('../partials/home-header.ejs') %>
+    <%- include('../partials/login-header.ejs') %>
 
     <%-body %>
 
     <!-- footer -->
-    <%- include('../partials/home-footer.ejs') %>
+    <%- include('../partials/dashboard-footer.ejs') %>
   <!-- script -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-
     
 </body>
 </html>
