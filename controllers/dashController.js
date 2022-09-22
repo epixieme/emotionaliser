@@ -6,9 +6,21 @@ module.exports = {
             title: "Dashboard",
             layout:'./layouts/dashboard-home.ejs'
           })
-            // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+     
         }catch(err){
             console.log(err)
         }
     },
+    getDashboardTools: async (req,res)=>{
+      console.log(req.user)
+      try{
+        res.render('tools',{
+          title: "Wellbeing Tools",
+          layout:'./layouts/dashboard-home.ejs'
+        })
+   
+      }catch(err){
+          console.log(err)
+      }
+  },
   }

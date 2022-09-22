@@ -14,6 +14,8 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
+const dashboardRoutes = require("./routes/dashboard");
+const thoughtDiaryRoutes = require("./routes/thoughtDiary");
 
 
 // const port = process.env.PORT || 2000;
@@ -73,6 +75,8 @@ app.set("layout", "./layouts/main"); // sets  and changes the location for ejs l
 
 
 app.use("/", mainRoutes); //use the route
+app.use("/dashboard", dashboardRoutes); //use the route
+app.use("/tools/thoughtdiary", thoughtDiaryRoutes);
 // app.use("/login", login ); //use the route
 
 

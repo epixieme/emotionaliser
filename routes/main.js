@@ -8,8 +8,6 @@ const dashController = require("../controllers/dashController");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get('/', homeController.homepage)
-router.get("/dashboard", ensureAuth, dashController.getDashboard);
-// router.get('/login', authenticationController.login); //create the route
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/login", authController.getLogin);
