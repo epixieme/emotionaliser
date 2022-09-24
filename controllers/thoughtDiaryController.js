@@ -15,7 +15,7 @@ module.exports = {
             console.log(err)
         }
     },
-    submitThought: async (req,res)=>{
+    getSubmitThought: async (req,res)=>{
       console.log(req.user)
       try{
 await thoughtDiary.findOne
@@ -28,5 +28,14 @@ await thoughtDiary.findOne
           console.log(err)
       }
   },
+  postSubmitThought: async (req,res)=>{
+    console.log(req.user)
+    try{
+await thoughtDiary.findOneAndUpdate
+ 
+    }catch(err){
+        console.log(err)
+    }
+},
  
   }
