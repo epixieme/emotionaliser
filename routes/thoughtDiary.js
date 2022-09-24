@@ -11,6 +11,7 @@ router.get("/",  thoughtDiaryController.getThoughtDiary);
 router.get("/submit-thought",  thoughtDiaryController.getSubmitThought);
 
 router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
+router.get("/:id",  thoughtDiaryController.getThought);
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);
 

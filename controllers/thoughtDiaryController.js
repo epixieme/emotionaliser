@@ -46,4 +46,19 @@ module.exports = {
       console.log(err);
     }
   },
+  getThought: async (req, res) => {
+    console.log(req.user);
+    try {
+      const thought = await Post.findById(req.params.id);
+      await thoughtDiary.findOne;
+      res.render("get-thoughts", {
+        title: "Thought Diary - Thought",
+        layout: "./layouts/dashboard-home.ejs",
+        thought:thought,
+        user:req.user
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
