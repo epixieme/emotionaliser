@@ -29,13 +29,24 @@ await thoughtDiary.findOne
       }
   },
   postSubmitThought: async (req,res)=>{
-    console.log(req.user)
-    try{
-await thoughtDiary.findOneAndUpdate
- 
-    }catch(err){
-        console.log(err)
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+
+      await Post.create({
+        summary: req.body.summary,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        details: req.body.details,
+        category:req.body.category,
+        likes: 0,
+        user: req.user.id,
+      });
+      console.log("Post has been added!");
+      // res.redirect("/dash");
+    } catch (err) {
+      console.log(err);
     }
-},
  
   }
+}
