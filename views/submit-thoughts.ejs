@@ -3,16 +3,16 @@
 
 <section class="w-full max-w-5xl">
   
-    <form class="bg-gradient-to-r from-teal-700 to-pink-500 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
+    <form action="/tools/thoughtdiary/submit-thought" enctype="multipart/form-data" method="post" class="bg-gradient-to-r from-teal-700 to-pink-500 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
       <section class="mb-6">
         <label class="block text-6xl text-white font-bold mb-2" for="password">
        How are you today?
         </label>
         <section>
-          <h1 class="slidetext p-2 text-2xl">Angry</h1>
+          <input class="slidetext p-2 text-2xl bg-transparent border-none outline-none" name="category" type="text" readonly/>
         </section>
         <div class="slidecontainer">
-          <input type="range" min="0" max="5" value="0" step=".1" class="pt-3 slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="myRange" name="category" id="category"/>
+          <input type="range" min="0" max="5" value="0" step=".1" class="pt-3 slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="myRange"  id="category"/>
         </div>
       </section>
       <section class="mb-4">
@@ -27,8 +27,12 @@
         </label>
         <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="details" type="details" placeholder="details" name="details"></textarea>
       </section>
+      <div class="mb-3">
+        <label for="imgUpload" class="form-label">Add an image that best describes your current mood</label>
+        <input type="file" class="form-control" id="imageUpload" name="file">
+      </div>
       <section class="flex items-center justify-between">
-        <button class="bg-white hover:bg-slate-300 border border-2  shadow-slate-700 shadow-sm text-zinc-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        <button class="bg-white hover:bg-slate-300 border border-2  shadow-slate-700 shadow-sm text-zinc-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
          Done
         </button>
        

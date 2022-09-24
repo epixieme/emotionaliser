@@ -20,7 +20,7 @@ const thoughtSchema = new mongoose.Schema({
   // this will be a chosen category form html select
   category: {
     type: String,
-    enum: ["Happy", "Sad", "Angry", "Confused", "Depressed", "Anxious"],
+    enum: ["Great","Very Good","Good","Bad","Very Bad","Awful"],
     required: "This field is required",
   },
   user: {

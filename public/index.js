@@ -20,5 +20,5 @@ const emotions = {
 function feelings(){
 
   // removes undefined values which were introduced when the range slider step was changed to .1
- slideText.innerText =  JSON.parse(JSON.stringify(emotions[this.value]))
+ slideText.value =  JSON.parse(JSON.stringify(emotions[this.value]))
 }
