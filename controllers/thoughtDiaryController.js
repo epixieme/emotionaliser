@@ -5,9 +5,12 @@ module.exports = {
   getThoughtDiary: async (req, res) => {
     console.log(req.user);
     try {
+      const thoughts = await thoughtDiary.find({ user: req.user.id });
       res.render("thoughtdiary", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
+        thoughts:thoughts,
+        user:req.user
       });
     } catch (err) {
       console.log(err);
@@ -49,7 +52,7 @@ module.exports = {
   getThought: async (req, res) => {
     console.log(req.user);
     try {
-      const thought = await Post.findById(req.params.id);
+      const thought = await thoughtDiary.findById(req.params.id);
       await thoughtDiary.findOne;
       res.render("get-thoughts", {
         title: "Thought Diary - Thought",

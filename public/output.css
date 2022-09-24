@@ -706,6 +706,14 @@ video {
   width: 50%;
 }
 
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-48 {
+  width: 12rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1095,6 +1103,10 @@ video {
 
 .pr-32 {
   padding-right: 8rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-left {
