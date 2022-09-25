@@ -5,21 +5,22 @@
 <section class="pt-32">
   <section>
     <h1 class=" text-white">Thought Diary</h1>
-    <h2 class=" text-white"">Weekly thoughts</h2>
-    <section class=" mt-20 container w-96 border border-white rounded-md text-white">
+    <h2 class=" text-white">Weekly thoughts</h2>
+    </section>
+    <section class="flex gap-4 mt-20 container border border-white rounded-md text-white w-full">
                 
-      <ul>
+      <!-- <ul> -->
         <% for(var i=0; i<thoughts.length; i++) {%>
-        <li class="flex flex-col align-middle justify-center">
+        <section class="flex align-middle justify-center w-72">
           <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
           <img src="<%= thoughts[i].image%>" class="rounded-t-md">
   
            <h1><%= thoughts[i].summary%></h1>
            <h1><%= thoughts[i].submitted%></h1>
         </a>
-        </li>
+      </section>
         <% } %>
-      </ul>
+      <!-- </ul> -->
     </section>
     <section>
       <%= %> 
@@ -27,11 +28,11 @@
       <!-- image
       date -->
     </section>
-  </section>
+ 
 
 </section>
 </section>
-</section>
+
 <!-- 
 s
 
