@@ -1,8 +1,39 @@
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56"></section>
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
+
+
+<section class="pt-32">
+  <section>
+    <h1 class=" text-white">Thought Diary</h1>
+    <h2 class=" text-white"">Weekly thoughts</h2>
+    <section class=" mt-20 container w-96 border border-white rounded-md text-white">
+                
+      <ul>
+        <% for(var i=0; i<thoughts.length; i++) {%>
+        <li class="flex flex-col align-middle justify-center">
+          <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
+          <img src="<%= thoughts[i].image%>" class="rounded-t-md">
+  
+           <h1><%= thoughts[i].summary%></h1>
+           <h1><%= thoughts[i].submitted%></h1>
+        </a>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+    <section>
+      <%= %> 
+
+      <!-- image
+      date -->
+    </section>
+  </section>
+
+</section>
+</section>
 </section>
 <!-- 
-
+s
 
     <h1 class="p-8 text-neutral-300 font-bold font-barlow text-4xl flex flex-col">Wellbeing Tools</h1>
     
