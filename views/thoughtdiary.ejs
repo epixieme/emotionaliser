@@ -1,6 +1,6 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56">
-
+<h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center"><%= users.userName%></h1>
     <h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center">Thought Diary</h1>
    
     <section class=" text-white">
@@ -22,13 +22,16 @@
                 </a>
 
                 </section>
-                <section class=" pt-20 container w-48">
-                  <h1>thoughts</h1>
+                <section class=" mt-20 container w-96 border border-white rounded-md">
+                
                   <ul>
                     <% for(var i=0; i<thoughts.length; i++) {%>
-                    <li>
+                    <li class="flex flex-col align-middle justify-center">
                       <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
-                      <img src="<%= thoughts[i].image%>">
+                      <img src="<%= thoughts[i].image%>" class="rounded-t-md">
+              
+                       <h1><%= thoughts[i].summary%></h1>
+                       <h1><%= thoughts[i].submitted%></h1>
                     </a>
                     </li>
                     <% } %>

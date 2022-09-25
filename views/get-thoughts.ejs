@@ -3,11 +3,23 @@
     
     <section class="w-full max-w-5xl">
       
-        <section class="bg-gradient-to-r from-teal-700 to-pink-500 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
+        <section class="border border-white rounded-lg shadow-md  px-8 pt-6 pb-8 mb-4 text-white">
           <section class="mb-6">
-            <h1 class="block text-6xl text-white font-bold mb-2">
-            Mood
+
+            <img  class="max-w-screen-sm" src="<%=thought.image %>">
+            <h1 class="block text-4xl text-white font-bold mb-2">
+              Mood
+                </h1>
+                <h1><%=thought.category %></h1>
+            <h1 class="block text-4xl text-white font-bold mb-2">
+          Summary
             </h1>
+            <h1><%=thought.summary %></h1>
+
+            <h1 class="block text-4xl text-white font-bold mb-2">
+               Details
+                  </h1>
+                  <h1><%=thought.details %></h1>
            
           </section>
         </section>

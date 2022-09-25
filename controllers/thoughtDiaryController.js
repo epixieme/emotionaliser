@@ -1,15 +1,18 @@
 const cloudinary = require("../middleware/cloudinary");
 const thoughtDiary = require("../models/Thoughts");
+const userDetails = require("../models/User");
 
 module.exports = {
   getThoughtDiary: async (req, res) => {
     console.log(req.user);
     try {
-      const thoughts = await thoughtDiary.find({ user: req.user.id });
+      const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
+      const users = await userDetails.find();
       res.render("thoughtdiary", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
         thoughts:thoughts,
+        users:users,
         user:req.user
       });
     } catch (err) {
@@ -44,7 +47,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      // res.redirect("/dash");
+      res.redirect("/tools/thoughtdiary");
     } catch (err) {
       console.log(err);
     }
