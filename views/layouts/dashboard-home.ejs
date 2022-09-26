@@ -22,6 +22,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
 crossorigin="anonymous"
 />
+
     <link rel="stylesheet" href="/output.css">
     <title> placeholder </title>
 </head>
@@ -35,6 +36,49 @@ crossorigin="anonymous"
     <%- include('../partials/dashboard-footer.ejs') %>
   <!-- script -->
   <script src="/index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    const data = {
     
+      datasets: [
+                {
+                    label: "US Dates",
+                    data: [{
+                        x: "04/01/2014", y: {5:"happy"}
+                    }, {
+                        x: "10/01/2014", y: 4
+                    }, {
+                        x: "04/01/2015", y: 3
+                    }, {
+                        x: "10/01/2015", y: 2
+                    }],
+                    fill: false,
+                    borderColor: 'red'
+                },]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+  </script>
+   
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
 </body>
 </html>

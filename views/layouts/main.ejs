@@ -10,12 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Material Icons Link -->
-    <link
-    href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-    rel="stylesheet"
-  />
-
+   
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,8 +39,63 @@ crossorigin="anonymous"
     <%- include('../partials/home-footer.ejs') %>
   <!-- script -->
 
-<script src= "/public/index.js"></script>
-
+<!-- <script src= "/public/index.js"></script> -->
+  <!-- script -->
+  <script src="/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    new Chart('myChart', {
+type: 'scatter',
+data: {
+  datasets: [{
+    label: 'My Dataset',
+    data: [
+      { x: '2022-11-06', y: '02:00' }, 
+      { x: '2022-11-07', y: '08:00' }, 
+      { x: '2022-11-08', y: '06:00' }
+    ],
+    showLine: true,
+    lineTension: 0.3,
+    borderColor: 'rgb(100, 100, 255)'
+  }],
+},
+options: {
+  scales: {
+    x: {
+      type: 'time',
+      time: {
+        unit: 'day',
+        displayFormats: {
+          day: 'D MMM yyyy'
+        }
+      }
+    },
+    y: {
+      type: 'time',
+      time: {
+        parser: 'HH:mm',
+        unit: 'hour',
+        stepSize: 1,
+        displayFormats: {
+          hour: 'HH:mm'
+        },
+        tooltipFormat: 'HH:mm'
+      },
+      ticks: {
+        min: '00:00',
+        max: '08:00'
+      }
+    }
+  }
+}
+});
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
     
 </body>
 </html>

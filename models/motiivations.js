@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const thoughtSchema = new mongoose.Schema({
+const motivationSchema = new mongoose.Schema({
   image: {
     type: String,
     required: "This field is required",
@@ -27,15 +27,11 @@ const thoughtSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  level:{
-   type:String,
-   default:"1"
-  },
-  date: {type: Date, default: Date.now}
+  submitted: {type: Date, default: Date.now}
 
 });
 
 
-thoughtSchema.index({ summary: "text", description: "text" }, ); //{ unique: true }/// index search
+motivationSchema.index({ summary: "text", description: "text" }, ); //{ unique: true }/// index search
 //Export the model so it can be reused in other js files
-module.exports = mongoose.model("Thoughts", thoughtSchema); // interface to the db
+module.exports = mongoose.model("Motivations", motivationSchema); // interface to the db
