@@ -3,6 +3,7 @@
 
 const slider = document.getElementById("myRange");
 const slideText = document.querySelector('.slidetext')
+const  moodRating = document.querySelector('.moodrating')
 console.log(this.value)
 
 slider.addEventListener('input', feelings)
@@ -21,4 +22,7 @@ function feelings(){
 
   // removes undefined values which were introduced when the range slider step was changed to .1
  slideText.value =  JSON.parse(JSON.stringify(emotions[this.value]))
+// console.log(slideText)
+ moodRating.value = JSON.parse(JSON.stringify(this.value))
+ console.log(moodRating.value)
 }
