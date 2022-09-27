@@ -1,32 +1,57 @@
+<section
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
+>
+  <h1
+    class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center"
+  >
+    <%= users.userName%>
+  </h1>
+  <h1
+    class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center"
+  >
+    Thought Diary
+  </h1>
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56">
-<h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center"><%= users.userName%></h1>
-    <h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center">Thought Diary</h1>
-   
-    <section class=" text-white">
-        <section class="flex flex-col align-middle p-10 justify-center h-screen">
-            
-            <!-- image could be a github heatmap for each thought map entry -->
-            <section class=" hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200">
+  <section class="text-white">
+    <section class="flex flex-col align-middle p-10 justify-center h-screen">
+      <!-- image could be a github heatmap for each thought map entry -->
+      <section
+        class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200"
+      >
+        <img
+          class="object-cover"
+          src="/images/moods.jpg"
+          alt="Sunset in the mountains"
+          style="width: 100%; height: 400px"
+        />
+      </section>
+      <section class="flex mt-20 container md:w-96 justify-center">
+        <button
+          class="flex justify-center py-5 px-8 text-xl border border-white"
+        >
+          <a href="/tools/thoughtdiary/submit-thought"> Add A Thought</a>
+        </button>
+      </section>
        
-                <img class="object-cover" src="/images/moods.jpg" alt="Sunset in the mountains" style="width:100%;height:400px">
-              
-          </section>
-                <section class="flex mt-20 container md:w-96 justify-center">
-                
-              <button class="flex justify-center  py-5 px-8 text-xl border border-white"><a href="/tools/thoughtdiary/submit-thought"> Add A Thought</a>
-              </button>
-                </section>
 
+      <ul
+        class="WeeklyDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"
+      >
+        <% for(let i=0; i< helper.past7Days.length; i++) {%>
+        <li><%= helper.past7Days[i] %></li>
 
-<section class="WeeklyDates">
-    
-</section>
-                
+     
+        <% } %>
+       
+      </ul>
+      <ul> <% for(let i=0; i<thoughts.length; i++) {%>
           
-
-
-                </section>
-                </section>
-                </section>
-                
+        <li><%= thoughts[i].date%></li>
+                <% } %></ul>
+     
+           
+    
+     
+    </section>
+  </section>
+</section>

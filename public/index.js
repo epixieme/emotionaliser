@@ -3,10 +3,15 @@
 
 const slider = document.getElementById("myRange");
 const slideText = document.querySelector('.slidetext')
-const  moodRating = document.querySelector('.moodrating')
+const moodRating = document.querySelector('.moodrating')
+const WeeklyDates = document.querySelector('.WeeklyDates')
 console.log(this.value)
 
-slider.addEventListener('input', feelings)
+
+if(slider){
+  slider.addEventListener('input', feelings)
+}
+
 
 const emotions = {
 
@@ -18,6 +23,8 @@ const emotions = {
 5:"Awful"
 }
 
+
+
 function feelings(){
 
   // removes undefined values which were introduced when the range slider step was changed to .1
@@ -27,12 +34,4 @@ function feelings(){
  console.log(moodRating.value)
 }
 
-
-// const past7Days = [...Array(7).keys()].map(index => {
-//   const date = new Date();
-//   date.setDate(date.getDate() - (index + 1));
-//   return date;
-// })
-
-// past7Days
 

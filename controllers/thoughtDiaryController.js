@@ -1,21 +1,25 @@
 const cloudinary = require("../middleware/cloudinary");
 const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
+const helper = require('../public/helper.js');
+
 
 module.exports = {
   getThoughtDiary: async (req, res) => {
-    console.log(req.user);
+  
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
-      const calThoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1})
+      console.log(thoughts);
+      // const calThoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1})
       const users = await userDetails.find();
-      res.render("thoughtdiary", {
+      res.render("thoughtdiary.ejs", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
         thoughts:thoughts,
-        calThoughts:calThoughts,
+        // calThoughts:calThoughts,
         users:users,
-        user:req.user
+        user:req.user,
+        helper:helper
       });
     } catch (err) {
       console.log(err);
