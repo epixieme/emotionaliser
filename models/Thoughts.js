@@ -23,6 +23,7 @@ const thoughtSchema = new mongoose.Schema({
     enum: ["Great","Very Good","Good","Bad","Very Bad","Awful"],
     required: "This field is required",
   },
+  // this is not working
   rating: {
     type: Number,
     required: "This field is required",

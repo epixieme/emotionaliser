@@ -5,12 +5,13 @@
 <section class="">
   <section>
     <!-- <h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex ">Thought Diary</h1> -->
-    <h2 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex ">Weekly thoughts</h2>
-
-  <!-- <div>
-  <canvas id="myChart"></canvas>
-</div> -->
+  <!-- /// sort out the live data -->
+<section class="container flex justify-center">
+  <div class="flex justify-center w-2/3 border border-white rounded">
+  <canvas class="" id="myChart"></canvas>
+</div>
     </section>
+  </section>
  
     <% for(var i=0; i<thoughts.length; i++) {%>
 
@@ -22,7 +23,7 @@
       <h1><%= arr %></h1>
       <% } %>
       
-
+      <h2 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex ">Weekly thoughts</h2>
     <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
     
       <!-- <ul> -->
@@ -35,7 +36,9 @@
         </section>
       
            <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2"><h1><%= thoughts[i].summary%></h1></div>
+            <div class="font-bold text-xl mb-2 text-white"><h1><%= thoughts[i].summary%></h1></div>
+<!-- this tag will link to the all of the happy or angry posts on the dashboard or thoughts page-->
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%= thoughts[i].category%></span>
             <p class="text-gray-700 text-base">
             
             </p>

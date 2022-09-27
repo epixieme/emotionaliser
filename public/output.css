@@ -755,6 +755,22 @@ video {
   width: 50%;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
+.w-1\/4 {
+  width: 25%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -781,6 +797,14 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .border-collapse {

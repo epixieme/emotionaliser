@@ -52,15 +52,15 @@ crossorigin="anonymous"
     
       datasets: [
                 {
-                    label: "US Dates",
+                    label: "Moods",
                     data: [{
-                        x: "04/01/2014", y: {5:"happy"}
+                        x: "04/01/2014", y: 5
                     }, {
                         x: "10/01/2014", y: 4
                     }, {
-                        x: "04/01/2015", y: 3
+                        x: "04/01/2015", y: 5
                     }, {
-                        x: "10/01/2015", y: 2
+                        x: "10/01/2015", y: 3
                     }],
                     fill: false,
                     borderColor: 'red'
@@ -70,7 +70,17 @@ crossorigin="anonymous"
     const config = {
       type: 'line',
       data: data,
-      options: {}
+      options: {
+        scales: {
+   x: {
+      display: true,
+   },
+   y: {
+      display: false,
+   }
+},
+        
+      }
     };
   </script>
    

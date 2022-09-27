@@ -46,6 +46,7 @@ module.exports = {
         cloudinaryId: result.public_id,
         details: req.body.details,
         category: req.body.category,
+        rating:req.body.rating,
         likes: 0,
         user: req.user.id,
       });
