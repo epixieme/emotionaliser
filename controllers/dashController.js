@@ -32,4 +32,21 @@ module.exports = {
           console.log(err)
       }
   },
+  getTypesOfEmotion: async (req, res) => {
+  
+    try {
+      const limitNumber = 7;
+      const great = await thoughtDiary.find({ category: "Great" }).limit(limitNumber);
+      const veryGood = await thoughtDiary.find({ category: "Very Good" }).limit(limitNumber);
+      const good = await thoughtDiary.find({ category: "Good" }).limit(limitNumber);
+      const feelings = {great, veryGood, good }; //put latestEmotion and individual emotions into an object to use in EJS
+      res.render("dashboard", {
+        title: "Emotions App - Homepage",
+        categories,
+        feelings,
+      }); // render homepage title and categories
+    } catch (error) {
+      errorHandling(res, error);
+    }
+  },
   }

@@ -44,13 +44,14 @@
         <% } %>
        
       </ul>
-      <ul> <% for(let i=0; i<thoughts.length; i++) {%>
-          
-        <li><%= thoughts[i].date%></li>
-                <% } %></ul>
+      <ul class="mongoDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+         <% for(let i=0; i<thoughts.length; i++) {%>
      
-           
-    
+          <li class="bg-white w-2 h-2 date"><%= thoughts[i].category%></li>
+                <% } %>
+              
+              </ul>
+                
      
     </section>
   </section>
