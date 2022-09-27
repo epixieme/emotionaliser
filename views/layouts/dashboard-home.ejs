@@ -38,6 +38,9 @@ crossorigin="anonymous"
   <script src="/index.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  
+  
   <script>
     const labels = [
       'January',
@@ -47,6 +50,8 @@ crossorigin="anonymous"
       'May',
       'June',
     ];
+
+    
   
     const data = {
     
@@ -61,9 +66,15 @@ crossorigin="anonymous"
                         x: "04/01/2015", y: 5
                     }, {
                         x: "10/01/2015", y: 3
+                    },
+                    {
+                        x: "11/01/2015", y: 3
+                    },
+                    {
+                        x: "17/01/2015", y: 3
                     }],
                     fill: false,
-                    borderColor: 'red'
+                    borderColor: 'teal'
                 },]
     };
   
@@ -71,6 +82,7 @@ crossorigin="anonymous"
       type: 'line',
       data: data,
       options: {
+        
         scales: {
    x: {
       display: true,

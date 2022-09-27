@@ -26,3 +26,13 @@ function feelings(){
  moodRating.value = JSON.parse(JSON.stringify(this.value))
  console.log(moodRating.value)
 }
+
+
+// const past7Days = [...Array(7).keys()].map(index => {
+//   const date = new Date();
+//   date.setDate(date.getDate() - (index + 1));
+//   return date;
+// })
+
+// past7Days
+
