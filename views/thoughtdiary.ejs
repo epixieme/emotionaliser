@@ -1,3 +1,8 @@
+
+<%# variables %>
+
+
+
 <section
   class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
 >
@@ -26,11 +31,11 @@
         />
       </section>
       <section class="flex mt-20 container md:w-96 justify-center">
-        <button
+        <a href="/tools/thoughtdiary/submit-thought"> <button
           class="flex justify-center py-5 px-8 text-xl border border-white"
         >
-          <a href="/tools/thoughtdiary/submit-thought"> Add A Thought</a>
-        </button>
+         Add A Thought
+        </button></a>
       </section>
        
 
@@ -38,20 +43,34 @@
         class="WeeklyDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"
       >
         <% for(let i=0; i< helper.past7Days.length; i++) {%>
-        <li><%= helper.past7Days[i] %></li>
+        <li class ='weeklyDate'><%= helper.past7Days[i] %></li>
 
-     
         <% } %>
        
       </ul>
-      <ul class="mongoDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+      <section class="mongoDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+        <% let shortenDate=[] %>
          <% for(let i=0; i<thoughts.length; i++) {%>
-     
-          <li class="bg-white w-2 h-2 date"><%= thoughts[i].category%></li>
-                <% } %>
-              
-              </ul>
+          <% let thoughtMonth = new Date(thoughts[i].date).getMonth() + 1 %>
+          <% let thoughtDay = new Date(thoughts[i].date).getDate()%>
+          <%shortenDate.push(`${thoughtDay}/${thoughtMonth}`)%>
+           <% } %>
                 
+           <%let sortMongoDate = shortenDate.sort()%>
+           <%console.log(sortMongoDate )%>
+           <%console.log(helper.past7Days)%>
+           <% const finalArray = helper.past7Days.map(item=>sortMongoDate.includes(item)? item:0)%>
+           
+
+           <% for(let i=0; i<7; i++) {%> 
+            <% if(finalArray){ %>
+              <section class=" h-2 date">
+                <%= finalArray[i]%>
+              </section>
+              <% } %>
+            <% } %>
+              </section>
+            
      
     </section>
   </section>
