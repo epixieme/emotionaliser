@@ -7,6 +7,7 @@ const moodRating = document.querySelector('.moodrating')
 const WeeklyDates = document.querySelector('.WeeklyDates')
 const dates = document.querySelectorAll('.date')
 const mongoDates = document.querySelector('.mongoDates')
+const thoughtRoutes = document.querySelectorAll('.thoughtRoute')
 console.log(this.value)
 
 
@@ -33,6 +34,69 @@ function feelings(){
 
 }
 
+
+
+let apiUrl = "/tools/thoughtdiary/thoughtData";
+async function fetchData(url) {
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    // console.log('this'+ data)
+    insertIds(data)
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchData(apiUrl);
+
+function insertIds(items){
+let data = [...items]
+let dateIds =data.map(elem => (
+  [
+  elem.date,
+  elem._id
+]
+))
+
+
+let ids = dateIds.map(item=>item[1])
+
+
+let formatDate = dateIds.map(item=>item[0]
+  .split(':')
+  .splice(0,1)
+.join('')
+.split('-').
+slice(1,3)
+.reverse()
+.join('/')
+.split('T')
+.join('/')
+.split('/')
+
+
+).map(item=>`${parseInt(item[0],10)}/${parseInt(item[2],10)}`)
+
+// console.log(formatDate)
+
+
+return dates.forEach(item=>{
+
+  // console.log(dateIds)
+  
+return formatDate.includes(item.innerText)? item.childNodes[1].href='':''
+
+
+
+})
+// links.forEach(link => link.href = "https://google.com");
+  // item.innerHTML !== '0'? item.childNodes.href ='/tools':'')
+}
+
+/// if dates.textcontent ===  format date then dates childnoe === id
+
+insertIds()
 // function createDatesArray(){
 
 // let array = [1,2,3,4,5,6,7]

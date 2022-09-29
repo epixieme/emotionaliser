@@ -9,9 +9,10 @@ const thoughtDiaryController = require("../controllers/thoughtDiaryController");
 //add controller here
 router.get("/",  thoughtDiaryController.getThoughtDiary);
 router.get("/submit-thought",  thoughtDiaryController.getSubmitThought);
-
+router.get("/thoughtData", thoughtDiaryController.getThoughtData)
 router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
 router.get("/:id",  thoughtDiaryController.getThought);
+
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);
 

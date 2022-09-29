@@ -6,7 +6,6 @@ const helper = require('../public/helper.js');
 
 module.exports = {
   getThoughtDiary: async (req, res) => {
-  
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
       console.log(thoughts);
@@ -27,12 +26,13 @@ module.exports = {
   },
   getSubmitThought: async (req, res) => {
     console.log(req.user);
-
     try {
-      await thoughtDiary.findOne;
+     const thought =  await thoughtDiary.findById(req.params.id)
       res.render("submit-thoughts", {
         title: "Thought Diary - submit",
         layout: "./layouts/dashboard-home.ejs",
+        thought:thought,
+        user: req.user
       });
     } catch (err) {
       console.log(err);
@@ -44,6 +44,7 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
+
       await thoughtDiary.create({
         summary: req.body.summary,
         image: result.secure_url,
@@ -64,7 +65,7 @@ module.exports = {
     console.log(req.user);
     try {
       const thought = await thoughtDiary.findById(req.params.id);
-      await thoughtDiary.findOne;
+     
       res.render("get-thoughts", {
         title: "Thought Diary - Thought",
         layout: "./layouts/dashboard-home.ejs",
@@ -75,4 +76,16 @@ module.exports = {
       console.log(err);
     }
   },
+
+ getThoughtData: async (req, res) => {
+  
+    try {
+      const data = await thoughtDiary.find(req.params.id);
+      res.json(data)
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
+
+

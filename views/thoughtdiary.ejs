@@ -52,26 +52,48 @@
         <% let shortenDate=[] %>
          <% for(let i=0; i<thoughts.length; i++) {%>
           <% let thoughtMonth = new Date(thoughts[i].date).getMonth() + 1 %>
-          <% let thoughtDay = new Date(thoughts[i].date).getDate()%>
-          <%shortenDate.push(`${thoughtDay}/${thoughtMonth}`)%>
-           <% } %>
-                
-           <%let sortMongoDate = shortenDate.sort()%>
-           <%console.log(sortMongoDate )%>
-           <%console.log(helper.past7Days)%>
-           <% const finalArray = helper.past7Days.map(item=>sortMongoDate.includes(item)? item:0)%>
-           
+          <% let thoughtDay = new Date(thoughts[i].date).getDate("dd")%>
 
-           <% for(let i=0; i<7; i++) {%> 
+          <%
+          const thoughtDetails =[  
+           {date:`${thoughtDay}/${thoughtMonth}`, id:thoughts[i].id}, 
+
+          ]
+
+          const idDetails =[  
+           {date:`${thoughtDay}/${thoughtMonth}`, id:thoughts[i].id}, 
+
+          ]
+          %>
+      
+          <%shortenDate.push(thoughtDetails)%>
+           <% } %>
+
+           <%let mongoDetails = shortenDate%>
+           
+          <%const convertToArray = mongoDetails.map(item=>[item[0].date, item[0].id])%>
+          
+          <%const mongoDates = mongoDetails.map(item=>item[0].date)%>
+          <%const mongoId = mongoDetails.map(item=>item[0].id)%>
+            <% const finalArray = helper.past7Days.map(item=>mongoDates.includes(item)?item:0)%>
+          
+             <% for(let i=0; i<7; i++) {%> 
             <% if(finalArray){ %>
               <section class=" h-2 date">
-                <%= finalArray[i]%>
-              </section>
-              <% } %>
+                <a class="thoughtRoute" href="">
+               <%= finalArray[i]%>
+              </a>
+            </section>
+          </a>
+
             <% } %>
+          <% } %>
+   <% for(let i=0; i<7; i++) {%>
+
+    <% } %>
               </section>
             
-     
+ 
     </section>
   </section>
 </section>
