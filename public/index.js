@@ -34,8 +34,6 @@ function feelings(){
 
 }
 
-
-
 let apiUrl = "/tools/thoughtdiary/thoughtData";
 async function fetchData(url) {
   try {
@@ -48,24 +46,30 @@ async function fetchData(url) {
     console.log(error);
   }
 }
+
+
 fetchData(apiUrl);
 
-function insertIds(items){
+async function insertIds(items){
 let data = [...items]
-let dateIds =data.map(elem => (
+let dateIds = await data.map(elem => (
   [
   elem.date,
-  elem._id
+  elem._id,
+  elem.category,
+  elem.image
 ]
 ))
 
-
 let ids = dateIds.map(item=>item[1])
+let category = dateIds.map(item=>item[2])
+let image = dateIds.map(item=>item[3])
+console.log(image)
 
-
+// format the date string fetched from mongo
 let formatDate = dateIds.map(item=>item[0]
-  .split(':')
-  .splice(0,1)
+.split(':')
+.splice(0,1)
 .join('')
 .split('-').
 slice(1,3)
@@ -80,82 +84,21 @@ slice(1,3)
 
 // console.log(formatDate)
 
+// compare against the html dates in ejs and then add the id from ids array uising indexOf to match
+return dates.forEach((item,i)=>{
+  // insert id,image, category into html
+if (formatDate.includes(item.innerText)){
+  const imageMap = item.childNodes[5].src=`${image[formatDate.indexOf(item.innerText)]}`
 
-return dates.forEach(item=>{
+const idMap  = item.childNodes[1].href=`/tools/thoughtdiary/${ids[formatDate.indexOf(item.innerText)]}`
+const categoryMap = item.childNodes[3].innerText=`${category[formatDate.indexOf(item.innerText)]}`
 
-  // console.log(dateIds)
-  
-return formatDate.includes(item.innerText)? item.childNodes[1].href='':''
-
+// get images to work in the morn
 
 
-})
-// links.forEach(link => link.href = "https://google.com");
-  // item.innerHTML !== '0'? item.childNodes.href ='/tools':'')
+
 }
+})
 
-/// if dates.textcontent ===  format date then dates childnoe === id
-
+}
 insertIds()
-// function createDatesArray(){
-
-// let array = [1,2,3,4,5,6,7]
-// const dateArray = [...dates]
-// let store =[]
-
-// let formatD = dateArray.map(item=>{
-//  let formattedD =  new Date(item.textContent)
-// let shortenDate = `${formattedD.getDate()}/${formattedD.getMonth()+ 1}`
-// return shortenDate
-// })
-
-// for (i=0;i<array.length;i++){
- 
-
-//   // let formatDate = `${dateArray.getDate()}/${dateArray.getMonth()+ 1}`
-// store.push(formatD[i])
-// }
-// return store.map(value => value === undefined ? '-' : value)
-
-// }
-
-
-// function insertDatesArray(){
-// let array = createDatesArray()
-
-// let dashes = array.filter(item=>item === '-')
-// let dateValues = array.filter(item=>item !== '-')
-// console.log(dashes, dateValues)
-
-// for(i=0;i<array.length;i++){
-//   dates[i].innerHTML = dateValues[i]
-//   let dashLi = document.createElement('li')
-//   dashLi.innerHTML=dashes[i]
-//   mongoDates.appendChild(dashLi)
-//   }
-
-
-// // }
-// return dates
-
-// }
-
-// insertDatesArray()
-
-
-
-
-
-// const past7Days = [...Array(7).keys()].map(index => {
-//   const date = new Date();
-//   date.setDate(date.getDate() - index);
-//   return `${date.getDate()}/${date.getMonth()+ 1}`;
-// });
-
-
-
-// module.exports = {
-//   // reverse the dates to show past to present
-//   past7Days: past7Days.reverse(),
- 
-// }
