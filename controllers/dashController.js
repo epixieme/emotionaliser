@@ -1,5 +1,7 @@
 const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
+// this is an exported function for calculating the last 7 days, then I am able to render it to EJS as below in getDashboard
+const helper = require('../public/helper.js');
 
 module.exports = {
     getDashboard: async (req,res)=>{
@@ -13,7 +15,8 @@ module.exports = {
             layout:'./layouts/dashboard-home.ejs',
             thoughts:thoughts,
             users:users,
-            user:req.user
+            user:req.user,
+            helper:helper
           })
      
         }catch(err){

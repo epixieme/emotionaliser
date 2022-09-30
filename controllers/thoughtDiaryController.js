@@ -7,7 +7,7 @@ const helper = require('../public/helper.js');
 module.exports = {
   getThoughtDiary: async (req, res) => {
     try {
-      const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
+      const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1})
       console.log(thoughts);
       // const calThoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1})
       const users = await userDetails.find();

@@ -2,10 +2,9 @@
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
 
 
-<section class="">
+
   <section>
-    <!-- <h1 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex ">Thought Diary</h1> -->
-  <!-- /// sort out the live data -->
+
 <section class="p-10 grid grid-cols-1">
   <div class="shadow-sm border md:max-w-lg border-slate-400 shadow-slate-400 rounded">
   <canvas class="" id="myChart"></canvas>
@@ -13,11 +12,11 @@
     </section>
   </section>
 
-      <h2 class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex ">Weekly thoughts</h2>
-    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+      <h2 class="px-10 py-4 text-neutral-300 font-bold font-barlow text-3xl flex ">Weekly thoughts</h2>
+    <!-- <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"> -->
     
       <!-- <ul> -->
-        <% for(var i=0; i<thoughts.length; i++) {%>
+        <!-- <% for(var i=0; i<thoughts.length; i++) {%>
           
         <section class="rounded overflow-hidden shadow-lg border border-white">
           <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
@@ -28,91 +27,66 @@
       
            <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2 text-white"><h1><%= thoughts[i].summary%></h1></div>
-<!-- this tag will link to the all of the happy or angry posts on the dashboard or thoughts page-->
+
             <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%= thoughts[i].category%></span>
             <p class="text-gray-700 text-base">
             
             </p>
           </div>
-          <!-- <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div> -->
+          
         </a>
       </section>
-        <% } %>
-      <!-- </ul> -->
+        <% } %> -->
+     
 
       
-    </section>
+
+ <section class="flex sm:flex-col ">
+
+    <!-- thoughts over last 7 days timeline -->
+<ul
+class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white"
+>
+
+
+</ul>
+
+<section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+<!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
+<% let shortenDate=[] %>
+ <% for(let i=0; i<thoughts.length; i++) {%>
+  <% let thoughtMonth = new Date(thoughts[i].date).getMonth() + 1 %>
+  <% let thoughtDay = new Date(thoughts[i].date).getDate()%>
+  <%const thoughtDetails =`${thoughtDay}/${thoughtMonth}`%>
+  <%shortenDate.push(thoughtDetails)%>
+   <% } %>
+
+
+  <!-- map the last 7 days array and if mongoDates array includes the item from last 7 days array then display the date else 0 which means no entry was submitted -->
+  <% const finalArray = helper.past7Days.map(item=>shortenDate.includes(item)?item:0)%>
+     <% for(let i=0; i<7; i++) {%>   
+    <% if(finalArray){ %>
+      <section class="rounded overflow-hidden shadow-lg border border-white"> 
+      <section class=" h-2 date">
+     
+        <a class="thoughtRoute" href="">
+        <img src="" alt="" class="object-cover" style="width:100%;height:150px">
+       
+        <p class="dateFields text-white text-opacity-0"><%= finalArray[i]%></p>
+      </a>
+
+      <!-- links to all items by same category -->
  
-    <!-- </ul> -->
-    
+      <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category"></p>
 
+    </section>
+  </section>
+
+    <% } %>
+  <% } %>
+
+      </section>
+    </section>
 </section>
 </section>
-
-<!-- 
-s
-
-    <h1 class="p-8 text-neutral-300 font-bold font-barlow text-4xl flex flex-col">Wellbeing Tools</h1>
-    
-    <section class="p-16 text-white">
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-            <section class=" hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm rounded overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200">
-                <img class="w-full" src="/images/moods.jpg" alt="Sunset in the mountains">
-                <section class="px-6 py-4">
-                  <section class="font-bold text-xl mb-2">Mood Diary</section>
-                </section>
-                <section class="px-6 pt-4 pb-2">
-             
-                </section>
-              </section>
-        
-            <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm rounded overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200">
-                <img class="w-full" src="/images/quotes.jpg" alt="Sunset in the mountains">
-                <section class="px-6 py-4">
-                  <section class="font-bold text-xl mb-2">Motivational Quotes</section>
-                  
-                </section>
-                <section class="px-6 pt-4 pb-2">
-           
-                </section>
-              </section>
-              <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm rounded overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200">
-                <img class="w-full" src="/images/questions.jpg" alt="Sunset in the mountains">
-                <section class="px-6 py-4">
-                  <section class="font-bold text-xl mb-2">DASS21 Questionaire</section>
-                  
-                </section>
-                <section class="px-6 pt-4 pb-2">
-             
-                </section>
-              </section>
-        
-            <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm rounded overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200">
-                <img class="w-full" src="/images/meditation.jpg" alt="Sunset in the mountains">
-                <section class="px-6 py-4">
-                  <section class="font-bold text-xl mb-2">Meditation Zone</section>
-                  
-                </section>
-                <section class="px-6 pt-4 pb-2">
-               
-                </section>
-              </section>
-            </section>
-        </section> 
-     
-        </section>
-     
-
-
-
-    
-
-   
-
-
-    
 

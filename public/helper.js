@@ -1,4 +1,4 @@
-// create dates on dashboard by exporting the function and passing through controller back to ejs so I can style it in tailwind
+// create array of dates on dashboard by exporting the function and passing through controller back to ejs so I can style it in tailwind
 const past7Days = [...Array(7).keys()].map(index => {
     const date = new Date();
     date.setDate(date.getDate() - index);
@@ -8,7 +8,7 @@ const past7Days = [...Array(7).keys()].map(index => {
   
   
   module.exports = {
-    // reverse the dates to show past to present
+    // reverse the dates to show past to present and export ready for import into a controller for reuse
     past7Days: past7Days.reverse(),
    
   }

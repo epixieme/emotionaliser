@@ -1,7 +1,4 @@
 
-<%# variables %>
-
-
 
 <section
   class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
@@ -12,85 +9,45 @@
     <%= users.userName%>
   </h1>
   <h1
-    class="px-16 py-4 text-neutral-300 font-bold font-barlow text-4xl flex justify-center"
+    class="px-16 py-4 text-neutral-300 font-bold font-barlow text-3xl flex justify-center"
   >
     Thought Diary
   </h1>
 
-  <section class="text-white">
-    <section class="flex flex-col align-middle p-10 justify-center h-screen">
+  <section class="flex flex-col align-middle p-10">
+    <a href="/tools/thoughtdiary/submit-thought">
+    <section class="flex align-middle justify-center h-screen">
       <!-- image could be a github heatmap for each thought map entry -->
       <section
         class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-200"
       >
         <img
-          class="object-cover"
+          class="object-cover shadow-sm shadow-slate-900"
           src="/images/moods.jpg"
           alt="Sunset in the mountains"
           style="width: 100%; height: 400px"
         />
+        <section class="text-white">
+          <h1 class="text-center p-4">Add Todays Thought</h1>
+        </section>
       </section>
-      <section class="flex mt-20 container md:w-96 justify-center">
-        <a href="/tools/thoughtdiary/submit-thought"> <button
-          class="flex justify-center py-5 px-8 text-xl border border-white"
-        >
-         Add A Thought
-        </button></a>
-      </section>
-       
-
-      <ul
-        class="WeeklyDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"
-      >
-        <% for(let i=0; i< helper.past7Days.length; i++) {%>
-        <li class ='weeklyDate'><%= helper.past7Days[i] %></li>
-
-        <% } %>
-       
-      </ul>
-      
-      <section class="mongoDates p-10 grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
-        
-        <% let shortenDate=[] %>
-         <% for(let i=0; i<thoughts.length; i++) {%>
-          <% let thoughtMonth = new Date(thoughts[i].date).getMonth() + 1 %>
-          <% let thoughtDay = new Date(thoughts[i].date).getDate()%>
-
-          <%const thoughtDetails =[ {date:`${thoughtDay}/${thoughtMonth}`, id:thoughts[i].id}, ]%>
-      
-          <%shortenDate.push(thoughtDetails)%>
-           <% } %>
-
-           <%let mongoDetails = shortenDate%>
-           
-          <%const convertToArray = mongoDetails.map(item=>[item[0].date, item[0].id])%>
-          
-          <%const mongoDates = mongoDetails.map(item=>item[0].date)%>
-          <%const mongoId = mongoDetails.map(item=>item[0].id)%>
-          <% const finalArray = helper.past7Days.map(item=>mongoDates.includes(item)?item:0)%>
-          
-             <% for(let i=0; i<7; i++) {%> 
-             
-            <% if(finalArray){ %>
-              <section> 
-                
-              <section class=" h-2 date">
-                <a class="thoughtRoute" href="">
-               <%= finalArray[i]%>
-              
-               </a>
-              
-              <p></p>
-              <img src="" alt="" class="object-cover" style="width:100%;height:150px">
-            </section>
-          </section>
-
-            <% } %>
-          <% } %>
-  
-              </section>
-            
- 
+   
     </section>
+  </a>
+
+
+<!-- <section class="flex flex-col"> -->
+  <% for(let i=0; i<thoughts.length; i++) {%>
+    <section class="even:bg-gray-600 odd:bg-slate-500 mt-10 border border-white rounded-lg p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 place-items-center gap-8  text-white ">
+    <p class=""><%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
+    <img class="object-cover rounded-md shadow-md shadow-slate-700" src="<%=thoughts[i].image%>" alt="" style="width:100%;height:150px">
+    <p class=""><%=thoughts[i].category%></p>
+    <p class=""><%=thoughts[i].summary%></p>
+    <p class=""><%=thoughts[i].details%></p>
+    </section>
+
+    <%}%>
+
+<!-- </section> -->
   </section>
 </section>
