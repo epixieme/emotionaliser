@@ -865,16 +865,8 @@ video {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.grid-cols-\[repeat\(auto-fit\2c _16\.666666\%\)\] {
-  grid-template-columns: repeat(auto-fit, 16.666666%);
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _10\.666666\%\)\] {
-  grid-template-columns: repeat(auto-fit, 10.666666%);
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _26\.666666\%\)\] {
-  grid-template-columns: repeat(auto-fit, 26.666666%);
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -1829,24 +1821,9 @@ body {
   background-color: rgb(17 94 89 / var(--tw-bg-opacity));
 }
 
-.odd\:bg-blue-100:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-stone-700:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 64 60 / var(--tw-bg-opacity));
-}
-
 .odd\:bg-slate-500:nth-child(odd) {
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-
-.even\:bg-amber-100:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 243 199 / var(--tw-bg-opacity));
 }
 
 .even\:bg-gray-600:nth-child(even) {
@@ -1893,16 +1870,8 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-7 {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
   .sm\:flex-col {
@@ -1919,10 +1888,6 @@ body {
     display: none;
   }
 
-  .md\:w-96 {
-    width: 24rem;
-  }
-
   .md\:max-w-lg {
     max-width: 32rem;
   }
@@ -1935,12 +1900,12 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:px-28 {
@@ -1971,20 +1936,20 @@ body {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
@@ -2005,11 +1970,11 @@ body {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
-  .xl\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }

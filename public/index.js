@@ -6,6 +6,8 @@ const dates = document.querySelectorAll(".date");
 const mongoDates = document.querySelector(".mongoDates");
 const thoughtRoutes = document.querySelectorAll(".thoughtRoute");
 const dateFields = document.querySelectorAll(".dateFields")
+const rating = document.querySelectorAll(".rating")
+
 
 const past7Days = [...Array(7).keys()].map(index => {
   const date = new Date();
@@ -46,6 +48,7 @@ async function fetchData(url) {
     let data = await response.json();
     // console.log('this'+ data)
     insertData(data);
+    createRatingArrows(data)
   } catch (error) {
     console.log(error);
   }
@@ -109,6 +112,13 @@ function insertData(data) {
     
     }
   });
+
+}
+
+function createRatingArrows(data){
+//get this working
+let arrows = data.map(item=>item.rating)
+return arrows.map((item,i,a)=>item < a[i+1]? rating[item].innerText='up':rating[item].innerText='down')
 
 }
 
