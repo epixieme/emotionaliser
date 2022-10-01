@@ -1036,6 +1036,10 @@ video {
   --tw-bg-opacity: 0.2;
 }
 
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+
 .bg-backg-wave {
   background-image: url('/images/wave.svg');
 }
