@@ -6,7 +6,9 @@ module.exports = {
   "./public/*.{html,js,css}",
   "./views/*.ejs",
   "./views/layouts/*.ejs",
-  "./views/partials/*.ejs"
+  "./views/partials/*.ejs",
+  './node_modules/tw-elements/dist/js/**/*.js'
+
 ],
   theme: {
     fontFamily: {
@@ -16,9 +18,7 @@ module.exports = {
     },
     height: {
       '128': '32rem',
-    },
-  
-    
+    }, 
     extend: {
       backgroundImage: {
         'nav-image':"url('/images/peaks.svg')",
@@ -28,13 +28,12 @@ module.exports = {
         'backg-wave-middle': "url('/images/wavey.svg')",
         'backg-wave-end': "url('/images/secondwave.svg')",
         'circles': "url('/images/circle-scatter.svg')",
-
-
-     
       }
-    }
-    ,
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+
+  ],
 }
 

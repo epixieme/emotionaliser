@@ -28,20 +28,20 @@ module.exports = {
       console.log(err);
     }
   },
-  delThoughtDiary: async (req, res) => {
-    try {
-      // Find post by id
-      let thought = await thoughtDiary.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(thought.cloudinaryId);
-      // Delete post from db
-      await thoughDiary.remove({ _id: req.params.id });
-      console.log("Deleted Post");
-      res.redirect("/tools/thoughtdiary");
-    } catch (err) {
-      res.redirect("/tools/thoughtdiary");
-    }
-  },
+  // delThoughtDiary: async (req, res) => {
+  //   try {
+  //     // Find post by id
+  //     let thought = await thoughtDiary.findById({ _id: req.params.id });
+  //     // Delete image from cloudinary
+  //     await cloudinary.uploader.destroy(thought.cloudinaryId);
+  //     // Delete post from db
+  //     await thoughDiary.remove({ _id: req.params.id });
+  //     console.log("Deleted Post");
+  //     res.redirect("/tools/thoughtdiary");
+  //   } catch (err) {
+  //     res.redirect("/tools/thoughtdiary");
+  //   }
+  // },
   getSubmitThought: async (req, res) => {
     console.log(req.user);
     try {
