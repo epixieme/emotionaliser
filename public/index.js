@@ -9,13 +9,6 @@ const dateFields = document.querySelectorAll(".dateFields")
 const rating = document.querySelectorAll(".rating")
 
 
-const past7Days = [...Array(7).keys()].map(index => {
-  const date = new Date();
-  date.setDate(date.getDate() - index);
-  return `${date.getDate()}/${date.getMonth()+ 1}`;
-}).reverse();
-
-
 
 if (slider) {
   slider.addEventListener("input", feelings);
@@ -36,9 +29,6 @@ function feelings() {
 
   moodRating.value = JSON.parse(JSON.stringify(this.value));
 }
-
-
-
 
 
 let apiUrl = "/tools/thoughtdiary/thoughtData";

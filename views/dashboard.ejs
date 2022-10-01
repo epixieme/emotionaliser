@@ -16,7 +16,7 @@
     <!-- <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"> -->
     
       <!-- <ul> -->
-        <!-- <% for(var i=0; i<thoughts.length; i++) {%>
+        <!-- <% for(let i=0; i<thoughts.length; i++) {%>
           
         <section class="rounded overflow-hidden shadow-lg border border-white">
           <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
@@ -45,10 +45,12 @@
 
     <!-- thoughts over last 7 days timeline -->
 <ul
-class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white"
+class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white text-center"
 >
+<% for(let i=0; i< helper.past7Days.length; i++) {%>
+  <li class ='weeklyDate'><%= helper.past7Days[i] %></li>
 
-
+  <%}%>
 </ul>
 
 <section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
