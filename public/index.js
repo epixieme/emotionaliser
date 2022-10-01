@@ -115,10 +115,29 @@ function insertData(data) {
 
 }
 
+
 function createRatingArrows(data){
 //get this working
+
+let up = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+</svg>`
+
+let down =`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+</svg>
+`
+let noChange = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+</svg>
+`
+
 let arrows = data.map(item=>item.rating)
-return arrows.map((item,i,a)=>item < a[i+1]? rating[item].innerText='up':rating[item].innerText='down')
+let upDown =arrows.map((item,i,a)=>item < a[i+1]? down:item > a[i+1]?up:noChange)
+
+upDown.forEach((item,i)=>rating[i].innerHTML = item)
+console.log(arrows)
+
 
 }
 
