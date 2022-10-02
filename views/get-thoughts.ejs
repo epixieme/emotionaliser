@@ -2,21 +2,30 @@
   class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
 >
   <section class="flex justify-center">
-    <section class="w-full max-w-5xl">
+    <section class="">
       <section
         class="border border-white rounded-lg shadow-md px-8 pt-6 pb-8 mb-4 text-white"
       >
         <section class="mb-6">
-          <img class="max-w-screen-sm" src="<%=thought.image %>" />
-          <h1 class="block text-4xl text-white font-bold mb-2">Mood</h1>
+    <section class="flex space-x-8">
+      <section>
+          <img class="bg-white border rounded max-w-sm" src="<%=thought.image %>" />
+        </section>
+        <section>
+          <section class="flex flex-col space-y-10">
+          <h1 class="block text-2xl text-white font-bold mb-2">Mood</h1>
           <h1><%=thought.category %></h1>
-          <h1 class="block text-4xl text-white font-bold mb-2">Summary</h1>
+          <h1 class="block text-2xl text-white font-bold mb-2">Summary</h1>
           <h1><%=thought.summary %></h1>
 
-          <h1 class="block text-4xl text-white font-bold mb-2">Details</h1>
+          <h1 class="block text-2xl text-white font-bold mb-2">Details</h1>
           <h1><%=thought.details %></h1>
         </section>
-        <p class="edit">
+        </section>
+      </section>
+    </section>
+        <section class="flex flex-row space-x-16">
+        <p class="edit hover:scale-105 transition delay-150 duration-300 ease-in-out">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -38,7 +47,7 @@
           <%if(thought.user == user.id){ %>
      
         <form action="/tools/thoughtdiary/delete-thought/<%=thought.id%>?_method=DELETE" method="POST">
-        <button class="del" type="submit">
+        <button class="del hover:scale-105 transition delay-150 duration-300 ease-in-out" type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -56,6 +65,11 @@
         </button>
         <%}%>
       </form>
+    <p class="hover:scale-105 transition delay-150 duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+    </svg>
+    </p>
+    </section>
       </section>
       <p class="text-center text-gray-500 text-xs">
         &copy;2020 Acme Corp. All rights reserved.
