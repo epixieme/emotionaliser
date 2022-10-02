@@ -36,7 +36,11 @@ const thoughtSchema = new mongoose.Schema({
    type:String,
    default:"1"
   },
-  date: {type: Date, default: Date.now}
+  date: {type: Date, default: Date.now},
+  submitted:{
+    type:Boolean,
+    default:true
+  }
 
 });
 

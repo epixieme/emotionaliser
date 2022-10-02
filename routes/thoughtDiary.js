@@ -12,7 +12,7 @@ router.get("/submit-thought",  thoughtDiaryController.getSubmitThought);
 router.get("/thoughtData", thoughtDiaryController.getThoughtData)
 router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
 router.get("/:id",  thoughtDiaryController.getThought);
-// router.delete("/deleteThought/:id",  thoughtDiaryController.delThoughtDiary);
+router.delete("/delete-thought/:id",  thoughtDiaryController.delThoughtDiary);
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);
 

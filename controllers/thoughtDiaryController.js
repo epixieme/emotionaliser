@@ -3,13 +3,15 @@ const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
 const helper = require('../public/helper.js');
 
-
+function errorHandling(res, error) {
+  res.status(500).send({ message: error.message || "Error Occured" });
+}
 module.exports = {
   getThoughtDiary: async (req, res) => {
+
+    // get posts by logged in user
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
-    
-
     
       // .map((item,i,a)=>item<)
      
@@ -28,28 +30,33 @@ module.exports = {
       console.log(err);
     }
   },
-  // delThoughtDiary: async (req, res) => {
-  //   try {
-  //     // Find post by id
-  //     let thought = await thoughtDiary.findById({ _id: req.params.id });
-  //     // Delete image from cloudinary
-  //     await cloudinary.uploader.destroy(thought.cloudinaryId);
-  //     // Delete post from db
-  //     await thoughDiary.remove({ _id: req.params.id });
-  //     console.log("Deleted Post");
-  //     res.redirect("/tools/thoughtdiary");
-  //   } catch (err) {
-  //     res.redirect("/tools/thoughtdiary");
-  //   }
-  // },
+
+
+  delThoughtDiary: async (req, res) => {
+    try {
+      console.log('id' + req.params.id )
+      // Find post by id
+      let thought = await thoughtDiary.findById({ _id: req.params.id });
+      // Delete image from cloudinary
+      await cloudinary.uploader.destroy(thought.cloudinaryId);
+      // Delete post from db
+      await thoughtDiary.deleteOne({ _id: req.params.id });
+      console.log("Deleted Post");
+      res.redirect("/tools/thoughtdiary");
+    } catch (err) {
+      errorHandling(res, err)
+      res.redirect("/tools/thoughtdiary");
+    }
+  },
   getSubmitThought: async (req, res) => {
     console.log(req.user);
     try {
-     const thought =  await thoughtDiary.findById(req.params.id)
+     const thoughts =  await thoughtDiary.find({user:req.user.id})
+     console.log('this is thoughts' + thoughts)
       res.render("submit-thoughts", {
         title: "Thought Diary - submit",
         layout: "./layouts/dashboard-home.ejs",
-        thought:thought,
+        thoughts:thoughts,
         user: req.user
       });
     } catch (err) {
@@ -80,15 +87,16 @@ module.exports = {
     }
   },
   getThought: async (req, res) => {
-    console.log(req.user);
+
     try {
       const thought = await thoughtDiary.findById(req.params.id);
-     
+      console.log('this is thoughts' + thought)
       res.render("get-thoughts", {
         title: "Thought Diary - Thought",
         layout: "./layouts/dashboard-home.ejs",
         thought:thought,
-        user:req.user
+        user: req.user
+        
       });
     } catch (err) {
       console.log(err);
