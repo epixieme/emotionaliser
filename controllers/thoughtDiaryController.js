@@ -38,7 +38,7 @@ module.exports = {
       // Find post by id
       let thought = await thoughtDiary.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(thought.cloudinaryId);
+      // await cloudinary.uploader.destroy(thought.cloudinaryId);
       // Delete post from db
       await thoughtDiary.deleteOne({ _id: req.params.id });
       console.log("Deleted Post");

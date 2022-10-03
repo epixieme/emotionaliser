@@ -123,13 +123,15 @@ let noChange = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 `
 
 let arrows = data.map(item=>item.rating)
-console.log(arrows)
+
 let upDown = arrows.reverse().map((item,i,a)=>item === a[i+1] ? noChange:item > a[i+1]?down:up)
-console.log(upDown)
+
+
+
 upDown.forEach((item,i)=>rating[i].innerHTML = item )
 
-
-
+// set first date item to nothing instead of arrows as nothing to compare
+rating[rating.length -1].innerHTML=''
 }
 
 

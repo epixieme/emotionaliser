@@ -40,6 +40,10 @@ const thoughtSchema = new mongoose.Schema({
   submitted:{
     type:Boolean,
     default:true
+  },
+  bookmarked:{
+    type:Boolean,
+    default:false
   }
 
 });

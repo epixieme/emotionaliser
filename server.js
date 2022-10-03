@@ -17,6 +17,7 @@ const mainRoutes = require("./routes/main");
 const dashboardRoutes = require("./routes/dashboard");
 const thoughtDiaryRoutes = require("./routes/thoughtDiary");
 const motivationsRoutes = require("./routes/motivations");
+const bookmarkRoutes = require("./routes/bookmarks");
 
 
 // const port = process.env.PORT || 2000;
@@ -78,6 +79,7 @@ app.set("layout", "./layouts/main"); // sets  and changes the location for ejs l
 app.use("/", mainRoutes); //use the route
 app.use("/dashboard", dashboardRoutes); //use the route
 app.use("/tools/thoughtdiary", thoughtDiaryRoutes);
+app.use("/tools/bookmarks", bookmarkRoutes);
 app.use("/tools/motivations", motivationsRoutes);
 // app.use("/login", login ); //use the route
 
