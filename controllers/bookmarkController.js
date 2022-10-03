@@ -34,11 +34,18 @@ removeBookmark: async (req, res)=>{
 },
 getBookmarked: async (req, res)=>{
     try{
-        const thoughts = await thoughtDiary.findOne({bookmarked: true})
+        const thoughts = await thoughtDiary.find({
+            bookmarked:true}
+        )
         console.log('bookmarked')
-        res.render('bookmarks')
+        res.render('bookmarks',{
+            title: "Bookmarks",
+            layout:'./layouts/dashboard-home.ejs',
+            thoughts:thoughts 
+          })
     }catch(err){
-        console.log(err)
+        errorHandling(res, err) 
+       
     }
 },
 

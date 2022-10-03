@@ -5824,6 +5824,11 @@ textarea.form-control.is-invalid {
   border-color: rgb(15 118 110 / var(--tw-border-opacity));
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
@@ -6220,6 +6225,10 @@ textarea.form-control.is-invalid {
 
 .pb-72 {
   padding-bottom: 18rem;
+}
+
+.pt-52 {
+  padding-top: 13rem;
 }
 
 .text-left {
