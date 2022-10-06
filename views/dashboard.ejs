@@ -5,14 +5,14 @@
 
   <section>
 
-<section class="p-10 grid grid-cols-1">
+<!-- <section class="p-10 grid grid-cols-1">
   <div class="shadow-sm border md:max-w-lg border-slate-400 shadow-slate-400 rounded">
   <canvas class="" id="myChart"></canvas>
 </div>
     </section>
-  </section>
+  </section> -->
 
-      <h2 class="px-10 py-4 text-neutral-300 font-bold font-barlow text-3xl flex ">Weekly thoughts</h2>
+      <h2 class="px-10 py-4 text-neutral-300 font-bold font-barlow text-3xl flex ">Your thoughts for the past 7 days</h2>
     <!-- <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"> -->
     
       <!-- <ul> -->
@@ -41,11 +41,11 @@
 
       
 
- <section class="flex sm:flex-col ">
+ <section class="mx-4 flex sm:flex-col border border-gray-700 max-w-5xl mb-20 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
 
     <!-- thoughts over last 7 days timeline -->
 <ul
-class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white text-center"
+class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white text-center max-w-5xl"
 >
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
   <li class ='weeklyDate'><%= helper.past7Days[i] %></li>
@@ -53,7 +53,7 @@ class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-c
   <%}%>
 </ul>
 
-<section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+<section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4 text-center max-w-5xl">
 <!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
 <% let shortenDate=[] %>
  <% for(let i=0; i<thoughts.length; i++) {%>
@@ -66,25 +66,39 @@ class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-c
 
   <!-- map the last 7 days array and if mongoDates array includes the item from last 7 days array then display the date else 0 which means no entry was submitted -->
   <% const finalArray = helper.past7Days.map(item=>shortenDate.includes(item)?item:0)%>
-     <% for(let i=0; i<7; i++) {%>   
-    <% if(finalArray){ %>
-      <section class="rounded overflow-hidden shadow-lg border border-white"> 
-      <section class=" h-2 date">
+  <%console.log(finalArray.length)%>
+     <% for(let i=0; i<finalArray.length; i++) {%>   
+
+      <% if(finalArray[i]!==0){ %>
+      <section class="rounded overflow-hidden shadow-lg border border-gray-700 h-52"> 
+
+
+          <section class=" h-2 date">
+         
+            <a class="thoughtRoute" href="/tools/thoughtdiary<%thoughts.id%>">
+            <img src="" alt="" class="object-cover" style="width:100%;height:150px">
+           
+            <p class="dateFields text-white text-opacity-0"><%= finalArray[i]%></p>
+          </a>
+    
+          <!-- links to all items by same category -->
      
-        <a class="thoughtRoute" href="/tools/thoughtdiary<%thoughts.id%>">
-        <img src="" alt="" class="object-cover" style="width:100%;height:150px">
-       
-        <p class="dateFields text-white text-opacity-0"><%= finalArray[i]%></p>
-      </a>
-
-      <!-- links to all items by same category -->
+          <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category"></p>
+    
+        </section>
+      </section>
+        <% } else { %>
+          <section class="rounded overflow-hidden h-52 border border-gray-700"> 
+        
+     
+          <p class="inline-block bg-gray-200  px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category">Not Submitted</p>
+    
+   </section>
+        <% } %>
  
-      <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category"></p>
+     
 
-    </section>
-  </section>
-
-    <% } %>
+  
   <% } %>
 
       </section>

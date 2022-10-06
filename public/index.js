@@ -87,7 +87,7 @@ function insertData(data) {
   return dates.forEach((item, i) => {
    console.log(item.childNodes)
     // insert id,image, category into html
-    if (formatDate.includes(item.innerText) &  item.text !='0') {
+    if (formatDate.includes(item.innerText)) {
       
       const imageMap = (item.childNodes[1].childNodes[1].src = `${
         image[formatDate.indexOf(item.innerText)]

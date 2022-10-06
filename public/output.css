@@ -5214,6 +5214,11 @@ textarea.form-control.is-invalid {
   margin-right: auto;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -5256,6 +5261,18 @@ textarea.form-control.is-invalid {
 
 .mr-4 {
   margin-right: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .block {
@@ -5588,6 +5605,10 @@ textarea.form-control.is-invalid {
 
 .place-items-center {
   place-items: center;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-start {
@@ -7005,14 +7026,6 @@ body {
     display: none;
   }
 
-  .md\:min-h-screen {
-    min-height: 100vh;
-  }
-
-  .md\:w-full {
-    width: 100%;
-  }
-
   .md\:max-w-lg {
     max-width: 32rem;
   }
@@ -7037,14 +7050,9 @@ body {
     background-position: top;
   }
 
-  .md\:px-72 {
-    padding-left: 18rem;
-    padding-right: 18rem;
-  }
-
-  .md\:px-96 {
-    padding-left: 24rem;
-    padding-right: 24rem;
+  .md\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 
   .md\:px-28 {
@@ -7055,11 +7063,6 @@ body {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  .md\:px-52 {
-    padding-left: 13rem;
-    padding-right: 13rem;
   }
 
   .md\:pb-56 {
