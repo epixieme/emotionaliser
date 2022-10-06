@@ -5536,6 +5536,10 @@ textarea.form-control.is-invalid {
   scroll-snap-align: center;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -5979,6 +5983,10 @@ textarea.form-control.is-invalid {
   background-position: center;
 }
 
+.bg-top {
+  background-position: top;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -6159,6 +6167,11 @@ textarea.form-control.is-invalid {
   padding-right: 24rem;
 }
 
+.px-52 {
+  padding-left: 13rem;
+  padding-right: 13rem;
+}
+
 .pt-32 {
   padding-top: 8rem;
 }
@@ -6245,6 +6258,10 @@ textarea.form-control.is-invalid {
 
 .align-baseline {
   vertical-align: baseline;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .align-middle {
@@ -6988,6 +7005,14 @@ body {
     display: none;
   }
 
+  .md\:min-h-screen {
+    min-height: 100vh;
+  }
+
+  .md\:w-full {
+    width: 100%;
+  }
+
   .md\:max-w-lg {
     max-width: 32rem;
   }
@@ -7008,6 +7033,10 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:bg-top {
+    background-position: top;
+  }
+
   .md\:px-72 {
     padding-left: 18rem;
     padding-right: 18rem;
@@ -7026,6 +7055,11 @@ body {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .md\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 
   .md\:pb-56 {

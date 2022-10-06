@@ -79,7 +79,7 @@ app.set("layout", "./layouts/main"); // sets  and changes the location for ejs l
 app.use("/", mainRoutes); //use the route
 app.use("/dashboard", dashboardRoutes); //use the route
 app.use("/tools/thoughtdiary", thoughtDiaryRoutes);
-app.use("/tools/bookmarks", bookmarkRoutes);
+app.use("/dashboard/bookmarks", bookmarkRoutes);
 app.use("/tools/motivations", motivationsRoutes);
 // app.use("/login", login ); //use the route
 
