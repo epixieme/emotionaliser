@@ -36,7 +36,7 @@ async function fetchData(url) {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    // console.log('this'+ data)
+ 
     insertData(data);
     createRatingArrows(data)
   } catch (error) {
@@ -49,7 +49,7 @@ fetchData(apiUrl);
 function insertData(data) {
   // create array of dates on dashboard by exporting the function and passing through controller back to ejs so I can style it in tailwind
 
-    
+  console.log('this is data' + data) 
   let dateIds = data.map(elem => [
     elem.date,
     elem._id,
@@ -74,8 +74,7 @@ function insertData(data) {
       .split("/")
   )
   .map((item) => `${parseInt(item[0], 10)}/${parseInt(item[2], 10)}`).filter(item=>!item==0)
-  console.log(formatDate)
-
+  
   let ids = dateIds.map((item) => item[1]);
   let category = dateIds.map((item) => item[2]);
   let image = dateIds.map((item) => item[3]);
@@ -83,9 +82,9 @@ function insertData(data) {
  
 
    
-  // compare against the html dates in ejs and then add the id from ids array uising indexOf to match
+  // compare against the html dates in ejs and then add the id from ids array using indexOf to match
   return dates.forEach((item, i) => {
-   console.log(item.childNodes)
+
     // insert id,image, category into html
     if (formatDate.includes(item.innerText)) {
       
@@ -107,7 +106,6 @@ function insertData(data) {
 
 
 function createRatingArrows(data){
-//get this working
 
 let up = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5.5" stroke="#047E3E" class="w-6 h-6">
 <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
@@ -122,16 +120,21 @@ let noChange = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 </svg>
 `
 
+// need to say if user === then only show ratings for this user
+
+
 let arrows = data.map(item=>item.rating)
 
 let upDown = arrows.reverse().map((item,i,a)=>item === a[i+1] ? noChange:item > a[i+1]?down:up)
 
-
-
-upDown.forEach((item,i)=>rating[i].innerHTML = item )
+upDown.forEach((item,i)=>rating[i].innerHTML = item)
 
 // set first date item to nothing instead of arrows as nothing to compare
 rating[rating.length -1].innerHTML=''
+
+// need to only see data for this req.user
+
+
 }
 
 

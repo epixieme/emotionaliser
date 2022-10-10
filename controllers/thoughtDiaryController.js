@@ -48,6 +48,7 @@ module.exports = {
       res.redirect("/tools/thoughtdiary");
     }
   },
+  
   getSubmitThought: async (req, res) => {
     console.log(req.user);
     try {
@@ -104,9 +105,10 @@ module.exports = {
   },
 
  getThoughtData: async (req, res) => {
-  
     try {
-      const data = await thoughtDiary.find(req.params.id);
+
+      // get data by logged in user and by id
+      const data = await thoughtDiary.find({id:req.params.id, user:req.user.id});
       res.json(data)
     } catch (err) {
       console.log(err);
