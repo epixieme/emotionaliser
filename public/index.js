@@ -121,7 +121,7 @@ let noChange = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 `
 
 // need to say if user === then only show ratings for this user
-
+console.log(data)
 
 let arrows = data.map(item=>item.rating)
 

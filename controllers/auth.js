@@ -1,6 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const thoughts = require("../models/Thoughts");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
@@ -62,9 +63,12 @@ exports.getSignup = (req, res) => {
   if (req.user) {
     return res.redirect("/dashboard");
   }
+
+  console.log('dated' + thought)
   res.render("signup", {
     title: "Create Account",
-    layout:'./layouts/signup-home.ejs'
+    layout:'./layouts/signup-home.ejs',
+
   });
 };
 

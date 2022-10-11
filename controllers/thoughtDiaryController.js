@@ -12,10 +12,8 @@ module.exports = {
     // get posts by logged in user
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
+      const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
     
-      // .map((item,i,a)=>item<)
-     
-      // const calThoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1})
       const users = await userDetails.find();
       res.render("thoughtdiary.ejs", {
         title: "Thought Diary",
@@ -24,7 +22,8 @@ module.exports = {
         // calThoughts:calThoughts,
         users:users,
         user:req.user,
-        helper:helper
+        helper:helper,
+        thoughtDate:thoughtDate
       });
     } catch (err) {
       console.log(err);
@@ -34,7 +33,7 @@ module.exports = {
 
   delThoughtDiary: async (req, res) => {
     try {
-      console.log('id' + req.params.id )
+      
       // Find post by id
       let thought = await thoughtDiary.findById({ _id: req.params.id });
       // Delete image from cloudinary
@@ -50,15 +49,17 @@ module.exports = {
   },
   
   getSubmitThought: async (req, res) => {
-    console.log(req.user);
+
     try {
      const thoughts =  await thoughtDiary.find({user:req.user.id})
-     console.log('this is thoughts' + thoughts)
+
+
       res.render("submit-thoughts", {
         title: "Thought Diary - submit",
         layout: "./layouts/dashboard-home.ejs",
         thoughts:thoughts,
-        user: req.user
+        user: req.user,
+      
       });
     } catch (err) {
       console.log(err);

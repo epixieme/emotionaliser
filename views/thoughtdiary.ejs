@@ -14,8 +14,10 @@
     Thought Diary
   </h1>
 
-  <section class="flex flex-col align-middle p-10">
-    <a href="/tools/thoughtdiary/submit-thought">
+  <section class="flex flex-col  ">
+
+
+      
     <section class="flex align-middle justify-center h-screen">
       <!-- image could be a github heatmap for each thought map entry -->
       <section
@@ -28,12 +30,28 @@
           style="width: 100%; height: 400px"
         />
         <section class="text-white">
-          <h1 class="text-center p-4 text-lg ">Add Todays Thought</h1>
+
+          <%# for(let i=0; i<thoughts.length; i++) {%>
+            <%console.log('this date ' + new Date(thoughtDate.date).toLocaleDateString('en-GB') + new Date().toLocaleDateString('en-GB') )%>
+            <% if(new Date(thoughtDate.date).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB')){ %>
+               
+              <h1 class="text-center p-4 text-lg ">Todays thought has already been submitted <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+               </h1>
+              
+              <% } else { %>
+                <a href="/tools/thoughtdiary/submit-thought">
+                <h1 class="text-center p-4 text-lg ">Add Todays Thought</h1>
+              </a>
+              <% } %>
+        
+          <%#}%>
         </section>
       </section>
    
     </section>
-  </a>
+
 
 
 <!-- <section class="flex flex-col"> -->
