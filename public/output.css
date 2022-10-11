@@ -6278,6 +6278,10 @@ textarea.form-control.is-invalid {
   padding-right: 4rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .text-left {
   text-align: left;
 }

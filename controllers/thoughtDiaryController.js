@@ -8,7 +8,6 @@ function errorHandling(res, error) {
 }
 module.exports = {
   getThoughtDiary: async (req, res) => {
-
     // get posts by logged in user
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
@@ -29,11 +28,8 @@ module.exports = {
       console.log(err);
     }
   },
-
-
   delThoughtDiary: async (req, res) => {
     try {
-      
       // Find post by id
       let thought = await thoughtDiary.findById({ _id: req.params.id });
       // Delete image from cloudinary
@@ -41,10 +37,10 @@ module.exports = {
       // Delete post from db
       await thoughtDiary.deleteOne({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/tools/thoughtdiary");
+      res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
       errorHandling(res, err)
-      res.redirect("/tools/thoughtdiary");
+      res.redirect("/dashboard/tools/thoughtdiary");
     }
   },
   
@@ -83,7 +79,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/tools/thoughtdiary");
+      res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
       console.log(err);
     }
@@ -107,7 +103,6 @@ module.exports = {
 
  getThoughtData: async (req, res) => {
     try {
-
       // get data by logged in user and by id
       const data = await thoughtDiary.find({id:req.params.id, user:req.user.id});
       res.json(data)

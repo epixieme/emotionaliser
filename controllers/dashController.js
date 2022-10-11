@@ -28,7 +28,8 @@ module.exports = {
       try{
         res.render('tools',{
           title: "Wellbeing Tools",
-          layout:'./layouts/dashboard-home.ejs'
+          layout:'./layouts/dashboard-home.ejs',
+          user:req.user,
         })
    
       }catch(err){

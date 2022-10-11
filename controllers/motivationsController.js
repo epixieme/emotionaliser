@@ -1,3 +1,7 @@
+const cloudinary = require("../middleware/cloudinary");
+const motivationQuotes = require("../models/Motivations");
+const userDetails = require("../models/User");
+
 module.exports = {
     getMotivations: async (req, res) => {
       console.log(req.user);
@@ -7,6 +11,7 @@ module.exports = {
         res.render("motivations", {
           title: "Motivational Quotes",
           layout: "./layouts/dashboard-home.ejs",
+          user:req.user
         //   thoughts:thoughts,
         //   users:users,
         //   user:req.user
@@ -20,10 +25,11 @@ module.exports = {
         console.log(req.user);
     
         try {
-          await thoughtDiary.findOne;
+          const motivation =  await motivationQuotes.find()
           res.render("submit-motivation", {
             title: "Motivation - submit",
             layout: "./layouts/dashboard-home.ejs",
+            user:req.user
           });
         } catch (err) {
           console.log(err);

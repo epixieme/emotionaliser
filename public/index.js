@@ -31,7 +31,7 @@ function feelings() {
 }
 
 
-let apiUrl = "/tools/thoughtdiary/thoughtData";
+let apiUrl = "/dashboard/tools/thoughtdiary/thoughtData";
 async function fetchData(url) {
   try {
     let response = await fetch(url);
@@ -91,7 +91,7 @@ function insertData(data) {
       const imageMap = (item.childNodes[1].childNodes[1].src = `${
         image[formatDate.indexOf(item.innerText)]
       }`);
-      const idMap = (item.childNodes[1].href = `/tools/thoughtdiary/${
+      const idMap = (item.childNodes[1].href = `/dashboard/tools/thoughtdiary/${
         ids[formatDate.indexOf(item.innerText)]
       }`);
     

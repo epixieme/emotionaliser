@@ -41,7 +41,8 @@ getBookmarked: async (req, res)=>{
         res.render('bookmarks',{
             title: "Bookmarks",
             layout:'./layouts/dashboard-home.ejs',
-            thoughts:thoughts 
+            thoughts:thoughts,
+            user:req.user
           })
     }catch(err){
         errorHandling(res, err) 
