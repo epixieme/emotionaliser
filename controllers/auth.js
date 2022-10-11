@@ -64,7 +64,7 @@ exports.getSignup = (req, res) => {
     return res.redirect("/dashboard");
   }
 
-  console.log('dated' + thought)
+
   res.render("signup", {
     title: "Create Account",
     layout:'./layouts/signup-home.ejs',

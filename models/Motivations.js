@@ -5,17 +5,27 @@ image: {
     type: String,
     required: "This field is required",
   },
- title: {
-    type: String,
-    required: "This field is required",
-  },
-quote: {
+  // category: {
+  //   type: String,
+  //   enum: ["inspiration","love","peace","future"],
+  //   required: "This field is required",
+  // },
+  poem: {
     type: String,
     required: "This field is required",
   },
   private:{
     type:Boolean,
     default:false,
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  likes: 0,
+  bookmarked:{
+    type:Boolean,
+    default:false
   }
   // tags:{
 

@@ -75,8 +75,10 @@ module.exports = {
         details: req.body.details,
         category: req.body.category,
         rating:req.body.rating,
+        private:req.body.private,
         likes: 0,
         user: req.user.id,
+
       });
       console.log("Post has been added!");
       res.redirect("/dashboard/tools/thoughtdiary");

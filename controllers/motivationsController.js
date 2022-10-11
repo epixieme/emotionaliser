@@ -36,6 +36,30 @@ module.exports = {
         }
       },
 
+      postSubmitMotivation: async (req, res) => {
+
+        console.log(req.user.id)
+        try {
+          // Upload image to cloudinary
+          const result = await cloudinary.uploader.upload(req.file.path);
+    
+          await motivationQuotes.create({
+           
+            image: result.secure_url,
+            cloudinaryId: result.public_id,
+            poem: req.body.poem,
+            category: req.body.category,
+            rating:req.body.rating,
+            likes: 0,
+             user: req.user.id,
+          });
+          console.log("Post has been added!");
+          res.redirect("/dashboard/tools/motivations");
+        } catch (err) {
+          console.log(err);
+        }
+      },
+
     
 
 }
