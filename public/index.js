@@ -130,7 +130,7 @@ let upDown = arrows.reverse().map((item,i,a)=>item === a[i+1] ? noChange:item > 
 upDown.forEach((item,i)=>rating[i].innerHTML = item)
 
 // set first date item to nothing instead of arrows as nothing to compare
-rating[rating.length -1].innerHTML=''
+rating[rating.length -1].innerHTML='-'
 
 // need to only see data for this req.user
 

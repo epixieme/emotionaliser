@@ -14,7 +14,7 @@ module.exports = {
         })
         console.log('bookmarked')
        
-        res.redirect("/tools/thoughtdiary");
+        res.redirect("/dashboard/tools/thoughtdiary");
     }catch(err){
 
         errorHandling(res, err)
@@ -26,7 +26,7 @@ removeBookmark: async (req, res)=>{
             bookmarked: false
         })
         console.log('unbookmarked')
-        res.redirect("/tools/thoughtdiary");
+        res.redirect("/dashboard/tools/thoughtdiary");
     }catch(err){
      
         errorHandling(res, err)

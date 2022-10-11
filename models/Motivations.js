@@ -10,7 +10,15 @@ image: {
   //   enum: ["inspiration","love","peace","future"],
   //   required: "This field is required",
   // },
+ title: {
+    type: String,
+    required: "This field is required",
+  },
   poem: {
+    type: String,
+    required: "This field is required",
+  },
+  author: {
     type: String,
     required: "This field is required",
   },

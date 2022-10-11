@@ -5672,6 +5672,10 @@ textarea.form-control.is-invalid {
   gap: 1.25rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -6280,6 +6284,14 @@ textarea.form-control.is-invalid {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-60 {
+  padding-bottom: 15rem;
+}
+
+.pb-96 {
+  padding-bottom: 24rem;
 }
 
 .text-left {
@@ -7063,6 +7075,10 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .md\:bg-top {
     background-position: top;
   }
@@ -7121,6 +7137,10 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -7141,5 +7161,9 @@ body {
 
   .xl\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
