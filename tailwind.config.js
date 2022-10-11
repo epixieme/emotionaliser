@@ -28,7 +28,7 @@ module.exports = {
         'backg-wave-middle': "url('/images/wavey.svg')",
         'backg-wave-end': "url('/images/secondwave.svg')",
         'circles': "url('/images/circle-scatter.svg')",
-        'motivation':"url('<%=motivations.image%>')"
+   
       }
     },
   },
