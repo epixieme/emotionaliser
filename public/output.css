@@ -5466,12 +5466,12 @@ textarea.form-control.is-invalid {
   width: 14rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-72 {
   width: 18rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-sm {
@@ -7069,14 +7069,14 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:bg-teal-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(19 78 74 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-slate-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-teal-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 78 74 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-black:hover {

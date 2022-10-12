@@ -62,7 +62,7 @@ module.exports = {
     }
   },
   postSubmitThought: async (req, res) => {
-
+    console.log('this is the post body for summary' + req.body.summary)
     console.log(req.user.id)
     try {
       // Upload image to cloudinary
@@ -110,6 +110,47 @@ module.exports = {
       res.json(data)
     } catch (err) {
       console.log(err);
+    }
+  },
+  getEditThought: async (req, res) => {
+
+    try {
+      const thought = await thoughtDiary.findById(req.params.id);
+      console.log('this is thoughts' + thought)
+      res.render("edit-thought", {
+        title: "Thought Diary - Thought",
+        layout: "./layouts/dashboard-home.ejs",
+        thought:thought,
+        user: req.user
+        
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  postEditThought: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+
+   await thoughtDiary.findByIdAndUpdate(req.params.id,{
+        summary: req.body.summary,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        details: req.body.details,
+        category: req.body.category,
+        rating:req.body.rating,
+        user: req.user.id,
+
+      });
+      console.log('this is the summary', req.body)
+     res.n
+     res.nModified
+      console.log("Post has been added!");
+      res.redirect("/dashboard/tools/thoughtdiary");
+    } catch (err) {
+      errorHandling(res, err)
     }
   },
 };

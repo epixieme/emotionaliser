@@ -4,6 +4,7 @@ const thoughtSchema = new mongoose.Schema({
   image: {
     type: String,
     required: "This field is required",
+    default:"No file"
   },
   summary: {
     type: String,

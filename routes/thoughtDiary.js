@@ -12,6 +12,8 @@ router.get("/submit-thought",  thoughtDiaryController.getSubmitThought);
 router.get("/thoughtData", thoughtDiaryController.getThoughtData)
 router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
 router.get("/:id",  thoughtDiaryController.getThought);
+router.get("/edit-thought/:id",  thoughtDiaryController.getEditThought);
+router.put("/edit-thought/:id",  upload.single("file"), thoughtDiaryController.postEditThought);
 router.delete("/delete-thought/:id",  thoughtDiaryController.delThoughtDiary);
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);

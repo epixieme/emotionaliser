@@ -21,6 +21,7 @@ const bookmarkRoutes = require("./routes/bookmarks");
 const profileRoutes = require("./routes/profile");
 
 
+
 // const port = process.env.PORT || 2000;
 
 //Use .env file in config folder
