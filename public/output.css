@@ -5462,20 +5462,16 @@ textarea.form-control.is-invalid {
   width: 2.5rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-56 {
   width: 14rem;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
+.w-1\/2 {
+  width: 50%;
 }
 
-.w-1\/6 {
-  width: 16.666667%;
+.w-72 {
+  width: 18rem;
 }
 
 .max-w-sm {
@@ -5516,6 +5512,10 @@ textarea.form-control.is-invalid {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .flex-1 {
@@ -6009,6 +6009,10 @@ textarea.form-control.is-invalid {
 
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
+}
+
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
 }
 
 .bg-backg-wave {
@@ -6588,6 +6592,18 @@ textarea.form-control.is-invalid {
 
 .opacity-80 {
   opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-40 {
+  opacity: 0.4;
 }
 
 .bg-blend-darken {
