@@ -12,7 +12,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
 
 </h1>
 <h1
-  class="px-16 py-4 text-neutral-300 font-bold font-barlow text-3xl flex justify-start px-8"
+  class="px-16 py-4 text-neutral-300 font-bold font-barlow text-3xl flex justify-center px-8"
 >
   Motivational Poems
 </h1>
@@ -21,7 +21,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
 
 
     
-  <section class="flex align-middle justify-start h-screen px-8">
+  <section class="flex align-middle justify-center h-screen px-8">
     <!-- image could be a github heatmap for each thought map entry -->
     <section
       class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500"
@@ -52,20 +52,20 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
  
   </section>
 
-  <section class=" text-white mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 text-center max-w-5xl">
+  <section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4 text-center max-w-5xl">
 
-<h1>My Quotes</h1>
-<h1>Community Quotes</h1>
-<!-- <section class="flex flex-col"> -->
-</section>
-  <section class="p-4 min-h-screen">
   
-    <% for(let i=0; i<motivations.length; i++) {%>
-      <section class="">
-      <p class="text-white"><%=motivations[i].title%></p>
-      
-      </section>
-      <%}%>
+  
+      <% for(let i=0; i< motivations.length; i++) {%>
+        <section class="">
+          <img src="<%=motivations[i].image%>" alt="" style="width:100%;height:150px">
+        <p class="text-white"><%=motivations[i].title%></p>
+        
+        </section>
+        <%}%>
+    
+    
+  </section>
   
 
 <!-- </section> -->

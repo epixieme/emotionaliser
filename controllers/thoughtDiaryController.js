@@ -150,7 +150,8 @@ module.exports = {
       console.log("Post has been added!");
       res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
-      errorHandling(res, err)
+      console.log(err);
+      // errorHandling(res, err)
     }
   },
 };
