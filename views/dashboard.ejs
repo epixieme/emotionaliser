@@ -2,13 +2,13 @@
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
 
 
-      <h2 class="px-8  py-4 text-neutral-300 font-bold font-barlow text-2xl  flex ">Weekly thoughts</h2>
+<h2 class="px-10  py-4 text-neutral-300 font-bold font-barlow text-2xl  flex ">Weekly thoughts</h2>
     
- <section class="p-4">
+ <section class="px-16 pt-8">
 
- <section class=" flex sm:flex-col  mb-20  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
+ <section class="flex sm:flex-col  mb-20  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
 
-<section class=" WeeklyDates grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl p-4"
+<section class=" WeeklyDates p-10 grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl"
 >
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
   <section class ='weeklyDate p-0  row-start-<%=i+1%> md:row-start-1' ><%= helper.past7Days[i] %></section>
@@ -49,11 +49,7 @@
       
         <% } %>
       </section>
-     
 
-           
-          
-   
       
   <% } %>
 
@@ -66,24 +62,32 @@
 
 </section>
 <!-- <section class="h-62"> -->
-  <div class="max-w-sm w-full lg:max-w-3xl lg:flex">
-    <div class="lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('<%=motivations.image%>')" title="">
-    </div>
-    <div class=" h-72 border-r border-b border-l border-black lg:border-l-0 lg:border-t lg:border-black bg-black rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
-      <div class="mb-8">
+  
+
+
+
+  <section class="mongoDates  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl ">
+
+  
+  
+
+      <section class=" bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
+        <img src="<%=motivations.image%>" alt="" style="width:100%;height:150px" class="rounded-t-md object-cover">
+ 
+      <p class="text-white text-2xl text-left p-4"><%=motivations.poem%></p>
+      <section class="flex justify-between">
+        <p class="text-neutral-400 p-4"><%=motivations.author%></p>
+        <p class="text-neutral-400 p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:bg-teal-700 rounded">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+        </svg>
+        </p>
+      </section>
+      </section>
+     
       
-        <div class="text-neutral-200 font-bold text-xl mb-2"><%=motivations.title%></div>
-        <p class="text-neutral-400  text-base"><%=motivations.poem%></p>
-      </div>
-      <div class="flex items-center">
-        
-        <div class="text-sm">
-          <p class="text-neutral-200  leading-none"><%=motivations.author%></p>
-      
-        </div>
-      </div>
-    </div>
-  </div>
+  
+  
+</section>
 
 <!-- </section> -->
 </section>
