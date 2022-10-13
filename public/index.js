@@ -50,7 +50,7 @@ function insertData(data) {
   // create array of dates on dashboard by exporting the function and passing through controller back to ejs so I can style it in tailwind
 
   console.log('this is data' + data) 
-  let dateIds = data.map(elem => [
+  let dataElems = data.map(elem => [
     elem.date,
     elem._id,
     elem.category,
@@ -59,7 +59,7 @@ function insertData(data) {
   ]);
 
     // format the date string fetched from mongo
-  let formatDate = dateIds
+  let formatDate = dataElems 
   .map((item) =>
     item[0]
       .split(":")
@@ -75,14 +75,14 @@ function insertData(data) {
   )
   .map((item) => `${parseInt(item[0], 10)}/${parseInt(item[2], 10)}`).filter(item=>!item==0)
   
-  let ids = dateIds.map((item) => item[1]);
-  let category = dateIds.map((item) => item[2]);
-  let image = dateIds.map((item) => item[3]);
-  let summary = dateIds.map((item) => item[4]);
+  let ids = dataElems.map((item) => item[1]);
+  let category = dataElems.map((item) => item[2]);
+  let image = dataElems.map((item) => item[3]);
+  let summary = dataElems.map((item) => item[4]);
  
 
    
-  // compare against the html dates in ejs and then add the id from ids array using indexOf to match
+  // compare against the html dates in ejs and then add the id , cat, image, etc from dateids array using indexOf to match - should rename dateids to be more like deatils
   return dates.forEach((item, i) => {
 
     // insert id,image, category into html

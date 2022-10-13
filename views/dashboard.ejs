@@ -1,58 +1,21 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
- 
 
-
-
-<!-- <section class="p-10 grid grid-cols-1">
-  <div class="shadow-sm border md:max-w-lg border-slate-400 shadow-slate-400 rounded">
-  <canvas class="" id="myChart"></canvas>
-</div>
-    </section>
-  </section> -->
 
       <h2 class="px-8  py-4 text-neutral-300 font-bold font-barlow text-2xl  flex ">Weekly thoughts</h2>
-    <!-- <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4"> -->
     
-      <!-- <ul> -->
-        <!-- <% for(let i=0; i<thoughts.length; i++) {%>
-          
-        <section class="rounded overflow-hidden shadow-lg border border-white">
-          <a href="/tools/thoughtdiary/<%= thoughts[i]._id%>">
-        <section class=" border border-white ">
-          <img src="<%= thoughts[i].image%>" class="object-cover" style="width:100%;height:150px">
-          
-        </section>
-      
-           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-white"><h1><%= thoughts[i].summary%></h1></div>
+ <section class="p-4">
 
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%= thoughts[i].category%></span>
-            <p class="text-gray-700 text-base">
-            
-            </p>
-          </div>
-          
-        </a>
-      </section>
-        <% } %> -->
-     
+ <section class=" flex sm:flex-col  mb-20  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
 
-      <section class="p-4">
-
- <section class=" flex sm:flex-col  max-w-5xl mb-20 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
-
-    <!-- thoughts over last 7 days timeline -->
-<ul
-class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4  text-white text-center max-w-5xl"
+<section class=" WeeklyDates grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl p-4"
 >
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
-  <li class ='weeklyDate'><%= helper.past7Days[i] %></li>
+  <section class ='weeklyDate p-0  row-start-<%=i+1%> md:row-start-1' ><%= helper.past7Days[i] %></section>
 
   <%}%>
-</ul>
 
-<section class="mongoDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4 text-center max-w-5xl">
+
 <!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
 <% let shortenDate=[] %>
  <% for(let i=0; i<thoughts.length; i++) {%>
@@ -66,66 +29,64 @@ class="WeeklyDates p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-c
  
      <% for(let i=0; i<finalArray.length; i++) {%>   
 
-      <% if(finalArray[i]!==0){ %>
-      <section class="rounded overflow-hidden shadow-lg border border-gray-700 h-52"> 
 
-          <section class=" h-2 date">
+      <section class="rounded overflow-hidden shadow-lg border border-gray-700 row-start-auto md:row-start-none"> 
+        <% if(finalArray[i]!==0){ %>
+          <section class=" h-2 date" >
             <a class="thoughtRoute" href="/dashboard/tools/thoughtdiary<%thoughts.id%>">
-            <img src="" alt="" class="object-cover" style="width:100%;height:150px">
+            <img src="" alt="" class="object-cover" style="width:100%;height:153px">
             <p class="dateFields text-white text-opacity-0"><%= finalArray[i]%></p>
           </a>
     
           <!-- links to all items by same category -->
      
-          <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category"></p>
+          <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2 category hover:text-white hover:bg-teal-700 text-center"></p>
     
         </section>
-      </section>
         <% } else { %>
-          <section class="rounded overflow-hidden h-52 border border-gray-700 date"> 
-          <!-- <p class="inline-block bg-gray-200  px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 category">Oops! Not Submitted</p> -->
-    
-   </section>
+        
+          <p class="dateFields text-white text-opacity-0" style="width:100%;height:166.12px"><%= finalArray[i]%></p>
+      
         <% } %>
+      </section>
+     
+
+           
+          
+   
+      
   <% } %>
 
-      </section>
-      
-    </section>
-    
-    <section>
-      <h2 class="px-8  py-4 text-neutral-300 font-bold font-barlow text-2xl  flex ">Daily Quote/Poem</h2>
-    </section>
-
-
-<section>
-    <div class="max-w-sm w-full lg:max-w-3xl lg:flex ">
-      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('<%=motivations.image%>')" title="Woman holding a mug">
-      </div>
-      <div class="border-r border-b border-l border-black lg:border-l-0 lg:border-t lg:border-black bg-black rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
-        <div class="mb-8">
-        
-          <div class="text-neutral-200 font-bold text-xl mb-2"><%=motivations.title%></div>
-          <p class="text-neutral-400  text-base"><%=motivations.poem%></p>
-        </div>
-        <div class="flex items-center">
-          
-          <div class="text-sm">
-            <p class="text-neutral-200  leading-none"><%=motivations.author%></p>
-        
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
 
 
    
-    <!-- do a loop over the quotes and math.random for each time you log in or each day  -->
+  <!-- do a loop over the quotes and math.random for each time you log in or each day  --> 
   </section>
+  
 
 </section>
+<!-- <section class="h-62"> -->
+  <div class="max-w-sm w-full lg:max-w-3xl lg:flex">
+    <div class="lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('<%=motivations.image%>')" title="">
+    </div>
+    <div class=" h-72 border-r border-b border-l border-black lg:border-l-0 lg:border-t lg:border-black bg-black rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
+      <div class="mb-8">
+      
+        <div class="text-neutral-200 font-bold text-xl mb-2"><%=motivations.title%></div>
+        <p class="text-neutral-400  text-base"><%=motivations.poem%></p>
+      </div>
+      <div class="flex items-center">
+        
+        <div class="text-sm">
+          <p class="text-neutral-200  leading-none"><%=motivations.author%></p>
+      
+        </div>
+      </div>
+    </div>
+  </div>
 
+<!-- </section> -->
+</section>
+</section>
 
 
