@@ -1,17 +1,17 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
 
-
-<h2 class="px-10  py-4 text-neutral-300 font-bold font-barlow text-2xl  flex ">Weekly thoughts</h2>
+  <h1 class="px-14 py-4 text-neutral-300 font-bold font-barlow text-3xl  flex ">Dashboard</h1>
+<h2 class="px-14 py-4 text-neutral-300 font-barlow text-2xl  flex ">Weekly thoughts</h2>
     
- <section class="px-16 pt-8">
+ <section class="px-14 ">
 
- <section class="flex sm:flex-col  mb-20  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
+ <section class="flex sm:flex-col  mb-20  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border shadow-lg border-gray-700">
 
-<section class=" WeeklyDates p-10 grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl"
+<section class=" WeeklyDates p-8 grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl"
 >
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
-  <section class ='weeklyDate p-0  row-start-<%=i+1%> md:row-start-1' ><%= helper.past7Days[i] %></section>
+  <section class ='weeklyDate px-10 row-start-<%=i+1%> md:row-start-1' ><%= helper.past7Days[i] %></section>
 
   <%}%>
 
@@ -40,12 +40,12 @@
     
           <!-- links to all items by same category -->
      
-          <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2 category hover:text-white hover:bg-teal-700 text-center"></p>
+          <p class=" m-5 px-4 inline-block bg-gray-200 rounded-full  py-1 text-xs font-semibold text-gray-700  category hover:text-white hover:bg-teal-700 text-center"></p>
     
         </section>
         <% } else { %>
         
-          <p class="dateFields text-white text-opacity-0" style="width:100%;height:166.12px"><%= finalArray[i]%></p>
+          <p class="dateFields text-white text-center pt-4" style="width:100%;height:166.12px">No Submission</p>
       
         <% } %>
       </section>
@@ -64,7 +64,7 @@
 <!-- <section class="h-62"> -->
   
 
-
+  <h2 class=" py-4 text-neutral-300 font-barlow text-2xl  flex ">Daily Quote</h2>
 
   <section class="mongoDates  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl ">
 
@@ -77,7 +77,7 @@
       <p class="text-white text-2xl text-left p-4"><%=motivations.poem%></p>
       <section class="flex justify-between">
         <p class="text-neutral-400 p-4"><%=motivations.author%></p>
-        <p class="text-neutral-400 p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:bg-teal-700 rounded">
+        <p class="text-neutral-400 p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:fill-teal-700">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
         </svg>
         </p>
