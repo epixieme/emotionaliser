@@ -24,7 +24,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
   <section class="flex align-middle justify-center h-screen px-8">
     <!-- image could be a github heatmap for each thought map entry -->
     <section
-      class="hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500"
+      class="hover:scale-110 transition  duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500"
     >
       <img
         class="object-cover shadow-sm shadow-slate-900"
@@ -32,7 +32,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
         alt="Sunset in the mountains"
         style="width: 100%; height: 200px"
       />
-      <section class="text-white">
+      <section class="text-white hover:bg-black">
 
    
          
@@ -57,7 +57,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-
   
   
       <% for(let i=0; i< motivations.length; i++) {%>
-        <section class="border border-gray-500 rounded-md  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
+        <section class=" hover:scale-105 transition duration-300 ease-in-out  border border-gray-500 rounded-md  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
           <img src="<%=motivations[i].image%>" alt="" style="width:100%;height:150px" class="rounded-t-md">
    
         <p class="text-white text-left p-2"><%=motivations[i].poem%></p>

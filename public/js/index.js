@@ -7,8 +7,9 @@ const mongoDates = document.querySelector(".mongoDates");
 const thoughtRoutes = document.querySelectorAll(".thoughtRoute");
 const dateFields = document.querySelectorAll(".dateFields")
 const rating = document.querySelectorAll(".rating")
+const nav = document.querySelectorAll("nav li")
 
-
+// **** range slider feature for thought diary ****
 
 if (slider) {
   slider.addEventListener("input", feelings);
@@ -30,6 +31,7 @@ function feelings() {
   moodRating.value = JSON.parse(JSON.stringify(this.value));
 }
 
+// **** weekly thoughts functionality for dashboard ****
 
 let apiUrl = "/dashboard/tools/thoughtdiary/thoughtData";
 async function fetchData(url) {
@@ -104,6 +106,7 @@ function insertData(data) {
 
 }
 
+// **** arrow ratings for though diary screen ****
 
 function createRatingArrows(data){
 
@@ -134,6 +137,12 @@ rating[rating.length -1].innerHTML='-'
 
 // need to only see data for this req.user
 
+}
+
+
+nav.forEach(item=>item.addEventListener('click', navigation))
+function navigation(){
+this.style.color ='teal'
 
 }
 

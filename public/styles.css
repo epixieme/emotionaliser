@@ -165,27 +165,4 @@ body {
     margin: 20px;
   }
 
-  /* //hide every other day on y axis */
   
-  .days li:nth-child(odd) {
-    visibility: hidden;
-  }
-  
-  .squares li {
-    background-color: white;
-    border-radius: var(--square-radius);
-  }
-  
-  /* .squares li[data-level="1"] {
-    background-color: #c6e48b;
-  } */
-  
-  .squares li[data-level="1"] {
-    background-color: #7bc96f;
-  }
-  .squares li[data-level="0"] {
-    background-color: white;
-  }
-  /* .squares li[data-level="3"] {
-    background-color: #196127;
-  } */

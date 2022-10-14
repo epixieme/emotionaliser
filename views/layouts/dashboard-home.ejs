@@ -35,74 +35,13 @@ crossorigin="anonymous"
     <!-- footer -->
     <%- include('../partials/dashboard-footer.ejs') %>
   <!-- script -->
-  <script src="/index.js"></script>
+ 
+  
+  
 
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   
-  
-  <script>
-    const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-
-    
-  
-    const data = {
-    
-      datasets: [
-                {
-                    label: "Moods",
-                    data: [{
-                        x: "04/01/2014", y: 5
-                    }, {
-                        x: "10/01/2014", y: 4
-                    }, {
-                        x: "04/01/2015", y: 5
-                    }, {
-                        x: "10/01/2015", y: 3
-                    },
-                    {
-                        x: "11/01/2015", y: 3
-                    },
-                    {
-                        x: "17/01/2015", y: 3
-                    }],
-                    fill: false,
-                    borderColor: 'teal'
-                },]
-    };
-  
-    const config = {
-      type: 'line',
-      data: data,
-      options: {
-        
-        scales: {
-   x: {
-      display: true,
-   },
-   y: {
-      display: false,
-   }
-},
-        
-      }
-    };
-  </script>
-   
-  <script>
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script>
 
 </body>
 </html>

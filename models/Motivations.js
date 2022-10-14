@@ -27,7 +27,10 @@ image: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  likes: 0,
+  like: {
+    type:Boolean,
+    default:true
+  },
   bookmarked:{
     type:Boolean,
     default:false
