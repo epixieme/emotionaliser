@@ -5219,6 +5219,14 @@ textarea.form-control.is-invalid {
   width: 50%;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -5307,6 +5315,10 @@ textarea.form-control.is-invalid {
 
 .grid-rows-1 {
   grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -5649,6 +5661,10 @@ textarea.form-control.is-invalid {
 
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .px-16 {
@@ -6450,6 +6466,10 @@ body {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:flex-col {
     flex-direction: column;
   }
@@ -6462,6 +6482,10 @@ body {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:hidden {
