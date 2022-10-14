@@ -5,13 +5,21 @@ const motivationsQuotes = require("../models/Motivations");
 // this is an exported function for calculating the last 7 days, then I am able to render it to EJS as below in getDashboard
 const helper = require('../public/helper.js');
 
+
+function getRandomQuotes(min, max){
+return Math.ceil(Math.random() * (max-min) + min)
+}
+
 module.exports = {
     getDashboard: async (req,res)=>{
         console.log('this is req.user ' + req.user)
         try{
           const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)
           const users = await userDetails.find();
-          const motivations = await motivationsQuotes.findOne({id:req.params.id})
+          const motivations = await motivationsQuotes.find({id:req.params.id})
+
+          // get random quotes to show on dashboard
+          const randomMotivations = motivations.sort(() => Math.random() - 0.5);
 
           res.render('dashboard',{
             title: "Dashboard",
@@ -20,7 +28,7 @@ module.exports = {
             users:users,
             user:req.user,
             helper:helper,
-            motivations:motivations
+            motivations:randomMotivations
           })
      
         }catch(err){

@@ -7361,18 +7361,6 @@ body {
   fill: #0f766e;
 }
 
-.hover\:fill-teal-500:hover {
-  fill: #14b8a6;
-}
-
-.hover\:fill-emerald-500:hover {
-  fill: #10b981;
-}
-
-.hover\:fill-emerald-700:hover {
-  fill: #047857;
-}
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -7491,20 +7479,6 @@ body {
 
   .md\:pb-72 {
     padding-bottom: 18rem;
-  }
-
-  .md\:pr-32 {
-    padding-right: 8rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:text-5xl {
