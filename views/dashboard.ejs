@@ -1,13 +1,26 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
-
-  <h1 class="px-14 py-4 text-neutral-300 font-bold font-barlow text-3xl  flex ">Dashboard</h1>
-<h2 class="px-14 py-4 text-neutral-300 font-barlow text-2xl  flex ">Weekly thoughts</h2>
+  <section class=" text-white ">
+    <h1 class =" px-14 text-3xl text-neutral-300 py-8 font-bold">Good Morning, <%=user.userName%></h1>
+  </section>
+  <!-- <h1 class="px-14 py-4 text-neutral-300 font-bold font-barlow text-3xl  flex ">Dashboard</h1> -->
+<!-- <h2 class="px-14 py-4 text-neutral-300 font-barlow text-2xl  flex ">Weekly thoughts</h2> -->
     
  <section class="px-14 ">
 
  <section class="flex sm:flex-col  mb-20  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border shadow-lg border-gray-700">
+ 
+ <!-- get the average mood -->
 
+  <% const ratings = thoughts.map(item=>item.rating)%>
+
+
+ <% let calc = + ratings.reduce((a,c,i)=>a + c, 0)/ratings.length%>
+
+ <% let mood = thoughts.map(item=>item.rating === calc? item.category:0)%>
+ <% console.log() %>
+
+  <h1 class="text-neutral-300 pl-8 pt-4 ">YOUR WEEKLY SUBMISSIONS - MOOD ON AVG : <span class="font-bold"><%=[...new Set(mood)].join('').toUpperCase()%> </span></h1>
 <section class=" WeeklyDates p-8 grid grid-cols-2 grid-rows-7  gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-white w-4xl"
 >
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
@@ -61,7 +74,7 @@
 <!-- <section class="h-62"> -->
   
 
-  <h2 class=" py-4 text-neutral-300 font-barlow text-2xl  flex ">Daily Quote</h2>
+  <!-- <h2 class=" py-4 text-neutral-300 font-barlow text-2xl  flex ">Daily Quote</h2> -->
 
   <section class="mongoDates  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl ">
 
