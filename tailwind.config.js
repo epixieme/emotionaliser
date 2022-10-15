@@ -14,7 +14,9 @@ module.exports = {
     fontFamily: {
       sintony: ['sintony', 'sans-serif'],
       sourcesanspro: ['sourcesanspro', 'sans-serif'],
-      barlow:['Barlow', 'sans-serif']
+      barlow:['Barlow', 'sans-serif'],
+      poppins:['Poppins', 'sans-serif' ]
+
     },
     height: {
       '128': '32rem',
@@ -33,7 +35,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('tw-elements/dist/plugin')
+ 
 
   ],
 }

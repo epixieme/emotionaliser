@@ -3,7 +3,7 @@
     
     <section class="w-full max-w-xl">
       
-        <form action="/dashboard/tools/thoughtdiary/edit-thought/<%=thought.id%>?_method=PUT"  enctype="multipart/form-data"  method="post" class="bg-gradient-to-r from-teal-700 to-pink-500 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
+        <form action="/dashboard/tools/thoughtdiary/edit-thought/<%=thought.id%>?_method=PUT"  enctype="multipart/form-data"  method="post" class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
           <section class="mb-6">
             <label class="block text-4xl text-white font-bold mb-2" for="password">
            How are you today?
@@ -15,7 +15,7 @@
               <input class="moodrating p-2 text-2xl bg-transparent border-none outline-none" name="rating" type="text" value="<%=thought.rating%>" readonly hidden/>
             </section>
             <div class="slidecontainer">
-              <input type="range" min="0" max="5" value="<%=thought.rating%>" step=".1" class="pt-3 slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="myRange"  id="category"/>
+              <input type="range"  min="0" max="5" value="<%=thought.rating%>" step=".1" class="pt-3 slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="myRange"  id="category"/>
             </div>
           </section>
           <section class="mb-4">

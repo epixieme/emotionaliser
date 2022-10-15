@@ -2,14 +2,14 @@
 const past7Days = [...Array(7).keys()].map(index => {
     const date = new Date();
     date.setDate(date.getDate() - index);
-    return `${date.getDate()}/${date.getMonth()+ 1}`;
+    return `${date.getDate()}/${date.getMonth() + 1}`;
   });
 
   
   
   module.exports = {
     // reverse the dates to show past to present and export ready for import into a controller for reuse
-    past7Days: past7Days.reverse(),
+    past7Days: past7Days.reverse()
    
   }
 
