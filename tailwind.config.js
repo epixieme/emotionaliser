@@ -28,7 +28,7 @@ module.exports = {
         'footer-texture': "url('/img/footer-texture.png')",
         'backg-wave': "url('/images/wave.svg')",
         'backg-wave-middle': "url('/images/wavey.svg')",
-        'backg-wave-end': "url('/images/secondwave.svg')",
+        'backg-wave-end': "url('/images/wave-bottom.svg')",
         'circles': "url('/images/circle-scatter.svg')",
    
       }

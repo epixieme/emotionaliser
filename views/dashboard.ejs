@@ -4,7 +4,8 @@
 
    <% const date = new Date()%>
     <% const time = date.getHours()%>
-<% let greeting = time < 12 ? 'Morning' : time > 12 && time < 18 ? 'Afternoon': time > 18  && time < 24?'Evening':''%>
+    <% console.log(time)%>
+<% let greeting = time < 12 ? 'Morning' : time > 12 && time < 18 ? 'Afternoon': 'Evening'%>
     
 
     <h1 class =" px-14 text-3xl text-black py-4 font-bold">Good <%=greeting%>, <%=user.userName%></h1>
@@ -13,16 +14,16 @@
     
  <section class="px-14 ">
 
- <section class="flex flex-col mb-20 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-sm shadow-slate-900 max-w-5xl">
+ <section class="flex flex-col mb-20 bg-black rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-sm shadow-slate-900 max-w-5xl">
  
  <!-- get the average mood -->
 
-  <% const ratings = thoughts.map(item=>item.rating)%>
- <% let calc = + ratings.reduce((a,c,i)=>a + c, 0)/ratings.length%>
+  <%# const ratings = thoughts.map(item=>item.rating)%>
+ <%# let calc = + ratings.reduce((a,c,i)=>a + c, 0)/ratings.length%>
 
- <% let mood = thoughts.map(item=>item.rating === calc? item.category:0)%>
+ <%# let mood = thoughts.filter(item=>item.rating === calc? item.category:0)%>
 
-  <h1 class="text-black pl-8 pt-4  text-center">YOUR WEEKLY SUBMISSIONS - MOOD ON AVG : <span class="font-bold border-b border-white"><%=[...new Set(mood)].join('').toUpperCase()%> </span></h1>
+  <h1 class="text-black pl-8 pt-4  text-center text-lg font-bold">YOUR WEEKLY SUBMISSIONS<span class="font-bold border-b border-white"><%#=[...new Set(mood)].join('').toUpperCase()%> </span></h1>
 
    <!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
 <% let shortenDate=[] %>
@@ -32,21 +33,29 @@
  <%const thoughtDetails =`${thoughtDay}/${thoughtMonth}`%>
  <%shortenDate.push(thoughtDetails)%>
   <% } %>
+
  <!-- map the last 7 days array and if mongoDates array includes the item from last 7 days array then display the date else 0 which means no entry was submitted -->
  <% const finalArray = helper.past7Days.map(item=>shortenDate.includes(item)?item:0)%>
-
+<!-- if date is less than current an is 0 then hide -->
 <section class="WeeklyDates overflow-hidden grid grid-cols-2 grid-rows-7 p-8 gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-black font-bold w-4xl">
 <% for(let i=0; i< helper.past7Days.length; i++) {%>
 
+
+  <%#console.log(helper.past7Days[i].split('/')[0] < thoughts[i]) oldest document then remove that date and the entry else %>
+
+
+
   <section class ='weeklyDate px-10 row-start-<%=i+1%> md:row-start-1' ><%= helper.past7Days[i] %>
+ 
   </section> 
       <section class="rounded-lg overflow-hidden shadow-sm shadow-slate-800 row-start-auto"> 
         <% if(finalArray[i]!==0){ %>
           <section class=" h-2 date " >
             <a class="thoughtRoute" href="/dashboard/tools/thoughtdiary<%thoughts.id%>">
             <img src="" alt="" class="object-cover" style="width:100%;height:153px">
-          
             <p class="dateFields text-white text-opacity-0"><%= finalArray[i]%></p>
+          
+            
          
           </a>
     
