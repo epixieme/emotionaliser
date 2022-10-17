@@ -7,6 +7,24 @@ function errorHandling(res, error) {
   res.status(500).send({ message: error.message || "Error Occured" });
 }
 module.exports = {
+  getThoughtDiaryPages:async(req, res, next) =>{
+    const perPage = 9
+    const page = req.params.page || 1
+    // console.log('this is the page' + page)
+    const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
+    const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage);
+    // console.log('this is the thoughtsPerPage' + thoughtsPerPage)
+    const count = await thoughtDiary.count()
+    
+     res.render("thoughtdiary.ejs", {
+                      thoughtsPerPage : thoughtsPerPage,
+                      current: page,
+                      pages: Math.ceil(count / perPage),
+                      thoughtDate:thoughtDate,
+                      helper:helper,
+                  })
+                 
+  },
   getThoughtDiary: async (req, res) => {
     // get posts by logged in user
     try {
@@ -17,32 +35,18 @@ module.exports = {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
         thoughts:thoughts,
-        // calThoughts:calThoughts,
         users:users,
         user:req.user,
         helper:helper,
-        thoughtDate:thoughtDate,
+        thoughtDate:thoughtDate
+      
         
       });
     } catch (err) {
       console.log(err);
     }
   },
-  getThoughtDiaryPages:async(req, res, next) =>{
-  const perPage = 9
-  const page = req.params.page || 1
-  // console.log('this is the page' + page)
-  const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage);
-  // console.log('this is the thoughtsPerPage' + thoughtsPerPage)
-  const count = await thoughtsPerPage.count()
-  
-   res.render("thoughtPages.ejs", {
-                    thoughtsPerPage : thoughtsPerPage,
-                    current: page,
-                    pages: Math.ceil(count / perPage)
-                })
-               
-},
+
   delThoughtDiary: async (req, res) => {
     try {
       // Find post by id

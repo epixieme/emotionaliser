@@ -38,7 +38,7 @@ async function fetchData(url) {
   try {
     let response = await fetch(url);
     let data = await response.json();
- 
+ console.log(data)
     insertData(data);
     createRatingArrows(data)
   } catch (error) {
@@ -153,5 +153,5 @@ rating[rating.length -1].innerHTML='-'
 
 function quoteCardModal(){
 
-  
+
 }
