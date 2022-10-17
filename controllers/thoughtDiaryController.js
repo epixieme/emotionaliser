@@ -8,14 +8,11 @@ function errorHandling(res, error) {
 }
 module.exports = {
   getThoughtDiary: async (req, res) => {
-    const perPage = 3
-    const page = req.params.page || 1
+    // get posts by logged in user
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
       const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
-      const thoughtsPerPage = thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage)
       const users = await userDetails.find();
-      const count = thoughtDiary.count()
       res.render("thoughtdiary.ejs", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
@@ -25,14 +22,27 @@ module.exports = {
         user:req.user,
         helper:helper,
         thoughtDate:thoughtDate,
-        thoughtsPerPage : thoughtsPerPage ,
-        current: page,
-        pages: Math.ceil(count / perPage)
+        
       });
     } catch (err) {
       console.log(err);
     }
   },
+  getThoughtDiaryPages:async(req, res, next) =>{
+  const perPage = 9
+  const page = req.params.page || 1
+  // console.log('this is the page' + page)
+  const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage);
+  // console.log('this is the thoughtsPerPage' + thoughtsPerPage)
+  const count = await thoughtsPerPage.count()
+  
+   res.render("thoughtPages.ejs", {
+                    thoughtsPerPage : thoughtsPerPage,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+               
+},
   delThoughtDiary: async (req, res) => {
     try {
       // Find post by id
@@ -67,8 +77,7 @@ module.exports = {
     }
   },
   postSubmitThought: async (req, res) => {
-    console.log('this is the post body for summary' + req.body.summary)
-    console.log(req.user.id)
+  
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
