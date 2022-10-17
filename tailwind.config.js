@@ -29,8 +29,8 @@ module.exports = {
         'backg-wave': "url('/images/wave.svg')",
         'backg-wave-middle': "url('/images/wavey.svg')",
         'backg-wave-end': "url('/images/wave-bottom.svg')",
-        'circles': "url('/images/circle-scatter.svg')",
-   
+        'circles': "url('/images/circled.svg')",
+        'wave-line': "url('/images/wave-line.svg')",
       }
     },
   },
