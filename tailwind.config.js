@@ -31,6 +31,7 @@ module.exports = {
         'backg-wave-end': "url('/images/wave-bottom.svg')",
         'circles': "url('/images/circled.svg')",
         'wave-line': "url('/images/wave-line.svg')",
+
       }
     },
   },

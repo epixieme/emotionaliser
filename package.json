@@ -13,6 +13,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.8",
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.2",
     "cloudinary": "^1.32.0",
     "concurrently": "^7.4.0",
     "connect-livereload": "^0.6.1",

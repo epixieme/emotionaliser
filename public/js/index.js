@@ -140,11 +140,18 @@ rating[rating.length -1].innerHTML='-'
 }
 
 
-nav.forEach(item=>item.addEventListener('click', navigation))
-function navigation(){
-this.style.color ='teal'
+// nav.forEach(item=>item.addEventListener('click', navigation))
+// function navigation(){
+// this.style.color ='teal'
 
-}
+// }
 
 
 // if previous day rating is less then down arrow and vice versa
+
+// modal for dashboard motivation slide
+
+function quoteCardModal(){
+
+  
+}

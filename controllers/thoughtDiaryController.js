@@ -8,12 +8,14 @@ function errorHandling(res, error) {
 }
 module.exports = {
   getThoughtDiary: async (req, res) => {
-    // get posts by logged in user
+    const perPage = 3
+    const page = req.params.page || 1
     try {
       const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
       const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
-    
+      const thoughtsPerPage = thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage)
       const users = await userDetails.find();
+      const count = thoughtDiary.count()
       res.render("thoughtdiary.ejs", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
@@ -22,7 +24,10 @@ module.exports = {
         users:users,
         user:req.user,
         helper:helper,
-        thoughtDate:thoughtDate
+        thoughtDate:thoughtDate,
+        thoughtsPerPage : thoughtsPerPage ,
+        current: page,
+        pages: Math.ceil(count / perPage)
       });
     } catch (err) {
       console.log(err);
