@@ -39,7 +39,7 @@ async function fetchData(url) {
     let response = await fetch(url);
     let data = await response.json();
  console.log(data)
-    insertData(data);
+    // insertData(data);
     createRatingArrows(data)
   } catch (error) {
     console.log(error);
@@ -48,63 +48,63 @@ async function fetchData(url) {
 
 fetchData(apiUrl);
 
-function insertData(data) {
+// function insertData(data) {
   // create array of dates on dashboard by exporting the function and passing through controller back to ejs so I can style it in tailwind
 
-  console.log('this is data' + data) 
-  let dataElems = data.map(elem => [
-    elem.date,
-    elem._id,
-    elem.category,
-    elem.image,
-    elem.summary
-  ]);
+  // console.log('this is data' + data) 
+  // let dataElems = data.map(elem => [
+    // elem.date,
+    // elem._id,
+    // elem.category,
+    // elem.image,
+    // elem.summary
+  // ]);
 
     // format the date string fetched from mongo
-  let formatDate = dataElems 
-  .map((item) =>
-    item[0]
-      .split(":")
-      .splice(0, 1)
-      .join("")
-      .split("-")
-      .slice(1, 3)
-      .reverse()
-      .join("/")
-      .split("T")
-      .join("/")
-      .split("/")
-  )
-  .map((item) => `${parseInt(item[0], 10)}/${parseInt(item[2], 10)}`).filter(item=>!item==0)
+  // let formatDate = dataElems 
+  // .map((item) =>
+  //   item[0]
+  //     .split(":")
+  //     .splice(0, 1)
+  //     .join("")
+  //     .split("-")
+  //     .slice(1, 3)
+  //     .reverse()
+  //     .join("/")
+  //     .split("T")
+  //     .join("/")
+  //     .split("/")
+  // )
+  // .map((item) => `${parseInt(item[0], 10)}/${parseInt(item[2], 10)}`).filter(item=>!item==0)
   
-  let ids = dataElems.map((item) => item[1]);
-  let category = dataElems.map((item) => item[2]);
-  let image = dataElems.map((item) => item[3]);
-  let summary = dataElems.map((item) => item[4]);
+  // let ids = dataElems.map((item) => item[1]);
+  // let category = dataElems.map((item) => item[2]);
+  // let image = dataElems.map((item) => item[3]);
+  // let summary = dataElems.map((item) => item[4]);
  
 
    
   // compare against the html dates in ejs and then add the id , cat, image, etc from dateids array using indexOf to match - should rename dateids to be more like deatils
-  return dates.forEach((item, i) => {
+  // return dates.forEach((item, i) => {
 
     // insert id,image, category into html
-    if (formatDate.includes(item.innerText)) {
+    // if (formatDate.includes(item.innerText)) {
       
-      const imageMap = (item.childNodes[1].childNodes[1].src = `${
-        image[formatDate.indexOf(item.innerText)]
-      }`);
-      const idMap = (item.childNodes[1].href = `/dashboard/tools/thoughtdiary/${
-        ids[formatDate.indexOf(item.innerText)]
-      }`);
+      // const imageMap = (item.childNodes[1].childNodes[1].src = `${
+      //   image[formatDate.indexOf(item.innerText)]
+      // }`);
+      // const idMap = (item.childNodes[1].href = `/dashboard/tools/thoughtdiary/${
+      //   ids[formatDate.indexOf(item.innerText)]
+      // }`);
     
-      const categoryMap = (item.childNodes[5].innerText = `#${
-        category[formatDate.indexOf(item.innerText)]
-      }`);
+//       const categoryMap = (item.childNodes[5].innerText = `#${
+//         category[formatDate.indexOf(item.innerText)]
+//       }`);
     
-    }
-  });
+//     }
+//   });
 
-}
+// }
 
 // **** arrow ratings for though diary screen ****
 
@@ -155,3 +155,5 @@ function quoteCardModal(){
 
 
 }
+
+// dateFields.forEach((item,i)=>console.log(item.innerText='No Entry' && WeeklyDates[i] <  first date entry))

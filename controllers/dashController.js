@@ -14,7 +14,7 @@ module.exports = {
     getDashboard: async (req,res)=>{
         console.log('this is req.user ' + req.user)
         try{
-          const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)
+          const thoughts = await (await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)).reverse()
           const users = await userDetails.find();
           const motivations = await motivationsQuotes.find({id:req.params.id})
 
