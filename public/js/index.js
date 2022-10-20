@@ -17,12 +17,12 @@ if (slider) {
 
 function feelings() {
   const emotions = {
-    0: "Great",
-    1: "Very Good",
-    2: "Good",
+    6: "Great",
+    5: "Very Good",
+    4: "Good",
     3: "Bad",
-    4: "Very Bad",
-    5: "Awful",
+    2: "Very Bad",
+    1: "Awful",
   };
 
   // this line removes undefined values which were introduced when the range slider step was changed to .1

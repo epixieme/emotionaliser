@@ -19,8 +19,16 @@
     <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/      charts-mongodb-gtywi/embed/charts?id=7f535ee7-2074-4350-9f94-237277b94391&theme=light"></iframe>
     -->
     <section class="px-14">
+     
     <section class="px-8 pt-10 mb-10 shadow-md max-w-6xl  bg-black   rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
- 
+      <section class="flex space-x-4 justify-center font-poppins">
+        <p>6 - Great</p>
+        <p>5 - Very Good</p>
+        <p>4 - Good</p>
+        <p>3 - Bad</p>
+        <p>2 - Very Bad</p>
+        <p>1 - Awful</p>
+      </section>
     <div id="chart" class=" max-w-7xl "></div>
   </section>
 </section>
@@ -29,7 +37,7 @@
  <section class="flex flex-col  bg-black   rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md max-w-5xl">
  
 
-  <h1 class="text-black pl-8 pt-4  text-center text-lg font-bold">YOUR WEEKLY SUBMISSIONS<span class="font-bold border-b border-white"><%#=[...new Set(mood)].join('').toUpperCase()%> </span></h1>
+  <!-- <h1 class="text-black pl-8 pt-4  text-center text-lg font-bold">YOUR WEEKLY SUBMISSIONS<span class="font-bold border-b border-white"><%#=[...new Set(mood)].join('').toUpperCase()%> </span></h1> -->
 
    <!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
 
@@ -44,7 +52,7 @@
    <%const date = new Date(thoughts[i].date)%> 
    <%const d = date.getDate()%>
    <%const m = date.getMonth()+1%>
-    <p><%=`${d}/${m}`%></p>
+    <p class="text-center p-4 text font-normal"><%=`${d}/${m}`%></p>
     <section class="row-start-<%i%>">
 
     </section>
@@ -73,11 +81,14 @@
 
 </section>
 <!-- <section class="h-62"> -->
+  <section class="">
+    <h1 class="text-xl px-16 font-poppins pt-8">Be Inspired</h1>
+  </section>
   
 
   <!-- <h2 class=" py-4 text-neutral-300 font-barlow text-2xl  flex ">Daily Quote</h2> -->
 
-  <section class="p-16 mongoDates  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8 ">
+  <section class="px-16 py-8 mongoDates  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8 ">
 
   
     <% for(let i=0; i<1; i++) {%>   
