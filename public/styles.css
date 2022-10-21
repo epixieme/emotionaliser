@@ -86,70 +86,61 @@
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231e9789' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
-input[type=range]::-webkit-slider-thumb {
+/* input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: 1px solid #000000;
     height: 36px;
     width: 36px;
     border-radius: 3px;
-    background: teal;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     cursor: pointer;
-    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
-  }
+    margin-top: -14px; 
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
+  } */
 
-/* grid for emotions */
-  :root {
-    --square-size: 15px;
-    --square-gap: 5px;
-    --square-radius:50%;
-    --week-width: calc(var(--square-size) + var(--square-gap));
-    --cal-font-color:white;
+  .gdas-range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, red, green);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
   }
   
-  .months { grid-area: months; }
-  .days { grid-area: days; }
-  .squares { grid-area: squares; }
+  .gdas-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #ddd;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+       background-image: linear-gradient(white, white), linear-gradient(to right, red, green);
+       background-attachment: fixed, fixed;
+       background-clip: padding-box, border-box;
+  }
   
-  .graph {
-    display: inline-grid;
-    grid-template-areas: "empty months"
-                         "days squares";
-    grid-template-columns: auto 1fr;
-    grid-gap: 10px;
+  .gdas-range::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #ddd;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+       background-image: linear-gradient(white, white), linear-gradient(to right, red, green);
+       background-attachment: fixed, fixed;
+       background-clip: padding-box, border-box;
+  }
+  
 
-    color:var(--cal-font-color)
-  }
-  
-  .months {
-    display: grid;
-    grid-template-columns: calc(var(--week-width) * 4) /* Jan */
-                           calc(var(--week-width) * 4) /* Feb */
-                           calc(var(--week-width) * 4) /* Mar */
-                           calc(var(--week-width) * 5) /* Apr */
-                           calc(var(--week-width) * 4) /* May */
-                           calc(var(--week-width) * 4) /* Jun */
-                           calc(var(--week-width) * 5) /* Jul */
-                           calc(var(--week-width) * 4) /* Aug */
-                           calc(var(--week-width) * 4) /* Sep */
-                           calc(var(--week-width) * 5) /* Oct */
-                           calc(var(--week-width) * 4) /* Nov */
-                           calc(var(--week-width) * 5) /* Dec */;
-  }
-  
-  .days,
-  .squares {
-    display: grid;
-    grid-gap: var(--square-gap);
-    grid-template-rows: repeat(7, var(--square-size));
-  
-  }
-  
-  .squares {
-    grid-auto-flow: column;
-    grid-auto-columns: var(--square-size);
-   
-  }
+ 
 
 
 /* Other styling */
@@ -166,3 +157,73 @@ body {
   }
 
   
+  .bg-motivations{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:200px
+
+  }
+
+
+  input[type=file]::file-selector-button {
+    border: 1px solid white;
+    margin-top: 10px;
+    padding: .5em .8em;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: 1s;
+    color:white;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: transparent;
+    border: 2px solid #0D766E;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+  }
+  
+  .tooltip .tooltiptext {
+   
+    visibility: hidden;
+    width: 220px;
+    background-color:#374151;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .dropdown{
+  
+    position: absolute;
+    /* background:black; */
+    min-width:20%;
+  }

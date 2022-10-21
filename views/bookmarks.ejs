@@ -1,13 +1,13 @@
 
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 pt-32">
-   <h1 class="text-neutral-200 text-2xl px-16 font-bold">Positivity Hub</h1>
-   <h1 class="text-white px-16 pt-8 ">Positive Thoughts</h1>
+   <h1 class="text-black text-2xl px-16 font-bold">Positivity Hub</h1>
+   <h1 class="text-black px-16 pt-8 ">Positive Thoughts</h1>
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
 
  
    <% for(let i=0; i<thoughts.length; i++) {%>
-     <section class="bordershadow-lg rounded overflow-hidden text-neutral-200 border border-gray-700  bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-700">
+     <section class="bordershadow-lg rounded overflow-hidden text-neutral-200  bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-700">
         
             <a href="/dashboard/tools/thoughtdiary/<%=thoughts[i].id%>" style="width:100%;height:150px">
                <img src="<%=thoughts[i].image%>" class="object-cover" style="width:100%;height:150px">
@@ -20,6 +20,21 @@
     
      <% } %>
   </section>
-  <h1 class="text-white px-16 pt-8 ">Motivations</h1>
+  <h1 class="text-black px-16 pt-8 ">Motivations</h1>
+
+  <% for(let i=0; i<motivations.length; i++) {%>
+    <section class="bordershadow-lg rounded overflow-hidden text-neutral-200  bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-700">
+       
+           <a href="/dashboard/tools/motivations/<%=motivations[i].id%>" style="width:100%;height:150px">
+              <img src="<%=motivations[i].image%>" class="object-cover" style="width:100%;height:150px">
+           </a>
+           <section class="p-4">
+           <p class="text-neutral-200"><%=motivations[i].pem%></p>
+
+       </section>
+     </section>
+   
+    <% } %>
+ </section>
 </section>
 
