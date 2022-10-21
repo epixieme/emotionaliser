@@ -34,6 +34,8 @@
 </section>
  <section class="px-14 ">
 
+<% console.log(thoughts) %> 
+  <% if(thoughts.length >0){ %>
  <section class="flex flex-col  bg-black   rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md max-w-5xl">
  
 
@@ -47,7 +49,7 @@
 <!-- if date is less than current an is 0 then hide -->
 <section class="WeeklyDates overflow-hidden grid grid-cols-2 grid-rows-7 p-8 gap-4 md:grid-rows-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-black font-bold w-4xl">
 <% for(let i=0; i< thoughts.length; i++) {%>
-
+  
   <section class="rounded-lg overflow-hidden shadow-md row-start-auto"> 
    <%const date = new Date(thoughts[i].date)%> 
    <%const d = date.getDate()%>
@@ -68,11 +70,14 @@
  </section> 
 
  
- 
+      
         <% } %>
+        
       </section>
 
-      
+      <% } else { %>
+        <h1 class="text-base px-16">Sorry, There are no thoughts available to display. Please add an entry to your thought diary.</h1>
+            <% } %>
 
 
   <!-- do a loop over the quotes and math.random for each time you log in or each day  --> 
@@ -92,7 +97,10 @@
 
   
     <% for(let i=0; i<1; i++) {%>   
+      
 
+
+  <% if(motivations.length !==0 ){ %>
       <section class=" bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md border border-black">
      
       <section class=" motivationsCard bg-motivations rounded-t-md" style="background-image: url('<%= motivations[i].image%>')">
@@ -121,7 +129,7 @@
            </form>
           
            <form action="/dashboard?_method=PUT" method="POST">
-         <input type="text" value ="<%=motivations[i].id%>" name="id">
+         <input type="text" value ="<%=motivations[i].id%>" name="id" hidden>
           <li class ="flex p-1 rounded-md hover:bg-teal-700 items-center">
             <button type="submit" class="flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:fill-teal-700">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384" />
@@ -137,6 +145,10 @@
         <p class="text-gray-700 px-8 text-left"><%=motivations[i].author%></p>
     </section>
     </section>
+      
+  <% } else { %>
+<h1 class="text-base ">Sorry, There are no quotes to display. Try again later.</h1>
+    <% } %>
       <% } %>
     
      

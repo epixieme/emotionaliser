@@ -1212,6 +1212,10 @@ video {
   padding: 0.25rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1300,6 +1304,11 @@ video {
 .px-40 {
   padding-left: 10rem;
   padding-right: 10rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .pt-32 {
