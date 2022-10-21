@@ -10,7 +10,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/", ensureAuth, dashController.getDashboard);
 router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.put("/like/:id", dashController.likeQuote);
-router.put("/", dashController.dislikeQuote);
+router.put("/dislike", dashController.dislikeQuote);
+router.put("/like", dashController.likeQuote);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);
 
 

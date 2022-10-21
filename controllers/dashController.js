@@ -79,7 +79,25 @@ module.exports = {
       );
 
       console.log("Likes:false");
-      res.redirect(`/dashboard`);
+      // res.redirect(`/dashboard`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  likeQuote: async (req, res) => {
+
+
+    console.log('this is motivaton ids' + req.body.id )
+    try {
+     await motivationsQuotes.findByIdAndUpdate(
+      req.body.id,{
+        like: true, 
+      }
+        
+      );
+
+      console.log("Likes:false");
+      // res.redirect(`/dashboard`);
     } catch (err) {
       console.log(err);
     }
