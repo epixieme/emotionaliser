@@ -11,12 +11,13 @@ return Math.ceil(Math.random() * (max-min) + min)
 }
 
 module.exports = {
+
     getDashboard: async (req,res)=>{
-        console.log('this is req.user ' + req.user)
+      
         try{
           const thoughts = await (await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)).reverse()
           const users = await userDetails.find();
-          const motivations = await motivationsQuotes.find({id:req.params.id})
+          const motivations = await motivationsQuotes.find({id:req.params.id,like:true})
 
           // get random quotes to show on dashboard
           const randomMotivations = motivations.sort(() => Math.random() - 0.5);
@@ -63,6 +64,24 @@ module.exports = {
       }); // render homepage title and categories
     } catch (error) {
       errorHandling(res, error);
+    }
+  },
+  dislikeQuote: async (req, res) => {
+
+
+    console.log('this is motivaton ids' + req.body.id )
+    try {
+     await motivationsQuotes.findByIdAndUpdate(
+      req.body.id,{
+        like: false, 
+      }
+        
+      );
+
+      console.log("Likes:false");
+      res.redirect(`/dashboard`);
+    } catch (err) {
+      console.log(err);
     }
   },
   }

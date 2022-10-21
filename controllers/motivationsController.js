@@ -3,6 +3,7 @@ const motivationQuotes = require("../models/Motivations");
 const userDetails = require("../models/User");
 
 module.exports = {
+
     getMotivations: async (req, res) => {
       const motivations = await motivationQuotes.find({id:req.params.id})
   

@@ -10,10 +10,12 @@ const motivationsController = require("../controllers/motivationsController");
 router.get("/",  motivationsController.getMotivations);
 router.get("/submit-motivation",  motivationsController.getSubmitMotivation);
 router.post("/submit-motivation", upload.single("file"), motivationsController.postSubmitMotivation);
+
 // router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
 // router.get("/:id",  thoughtDiaryController.getThought);
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);
+
 
 
 module.exports = router // export the router
