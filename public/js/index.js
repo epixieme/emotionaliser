@@ -71,7 +71,7 @@ console.log(data)
 
 let arrows = data.map(item=>item.rating)
 
-let upDown = arrows.reverse().map((item,i,a)=>item === a[i+1] ? noChange:item > a[i+1]?down:up)
+let upDown = arrows.reverse().map((item,i,a)=>item === a[i+1] ? noChange:item < a[i+1]?down:up)
 
 upDown.forEach((item,i)=>rating[i].innerHTML = item)
 
