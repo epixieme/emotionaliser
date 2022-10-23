@@ -771,16 +771,16 @@ video {
   width: 5rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-32 {
   width: 8rem;
 }
 
 .w-64 {
   width: 16rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-6xl {
@@ -1163,6 +1163,11 @@ video {
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(82 82 82 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -2107,53 +2112,9 @@ input[type=file]::file-selector-button:hover {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
-.odd\:bg-orange-100:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 237 213 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-gray-400:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-gray-50:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-gray-100:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-stone-100:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-stone-400:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 162 158 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-stone-300:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
-}
-
 .odd\:bg-neutral-400:nth-child(odd) {
   --tw-bg-opacity: 1;
   background-color: rgb(163 163 163 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-neutral-300:nth-child(odd) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
-}
-
-.odd\:bg-transparent:nth-child(odd) {
-  background-color: transparent;
 }
 
 .odd\:text-white:nth-child(odd) {
@@ -2166,31 +2127,6 @@ input[type=file]::file-selector-button:hover {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.even\:bg-orange-50:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
-}
-
-.even\:bg-gray-400:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.even\:bg-stone-300:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
-}
-
-.even\:bg-stone-200:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
-}
-
-.even\:bg-stone-400:nth-child(even) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 162 158 / var(--tw-bg-opacity));
-}
-
 .even\:bg-transparent:nth-child(even) {
   background-color: transparent;
 }
@@ -2198,10 +2134,6 @@ input[type=file]::file-selector-button:hover {
 .even\:text-black:nth-child(even) {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.hover\:w-72:hover {
-  width: 18rem;
 }
 
 .hover\:scale-105:hover {
@@ -2219,6 +2151,11 @@ input[type=file]::file-selector-button:hover {
 .hover\:border-teal-700:hover {
   --tw-border-opacity: 1;
   border-color: rgb(15 118 110 / var(--tw-border-opacity));
+}
+
+.hover\:bg-neutral-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(82 82 82 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-teal-700:hover {
@@ -2241,34 +2178,14 @@ input[type=file]::file-selector-button:hover {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-zinc-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 161 170 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-stone-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 162 158 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-neutral-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(82 82 82 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-neutral-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(115 115 115 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-neutral-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(163 163 163 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-opacity-5:hover {
@@ -2277,26 +2194,6 @@ input[type=file]::file-selector-button:hover {
 
 .hover\:fill-teal-700:hover {
   fill: #0f766e;
-}
-
-.hover\:p-11:hover {
-  padding: 2.75rem;
-}
-
-.hover\:pl-11:hover {
-  padding-left: 2.75rem;
-}
-
-.hover\:pl-10:hover {
-  padding-left: 2.5rem;
-}
-
-.hover\:pl-60:hover {
-  padding-left: 15rem;
-}
-
-.hover\:pl-72:hover {
-  padding-left: 18rem;
 }
 
 .hover\:text-white:hover {
@@ -2386,10 +2283,6 @@ input[type=file]::file-selector-button:hover {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:grid-rows-1 {
-    grid-template-rows: repeat(1, minmax(0, 1fr));
   }
 
   .md\:flex-row {
