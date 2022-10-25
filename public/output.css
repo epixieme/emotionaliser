@@ -858,10 +858,6 @@ video {
   width: 16rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-48 {
   width: 12rem;
 }
@@ -870,16 +866,8 @@ video {
   width: 20rem;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
-}
-
 .w-11 {
   width: 2.75rem;
-}
-
-.w-6\/12 {
-  width: 50%;
 }
 
 .w-4 {
@@ -890,16 +878,16 @@ video {
   width: 18rem;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
 .w-screen {
   width: 100vw;
 }
 
-.w-1\/12 {
-  width: 8.333333%;
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-6\/12 {
+  width: 50%;
 }
 
 .max-w-6xl {
@@ -940,6 +928,10 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .flex-grow {
@@ -2367,6 +2359,11 @@ input[type=file]::file-selector-button:hover {
 .even\:text-black:nth-child(even) {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.even\:text-neutral-500:nth-child(even) {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
 }
 
 .hover\:scale-105:hover {

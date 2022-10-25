@@ -13,7 +13,7 @@
                <img src="<%=thoughts[i].image%>" class="object-cover" style="width:100%;height:150px">
             </a>
             <section class="p-4">
-            <p class="text-neutral-200"><%=thoughts[i].summary%></p>
+            <p class="text-black"><%=thoughts[i].summary%></p>
             <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%=thoughts[i].category%></p>
         </section>
       </section>
@@ -23,13 +23,13 @@
   <h1 class="text-black px-16 pt-8 ">Motivations</h1>
 
   <% for(let i=0; i<motivations.length; i++) {%>
-    <section class="bordershadow-lg rounded overflow-hidden text-neutral-200  bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-700">
+    <section class=" hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-neutral-500">
        
            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>" style="width:100%;height:150px">
               <img src="<%=motivations[i].image%>" class="object-cover" style="width:100%;height:150px">
            </a>
            <section class="p-4">
-           <p class="text-neutral-200"><%=motivations[i].pem%></p>
+           <p class="text-neutral-200"><%=motivations[i].poem%></p>
 
        </section>
      </section>

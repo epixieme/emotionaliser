@@ -14,24 +14,33 @@ module.exports = {
       const users = await userDetails.find();
       const perPage = 9
       const page = req.params.page || 1
+      const count = await thoughtDiary.find({ user: req.user.id }).count()
+      console.log(page)
+     
       // console.log('this is the page' + page)
-      const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
+      const thoughts = await thoughtDiary.find({ user: req.user.id }).skip((perPage * page) - perPage).limit(perPage).sort({date: -1});
       const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
-      const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage).sort({date: -1});
-
+      // const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage).sort({date: -1});
+    
+    
       res.render("thoughtdiary.ejs", {
         title: "Thought Diary",
         layout: "./layouts/dashboard-home.ejs",
         users:users,
         thoughtDate:thoughtDate,
-        thoughtsPerPage:thoughtsPerPage,
+        // thoughtsPerPage:thoughtsPerPage,
         thoughts:thoughts,
         user:req.user, 
+        current:page,
+        // this gets the number of pages
+        pages: Math.ceil(count / perPage),
       });
     } catch (err) {
       console.log(err);
     }
   },
+
+  
   // getThoughtDiaryPage:async(req, res) =>{
   //   try {
   //     const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})

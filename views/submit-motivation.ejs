@@ -5,38 +5,50 @@ link to your own quotes -->
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56">
   
-    <section class="flex justify-center">
+    <section class="flex justify-center ">
     
-    <!-- <section class="w-full max-w-5xl"> -->
+    <section class="w-full max-w-2xl">
       
-        <form action="/dashboard/tools/motivations/submit-motivation" enctype="multipart/form-data" method="post" class="shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-500">
-          <section class="mb-6">
+        <form action="/dashboard/tools/motivations/submit-motivation" enctype="multipart/form-data" method="post" class="font-poppins px-8 pt-6 pb-8 mb-4 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md text-white max-w-7xl ">
+        
            
-            <label class="block  text-white font-bold mb-2" for="poem">
+          <label class="block  text-white text-base mb-2" for="poem">
           Add Your Quote Below:
             </label>
             <section>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="details" name="poem"></textarea>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Quote Text" name="poem"></textarea>
           </section>
-          <label class="block  text-white font-bold mb-2" for="password">
+          <label class="block  text-white font-bold mb-2 text-base" for="password">
            Author
               </label>
               <section>
-                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="author" name="author">
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Author Name" name="author">
             </section>
           <section class="mb-6">
-            <label class="block text-white text-sm font-bold mb-2" for="details">
+            <label class="block text-white mb-2 text-base" for="details">
               Make Private
             <input type="checkbox" name="private">
             </label>
-           
+          
           </section>
-          <div class="mb-3">
-            <label for="imgUpload" class="form-label">Upload background for your quote</label>
+
+          <div class="mb-3 text-base">
+            <section class="tooltip">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+            </svg>
+            <!-- <p class="text-xs flex items-center my-2">
+             
+          </p> -->
+          <span class="tooltiptext text-sm">  Upload an image that suits your quote</span>
+            </section>
+            <label for="imgUpload" class="form-label flex">
+            </label>
             <input type="file" class="form-control" id="imageUpload" name="file">
           </div>
+    
           <section class="flex items-center justify-between">
-            <button class="bg-white hover:bg-slate-300  shadow-slate-700 shadow-sm text-zinc-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button class="bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
              Done
             </button>
            
