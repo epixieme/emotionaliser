@@ -54,24 +54,33 @@
 
     <section class="px-16 pt-4">
       <section class="flex justify-evenly py-2"> 
-<section class="flex">
-        <input type="search" name="" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base ">
-        <button class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white over:scale-105 transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">Search</button>
-      </section>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<form class="flex" action="/dashboard/tools/thoughtdiary/search" method="POST">
+        <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base ">
+        <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white over:scale-105 transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">Search</button>
+</form>
+
+<h1></h1>
+
+
+
+
+  <!-- <%# } else if (isSearch) { %>
+  <span class="text-center pb-3">No matches found.</span> -->
+  
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
-                
+                 -->
        
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
+        </svg> -->
         
       </section>
-     
+   
 
       <% for(let i=0; i<thoughts.length; i++) {%>
         <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white  mt-5 shadow-md  p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 place-items-center text-black text-base  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2">
@@ -87,36 +96,66 @@
         </a></p>
         </section>
         <%}%>
-    
-              <% if (pages > 0) { %>
-                  <ul class="pagination text-center">
-                      <% if (current === 1) { %>
-                          <li class="disabled"><a>First</a></li>
+     <% if (pages > 0) { %>
+      <section class="flex justify-center items-center p-4">
+                  <ul class="pagination text-center flex space-x-7 justify-center w-fit items-center ">
+                      <% if (current == 1) { %>
+                          <li class="disabled p-4  bg-neutral-400 text-white">
+                            <a class="">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-left w-6 h-6">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                          </svg>
+                        </a>
+                      </li>
                       <% } else { %>
-                          <li><a href="/dashboard/tools/thoughtdiary/1">First</a></li>
+                          <li class ="p-4"><a href="/dashboard/tools/thoughtdiary/1">  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-left w-6 h-6">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                          </svg></a></li>
                       <% } %>
                       <%let i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
                       <% if (i !== 1) { %>
-                          <li class="disabled"><a>...</a></li>
+                          <li class="disabled p-4"><a>...</a></li>
                       <% } %>
                       <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
                           <% if (i == current) { %>
-                              <li class="active"><a><%= i %></a></li>
+                              <li class="active p-4 bg-teal-700 text-white rounded-md"><a><%= i %></a></li>
                           <% } else { %>
-                              <li><a href="/dashboard/tools/thoughtdiary/<%= i %>"><%= i %></a></li>
+                              <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= i %>"><%= i %></a></li>
                           <% } %>
                           <% if (i == Number(current) + 4 && i < pages) { %>
-                              <li class="disabled"><a>...</a></li>
+                              <li class="disabled p-4"><a>...</a></li>
                           <% } %>
                       <% } %>
                       <% if (current == pages) { %>
-                          <li class="disabled"><a>Last</a></li>
+                          <li class="disabled p-4  bg-neutral-400 text-white"><a> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-right w-6 h-6">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                          </svg></a></li>
                       <% } else { %>
-                          <li><a href="/dashboard/tools/thoughtdiary/<%= pages %>">Last</a></li>
+                          <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= pages %>"> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-right w-6 h-6">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                          </svg></a></li>
                       <% } %>
                   </ul>
+                </section>
               <% } %>
-      </div>
+      
+
+
+
+
+
+
+
+
+              
 
 
 
