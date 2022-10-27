@@ -20,6 +20,7 @@ const motivationsRoutes = require("./routes/motivations");
 const bookmarkRoutes = require("./routes/bookmarks");
 const profileRoutes = require("./routes/profile");
 const searchRoutes = require("./routes/search");
+const communityRoutes = require("./routes/community");
 
 
 
@@ -87,6 +88,7 @@ app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
 app.use("/dashboard/bookmarks", bookmarkRoutes);
 app.use("/dashboard/tools/motivations", motivationsRoutes);
 app.use("/dashboard/tools/thoughtdiary", searchRoutes);
+app.use("/dashboard/community", communityRoutes);
 // app.use("/login", login ); //use the route
 
 

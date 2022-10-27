@@ -39,7 +39,7 @@ async function fetchData(url) {
   try {
     let response = await fetch(url);
     let data = await response.json();
- console.log(data)
+ console.log('data' + data)
     // insertData(data);
     createRatingArrows(data)
   } catch (error) {
@@ -67,7 +67,7 @@ let noChange = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 `
 
 // need to say if user === then only show ratings for this user
-console.log(data)
+// console.log('data' + data)
 
 let arrows = data.map(item=>item.rating)
 
@@ -85,9 +85,9 @@ rating[rating.length -1].innerHTML='-'
 
 const circlesBtn = document.querySelector('.circlesBtn')
 
-
+if (circlesBtn) {
 circlesBtn.addEventListener('click', toolTip)
-
+}
 function toolTip(){
 const likeOrNot = document.querySelector('.likeOrNot')
 
