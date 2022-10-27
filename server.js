@@ -83,12 +83,12 @@ app.set("layout", "./layouts/main"); // sets  and changes the location for ejs l
 app.use("/", mainRoutes); //use the route
 app.use("/dashboard", dashboardRoutes); //use the route
 app.use("/dashboard/profile", profileRoutes); //use the route
-// app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
-app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
+app.use("/dashboard/community", communityRoutes);
 app.use("/dashboard/bookmarks", bookmarkRoutes);
+app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
 app.use("/dashboard/tools/motivations", motivationsRoutes);
 app.use("/dashboard/tools/thoughtdiary", searchRoutes);
-app.use("/dashboard/community", communityRoutes);
+
 // app.use("/login", login ); //use the route
 
 

@@ -11,10 +11,10 @@ router.get("/",  thoughtDiaryController.getThoughtDiary);
 router.get("/thoughtData", thoughtDiaryController.getThoughtData)
 router.get("/:page",  thoughtDiaryController.getThoughtDiary);
 // router.get('/:page', thoughtDiaryController.getThoughtDiaryPage);
-router.get("/submit-thought",  thoughtDiaryController.getSubmitThought);
+router.get("/:page/submit-thought",  thoughtDiaryController.getSubmitThought);
 router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
-router.get("/:id",  thoughtDiaryController.getThought);
-router.get("/edit-thought/:id",  thoughtDiaryController.getEditThought);
+router.get("/:page/:id",  thoughtDiaryController.getThought);
+router.get("/:page/edit-thought/:id",  thoughtDiaryController.getEditThought);
 router.put("/edit-thought/:id",  upload.single("file"), thoughtDiaryController.postEditThought);
 router.delete("/delete-thought/:id",  thoughtDiaryController.delThoughtDiary);
 
