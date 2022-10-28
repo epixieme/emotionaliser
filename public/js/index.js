@@ -84,21 +84,52 @@ rating[rating.length -1].innerHTML='-'
 
 
 const circlesBtn = document.querySelector('.circlesBtn')
+const motivationSection  = document.querySelector('.motivationSection ')
 
-if (circlesBtn) {
-circlesBtn.addEventListener('click', toolTip)
-}
-function toolTip(){
-const likeOrNot = document.querySelector('.likeOrNot')
+// if (circlesBtn) {
+// circlesBtn.addEventListener('click', toolTip)
 
-if(likeOrNot.hidden === true){
+// }else if (!circlesBtn){
+//   document.addEventListener('click',()=>{
+//     likeOrNot.hidden=true
+//   })
+  
+// }
 
-  likeOrNot.hidden=false
+// document.addEventListener('click', function handleClickOutsideBox(event) {
+//   const circlesBtn = document.querySelector('.circlesBtn')
 
-}else{
+//   if (!circlesBtn.contains(event.target)) {
+//     likeOrNot.style.display = 'none';
+//   }
+// });
+  
+  function toolTip(){
 
-  likeOrNot.hidden=true
-}
+  const likeOrNot = document.querySelector('.likeOrNot')
+
+  if(likeOrNot.hidden===true){
+  
+      likeOrNot.hidden=false
+      console.log(likeOrNot.hidden)
+    }else{
+      likeOrNot.hidden=true
+      console.log(likeOrNot.hidden)
+    }
+  
+  }
+
+  // document.addEventListener('click', function handleClickOutsideBox(event) {
+  //   // 👇️ the element the user clicked
+  //   console.log('user clicked: ', event.target);
+  
+  //   const likeOrNot = document.querySelector('.likeOrNot')
+  
+  //   if (body.contains(likeOrNot)) {
+  //     likeOrNot.hidden=true
+  //   }
+  // });
 
 
-}
+
+

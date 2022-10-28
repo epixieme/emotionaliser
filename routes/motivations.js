@@ -11,10 +11,9 @@ router.get("/",  motivationsController.getMotivations);
 router.get("/submit-motivation",  motivationsController.getSubmitMotivation);
 router.post("/submit-motivation", upload.single("file"), motivationsController.postSubmitMotivation);
 router.get("/:id",  motivationsController.getMotivation);
-// router.post("/submit-thought", upload.single("file"), thoughtDiaryController.postSubmitThought);
-// router.get("/:id",  thoughtDiaryController.getThought);
-// router.get("/tools", ensureAuth, dashController.getDashboardTools);
-// router.get("/community", ensureAuth, dashController.getDashboardCommunity);
+router.get("/edit-motivation/:id",  motivationsController.getEditMotivation);
+router.put("/edit-motivation/:id",  upload.single("file"), motivationsController.postEditMotivation);
+router.delete("/delete-motivation/:id",  motivationsController.delMotivation);
 
 
 

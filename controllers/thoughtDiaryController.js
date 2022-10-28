@@ -61,35 +61,7 @@ module.exports = {
     }
   },
 
-  
-  // getThoughtDiaryPage:async(req, res) =>{
-  //   try {
-  //     const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({date: -1})
-  //   const perPage = 9
-  //   const page = req.params.page || 1
-  //   // console.log('this is the page' + page)
-  //   const users = await userDetails.find();
-  //   const thoughtsPerPage = await thoughtDiary.find({ user: req.user.id }).skip((perPage * page) - perPage).limit(perPage).sort({date: -1});
-  //   const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
-  //   console.log('this is the thoughtsPerPage' + thoughtsPerPage)
-  //   const count = await thoughtDiary.count()
-    
-    
-  //    res.render("thoughtdiary.ejs", {
-  //                     thoughtsPerPage:thoughtsPerPage,
-  //                     current: page,
-  //                     pages: Math.ceil(count / perPage),
-  //                     helper:helper,
-  //                     users:users,
-  //                     thoughts:thoughts,
-  //                     user:req.user, 
-  //                     thoughtDate:thoughtDate,
-  //                 })
-  //               } catch (err) {
-  //                 console.log(err);
-  //               }
-                 
-  // },
+
 
   delThoughtDiary: async (req, res) => {
     try {
@@ -137,7 +109,7 @@ module.exports = {
         details: req.body.details,
         category: req.body.category,
         rating:req.body.rating,
-        private:req.body.private,
+        public: req.body.public,
         likes: 0,
         user: req.user.id,
 
