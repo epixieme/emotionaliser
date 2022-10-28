@@ -45,6 +45,10 @@ const thoughtSchema = new mongoose.Schema({
   bookmarked:{
     type:Boolean,
     default:false
+  },
+  public:{
+    type:Boolean,
+    default:false
   }
 
 });

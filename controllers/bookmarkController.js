@@ -48,6 +48,20 @@ removeBookmark: async (req, res)=>{
         errorHandling(res, err)
     }
 },
+removeMotivationBookmark: async (req, res)=>{
+    try{
+        const motivations = await motivationDetails.findOneAndUpdate({_id:req.params.id},{
+            bookmarked: false
+        })
+        console.log('unbookmarked')
+        res.redirect("/dashboard/tools/motivations");
+    }catch(err){
+     
+        errorHandling(res, err)
+    }
+},
+
+
 getBookmarked: async (req, res)=>{
     try{
         const thoughts = await thoughtDiary.find({
@@ -61,7 +75,7 @@ getBookmarked: async (req, res)=>{
             title: "Bookmarks",
             layout:'./layouts/dashboard-home.ejs',
             thoughts:thoughts,
-            motivations,motivations,
+            motivations:motivations,
             user:req.user
           })
     }catch(err){

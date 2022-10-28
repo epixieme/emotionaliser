@@ -34,6 +34,10 @@ image: {
   bookmarked:{
     type:Boolean,
     default:false
+  },
+  public:{
+    type:Boolean,
+    default:false
   }
   // tags:{
 

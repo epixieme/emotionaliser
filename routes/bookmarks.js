@@ -8,8 +8,9 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //add controller here
 router.get("/", bookmarkController.getBookmarked);
-router.put("/bookmarked/:id", bookmarkController.addBookmark);
-router.put("/notBookmarked/:id", bookmarkController.removeBookmark);
-
+router.put("/thought/bookmarked/:id", bookmarkController.addBookmark);
+router.put("/thought/notBookmarked/:id", bookmarkController.removeBookmark);
+router.put("/motivation/bookmarked/:id", bookmarkController.addMotivationBookmark);
+router.put("/motivation/notBookmarked/:id", bookmarkController.removeMotivationBookmark);
 
 module.exports = router // export the router

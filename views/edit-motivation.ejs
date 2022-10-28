@@ -16,19 +16,19 @@ link to your own quotes -->
           Add Your Quote Below:
             </label>
             <section>
-                <textarea class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Quote Text" name="poem"></textarea>
+                <textarea class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Quote Text" name="poem"><%=motivation.poem%></textarea>
           </section>
           <label class="block  text-white font-bold mb-2 text-base" for="password">
            Author
               </label>
               <section>
-                  <input class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Author Name" name="author">
+                  <input class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Author Name" name="author" value="<%=motivation.author%>">
             </section>
             <section class="mb-4">
               <label class="block text-white  mb-2 text-base" for="summary">
              Make public to the community?
               </label>
-              <input class="shadow border rounded " id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public">
+              <input class="shadow border rounded " id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public" value="<%=motivation.public%>">
             </section>
       
 
@@ -40,7 +40,7 @@ link to your own quotes -->
             <!-- <p class="text-xs flex items-center my-2">
              
           </p> -->
-          <span class="tooltiptext text-sm">  Upload an image that suits your quote</span>
+          <span class="tooltiptext text-sm">  Re-upload an image that suits your quote</span>
             </section>
             <label for="imgUpload" class="form-label flex">
             </label>

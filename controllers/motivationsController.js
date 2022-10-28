@@ -62,6 +62,23 @@ module.exports = {
         }
       },
 
+      getMotivation: async (req, res) => {
+
+        try {
+          const motivation =  await motivationQuotes.findById(req.params.id);
+        
+          res.render("get-motivation", {
+            title: "Motivational Quotes - Quote",
+            layout: "./layouts/dashboard-home.ejs",
+            motivation:motivation,
+            user: req.user
+            
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      },
+
     
 
 }

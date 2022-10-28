@@ -21,7 +21,7 @@
      <% } %>
   </section>
   <h1 class="text-black px-16 py-8 text-base font-poppins">Motivations</h1>
-
+  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
   <% for(let i=0; i<motivations.length; i++) {%>
     <section class=" hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-neutral-500">
        
@@ -29,12 +29,14 @@
               <img src="<%=motivations[i].image%>" class="object-cover" style="width:100%;height:150px">
            </a>
            <section class="p-4">
-           <p class="text-neutral-200"><%=motivations[i].poem%></p>
+           <p class="text-black"><%=motivations[i].poem%></p>
+           <p class="text-neutral-600"><%=motivations[i].author%></p>
 
        </section>
      </section>
    
     <% } %>
  </section>
+</section>
 </section>
 
