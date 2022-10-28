@@ -1,6 +1,6 @@
 
 
-    <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56">
+    <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56 font-poppins">
       <section class="flex justify-center">
       
       <section class="w-full max-w-xl p-4">
@@ -11,26 +11,26 @@
       
               </label>
               <section>
-                <input class="slidetext p-2 text-base bg-transparent border-none outline-none" name="category" type="text" value="<%=thought.category%>" readonly/>
+                <input class="slidetext p-2 text-base bg-transparent border-none outline-none font-light text-base" name="category" type="text" value="<%=thought.category%>" readonly/>
               </section>
               <section>
                 <input class="moodrating p-2 text-2xl bg-transparent border-none outline-none" name="rating" type="text" value="<%=thought.rating%>" readonly hidden/>
               </section>
-              <div class="gdas-menu-left">
-                <input type="range" min="1" max="6" value="<%=thought.rating%>" step=".1" class="gdas-range w-full h-2 bg-gray-200  " id="myRange"  id="category"/>
+              <div class="gdas-menu-left ">
+                <input type="range" min="1" max="6" value="<%=thought.rating%>" step=".1" class="text-base gdas-range w-full h-2 bg-gray-200  " id="myRange"  id="category"/>
               </div>
             </section>
             <section class="mb-4">
               <label class="block text-white  mb-2 text-base" for="summary">
               Summarise how you feel?
               </label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary" type="text" placeholder="Summary"  aria-placeholder="Summary" name="summary" value="<%=thought.summary%>">
+              <input class="font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary" type="text" placeholder="Summary"  aria-placeholder="Summary" name="summary" value="<%=thought.summary%>">
             </section>
             <section class="mb-6">
               <label class="block text-white  text-base mb-2" for="details">
               Tell me more about how you feel?
               </label>
-              <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="details" type="details" placeholder="Details" name="details"><%=thought.details%></textarea>
+              <textarea class=" font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="details" type="details" placeholder="Details" name="details"><%=thought.details%></textarea>
             </section>
             <div class="mb-3 text-base">
               <section class="tooltip">
@@ -56,9 +56,7 @@
             
             </section>
           </form>
-          <p class="text-center text-gray-500 text-xs">
-            &copy;2020 Acme Corp. All rights reserved.
-          </p>
+       
         </section>
       </section>
       </section>

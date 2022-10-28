@@ -1,26 +1,26 @@
 
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 pt-32">
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 pt-32 font-poppins">
    <h1 class="text-black text-2xl px-16 font-bold">Positivity Hub</h1>
-   <h1 class="text-black px-16 pt-8 ">Positive Thoughts</h1>
+   <h1 class="text-black px-16 py-8  text-base font-poppins">Positive Thoughts</h1>
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
 
  
    <% for(let i=0; i<thoughts.length; i++) {%>
-     <section class="bordershadow-lg rounded overflow-hidden text-neutral-200  bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-700">
+     <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-neutral-500">
         
             <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" style="width:100%;height:150px">
                <img src="<%=thoughts[i].image%>" class="object-cover" style="width:100%;height:150px">
             </a>
-            <section class="p-4">
-            <p class="text-black"><%=thoughts[i].summary%></p>
-            <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%=thoughts[i].category%></p>
+            <section class="p-4 flex flex-col items-start">
+            <p class=" text-black "><%=thoughts[i].summary%></p>
+            <p class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  mt-2">#<%=thoughts[i].category%></p>
         </section>
       </section>
     
      <% } %>
   </section>
-  <h1 class="text-black px-16 pt-8 ">Motivations</h1>
+  <h1 class="text-black px-16 py-8 text-base font-poppins">Motivations</h1>
 
   <% for(let i=0; i<motivations.length; i++) {%>
     <section class=" hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-neutral-500">

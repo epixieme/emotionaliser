@@ -17,6 +17,7 @@ router.get("/:page/:id",  thoughtDiaryController.getThought);
 router.get("/:page/edit-thought/:id",  thoughtDiaryController.getEditThought);
 router.put("/edit-thought/:id",  upload.single("file"), thoughtDiaryController.postEditThought);
 router.delete("/delete-thought/:id",  thoughtDiaryController.delThoughtDiary);
+router.get("/search/:searchTerm", thoughtDiaryController.searchItems)
 
 // router.get("/tools", ensureAuth, dashController.getDashboardTools);
 // router.get("/community", ensureAuth, dashController.getDashboardCommunity);

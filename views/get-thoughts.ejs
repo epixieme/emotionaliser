@@ -1,16 +1,16 @@
 <section
-  class="flex justify-center bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
+  class="flex justify-center bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56 font-poppins"
 >
 <section class="text-black hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-md  overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-h-full">
 
   <img class="border object-cover rounded-md" src="<%=thought.image %>"  style="width:100%;height:350px" />
   <section class="px-8 py-4">
     <h1 class="block text-2xl  font-bold py-2">Mood</h1>
-    <h1><%=thought.category %></h1>
+    <h1 class="text-base font-light"><%=thought.category %></h1>
     <h1 class="block text-2xl  font-bold py-2">Summary</h1>
-    <h1><%=thought.summary %></h1>
+    <h1 class="text-base font-light"><%=thought.summary %></h1>
     <h1 class="block text-2xl font-bold py-2">Details</h1>
-    <h1><%=thought.details %></h1>
+    <h1 class="text-base font-light"><%=thought.details %></h1>
   </section>
   <section class="flex px-8 pt-4 pb-2 space-x-16">
     <p class="edit hover:scale-105 transition delay-150 duration-300 ease-in-out"><a href="/dashboard/tools/thoughtdiary/0/edit-thought/<%=thought.id%>">

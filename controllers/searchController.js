@@ -19,10 +19,12 @@ module.exports = {
           });
           console.log(searchResults);
           res.render("search.ejs", {
+            layout: "./layouts/dashboard-home.ejs",
             results:searchResults,
             user: req.user,
             users:users,
             thoughtDate:thoughtDate
+            
           });
         } catch (error) {
           errorHandling(res, error);

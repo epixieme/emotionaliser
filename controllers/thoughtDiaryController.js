@@ -32,11 +32,32 @@ module.exports = {
         thoughts:thoughts,
         user:req.user, 
         current:page,
+       
         // this gets the number of pages
         pages: Math.ceil(count / perPage),
       });
     } catch (err) {
       console.log(err);
+    }
+  },
+  searchItems: async (req, res) => {
+    try {
+      const users = await userDetails.find();
+      let searchTerm = req.body.searchTerm;
+      console.log('searchterm' + searchTerm)
+      const thoughtDate = await thoughtDiary.findOne({ user: req.user.id }).sort({date: -1})
+      let searchResults = await thoughtDiary.find({
+        $text: { $search: searchTerm, $diacriticSensitive: true },
+      });
+      console.log(searchResults);
+      res.render("thoughtdiary.ejs", {
+        results:searchResults,
+        user: req.user,
+        users:users,
+        thoughtDate:thoughtDate
+      });
+    } catch (error) {
+      errorHandling(res, error);
     }
   },
 
