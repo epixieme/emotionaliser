@@ -86,23 +86,22 @@ rating[rating.length -1].innerHTML='-'
 const circlesBtn = document.querySelector('.circlesBtn')
 const motivationSection  = document.querySelector('.motivationSection ')
 
-// if (circlesBtn) {
-// circlesBtn.addEventListener('click', toolTip)
+if (circlesBtn) {
+circlesBtn.addEventListener('click', toolTip)
 
-// }else if (!circlesBtn){
-//   document.addEventListener('click',()=>{
-//     likeOrNot.hidden=true
-//   })
-  
-// }
+}
+
+
+
 
 // document.addEventListener('click', function handleClickOutsideBox(event) {
 //   const circlesBtn = document.querySelector('.circlesBtn')
+//   const likeOrNot = document.querySelector('.likeOrNot')
 
-//   if (!circlesBtn.contains(event.target)) {
-//     likeOrNot.style.display = 'none';
-//   }
-// });
+
+//     likeOrNot.hidden=true
+  
+// })
   
   function toolTip(){
 

@@ -814,12 +814,8 @@ video {
   width: auto;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-6\/12 {
-  width: 50%;
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-4 {
@@ -844,8 +840,12 @@ video {
   width: 1.25rem;
 }
 
-.w-1 {
-  width: 0.25rem;
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-6\/12 {
+  width: 50%;
 }
 
 .max-w-6xl {
