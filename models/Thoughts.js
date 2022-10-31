@@ -49,7 +49,11 @@ const thoughtSchema = new mongoose.Schema({
   public:{
     type:Boolean,
     default:false
-  }
+  },
+  likes: {
+    type: Number,
+    required: true,
+  },
 
 });
 

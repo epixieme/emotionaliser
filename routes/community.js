@@ -9,8 +9,7 @@ const communityController = require("../controllers/communityController");
 //add controller here
 router.get("/",  communityController.getCommunity);
 router.get("/communityThoughts",  communityController.getThoughtPosts);
-
-
+router.put("/communityThoughts/likePost", communityController.likePost);
 
 
 module.exports = router // export the router
