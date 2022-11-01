@@ -84,6 +84,7 @@ app.use("/", mainRoutes); //use the route
 app.use("/dashboard", dashboardRoutes); //use the route
 app.use("/dashboard/profile", profileRoutes); //use the route
 app.use("/dashboard/community", communityRoutes);
+app.use("/dashboard/community/comments", communityRoutes);
 app.use("/dashboard/bookmarks", bookmarkRoutes);
 app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
 app.use("/dashboard/tools/motivations", motivationsRoutes);

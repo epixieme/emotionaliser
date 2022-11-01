@@ -5,51 +5,59 @@
 <section class="px-4 md:px-32 py-16 ">
 
     <% for(let i=0; i<thoughts.length; i++) {%> 
-        <section class="flex flex-col  shadow-md rounded-md p-4 md:px-32 bg-white border-t border-b border-black py-8">
+        <section class="flex flex-col  shadow-md rounded-md p-4 md:px-32 bg-white  py-8 mt-8">
 
 <section class="flex flex-col   ">
    
         <h2 class="text-base font-bold"><%=user.userName%></h2>  
         <p class="text-neutral-600"><%=thoughts[i].date.toDateString()%></p>
     <p class="text-base">Subject: <%=thoughts[i].summary%> </p>
-    <p class="text-base"><%=thoughts[i].details%> </p>
+    <p class="text-base truncate"><%=thoughts[i].details%> </p>
 </section>
-<section class="flex space-x-4 items-center">
-    <section class="flex space-x-1 items-center">
-<form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post">
+
+<section class="flex space-x-4 py-4 items-center border-b border-neutral-400">
+
+<form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center">
     <input type="text" value="<%=thoughts[i].id%>" hidden name="id">
 <button type="submit">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
   </svg>
 </button>
-</form>
 <h3 class="col-3"><%= thoughts[i].likes %></h3>
-</section>
-<form action="">
+</form>
+
+<form action="" class="comments flex space-x-1 items-center">
 <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
   </svg>
+ 
   </p>
+  <h3 class="col-3">10</h3> 
 </form>
-<form action="">
+
+<form action="" class="bookmark flex items-center">
 <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
   </svg>
+
   </p>
 </form>
-<form action="">
+<!-- </section> -->
+
+<form action="" class="share flex">
 <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 7.5h-.75A2.25 2.25 0 004.5 9.75v7.5a2.25 2.25 0 002.25 2.25h7.5a2.25 2.25 0 002.25-2.25v-7.5a2.25 2.25 0 00-2.25-2.25h-.75m0-3l-3-3m0 0l-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-7.5a2.25 2.25 0 01-2.25-2.25v-.75" />
   </svg>
   </p>
 </form>
 
+
   <% console.log(thoughts[i].user, user.id) %> 
 
   <% if(thoughts[i].user.toString() === user.id ){ %>
-
-<form action="/dashboard/community/communityThoughts/deletePost?_method=PUT" method="POST">
+  
+<form action="/dashboard/community/communityThoughts/deletePost?_method=PUT" method="POST" class="delete flex">
   <input type="text" value="<%=thoughts[i].id%>" hidden name="id">
     <button type="submit">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -59,7 +67,13 @@
       </p>
     </button>
     <%}%>
+    </form>
+  
 </section>
+
+<form action="" method="POST" class="commentBox py-4 ">
+  <input type="text" class="border border-neutral-400 p-4 rounded-md w-80 focus:outline-none" placeholder="Write a response" name="comment">
+</form>
 </section>
 <% } %> 
 

@@ -11,9 +11,9 @@ const commentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  postid: {
+  thoughtsid: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Post",
+    ref: "Thoughts",
   },
   bookmarked:{
     type:Boolean,
