@@ -5,16 +5,16 @@ function errorHandling(res, error) {
 }
 
 module.exports = {
-    getComment:async(req,res) =>{
-
-
-    try{
-  
+createComment:async(req,res) =>{
+try{
+  const comment = await comments.create({
+    comment: req.body.comment,
+  })
+  res.redirect(`/dashboard/community/communityThoughts`);
   
     }catch(err){
-      
+      console.log(err)
     }
   
    }
-
 }
