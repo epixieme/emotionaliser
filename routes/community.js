@@ -10,6 +10,7 @@ const communityController = require("../controllers/communityController");
 router.get("/",  communityController.getCommunity);
 router.get("/communityThoughts",  communityController.getThoughtPosts);
 router.put("/communityThoughts/likePost", communityController.likePost);
+router.put("/communityThoughts/deletePost", communityController.deletePost);
 
 
 module.exports = router // export the router

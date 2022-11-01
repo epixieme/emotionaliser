@@ -2457,14 +2457,14 @@ input[type=file]::file-selector-button:hover {
     padding: 2.5rem;
   }
 
-  .md\:px-52 {
-    padding-left: 13rem;
-    padding-right: 13rem;
-  }
-
   .md\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+
+  .md\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 
   .md\:px-28 {
