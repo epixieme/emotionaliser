@@ -52,9 +52,6 @@
   </p>
 </form>
 
-
-  <% console.log(thoughts[i].user, user.id) %> 
-
   <% if(thoughts[i].user.toString() === user.id ){ %>
   
 <form action="/dashboard/community/communityThoughts/deletePost?_method=PUT" method="POST" class="delete flex">
@@ -71,12 +68,23 @@
   
 </section>
 
-<form action="" method="POST" class="commentBox py-4 ">
+<form action="/dashboard/community/comments/createComment" method="POST" class="commentBox py-4 ">
+  <input type="text" value="<%=thoughts[i].id%>" hidden name="thoughtId">
   <input type="text" class="border border-neutral-400 p-4 rounded-md w-80 focus:outline-none" placeholder="Write a response" name="comment">
 </form>
+
+
+<% for(let i=0; i<comments.length; i++) {%> 
+
+  <p><%=comments[i].comment %> </p>
+  <% } %> 
+
 </section>
+
 <% } %> 
 
+
+  
 </section>
 </section>
 <!-- like route

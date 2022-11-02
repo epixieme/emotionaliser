@@ -21,6 +21,8 @@ const bookmarkRoutes = require("./routes/bookmarks");
 const profileRoutes = require("./routes/profile");
 const searchRoutes = require("./routes/search");
 const communityRoutes = require("./routes/community");
+const commentRoutes = require("./routes/comments");
+
 
 
 
@@ -84,7 +86,7 @@ app.use("/", mainRoutes); //use the route
 app.use("/dashboard", dashboardRoutes); //use the route
 app.use("/dashboard/profile", profileRoutes); //use the route
 app.use("/dashboard/community", communityRoutes);
-app.use("/dashboard/community/comments", communityRoutes);
+app.use("/dashboard/community/comments", commentRoutes);
 app.use("/dashboard/bookmarks", bookmarkRoutes);
 app.use("/dashboard/tools/thoughtdiary", thoughtDiaryRoutes);
 app.use("/dashboard/tools/motivations", motivationsRoutes);
