@@ -52,7 +52,7 @@ module.exports = {
             cloudinaryId: result.public_id,
             poem: req.body.poem,
             author:req.body.author,
-             user: req.user.id,
+            user: req.user.id,
           });
           console.log("Post has been added!");
           res.redirect("/dashboard/tools/motivations");

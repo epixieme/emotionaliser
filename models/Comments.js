@@ -11,14 +11,10 @@ const commentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  thoughtId: {
+  thoughts: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Thoughts",
+    ref: "Thoughts", 
   },
-  // bookmarked:{
-  //   type:Boolean,
-  //   default:false
-  // },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -27,6 +23,7 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  
 });
 
 module.exports = mongoose.model("Comment", commentSchema);

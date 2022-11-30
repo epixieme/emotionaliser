@@ -10,11 +10,12 @@ function errorHandling(res, error) {
 module.exports = {
 createComment:async(req,res) =>{
 try{
-  console.log('thought' + req.body.thoughtId)
+
   const comment = await comments.create({
     comment: req.body.comment,
     likes:0,
-    thoughts: req.body.thoughtId
+    thoughts:req.body.id
+
   })
   res.redirect(`/dashboard/community/communityThoughts`);
   
@@ -22,5 +23,7 @@ try{
       console.log(err)
     }
   
-   }
+   },
+
+
 }

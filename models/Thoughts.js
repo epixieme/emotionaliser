@@ -55,6 +55,7 @@ const thoughtSchema = new mongoose.Schema({
     required: true,
   },
 
+
 });
 
 

@@ -24,18 +24,27 @@ module.exports = {
     }
   },
   getThoughtPosts: async (req, res) => {
-  console.log(req.body.thoughtId)
+
     try {
-      const comments = await commentDetails.find({thoughtId:req.body.thoughtId}).sort({ createdAt: "desc" }).lean();
+      const comments = await commentDetails.find()
+   
+      //use the id in the body to get the individual thought id 
+     
       const users = await userDetails.find();
      
-      const thoughts = await thoughtDiary.find({ public: true });
+      const thoughts = await thoughtDiary.find({ public: true});
+      const thought = await thoughtDiary.findById(req.body.id);
+
+console.log(thoughts)
+
+      
       res.render("community-thoughts", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
         thoughts: thoughts,
+        thought:thought,
         likes: 0,
         comments:comments
         
@@ -44,6 +53,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   likePost: async (req, res) => {
     try {
       console.log(req.body.id);
@@ -59,6 +69,7 @@ module.exports = {
       console.log(err);
     }
   },
+
 
   getMotivationtPosts: async (req, res) => {
     try {
