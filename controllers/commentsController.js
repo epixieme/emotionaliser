@@ -14,7 +14,7 @@ try{
   const comment = await comments.create({
     comment: req.body.comment,
     likes:0,
-    thoughts:req.body.id
+    thoughts: req.body.id
 
   })
   res.redirect(`/dashboard/community/communityThoughts`);

@@ -26,13 +26,14 @@ module.exports = {
   getThoughtPosts: async (req, res) => {
 
     try {
-      const comments = await commentDetails.find()
-   
+      const comments = await commentDetails.find().lean()
+
+   const commentCount =  await commentDetails.find().count()
       //use the id in the body to get the individual thought id 
      
-      const users = await userDetails.find();
+      const users = await userDetails.find().lean();
      
-      const thoughts = await thoughtDiary.find({ public: true});
+      const thoughts = await thoughtDiary.find({ public: true}).lean();
       const thought = await thoughtDiary.findById(req.body.id);
 
 console.log(thoughts)
@@ -46,7 +47,8 @@ console.log(thoughts)
         thoughts: thoughts,
         thought:thought,
         likes: 0,
-        comments:comments
+        comments:comments,
+        commentCount:commentCount
         
       });
     } catch (err) {
