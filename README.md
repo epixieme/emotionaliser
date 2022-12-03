@@ -18,3 +18,18 @@ Ability to submit, edit and update using content editable fields or delete the d
 Views to see weekly emotions.
 Using Node.js, EJS, Express.js, Mongoose and MVC.
 
+Installation
+
+To run this project you must install node.
+
+Run the following from a terminal if on Mac or command prompt on windows
+npm i
+
+This will install the required package.json file
+
+Create your .env and set up cloudinary and mongodb. Add your settings to the .env file.
+
+Advisable to set up a .gitignore file so that your .env file is not made public to GitHub.
+
+
+
