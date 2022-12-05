@@ -28,15 +28,15 @@ module.exports = {
     try {
       const comments = await commentDetails.find().lean()
 
-   const commentCount =  await commentDetails.find().count()
+ 
       //use the id in the body to get the individual thought id 
      
       const users = await userDetails.find().lean();
      
       const thoughts = await thoughtDiary.find({ public: true}).lean();
-      const thought = await thoughtDiary.findById(req.body.id);
+      const commentCount = await commentDetails.find().count();
 
-console.log(thoughts)
+console.log('commentCount' + commentCount)
 
       
       res.render("community-thoughts", {
@@ -45,7 +45,7 @@ console.log(thoughts)
         user: req.user,
         users: users,
         thoughts: thoughts,
-        thought:thought,
+       
         likes: 0,
         comments:comments,
         commentCount:commentCount

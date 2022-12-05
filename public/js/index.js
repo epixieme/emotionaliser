@@ -35,6 +35,7 @@ function feelings() {
 // **** weekly thoughts functionality for dashboard ****
 
 let apiUrl = "/dashboard/tools/thoughtdiary/thoughtData";
+
 async function fetchData(url) {
   try {
     let response = await fetch(url);
@@ -128,6 +129,14 @@ circlesBtn.addEventListener('click', toolTip)
   //     likeOrNot.hidden=true
   //   }
   // });
+
+  const sharePost = document.querySelector('.sharePost')
+  sharePost.addEventListener('click', shareCommunityPost)
+
+  function shareCommunityPost(){
+ navigator.share
+ console.log('click')
+  }
 
 
 
