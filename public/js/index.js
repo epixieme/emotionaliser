@@ -134,7 +134,7 @@ circlesBtn.addEventListener('click', toolTip)
   sharePost.addEventListener('click', shareCommunityPost)
 
   function shareCommunityPost(){
- navigator.share
+ navigator.canShare()
  console.log('click')
   }
 
