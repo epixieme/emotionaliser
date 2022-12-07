@@ -45,7 +45,6 @@ console.log('commentCount' + commentCount)
         user: req.user,
         users: users,
         thoughts: thoughts,
-       
         likes: 0,
         comments:comments,
         commentCount:commentCount
