@@ -5,10 +5,11 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String,
-  Bookmarks:{ 
-  type: Boolean,
-  default:false
-}
+ thoughtBookmarks: [{
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'Thoughts'
+}],
   
 });
 

@@ -1,7 +1,6 @@
 const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
 const motivationDetails = require("../models/Motivations");
-const user = require("../models/User")
 
 
 function errorHandling(res, error) {
@@ -10,7 +9,7 @@ function errorHandling(res, error) {
 
 module.exports = {
   addBookmark: async (req, res) => {
-    console.log("this is id" + req.params.id);
+  
     try {
       const thoughts = await thoughtDiary.findOneAndUpdate(
         { _id: req.params.id },
@@ -29,13 +28,16 @@ module.exports = {
   addCommunityBookmark: async (req, res) => {
     console.log("this is id" + req.params.id);
     try {
-      const community = await user.findOneAndUpdate(
-        { _id: req.body.id },
-        {
-          bookmarked: true,
-        }
-      );
-      console.log("bookmarked");
+      const community = await userDetails.findOneAndUpdate(
+        { _id: req.user},
+      
+            {$push: {thoughtBookmarks:req.body.id}}
+        
+
+      )
+
+    // community.bookmarks.push(req.body.id)
+      console.log("community" + community);
 
       res.redirect("/dashboard/community/communityThoughts");
     } catch (err) {
@@ -43,7 +45,7 @@ module.exports = {
     }
   },
   addMotivationBookmark: async (req, res) => {
-    console.log("this is id" + req.params.id);
+   
     try {
       const motivations = await motivationDetails.findOneAndUpdate(
         { _id: req.params.id },
@@ -95,6 +97,8 @@ module.exports = {
       const motivations = await motivationDetails.find({
         bookmarked: true,
       });
+
+   
       console.log("bookmarked");
       res.render("bookmarks", {
         title: "Bookmarks",
