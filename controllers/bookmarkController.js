@@ -31,10 +31,11 @@ module.exports = {
       const community = await userDetails.findOneAndUpdate(
         { _id: req.user},
       
-            {$push: {thoughtBookmarks:req.body.id}}
+         {$push: {thoughtBookmarks:req.body.id}}
         
 
       )
+    //   .populate({path:'thoughtBookmarks', select: 'bookmarked' })
 
     // community.bookmarks.push(req.body.id)
       console.log("community" + community);
@@ -98,6 +99,8 @@ module.exports = {
         bookmarked: true,
       });
 
+      const community = await userDetails.find()
+
    
       console.log("bookmarked");
       res.render("bookmarks", {
@@ -105,6 +108,7 @@ module.exports = {
         layout: "./layouts/dashboard-home.ejs",
         thoughts: thoughts,
         motivations: motivations,
+        community:community,
         user: req.user,
       });
     } catch (err) {

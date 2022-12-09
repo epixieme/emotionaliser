@@ -39,6 +39,16 @@
  </section>
 
  <h1 class="text-black px-16 py-8 text-base font-poppins">Community Posts</h1>
+ <section class="">
+
+   <% for(let i=0; i<community.length; i++) {%>
+      <% if(community[i].thoughtBookmarks.length > 0){ %>
+         <% for(let j=0; j<community[i].thoughtBookmarks.length; j++) {%>
+      <% console.log(community[i].thoughtBookmarks[j]) %> 
+      <p><%=community[i].thoughtBookmarks[j]%></p>
+      <% } %>
+      <% } %>
+      <% } %>
 </section>
 </section>
 
