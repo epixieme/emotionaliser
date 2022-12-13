@@ -31,7 +31,9 @@ module.exports = {
       const community = await userDetails.findOneAndUpdate(
         { _id: req.user},
       
-         {$push: {thoughtBookmarks:req.body.id}},
+        //  {$push: {thoughtBookmarks:req.body.id}},
+        { $addToSet: {thoughtBookmarks:req.body.id}},
+       
          { upsert: true }
 )
 
@@ -44,6 +46,19 @@ module.exports = {
 
     // community.bookmarks.push(req.body.id)
     
+    } catch (err) {
+      errorHandling(res, err);
+    }
+  },
+
+  removeCommunityBookmark: async (req, res) => {
+    try {
+      const motivations = await userDetails.findOneAndUpdate(
+        { _id: req.params.id },
+        {$pull: {thoughtBookmarks:req.body.id}}
+      );
+      console.log("unbookmarked");
+      res.redirect("/dashboard/tools/motivations");
     } catch (err) {
       errorHandling(res, err);
     }
@@ -104,8 +119,6 @@ module.exports = {
 
       const community = await userDetails.find().populate('thoughtBookmarks')
 
-   
-      console.log("community" + community);
       res.render("bookmarks", {
         title: "Bookmarks",
         layout: "./layouts/dashboard-home.ejs",
