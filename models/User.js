@@ -7,10 +7,9 @@ const UserSchema = new mongoose.Schema({
   password: String,
  thoughtBookmarks: [{
     type: mongoose.Schema.Types.ObjectId,
-    required: false,
     ref: 'Thoughts'
 }],
-  
+
 });
 
 // Password hash middleware.

@@ -12,7 +12,7 @@ module.exports = {
   
     try {
       const thoughts = await thoughtDiary.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.params.id }, 
         {
           bookmarked: true,
         }
@@ -26,21 +26,24 @@ module.exports = {
   },
 //  uses thought diary model
   addCommunityBookmark: async (req, res) => {
-    console.log("this is id" + req.params.id);
+  
     try {
       const community = await userDetails.findOneAndUpdate(
         { _id: req.user},
       
-         {$push: {thoughtBookmarks:req.body.id}}
-        
+         {$push: {thoughtBookmarks:req.body.id}},
+         { upsert: true }
+)
 
-      )
-    //   .populate({path:'thoughtBookmarks', select: 'bookmarked' })
+ 
+  console.log("community" + community);
+
+  res.redirect("/dashboard/community/communityThoughts");
+
+
 
     // community.bookmarks.push(req.body.id)
-      console.log("community" + community);
-
-      res.redirect("/dashboard/community/communityThoughts");
+    
     } catch (err) {
       errorHandling(res, err);
     }
@@ -99,10 +102,10 @@ module.exports = {
         bookmarked: true,
       });
 
-      const community = await userDetails.find()
+      const community = await userDetails.find().populate('thoughtBookmarks')
 
    
-      console.log("bookmarked");
+      console.log("community" + community);
       res.render("bookmarks", {
         title: "Bookmarks",
         layout: "./layouts/dashboard-home.ejs",
@@ -110,6 +113,7 @@ module.exports = {
         motivations: motivations,
         community:community,
         user: req.user,
+        
       });
     } catch (err) {
       errorHandling(res, err);
