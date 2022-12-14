@@ -54,7 +54,7 @@ module.exports = {
   removeCommunityBookmark: async (req, res) => {
     try {
       const motivations = await userDetails.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.user },
         {$pull: {thoughtBookmarks:req.body.id}}
       );
       console.log("unbookmarked");

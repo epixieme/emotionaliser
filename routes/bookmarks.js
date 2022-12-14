@@ -13,7 +13,7 @@ router.put("/thought/notBookmarked/:id", bookmarkController.removeBookmark);
 router.put("/motivation/bookmarked/:id", bookmarkController.addMotivationBookmark);
 router.put("/motivation/notBookmarked/:id", bookmarkController.removeMotivationBookmark);
 router.put("/community/communityThoughts/bookmarked", bookmarkController.addCommunityBookmark);
-// router.put("/community/communityThoughts/bookmarked", bookmarkController.removeCommunityBookmark);
+router.put("/community/communityThoughts/notBookmarked", bookmarkController.removeCommunityBookmark);
 
 
 module.exports = router // export the router

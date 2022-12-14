@@ -11,14 +11,13 @@ module.exports = {
     try {
       const users = await userDetails.find();
 
-
+      const user = await userDetails.findOne(req.user);
       res.render("community", {
         title: "Dashboard",
         layout: "./layouts/dashboard-home.ejs",
-        user: req.user,
+        user: user,
         users: users,
-      
-        
+
       });
     } catch (err) {
       console.log(err);
