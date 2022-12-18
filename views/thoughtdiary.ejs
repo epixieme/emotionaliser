@@ -1,5 +1,5 @@
 <section
-  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56"
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56 "
 >
   <h1
     class="px-16 py-4 text-neutral-300 font-bold  text-4xl flex justify-center"
@@ -19,7 +19,7 @@
       
     <section class="flex align-middle justify-center h-screen  ">
       <!-- image could be a github heatmap for each thought map entry -->
-      <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-lg h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
+      <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-neutral-500 shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
       >
         <img
           class="object-cover"
@@ -53,10 +53,10 @@
 
 
     <section class="px-16 pt-4">
-      <section class="flex justify-center py-2"> 
+      <section class="flex justify-center py-2 "> 
 <form class="flex" action="/dashboard/tools/thoughtdiary/search" method="POST">
-        <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base focus:outline-0">
-        <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white over:scale-105 transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">Search</button>
+        <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base focus:outline-0 ">
+        <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white over:scale-105 transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-400">Search</button>
 </form>
 
 <h1></h1>
@@ -65,7 +65,7 @@
    
 
       <% for(let i=0; i<thoughts.length; i++) {%>
-        <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white  mt-5 shadow-md  p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 place-items-center text-black text-base  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2">
+        <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white  mt-5 shadow-md  p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 place-items-center text-black text-base  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
         
           <p class=""><%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
       

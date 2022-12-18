@@ -58,7 +58,7 @@ module.exports = {
         {$pull: {thoughtBookmarks:req.body.id}}
       );
       console.log("unbookmarked");
-      res.redirect("/dashboard/tools/motivations");
+      res.redirect("/dashboard/community/communityThoughts");
     } catch (err) {
       errorHandling(res, err);
     }
