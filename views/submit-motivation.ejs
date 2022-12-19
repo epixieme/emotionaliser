@@ -37,15 +37,20 @@ link to your own quotes -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
             </svg>
-            <!-- <p class="text-xs flex items-center my-2">
-             
-          </p> -->
+            <section class="mb-4">
+              <label class="block text-white  mb-2 text-base" for="summary">
+             Make public to the community?
+              </label>
+              <input class="shadow border rounded" value="true" id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public">
+            </section>
+      
           <span class="tooltiptext text-sm">  Upload an image that suits your quote</span>
             </section>
             <label for="imgUpload" class="form-label flex">
             </label>
             <input type="file" class="form-control" id="imageUpload" name="file">
           </div>
+    
     
           <section class="flex items-center justify-between">
             <button class="bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
