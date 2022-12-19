@@ -1,6 +1,8 @@
 const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
 const commentDetails = require("../models/Comments");
+const motivations = require("../models/Motivations");
+const Motivations = require("../models/Motivations");
 
 function errorHandling(res, error) {
   res.status(500).send({ message: error.message || "Error Occured" });
@@ -75,13 +77,14 @@ console.log('commentCount' + commentCount)
   getMotivationtPosts: async (req, res) => {
 
    try {
-      const thoughts = await thoughtDiary.find({ public: true}).lean();
+      const motivations = await Motivations.find({ public: true}).lean();
       const users = await userDetails.find();
       res.render("community-motivations", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
+        motivations:motivations
       });
     } catch (err) {
       console.log(err);
