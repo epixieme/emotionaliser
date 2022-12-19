@@ -15,6 +15,10 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Thoughts", 
   },
+  motivations: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Thoughts", 
+  },
   createdAt: {
     type: Date,
     default: Date.now,

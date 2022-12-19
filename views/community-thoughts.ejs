@@ -123,7 +123,8 @@
 <!-- create comments section -->
 <form action="/dashboard/community/comments/createComment" method="POST" class="commentBox py-4 ">
   <input type="text" class="border border-neutral-400 p-4 rounded-md w-80 focus:outline-none" placeholder="Write a response" name="comment">
-  <input type="text" value="<%=thoughts[i]._id%>" hidden name="id">
+  <input type="text" value="<%=thoughts[i]._id%>" hidden name="t_id">
+  <input type="text" value="<%=motivations[i]._id%>" hidden name="m_id">
   <button type="submit" class="bg-teal-700 text-white p-4 rounded-md"> Submit
  </button>
 </form>

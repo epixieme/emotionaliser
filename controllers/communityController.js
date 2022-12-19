@@ -73,7 +73,9 @@ console.log('commentCount' + commentCount)
 
 
   getMotivationtPosts: async (req, res) => {
-    try {
+
+   try {
+      const thoughts = await thoughtDiary.find({ public: true}).lean();
       const users = await userDetails.find();
       res.render("community-motivations", {
         title: "Community Forum",
