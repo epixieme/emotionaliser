@@ -53,6 +53,7 @@ module.exports = {
             poem: req.body.poem,
             author:req.body.author,
             user: req.user.id,
+            public: req.body.public,
           });
           console.log("Post has been added!");
           res.redirect("/dashboard/tools/motivations");
