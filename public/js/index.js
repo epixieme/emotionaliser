@@ -8,6 +8,7 @@ const thoughtRoutes = document.querySelectorAll(".thoughtRoute");
 const dateFields = document.querySelectorAll(".dateFields");
 const rating = document.querySelectorAll(".rating");
 const nav = document.querySelectorAll("nav li");
+const like = document.querySelector(".like");
 
 // **** range slider feature for thought diary ****
 
@@ -91,6 +92,11 @@ if (circlesBtn) {
   circlesBtn.addEventListener("click", toolTip);
 }
 
+if (like) {
+  like.addEventListener("click", likedislike);
+}
+
+
 // dashboard motivational quote
 
 function toolTip() {
@@ -103,8 +109,24 @@ function toolTip() {
     likeOrNot.hidden = true;
     console.log(likeOrNot.hidden);
   }
+  // if (like) {
+  //   like.addEventListener("click",likeunlike(likeOrNot));
+  // }
+
+
 }
 
+
+
+
+function likedislike(){
+
+  const likeOrNot = document.querySelector(".likeOrNot");
+  likeOrNot.hidden = true
+
+console.log('hello')
+
+}
 
 const sharePost = document.querySelector(".sharePost");
 const shareDialog = document.querySelector(".shareDialog");

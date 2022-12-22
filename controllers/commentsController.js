@@ -14,8 +14,9 @@ try{
   const comment = await comments.create({
     comment: req.body.comment,
     likes:0,
-    thoughts: req.body.t_id,
-    motivations:req.body.m_id
+    thoughts:req.body.id
+    // thoughts: req.body.t_id,
+    // motivations:req.body.m_id
   })
   res.redirect(`/dashboard/community/communityThoughts`);
     }catch(err){

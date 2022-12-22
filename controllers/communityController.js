@@ -75,12 +75,16 @@ module.exports = {
 try {
       const motivations = await motivationsDetails.find({ public: true}).lean();
       const users = await userDetails.find();
+      const comments = await commentDetails.find().lean()
+      const commentCount = await commentDetails.find().count();
       res.render("community-motivations", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
-        motivations:motivations
+        motivations:motivations,
+        comments:comments,
+        commentCount:commentCount
       });
     } catch (err) {
       console.log(err);

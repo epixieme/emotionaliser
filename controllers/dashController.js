@@ -79,7 +79,7 @@ module.exports = {
       );
 
       console.log("Likes:false");
-      // res.redirect(`/dashboard`);
+      res.redirect(`/dashboard`);
     } catch (err) {
       console.log(err);
     }
@@ -97,7 +97,8 @@ module.exports = {
       );
 
       console.log("Likes:false");
-      // res.redirect(`/dashboard`);
+     
+      res.redirect(`/dashboard`);
     } catch (err) {
       console.log(err);
     }

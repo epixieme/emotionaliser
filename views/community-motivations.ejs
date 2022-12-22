@@ -34,7 +34,7 @@
     </p>
     <% let commentsArray = [] %> 
     <% for(let j=0; j<comments.length; j++) { %>
-      <% if(comments[j].thoughts.toString() == motivations[i]._id){ %>
+      <% if(comments.motivations && comments[j].motivations.toString() == motivations[i]._id){ %>
         <% commentsArray.push(comments[j].comment)%>
       <% }  %>
      <%  } %>
@@ -42,9 +42,9 @@
      <p><%=commentsArray.length%></p> 
      
   </form>
-  <% console.log(user.thoughtBookmarks.includes(motivations[i]._id)) %> 
+ 
   
-  <%if(user.thoughtBookmarks.includes(motivations[i]._id)){ %>
+  <%if(user.motivationsBookmarks.includes(motivations[i]._id)){ %>
     
   <form action="/dashboard/bookmarks/community/communityThoughts/notBookmarked?_method=PUT" method="POST" class="bookmark flex items-center">
     <input type="text" value="<%=motivations[i]._id%>" hidden name="id">

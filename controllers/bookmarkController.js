@@ -32,9 +32,9 @@ module.exports = {
         { _id: req.user},
       
         //  {$push: {thoughtBookmarks:req.body.id}},
-        { $addToSet: {thoughtBookmarks:req.body.id}},
+        { $addToSet: {thoughtBookmarks:req.body.id}}
        
-         { upsert: true }
+        //  { upsert: true }
 )
 
  
