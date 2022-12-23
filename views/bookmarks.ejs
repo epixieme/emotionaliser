@@ -24,7 +24,7 @@
   <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
   <% for(let i=0; i<motivations.length; i++) {%>
     
-       
+   <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>" style="width:100%;height:150px">
               <img src="<%=motivations[i].image%>" class="object-cover rounded-md" style="width:100%;height:150px">
            </a>
@@ -34,9 +34,10 @@
 
        </section>
      </section>
+
    
     <% } %>
- </section>
+   </section>
 
  <h1 class="text-black px-16 py-8 text-base font-poppins">Community Posts</h1>
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
@@ -57,10 +58,11 @@
 </section>
  </section>
       <% } %>
-
+   </section>
       <% } %>
       <% } %>
 
 </section>
 </section>
+
 

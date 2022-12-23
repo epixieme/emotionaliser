@@ -120,8 +120,7 @@ function toolTip() {
 
 
 function likedislike(){
-
-  const likeOrNot = document.querySelector(".likeOrNot");
+const likeOrNot = document.querySelector(".likeOrNot");
   likeOrNot.hidden = true
 
 console.log('hello')
