@@ -2,9 +2,6 @@
 
 <h1>Emotionaliser</h1>
 
-[![emotionaliser] (https://user-images.githubusercontent.com/39728053/180803418-81498b29-fee6-405a-b545-2a398778ffe6.mp4)
-This is a full stack CRUD application.
-
 Emotionaliser is a full stack CRUD application built with vanilla JS, node, express, mongoose and EJS. The purpose of the app is to provide a well being platform to help assist the user to manage and turn negative emotions into positive outcomes.
 
 <h2>Features</h2>
