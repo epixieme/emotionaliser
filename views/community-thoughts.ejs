@@ -115,10 +115,8 @@
 <!-- if id matches id then display comments -->
 <% for(let j=0; j<comments.length; j++) { %>
   <% if(comments[j].thoughts && comments[j].thoughts.toString() == thoughts[i]._id ){ %>
-<p><%=comments[j].comment %></p>
- 
-  <% } } %>
-    
+  <p><%=comments[j].comment %></p>
+  <% } } %>  
 </section>
 <% } %> 
   
