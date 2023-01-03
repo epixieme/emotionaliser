@@ -17,7 +17,7 @@ const commentSchema = new mongoose.Schema({
   },
   motivations: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Thoughts", 
+    ref: "Motivations", 
   },
   createdAt: {
     type: Date,
