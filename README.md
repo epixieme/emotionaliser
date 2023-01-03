@@ -17,7 +17,7 @@ This enables the user to enter sources of inspiration that help pertain and inst
 Talking to others helps to feel more supported.
 
 
-Installation
+<h2>Installation</h2>
 
 To run this project you must install node.
 
