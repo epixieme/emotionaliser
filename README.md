@@ -1,3 +1,4 @@
+<img width="1440" alt="emotdash" src="https://user-images.githubusercontent.com/39728053/210396734-df6ed50a-d32a-456d-b337-86c56cfc42b3.png">
 
 <h1>Emotionaliser</h1>
 
