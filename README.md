@@ -9,10 +9,10 @@ Emotionaliser is a full stack CRUD application built with vanilla JS, node, expr
 Users are able to add thoughts once per day so that they are able to reflect and assess trends in daily emotions.
 
 <h3>Motivational Quotes</h3>
-This enables the user to enter sources of inspiration that help pertain and instill positive thoughts.
+This enables the user to enter sources of inspiration and upload images that help pertain and instill positive thoughts that can also be made public to benefit the community whilst also opening up opportunity for dialog and conversation.
 
 <h3>Communtiy Conversation</h3>
-Talking to others helps to feel more supported.
+An open application community forum where users are able to comment and like each others posts. Talking to others helps to promote a supportive and inclusive community using the application.
 
 
 <h2>Installation</h2>
