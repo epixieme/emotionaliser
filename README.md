@@ -6,14 +6,14 @@ This is a full stack CRUD application.
 
 Emotionaliser is a full stack CRUD application built with vanilla JS, node, express, mongoose and EJS. The purpose of the app is to provide a well being platform to help assist the user to manage and turn negative emotions into positive outcomes.
 
-Features
-Thought Diary
+<h2>Features</h2>
+<h3>Thought Diary</h3>
 Users are able to add thoughts once per day so that they are able to reflect and assess trends in daily emotions.
 
-Motivational Quotes
+<h3>Motivational Quotes</h3>
 This enables the user to enter sources of inspiration that help pertain and instill positive thoughts.
 
-Communtiy Conversation
+<h3>Communtiy Conversation</h3>
 Talking to others helps to feel more supported.
 
 
