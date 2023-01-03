@@ -21,7 +21,7 @@ module.exports = {
 
           // get random quotes to show on dashboard
           const randomMotivations = motivations.sort(() => Math.random() - 0.5);
-
+          const like = req.flash('like')
           res.render('dashboard',{
             title: "Dashboard",
             layout:'./layouts/dashboard-home.ejs',
@@ -29,7 +29,8 @@ module.exports = {
             users:users,
             user:req.user,
             helper:helper,
-            motivations:randomMotivations
+            motivations:randomMotivations,
+            like:like
           })
      
         }catch(err){
