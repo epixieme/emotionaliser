@@ -41,9 +41,29 @@ module.exports = {
   console.log("community" + community);
 
   res.redirect("/dashboard/community/communityThoughts");
+    // community.bookmarks.push(req.body.id)
+    
+    } catch (err) {
+      errorHandling(res, err);
+    }
+  },
 
+  addCommunityMotivationBookmark: async (req, res) => {
+  
+    try {
+      const community = await userDetails.findOneAndUpdate(
+        { _id: req.user},
+      
+        //  {$push: {thoughtBookmarks:req.body.id}},
+        { $addToSet: {motivationBookmarks:req.body.id}}
+       
+        //  { upsert: true }
+)
 
+ 
+  console.log("community" + community);
 
+  res.redirect("/dashboard/community/communityMotivations");
     // community.bookmarks.push(req.body.id)
     
     } catch (err) {
