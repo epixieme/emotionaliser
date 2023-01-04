@@ -1,24 +1,21 @@
-# emotionaliser
+<img width="1440" alt="emotdash" src="https://user-images.githubusercontent.com/39728053/210396734-df6ed50a-d32a-456d-b337-86c56cfc42b3.png">
 
-<img width="1401" alt="emotionaliser" src="https://user-images.githubusercontent.com/39728053/192013956-0bd3f165-5a9b-41dc-8e49-b1377733578e.png">
+<h1>Emotionaliser</h1>
 
-<section></section
+Emotionaliser is a full stack CRUD application built with vanilla JS, node, express, mongoose and EJS. The purpose of the app is to provide a well being platform to help assist the user to manage and turn negative emotions into positive outcomes.
 
-Emotionaliser
+<h2>Features</h2>
+<h3>Thought Diary</h3>
+Users are able to add thoughts once per day so that they are able to reflect and assess trends in daily emotions.
 
-[![emotionaliser] (https://user-images.githubusercontent.com/39728053/180803418-81498b29-fee6-405a-b545-2a398778ffe6.mp4)
-This is a full stack CRUD application.
+<h3>Motivational Quotes</h3>
+This enables the user to enter sources of inspiration and upload images that help pertain and instill positive thoughts that can also be made public to benefit the community whilst also opening up opportunity for dialog and conversation.
 
-Features
+<h3>Communtiy Conversation</h3>
+An open application community forum where users are able to comment and like each others posts. Talking to others helps to promote a supportive and inclusive community using the application.
 
 
-Users create their daily emotions to the app (like a thought diary).
-Ability to Search the database.
-Ability to submit, edit and update using content editable fields or delete the document.
-Views to see weekly emotions.
-Using Node.js, EJS, Express.js, Mongoose and MVC.
-
-Installation
+<h2>Installation</h2>
 
 To run this project you must install node.
 

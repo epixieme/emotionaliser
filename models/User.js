@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Thoughts'
 }],
+motivationBookmarks: [{
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'Motivations'
+}],
 
 });
 
