@@ -117,7 +117,7 @@ module.exports = {
         bookmarked: true,
       });
 
-      const community = await userDetails.find().populate('thoughtBookmarks')
+      const community = await userDetails.find(req.user).populate('thoughtBookmarks')
 
       res.render("bookmarks", {
         title: "Bookmarks",

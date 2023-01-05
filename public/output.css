@@ -682,6 +682,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -852,6 +856,14 @@ video {
   width: 20rem;
 }
 
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
 .w-3\/4 {
   width: 75%;
 }
@@ -866,14 +878,6 @@ video {
 
 .w-6\/12 {
   width: 50%;
-}
-
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-96 {
-  width: 24rem;
 }
 
 .max-w-6xl {
@@ -971,6 +975,11 @@ video {
 
 .resize {
   resize: both;
+}
+
+.scroll-py-20 {
+  scroll-padding-top: 5rem;
+  scroll-padding-bottom: 5rem;
 }
 
 .appearance-none {
@@ -1581,6 +1590,21 @@ video {
   padding-right: 10rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 .pt-32 {
   padding-top: 8rem;
 }
@@ -1651,6 +1675,14 @@ video {
 
 .pb-56 {
   padding-bottom: 14rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-left {
@@ -1870,6 +1902,11 @@ video {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-neutral-700 {
+  --tw-text-opacity: 1;
+  color: rgb(64 64 64 / var(--tw-text-opacity));
 }
 
 .underline {
