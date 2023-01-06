@@ -1382,6 +1382,31 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
+}
+
+.bg-rose-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 29 72 / var(--tw-bg-opacity));
+}
+
+.bg-rose-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 113 133 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+
+.bg-purple-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
@@ -1404,6 +1429,30 @@ video {
 
 .bg-backg-wave-middle {
   background-image: url('/images/wavey.svg');
+}
+
+.bg-\[url\(\'\/images\/bubbles\.svg\'\)\] {
+  background-image: url('/images/bubbles.svg');
+}
+
+.bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
+  background-image: url('/images/autumn.svg');
+}
+
+.bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
+  background-image: url('/images/overlapping-circles.svg');
+}
+
+.bg-\[url\(\'\/images\/connections\.svg\'\)\] {
+  background-image: url('/images/connections.svg');
+}
+
+.bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
+  background-image: url('/images/cogs.svg');
+}
+
+.bg-\[url\(\'\/images\/circuit-board\.svg\'\)\] {
+  background-image: url('/images/circuit-board.svg');
 }
 
 .bg-cover {
@@ -1912,6 +1961,10 @@ video {
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.opacity-40 {
+  opacity: 0.4;
 }
 
 .bg-blend-darken {

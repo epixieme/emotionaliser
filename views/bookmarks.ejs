@@ -1,7 +1,7 @@
 
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 pt-20 font-poppins">
-   <section class="flex items-center bg-teal-700 p-8 m-0 ">
+   <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0 ">
  
    <p class="px-8 text-white pt-4 text-base font-poppins"><span class="text-xl">Positivity Hub</span> - A place of positivity, to view and reflect on bookmarks of community posts, thoughts and motivations.</p>
 </section>
@@ -60,7 +60,7 @@
                <img src="<%=community[i].thoughtBookmarks[j].image%>" alt="" class="object-cover rounded-md" style="width:100%;height:150px">
 
                <section class="p-4 flex flex-col items-start">
-                  <p class="font-bold">Author: <%=user.userName%></p>  
+                  <!-- <p class="font-bold">Author: <%=userName[i].user%></p>   -->
                <p class=" text-black "><%=community[i].thoughtBookmarks[j].summary%></p>
                <!-- <p class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  mt-2">#<%=community[i].thoughtBookmarks[j].category%></p> -->
        

@@ -37,12 +37,15 @@ module.exports = {
      
       const thoughts = await thoughtDiary.find({ public: true}).lean();
       const commentCount = await commentDetails.find().count();
+      const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
+      console.log('username' + userName);
 
       res.render("community-thoughts", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
+        userName: userName,
         thoughts: thoughts,
         likes: 0,
         comments:comments,

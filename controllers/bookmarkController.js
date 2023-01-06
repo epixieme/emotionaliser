@@ -118,6 +118,7 @@ module.exports = {
       });
 
       const community = await userDetails.find(req.user).populate('thoughtBookmarks')
+      const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
 
       res.render("bookmarks", {
         title: "Bookmarks",
@@ -126,6 +127,7 @@ module.exports = {
         motivations: motivations,
         community:community,
         user: req.user,
+        userName:userName
         
       });
     } catch (err) {
