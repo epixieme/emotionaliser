@@ -1,6 +1,10 @@
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56 font-poppins">
-  <section class=" text-black ">
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-20 min-h-screen md:pb-56 font-poppins">
+
+  <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0 ">
+ 
+   
+
 
    <% const date = new Date()%>
     <% const time = date.getHours()%>
@@ -8,7 +12,7 @@
 <% let greeting = time < 12 ? 'Morning' : time > 12 && time < 18 ? 'Afternoon': 'Evening'%>
     
 
-    <h1 class =" px-16 text-2xl text-black py-4 font-bold">Good <%=greeting%>, <%=user.userName%></h1>
+    <p class ="text-xl text-white pt-4 px-8 font-poppins">Good <%=greeting%>, <%=user.userName%></p>
   </section>
 <section class="py-8">
   <h1 class="text-xl px-16 font-poppins ">Visualise your Moods</h1>

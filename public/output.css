@@ -1431,10 +1431,6 @@ video {
   background-image: url('/images/wavey.svg');
 }
 
-.bg-\[url\(\'\/images\/bubbles\.svg\'\)\] {
-  background-image: url('/images/bubbles.svg');
-}
-
 .bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
   background-image: url('/images/autumn.svg');
 }
@@ -1443,16 +1439,16 @@ video {
   background-image: url('/images/overlapping-circles.svg');
 }
 
-.bg-\[url\(\'\/images\/connections\.svg\'\)\] {
-  background-image: url('/images/connections.svg');
-}
-
 .bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
   background-image: url('/images/cogs.svg');
 }
 
 .bg-\[url\(\'\/images\/circuit-board\.svg\'\)\] {
   background-image: url('/images/circuit-board.svg');
+}
+
+.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
+  background-image: url('/images/hexagons.svg');
 }
 
 .bg-cover {
