@@ -10,6 +10,12 @@ const UserSchema = new mongoose.Schema({
     ref: 'Thoughts'
 }],
 
+// for file uploads of user picture
+// image: {
+//   type: String,
+//   default:"No file"
+// },
+
 });
 
 // Password hash middleware.

@@ -1,18 +1,30 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-20 min-h-screen md:pb-56 font-poppins">
+  <% const date = new Date()%>
+  <% const time = date.getHours()%>
 
-  <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0 ">
- 
-   
-
-
-   <% const date = new Date()%>
-    <% const time = date.getHours()%>
- 
 <% let greeting = time < 12 ? 'Morning' : time > 12 && time < 18 ? 'Afternoon': 'Evening'%>
-    
+<!-- x-data is used for Alpine js data  -->
+  <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0"  
+  x-data="{ 
+    text: '',  
+    textArray: ['Good <%=greeting%>, <%=user.userName%>'],
+    textIndex: 0,
+    charIndex: 0,
+    typeSpeed: 200, }"  
+    x-init="
+    setInterval(function(){
+      let current = $data.textArray[ $data.textIndex ];
+      $data.text = current.substring(0, $data.charIndex);
+      $data.charIndex += 1;
+   }, $data.typeSpeed);"
+    >
 
-    <p class ="text-xl text-white pt-4 px-8 font-poppins">Good <%=greeting%>, <%=user.userName%></p>
+    
+ <h1 class="text-7xl font-black" ></h1>
+
+ <!-- x-text is used to display the data -->
+    <p class ="text-xl text-white pt-4 px-8 font-poppins font-bold" x-text="text"></p>
   </section>
 <section class="py-8">
   <h1 class="text-xl px-16 font-poppins ">Visualise your Moods</h1>

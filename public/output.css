@@ -1435,6 +1435,10 @@ video {
   background-image: url('/images/autumn.svg');
 }
 
+.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
+  background-image: url('/images/hexagons.svg');
+}
+
 .bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
   background-image: url('/images/overlapping-circles.svg');
 }
@@ -1445,10 +1449,6 @@ video {
 
 .bg-\[url\(\'\/images\/circuit-board\.svg\'\)\] {
   background-image: url('/images/circuit-board.svg');
-}
-
-.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
-  background-image: url('/images/hexagons.svg');
 }
 
 .bg-cover {
@@ -1816,6 +1816,11 @@ video {
   line-height: 1;
 }
 
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1834,6 +1839,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-black {
+  font-weight: 900;
 }
 
 .uppercase {
