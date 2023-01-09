@@ -10,10 +10,6 @@ const thoughtSchema = new mongoose.Schema({
     type: String,
     required: "This field is required",
   },
-  // feelings: {
-  //   type: Array,
-  //   required: "This field is required",
-  // },
   details: {
     type: String,
     required: "This field is required",

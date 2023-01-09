@@ -3,7 +3,8 @@
   <% const date = new Date()%>
   <% const time = date.getHours()%>
 
-<% let greeting = time < 12 ? 'Morning' : time > 12 && time < 18 ? 'Afternoon': 'Evening'%>
+<% let greeting = time < 12 ? 'Morning' : time >= 12 && time < 18 ? 'Afternoon': 'Evening'%>
+
 <!-- x-data is used for Alpine js data  -->
   <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0"  
   x-data="{ 
@@ -20,7 +21,6 @@
    }, $data.typeSpeed);"
     >
 
-    
  <h1 class="text-7xl font-black" ></h1>
 
  <!-- x-text is used to display the data -->
@@ -31,9 +31,6 @@
 </section>
 
 
-    <!-- 
-    <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/      charts-mongodb-gtywi/embed/charts?id=7f535ee7-2074-4350-9f94-237277b94391&theme=light"></iframe>
-    -->
     <% console.log('user ' + thoughts.user)%>
 
     <!--****** for every thought if thought.user == user.id then show chart *****-->

@@ -5,17 +5,31 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String,
+  // for file uploads of user picture
+image: {
+  type: String,
+  required: "This field is required",
+  default:"No file"
+},
  thoughtBookmarks: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Thoughts'
 }],
-
-// for file uploads of user picture
-// image: {
-//   type: String,
-//   default:"No file"
-// },
-
+city:{
+  type: String, 
+  required: "This field is required",
+  default:"No City"
+},
+county:{
+  type: String, 
+  required: "This field is required",
+  default:"No County"
+},
+postCode:{
+  type: String, 
+  required: "This field is required",
+  default:"No PostCode"
+}
 });
 
 // Password hash middleware.
