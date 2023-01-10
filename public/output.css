@@ -876,10 +876,6 @@ video {
   width: 50%;
 }
 
-.w-6\/12 {
-  width: 50%;
-}
-
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -2587,10 +2583,6 @@ input[type=file]::file-selector-button:hover {
 }
 
 @media (min-width: 640px) {
-  .sm\:w-4\/12 {
-    width: 33.333333%;
-  }
-
   .sm\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -2655,10 +2647,6 @@ input[type=file]::file-selector-button:hover {
 
   .md\:bg-top {
     background-position: top;
-  }
-
-  .md\:p-10 {
-    padding: 2.5rem;
   }
 
   .md\:px-32 {

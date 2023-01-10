@@ -61,13 +61,15 @@ module.exports = {
 postEditProfile: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      // const result = await cloudinary.uploader.upload(req.file.path);
 
    await userDetails.findByIdAndUpdate(req.params.id,{
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
+        // image: result.secure_url,
+        // cloudinaryId: result.public_id,
         user: req.user.id,
         userName: req.body.userName,
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
         email: req.body.email,
         password: req.body.password,
         city: req.body.city,
@@ -78,7 +80,7 @@ postEditProfile: async (req, res) => {
      res.n
      res.nModified
       console.log("user profile updated");
-      res.redirect("edit-thought");
+      res.redirect(`/dashboard/profile/${req.params.id}`);
     } catch (err) {
       console.log(err);
       // errorHandling(res, err)

@@ -2,10 +2,12 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  firstName:{type: String},
-  lastName:{type: String},
-  userName: { type: String, unique: true },
-  email: { type: String, unique: true },
+  firstName:{type: String,  required: "This field is required",
+  default:""},
+  lastName:{type: String, required: "This field is required",
+  default:""},
+  userName: { type: String, unique: true, required: "This field is required"},
+  email: { type: String, unique: true, required: "This field is required" },
   password: String,
   // for file uploads of user picture
 image: {
