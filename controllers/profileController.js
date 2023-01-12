@@ -25,67 +25,93 @@ module.exports = {
         console.log(err);
       }
     }, 
+    postEditProfile: async (req, res) => {
+      try {
+        // Upload image to cloudinary
+    // const result = await cloudinary.uploader.upload(req.file.path);
+  
+     await userDetails.findByIdAndUpdate(req.params.id,{
+     
+          user: req.user.id,
+          userName: req.body.userName,
+          firstName:req.body.firstName,
+          lastName:req.body.lastName,
+          email: req.body.email,
+          password: req.body.password,
+          city: req.body.city,
+          county:req.body.county,
+          postcode:req.body.postcode,
+          // image: result.secure_url,
+          // cloudinaryId: result.public_id,
+        });
+     
+      //  res.n
+      //  res.nModified
+        console.log("user profile updated");
+        res.redirect(`/dashboard/profile/${req.params.id}`);
+      } catch (err) {
+        console.log(err);
+        // errorHandling(res, err)
+      }
+    },
+    postEditUserPhoto: async (req, res) => {
+      try {
+        // Upload image to cloudinary
+    const result = await cloudinary.uploader.upload(req.file.path);
+  
+     await userDetails.findByIdAndUpdate(req.params.id,{
+     
+          user: req.user.id,
+       
+          image: result.secure_url,
+          cloudinaryId: result.public_id,
+        });
+     
+      //  res.n
+      //  res.nModified
+        console.log("user profile updated");
+        res.redirect(`/dashboard/profile/${req.params.id}`);
+      } catch (err) {
+        console.log(err);
+        // errorHandling(res, err)
+      }
+    },
+
+
     
-  delProfile: async (req, res) => {
+    deleteProfile: async (req, res) => {
     try {
       // Find post by id
-      let thought = await thoughtDiary.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      // await cloudinary.uploader.destroy(thought.cloudinaryId);
-      // Delete post from db
-      await thoughtDiary.deleteOne({ _id: req.params.id });
+      let user = await userDetails.findById({ _id: req.params.id });
+      // Delete image from cloudinary - this doesn't work 
+      // await cloudinary.uploader.destroy(user.cloudinaryId);
+      // // Delete post from db
+      await user.deleteOne({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/dashboard/tools/thoughtdiary");
+      res.redirect("/");
     } catch (err) {
       errorHandling(res, err)
-      res.redirect("/dashboard/tools/thoughtdiary");
+      res.redirect("/");
     }
   },
-  getEditProfile: async (req, res) => {
-      const result = await cloudinary.uploader.upload(req.file.path);
-    try {
-      const thought = await thoughtDiary.findById(req.params.id);
-      console.log('this is thoughts' + thought)
-      res.render("edit-thought", {
-        title: "Thought Diary - Thought",
-        layout: "./layouts/dashboard-home.ejs",
-        thought:thought,
-        user: req.user
+  // getEditProfile: async (req, res) => {
+  //     const result = await cloudinary.uploader.upload(req.file.path);
+  //   try {
+  //     const thought = await thoughtDiary.findById(req.params.id);
+  //     console.log('this is thoughts' + thought)
+  //     res.render("edit-thought", {
+  //       title: "Thought Diary - Thought",
+  //       layout: "./layouts/dashboard-home.ejs",
+  //       thought:thought,
+  //       user: req.user
         
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
 
-postEditProfile: async (req, res) => {
-    try {
-      // Upload image to cloudinary
-      // const result = await cloudinary.uploader.upload(req.file.path);
 
-   await userDetails.findByIdAndUpdate(req.params.id,{
-        // image: result.secure_url,
-        // cloudinaryId: result.public_id,
-        user: req.user.id,
-        userName: req.body.userName,
-        firstName:req.body.firstName,
-        lastName:req.body.lastName,
-        email: req.body.email,
-        password: req.body.password,
-        city: req.body.city,
-        county:req.body.county,
-        postcode:req.body.postcode
-      });
-   
-     res.n
-     res.nModified
-      console.log("user profile updated");
-      res.redirect(`/dashboard/profile/${req.params.id}`);
-    } catch (err) {
-      console.log(err);
-      // errorHandling(res, err)
-    }
-  },
 }
 
 

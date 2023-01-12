@@ -6,23 +6,24 @@
  </section>
 
 
-<div class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-4 w-auto p-8">
-<section class="flex flex-col items-center justify-evenly shadow-md rounded-md bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 py-8">
-        <img src="/images/john.jpg" alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:50%;height:153px">
-   <h1 class="text-2xl py-4">John Doe</h1>
+<section class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-4 w-auto p-8" >
+<form class="flex flex-col items-center justify-evenly shadow-md rounded-md bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 py-8 " action="/dashboard/profile/update-photo/<%=user._id%>?_method=PUT"  enctype="multipart/form-data" method="POST">
+  <img src=<%=user.image%> alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:50%;height:153px">
+   <h1 class="text-2xl py-4"><%=user.userName%></h1>
    
    <label for="imgUpload" class="form-label flex">
 
 </label>
 <input type="file" class="form-control pb-8" id="imageUpload" name="file">
-    </section>
+<button type="submit" class="mt-4 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">Update Photo</button>
+</form>
 
 
 
 	<div class="box row-start-1 row-end-5 col-start-2 col-span-11">
-        <section class="flex flex-col items-center justify-evenly shadow-md  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md py-8">
+  <form class="flex flex-col items-center justify-evenly  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md py-8" action="/dashboard/profile/update-profile/<%=user._id%>?_method=PUT" method="POST">
         
-  <form class="w-full max-w-lg" action="/dashboard/profile/update-profile/<%=user._id%>?_method=PUT"  enctype="multipart/form-data" method="POST">
+  <section class="w-full max-w-lg" >
   <div class="flex flex-wrap -mx-3 mb-6">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         
@@ -50,7 +51,7 @@
     </div>
   </div>
   
-  <div class="flex flex-wrap -mx-3 mb-6">
+  <!-- <div class="flex flex-wrap -mx-3 mb-6">
     <div class="w-full px-3">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
         Password
@@ -58,7 +59,7 @@
       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" name="password" value="********">
       <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
     </div>
-  </div>
+  </div> -->
   <div class="flex flex-wrap -mx-3 mb-6">
     <div class="w-full px-3">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
@@ -98,13 +99,18 @@
       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" name="postCode" value=<%=user.postCode%>>
     </div>
   </div>
- <button type="submit" name="updateAccount" id="" class="mt-4">Update Account</button>
+  <section class="flex justify-center space-x-8">
+ <button type="submit" name="updateAccount" id="" class="mt-4 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">
+Update Account</button>
+
+</section>
+  </section>
 </form>
-            <form action="">
-            <button type="submit" name="deleteAccount" id="" class="mt-4">Delete Account</button>
-        </form>
-        </section>
-    </div>
-	<!-- <div class="box">3</div> -->
-</div>
+  </div>
+  
+
+
+
+</section>
+ 
 </section>

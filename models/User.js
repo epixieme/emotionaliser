@@ -2,9 +2,9 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  firstName:{type: String,  required: "This field is required",
+  firstName:{type: String,
   default:""},
-  lastName:{type: String, required: "This field is required",
+  lastName:{type: String,
   default:""},
   userName: { type: String, unique: true, required: "This field is required"},
   email: { type: String, unique: true, required: "This field is required" },
@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
   // for file uploads of user picture
 image: {
   type: String,
-  required: "This field is required",
+  // required: "This field is required",
   default:"No file"
 },
  thoughtBookmarks: [{
@@ -21,17 +21,17 @@ image: {
 }],
 city:{
   type: String, 
-  required: "This field is required",
+ 
   default:"No City"
 },
 county:{
   type: String, 
-  required: "This field is required",
+
   default:"No County"
 },
 postCode:{
   type: String, 
-  required: "This field is required",
+
   default:"No PostCode"
 }
 });

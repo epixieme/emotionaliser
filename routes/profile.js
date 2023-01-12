@@ -6,5 +6,9 @@ const profileController = require("../controllers/profileController");
 
 //add controller here
 router.get("/:id",  profileController.getProfile);
-router.put("/update-profile/:id",  upload.single("file"), profileController.postEditProfile);
+router.put("/update-profile/:id", profileController.postEditProfile);
+router.put("/update-photo/:id",  upload.single("file"), profileController.postEditUserPhoto);
+// router.put("/update-profile/:id",  upload.single("file"), profileController.postEditProfile);
+router.delete("/delete-profile/:id",  profileController.deleteProfile);
 module.exports = router // export the router
+
