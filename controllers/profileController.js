@@ -94,6 +94,21 @@ module.exports = {
       res.redirect("/");
     }
   },
+
+  getDeleteProfile: async (req, res) => {
+    try {
+      const users = await userDetails.findById(req.params.id);
+      res.render("delete-profile.ejs", {
+        title: "Delete Profile",
+        layout: "./layouts/dashboard-home.ejs",
+        users:users,
+        user:req.user,
+     
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   // getEditProfile: async (req, res) => {
   //     const result = await cloudinary.uploader.upload(req.file.path);
   //   try {

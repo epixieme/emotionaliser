@@ -6,12 +6,12 @@
  </section>
 
 
-<section class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-4 w-auto p-8" >
+<section class="grid overflow-hidden grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 w-auto p-8" >
 <form class="flex flex-col items-center justify-evenly shadow-md rounded-md bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 py-8 " action="/dashboard/profile/update-photo/<%=user._id%>?_method=PUT"  enctype="multipart/form-data" method="POST">
   <img src=<%=user.image%> alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:50%;height:153px">
    <h1 class="text-2xl py-4"><%=user.userName%></h1>
    
-   <label for="imgUpload" class="form-label flex">
+<label for="imgUpload" class="form-label flex">
 
 </label>
 <input type="file" class="form-control pb-8" id="imageUpload" name="file">
@@ -20,8 +20,10 @@
 
 
 
-	<div class="box row-start-1 row-end-5 col-start-2 col-span-11">
-  <form class="flex flex-col items-center justify-evenly  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md py-8" action="/dashboard/profile/update-profile/<%=user._id%>?_method=PUT" method="POST">
+	<div class="box md:row-start-1 md:row-end-5 md:col-start-2 md:col-span-11">
+    <section class="flex flex-col items-center justify-evenly  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md p-8">
+  
+  <form  action="/dashboard/profile/update-profile/<%=user._id%>?_method=PUT" method="POST">
         
   <section class="w-full max-w-lg" >
   <div class="flex flex-wrap -mx-3 mb-6">
@@ -100,12 +102,33 @@
     </div>
   </div>
   <section class="flex justify-center space-x-8">
- <button type="submit" name="updateAccount" id="" class="mt-4 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">
+ <button type="submit" name="updateAccount" id="" class="mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">
 Update Account</button>
+<a href="/dashboard/profile/update-profile/delete-profile/<%=user._id%>" class=" del mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-red-600 border border-red-600 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
+  <!-- <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="w-6 h-6  text-neutral-500 hover:text-teal-700"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+    />
+  </svg> -->
+  Delete Account
+</a>
+
 
 </section>
   </section>
+
 </form>
+
+</section>
   </div>
   
 
