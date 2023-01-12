@@ -8,9 +8,8 @@ const profileController = require("../controllers/profileController");
 router.get("/:id",  profileController.getProfile);
 router.put("/update-profile/:id", profileController.postEditProfile);
 router.put("/update-photo/:id",  upload.single("file"), profileController.postEditUserPhoto);
-// router.put("/update-profile/:id",  upload.single("file"), profileController.postEditProfile);
-// router.delete("/delete-profile/:id",  profileController.deleteProfile);
 router.get("/update-profile/delete-profile/:id",  profileController.getDeleteProfile);
 router.delete("/delete-profile/:id",  profileController.deleteProfile);
+
 module.exports = router // export the router
 

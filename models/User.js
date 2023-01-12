@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema({
 image: {
   type: String,
   // required: "This field is required",
-  default:"No file"
+  default:"/images/placeholder.png"
 },
  thoughtBookmarks: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -33,6 +33,10 @@ postCode:{
   type: String, 
 
   default:"No PostCode"
+},
+delete:{
+  type:Boolean,
+  default:false
 }
 });
 

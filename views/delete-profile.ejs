@@ -11,16 +11,19 @@
     <div class="box">
       <section class="flex flex-col items-center justify-evenly  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md p-8">
     
-    <input type="radio" value="Yes">
-    <input type="radio" value="No">
-    <form action="/dashboard/profile/delete-profile/<%=user._id%>?_method=DELETE"  enctype="multipart/form-data" method="POST" class="w-auto flex justify-center space-x-8 md:justify-end  py-8 md:px-32">
+        <section class="mb-4">
+            <h1 class="text-xl">
+      Are you sure you want to delete your account?  Deletion will mean you no longer have access to your account and all data will be non-recoverable.
+            </h1>
+     
+        <form action="/dashboard/profile/delete-profile/<%=user._id%>?_method=DELETE"  enctype="multipart/form-data" method="POST" class="w-auto flex justify-center space-x-8 md:justify-end  py-8 md:px-32" >
     
-    <button type="submit">del</button>
-    <a href="/dashboard/profile/<%=user._id%>">cancel</a>
-    </form>
-
+            <button type="submit"class='mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-red-600 border border-red-600 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base'>Confirm Delete</button>
+            <a href="/dashboard/profile/<%=user._id%>" class="mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">cancel</a>
+            </form>
+       
   
-  
+     
   
 
  
