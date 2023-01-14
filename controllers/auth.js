@@ -3,6 +3,7 @@ const validator = require("validator");
 const User = require("../models/User");
 const thoughts = require("../models/Thoughts");
 
+
 exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect("/dashboard");
@@ -93,6 +94,7 @@ exports.postSignup = (req, res, next) => {
   });
 
   const user = new User({
+    
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,

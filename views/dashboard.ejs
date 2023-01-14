@@ -28,7 +28,7 @@
     <p class ="text-xl text-white pt-4 px-8 font-poppins font-bold" x-text="text"></p>
   </section>
 <section class="py-8">
-  <p class='userid'><%=user._id%></p>
+  <p class='userid' hidden><%=user._id%></p>
   <h1 class="text-xl px-16 font-poppins ">Visualise your Moods</h1>
 </section>
 
@@ -54,8 +54,11 @@
         <p>1 - Awful</p>
       </section>
       
-    <div id="chart" class=" max-w-7xl ">
+    <!-- <div id="chart" class=" max-w-7xl ">
 
+    </div> -->
+   
+      <canvas id="myChart" style=" height:40vh; width:80vw"></canvas>
     </div>
   </section>
 </section>
@@ -114,13 +117,13 @@
 <!-- </section> -->
 <!-- <section class="h-62"> -->
   <section class="">
-    <h1 class="text-xl px-16 font-poppins pt-8">Be Inspired</h1>
+    <h1 class="text-xl font-poppins pt-8">Be Inspired</h1>
   </section>
   
 
   <!-- <h2 class=" py-4 text-neutral-300 font-barlow text-2xl  flex ">Daily Quote</h2> -->
 
-  <section class=" motivationSection px-16 py-8  mongoDates  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8 ">
+  <section class=" motivationSection  py-8  mongoDates  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8 ">
 
   <% for(let i=0; i<1; i++) {%>   
     
@@ -194,40 +197,121 @@
 </section>
 
 </section>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 let userid = document.querySelector('.userid')
-console.log('user' + thoughts.user)
+let url = "/dashboard/tools/thoughtdiary/thoughtData";
+
+async function fetchData(url) {
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log("data " + data.map((item) => item.user === userid.innerText ? item.rating:0))
+    chartData(data);
+    createRatingArrows(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchData(url);
+async function chartData(data){
+ let yLabels = {
+	1 : 'newb',
+    2 : 'codecademy',
+    3 : 'code-school',
+    5 : 'bootcamp',
+    6 : 'bootcamp',
+   
+}
+
+  const date = data.map((item) => item.date)
+
+  data.map((item) => item.date)
+  
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: data.map((item) => item.date.slice(0,item.date.indexOf('T'))),
+    datasets: [{
+      
+      label: "",
+      data: data.map((item) => item.user === userid.innerText ? item.rating:0),
+      backgroundColor: [
+                'rgba(255, 159, 64, 0.2)',
+               
+
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+               
+
+            ],
+            borderWidth: 1
+        }]
+
+
+  },
+  options: {
+    plugins:{
+      legend: {
+                display: false,
+               
+            }
+      
+    },
+  scales: {
+    y: {
+      ticks: {
+        display: false,
+      },
+      grid: {
+                display:false
+            }
+    }
+  }
+}
+
+});
+
+}
+
+// console.log('user' + thoughts.user)
 
 
 // const filter = user._id.toString() 
 // console.log('userdet' + filter)
-  const sdk = new ChartsEmbedSDK({
-    baseUrl: 'https://charts.mongodb.com/charts-emotionaliser-shqds'
-  });
+//   const sdk = new ChartsEmbedSDK({
+//     baseUrl: 'https://charts.mongodb.com/charts-emotionaliser-shqds'
+//   });
 
-  const chart = sdk.createChart({ chartId: '6331f70c-3ec8-447c-8f6b-03072c86d614',
-  height: "400px",
-  width:"100%",
-  showAttribution:false,
-  background:"transparent",
-  labels:false,
-  autoRefresh:true,
-  filter: { "user": { "$match": '63c18143c9379120a15b935e' } }
+//   const chart = sdk.createChart({ chartId: '6331f70c-3ec8-447c-8f6b-03072c86d614',
+//   height: "400px",
+//   width:"100%",
+//   showAttribution:false,
+//   background:"transparent",
+//   labels:false,
+//   autoRefresh:true,
+//   // filter: { "user": { "$match": '63c18143c9379120a15b935e' } }
 
  
 
-}); 
+// }); 
 
-async function refresh(){
-  await chart.render(document.getElementById('chart'));
-  await chart.setAutoRefresh(true);
-  await chart.setMaxDataAge(30);
-  // await chart.setFilter({"user": user.innerText})
+// async function refresh(){
+//   await chart.render(document.getElementById('chart'));
+//   await chart.setAutoRefresh(true);
+//   await chart.setMaxDataAge(30);
+//   await chart.setFilter({"user": userid.innerText})
+//   const filter = await chart.getFilter()
 
-}
+//   currentFilterDOM.innerText = JSON.stringify(filter);
 
-refresh()
+// }
+
+// refresh()
 
 
 
