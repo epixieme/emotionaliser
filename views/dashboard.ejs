@@ -1,5 +1,6 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-20 min-h-screen md:pb-56 font-poppins">
+
   <% const date = new Date()%>
   <% const time = date.getHours()%>
 
@@ -27,11 +28,12 @@
     <p class ="text-xl text-white pt-4 px-8 font-poppins font-bold" x-text="text"></p>
   </section>
 <section class="py-8">
+  <p class='userid'><%=user._id%></p>
   <h1 class="text-xl px-16 font-poppins ">Visualise your Moods</h1>
 </section>
 
 
-    <% console.log('user ' + thoughts.user)%>
+  
 
     <!--****** for every thought if thought.user == user.id then show chart *****-->
     <%# thoughts.every(function(thought) { %>
@@ -194,6 +196,12 @@
 </section>
 
 <script>
+let userid = document.querySelector('.userid')
+console.log('user' + thoughts.user)
+
+
+// const filter = user._id.toString() 
+// console.log('userdet' + filter)
   const sdk = new ChartsEmbedSDK({
     baseUrl: 'https://charts.mongodb.com/charts-emotionaliser-shqds'
   });
@@ -204,11 +212,28 @@
   showAttribution:false,
   background:"transparent",
   labels:false,
-  autoRefresh:true
+  autoRefresh:true,
+  filter: { "user": { "$match": '63c18143c9379120a15b935e' } }
+
+ 
 
 }); 
-  chart.render(document.getElementById('chart'));
-  chart.setAutoRefresh(true);
-chart.setMaxDataAge(30);
+
+async function refresh(){
+  await chart.render(document.getElementById('chart'));
+  await chart.setAutoRefresh(true);
+  await chart.setMaxDataAge(30);
+  // await chart.setFilter({"user": user.innerText})
+
+}
+
+refresh()
+
+
+
+
+     
+      
+ 
 </script>
 

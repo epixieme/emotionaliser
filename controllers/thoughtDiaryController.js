@@ -102,7 +102,7 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
-      await thoughtDiary.create({
+   await thoughtDiary.create({
         summary: req.body.summary,
         image: result.secure_url,
         cloudinaryId: result.public_id,
@@ -114,6 +114,29 @@ module.exports = {
         user: req.user.id,
 
       });
+
+      // Retrieve document
+// const doc = await thoughtDiary.findOne({ category })
+
+// Append items to `friends`
+
+console.log(thoughtDiary.category)
+await userDetails.findOneAndUpdate(
+  { _id: req.user},
+      
+  //  {$push: {thoughtBookmarks:req.body.id}},
+  { $push: {thoughtSchema:thoughtDiary.category}}
+  // { new: true } // forces callback to be passed a fresh object
+);
+
+
+
+// userDetails.save()
+
+// Update document
+
+     
+   
       console.log("Post has been added!");
       res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {

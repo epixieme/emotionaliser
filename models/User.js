@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
+const thoughtDiary = require("../models/Thoughts").schema;
 
 const UserSchema = new mongoose.Schema({
   firstName:{type: String,
@@ -37,7 +38,9 @@ postCode:{
 delete:{
   type:Boolean,
   default:false
-}
+},
+thoughtSchema:[thoughtDiary]
+
 });
 
 // Password hash middleware.

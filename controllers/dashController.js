@@ -25,6 +25,7 @@ module.exports = {
           res.render('dashboard',{
             title: "Dashboard",
             layout:'./layouts/dashboard-home.ejs',
+            
             thoughts:thoughts,
             users:users,
             user:req.user,

@@ -798,12 +798,8 @@ video {
   width: 100%;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-2\/4 {
-  width: 50%;
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-2 {
@@ -818,8 +814,8 @@ video {
   width: 13rem;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-32 {
@@ -848,12 +844,16 @@ video {
   width: 1.25rem;
 }
 
-.w-3 {
-  width: 0.75rem;
+.w-3\/4 {
+  width: 75%;
 }
 
-.w-1 {
-  width: 0.25rem;
+.w-2\/4 {
+  width: 50%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-6xl {
@@ -1293,22 +1293,6 @@ video {
   background-image: url('/images/wave.svg');
 }
 
-.bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
-  background-image: url('/images/autumn.svg');
-}
-
-.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
-  background-image: url('/images/hexagons.svg');
-}
-
-.bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
-  background-image: url('/images/overlapping-circles.svg');
-}
-
-.bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
-  background-image: url('/images/cogs.svg');
-}
-
 .bg-wave-line {
   background-image: url('/images/wave-line.svg');
 }
@@ -1323,6 +1307,22 @@ video {
 
 .bg-backg-wave-middle {
   background-image: url('/images/wavey.svg');
+}
+
+.bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
+  background-image: url('/images/autumn.svg');
+}
+
+.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
+  background-image: url('/images/hexagons.svg');
+}
+
+.bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
+  background-image: url('/images/overlapping-circles.svg');
+}
+
+.bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
+  background-image: url('/images/cogs.svg');
 }
 
 .bg-\[url\(\'\/images\/circuit-board\.svg\'\)\] {
