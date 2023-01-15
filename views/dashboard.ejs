@@ -44,7 +44,7 @@
    
     <section class="px-14">
      
-    <section class="px-8 pt-10 mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
+    <section class="px-8 p-10  mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
       <!-- <section class="flex space-x-4 justify-center font-poppins">
         <p>6 - Great</p>
         <p>5 - Very Good</p>
@@ -239,12 +239,8 @@ new Chart(ctx, {
   type: 'line',
   data: {
 
-
-
     labels: data.map((item) => item.date.slice(0,item.date.indexOf('T'))),
 
-
-  
     datasets: [{
       pointRadius: 5,
       tension: 0.5,
@@ -268,6 +264,7 @@ new Chart(ctx, {
 
   },
   options: {
+    
     animations: {
       tension: {
         duration: 5000,
@@ -311,20 +308,34 @@ new Chart(ctx, {
       
     },
   scales: {
+  
     y: {
       ticks: {
-        // display: false,
+        padding:10,
         beginAtZero: true,
                     callback: function(value, index, values) {
                         return yLabels[value];
-                    }
-      
+                    },
+                    
+                   
       },
+      
     
       grid: {
                 display:false
             }
-    }
+    },
+    x: {
+        ticks: {
+          padding:10,
+          autoSkip: false,
+                    maxRotation: 90,
+                    minRotation: 90
+          },
+          color: 'red',
+        },
+      
+      
   }
 }
 
