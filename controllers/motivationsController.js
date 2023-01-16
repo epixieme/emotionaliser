@@ -6,7 +6,7 @@ const userDetails = require("../models/User");
 module.exports = {
 
     getMotivations: async (req, res) => {
-      const motivations = await motivationQuotes.find({id:req.params.id})
+      const motivations = await motivationQuotes.find({ user: req.user.id })
   
       try {
         // const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)

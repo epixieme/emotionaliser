@@ -38,6 +38,16 @@ module.exports = {
             console.log(err)
         }
     },
+    getChartData: async (req, res) => {
+      try {
+        // get data by logged in user and by id
+        const data = await thoughtDiary.find({id:req.params.id, user:req.user.id}).limit(7);
+        
+        res.json(data)
+      } catch (err) {
+        console.log(err);
+      }
+    },
     getDashboardTools: async (req,res)=>{
       console.log(req.user)
       try{
@@ -105,4 +115,6 @@ module.exports = {
       console.log(err);
     }
   },
+
+  
   }

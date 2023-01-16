@@ -29,34 +29,14 @@
   </section>
 <section class="py-8">
   <p class='userid' hidden><%=user._id%></p>
-  <h1 class="text-xl px-16 font-poppins ">Visualise your Moods</h1>
+  <h1 class="text-xl px-16 font-poppins font-semibold">Visualise your Moods</h1>
+  <h2 class="text-base px-16 font-poppins pt-8 text-teal-700 text-decoration-line: underline underline-offset-8">Weekly Trends</h2>
 </section>
 
-
-  
-
-    <!--****** for every thought if thought.user == user.id then show chart *****-->
-    <%# thoughts.every(function(thought) { %>
-
-  
-    <%# if(user.id === thought.user){ %>
-  
    
     <section class="px-14">
      
     <section class="px-8 p-10  mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
-      <!-- <section class="flex space-x-4 justify-center font-poppins">
-        <p>6 - Great</p>
-        <p>5 - Very Good</p>
-        <p>4 - Good</p>
-        <p>3 - Bad</p>
-        <p>2 - Very Bad</p>
-        <p>1 - Awful</p>
-      </section> -->
-      
-    <!-- <div id="chart" class=" max-w-7xl ">
-
-    </div> -->
    
       <canvas id="myChart" style=" height:40vh; width:60vw"></canvas>
     </div>
@@ -71,14 +51,6 @@
  <section class="flex flex-col  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-w-5xl shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
  
 
-  <!-- <h1 class="text-black pl-8 pt-4  text-center text-lg font-bold">YOUR WEEKLY SUBMISSIONS<span class="font-bold border-b border-white"><%#=[...new Set(mood)].join('').toUpperCase()%> </span></h1> -->
-
-   <!-- loop over the length of the mongo data and shorten the date to dd,yy and push ddate to array-->
-
-
- <!-- map the last 7 days array and if mongoDates array includes the item from last 7 days array then display the date else 0 which means no entry was submitted -->
-
-<!-- if date is less than current an is 0 then hide -->
 <section class=" WeeklyDates overflow-hidden grid grid-cols-1 p-8 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-black font-bold w-4xl gap-3">
 <% for(let i=0; i< thoughts.length; i++) {%>
   <!-- hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-lg h-full w-full  hover:bg-neutral-600 hover:text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 -->
@@ -117,7 +89,7 @@
 <!-- </section> -->
 <!-- <section class="h-62"> -->
   <section class="">
-    <h1 class="text-xl ƒfont-poppins pt-8">Be Inspired</h1>
+    <h1 class="text-xl ƒfont-poppins pt-8 font-semibold">Be Inspired</h1>
   </section>
   
 
@@ -200,7 +172,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 let userid = document.querySelector('.userid')
-let url = "/dashboard/tools/thoughtdiary/thoughtData";
+let url = "/dashboard/chartData";
 
 async function fetchData(url) {
   try {
@@ -208,7 +180,6 @@ async function fetchData(url) {
     let data = await response.json();
     console.log("data " + data.map((item) => item.user === userid.innerText ? item.rating:0))
     chartData(data);
-    createRatingArrows(data);
   } catch (error) {
     console.log(error);
   }
@@ -228,19 +199,26 @@ async function chartData(data){
 }
 
   const date = data.map((item) => item.date)
+
+  const formatDate = data.map(item => item.date.slice(0,item.date.indexOf('T')))
+
+  // formatDate.replace('-','/')
+
+  // let dateFormat = new Date(formatDate)
+  // console.log(dateFormat.toLocaleDateString("en-US"))
   
   const ctx = document.getElementById('myChart').getContext("2d");
 
-  var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+
+
+const gradient = ctx.createLinearGradient(0, 0, 0, 400);
             gradient.addColorStop(0.2, 'rgb(255, 10, 86,0.2)');
             gradient.addColorStop(1, 'rgb(13, 118, 110,0.6)');
 
 new Chart(ctx, {
   type: 'line',
   data: {
-
     labels: data.map((item) => item.date.slice(0,item.date.indexOf('T'))),
-
     datasets: [{
       pointRadius: 5,
       tension: 0.5,
@@ -275,6 +253,7 @@ new Chart(ctx, {
       }},
 
     plugins:{
+     
       tooltip: {
                 usePointStyle: true,
                 callbacks: {
@@ -307,32 +286,54 @@ new Chart(ctx, {
             }
       
     },
+
   scales: {
   
     y: {
+      border: {
+          color: 'red',
+          borderWidth: 3,
+        },
       ticks: {
+      
         padding:10,
         beginAtZero: true,
                     callback: function(value, index, values) {
                         return yLabels[value];
                     },
+          
                     
                    
       },
       
+      
     
       grid: {
-                display:false
-            }
+                display:false,
+               
+                
+            },
+            
     },
     x: {
+      border: {
+          color: 'red'
+        },
+   
         ticks: {
+       
           padding:10,
           autoSkip: false,
-                    maxRotation: 90,
-                    minRotation: 90
+                    maxRotation: 70,
+                    minRotation: 70,
           },
-          color: 'red',
+           
+      grid: {
+                display:false,
+               
+                
+            },
+       
         },
       
       

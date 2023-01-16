@@ -37,7 +37,6 @@ module.exports = {
         //  { upsert: true }
 )
 
- 
   console.log("community" + community);
 
   res.redirect("/dashboard/community/communityThoughts");
@@ -111,11 +110,15 @@ module.exports = {
   getBookmarked: async (req, res) => {
     try {
       const thoughts = await thoughtDiary.find({
-        bookmarked: true,
+        bookmarked: true
       });
       const motivations = await motivationDetails.find({
-        bookmarked: true,
+        bookmarked:true
       });
+
+      const motivation = await motivationDetails.findById(
+        req.user,{bookmarked: true} 
+      );
 
       const community = await userDetails.find(req.user).populate('thoughtBookmarks')
       const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
@@ -125,6 +128,7 @@ module.exports = {
         layout: "./layouts/dashboard-home.ejs",
         thoughts: thoughts,
         motivations: motivations,
+        motivation: motivation,
         community:community,
         user: req.user,
         userName:userName

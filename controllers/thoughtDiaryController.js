@@ -114,29 +114,7 @@ module.exports = {
         user: req.user.id,
 
       });
-
-      // Retrieve document
-// const doc = await thoughtDiary.findOne({ category })
-
-// Append items to `friends`
-
-console.log(thoughtDiary.category)
-await userDetails.findOneAndUpdate(
-  { _id: req.user},
-      
-  //  {$push: {thoughtBookmarks:req.body.id}},
-  { $push: {thoughtSchema:thoughtDiary.category}}
-  // { new: true } // forces callback to be passed a fresh object
-);
-
-
-
-// userDetails.save()
-
 // Update document
-
-     
-   
       console.log("Post has been added!");
       res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
@@ -164,6 +142,7 @@ await userDetails.findOneAndUpdate(
     try {
       // get data by logged in user and by id
       const data = await thoughtDiary.find({id:req.params.id, user:req.user.id});
+      
       res.json(data)
     } catch (err) {
       console.log(err);
