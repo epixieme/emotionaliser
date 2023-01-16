@@ -133,18 +133,26 @@ function timedFlashMsg(){
   let likeMsg = document.getElementById('likeMsg')
   // likeMsg.style.display='none'
   let dislikeMsg = document.getElementById('dislikeMsg')
+
+  if(likeMsg.innerText.length === 0){
+    likeMsg.style.display='none'
+   }
+
+   if(dislikeMsg.innerText.length === 0){
+    dislikeMsg.style.display='none'
+   }
+
   // dislikeMsg.style.display='none'
   setTimeout(() => {
 
- 
-
+  
     console.log(likeMsg.innerText)
  
-    if(likeMsg.innerText.length > 0){
+    if(likeMsg){
      likeMsg.style.display='none'
     }
 
-    if(dislikeMsg.innerText.length > 0){
+    if(dislikeMsg){
       dislikeMsg.style.display='none'
      }
   

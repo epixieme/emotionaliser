@@ -65,7 +65,7 @@
     </a>
 
     <!-- links to all items by same category -->
-    <p class="hover:scale-105 transition duration-300 ease-in-out m-5  bg-gray-900 rounded-full  py-1 text-xs font-semibold text-white  category hover:text-white hover:bg-teal-700 text-center ">#<%=thoughts[i].category%></p>
+    <p class="hover:scale-105 transition duration-300 ease-in-out m-5  bg-gray-900 rounded-full  py-1 text-xs font-semibold text-white  category hover:text-white hover:bg-teal-700 text-center " id='likedDisliked'>#<%=thoughts[i].category%></p>
 
   </section>
  </section> 
@@ -88,8 +88,8 @@
 <!-- </section> -->
 <!-- <section class="h-62"> -->
  
-  <section class="" id='likedDisliked' >
-    <h1 class="text-xl font-poppins pt-8 font-semibold">Be Inspired</h1>
+  <section class=""  >
+    <h1 class="text-xl font-poppins pt-8 font-semibold" >Be Inspired</h1>
    
    
   </section>
@@ -125,7 +125,7 @@
         <section class =' dropdown rounded-md bg-black text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md' role="alert" id='likeMsg'>
          <section class=" flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md">
           <p class="font-bold font-poppins text-base" ><%= like %></p>
-          <!-- <p class="text-sm">Some additional text to explain said message.</p> -->
+         
         </section>
       </section>
 
@@ -133,7 +133,7 @@
       <section class =' dropdown rounded-md bg-black text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md' role="alert" id='dislikeMsg'>
         <section class=" flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md">
          <p class="font-bold font-poppins text-base" ><%= dislike %></p>
-         <!-- <p class="text-sm">Some additional text to explain said message.</p> -->
+       
        </section>
      </section>
 
