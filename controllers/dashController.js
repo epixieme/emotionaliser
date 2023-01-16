@@ -22,16 +22,17 @@ module.exports = {
           // get random quotes to show on dashboard
           const randomMotivations = motivations.sort(() => Math.random() - 0.5);
           const like = req.flash('like')
+          const dislike = req.flash('dislike')
           res.render('dashboard',{
             title: "Dashboard",
             layout:'./layouts/dashboard-home.ejs',
-            
             thoughts:thoughts,
             users:users,
             user:req.user,
             helper:helper,
             motivations:randomMotivations,
-            like:like
+            like:like,
+            dislike:dislike
           })
      
         }catch(err){
@@ -89,9 +90,9 @@ module.exports = {
       }
         
       );
-
-      console.log("Likes:false");
-      res.redirect(`/dashboard`);
+      req.flash('dislike', "We won't show you this quote again")
+    
+      res.redirect(`/dashboard#likedDisliked`);
     } catch (err) {
       console.log(err);
     }
@@ -107,10 +108,11 @@ module.exports = {
       }
         
       );
-
-      console.log("Likes:false");
+ 
+req.flash('like', "You'll see quotes like this again in the future")
      
-      res.redirect(`/dashboard`);
+     
+      res.redirect(`/dashboard#likedDisliked`);
     } catch (err) {
       console.log(err);
     }

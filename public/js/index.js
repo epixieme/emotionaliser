@@ -123,22 +123,38 @@ function likedislike(){
 const likeOrNot = document.querySelector(".likeOrNot");
   likeOrNot.hidden = true
 
-console.log('hello')
+
 
 }
 
-const sharePost = document.querySelector(".sharePost");
-const shareDialog = document.querySelector(".shareDialog");
-sharePost.addEventListener("click", shareCommunityPost);
 
-function shareCommunityPost() {
+function timedFlashMsg(){
 
-  console.log("click");
-  if ( shareDialog.hidden === true) {
-    shareDialog.hidden = false;
-    console.log(  shareDialog.hidden);
-  } else {
-    shareDialog.hidden = true;
-    console.log(  shareDialog.hidden);
-  }
+  let likeMsg = document.getElementById('likeMsg')
+  // likeMsg.style.display='none'
+  let dislikeMsg = document.getElementById('dislikeMsg')
+  // dislikeMsg.style.display='none'
+  setTimeout(() => {
+
+ 
+
+    console.log(likeMsg.innerText)
+ 
+    if(likeMsg.innerText.length > 0){
+     likeMsg.style.display='none'
+    }
+
+    if(dislikeMsg.innerText.length > 0){
+      dislikeMsg.style.display='none'
+     }
+  
+ 
+   }, "3000")
 }
+
+timedFlashMsg()
+
+
+
+
+

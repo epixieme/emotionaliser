@@ -7,7 +7,7 @@
 </section>
 <% for(let i=0; i<thoughts.length; i++) {%>
    <% if(thoughts.length > 0 && thoughts[i].user.toString() ==  user._id){ %>
-   <h1 class="text-black px-16 py-8  text-base font-poppins font-semibold">My Positive Thoughts</h1>
+   <h1 class="text-black px-16 py-8  text-xl font-poppins font-semibold">My Positive Thoughts</h1>
    <% }%>
    <% } %>
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
@@ -33,7 +33,7 @@
 
  <% for(let i=0; i<motivations.length; i++) {%>
       <% if(motivations.length > 0 && motivations[i].user.toString() ==  user._id){ %>
-  <h1 class="text-black px-16 py-8 text-base font-poppins font-semibold">My Motivations</h1>
+  <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">My Motivations</h1>
 
   <% }%>
     <% } %>
@@ -58,7 +58,7 @@
    </section>
    <% for(let i=0; i<community.length; i++) {%>
       <% if(community[i].thoughtBookmarks.length > 0 && community[i].thoughtBookmarks[i].user.toString() ==  user._id){ %>
- <h1 class="text-black px-16 py-8 text-base font-poppins font-semibold">Community Posts</h1>
+ <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">Community Posts</h1>
  <% } %>
  <% } %>
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
