@@ -15,6 +15,7 @@ module.exports = {
     getDashboard: async (req,res)=>{
       
         try{
+       
           const thoughts = await (await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)).reverse()
           const users = await userDetails.find();
           const motivations = await motivationsQuotes.find({id:req.params.id,like:true})
@@ -42,6 +43,7 @@ module.exports = {
     getChartData: async (req, res) => {
       try {
         // get data by logged in user and by id
+
         const data = await thoughtDiary.find({id:req.params.id, user:req.user.id}).limit(7);
         
         res.json(data)

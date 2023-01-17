@@ -14,6 +14,9 @@ module.exports = {
       // get posts by logged in user
       try {
         const users = await userDetails.findById(req.params.id);
+
+      // const pCodes= await postCodes.findById(req.params.id);
+
         res.render("profile.ejs", {
           title: "User Profile",
           layout: "./layouts/dashboard-home.ejs",
@@ -31,7 +34,7 @@ module.exports = {
     // const result = await cloudinary.uploader.upload(req.file.path);
   
      await userDetails.findByIdAndUpdate(req.params.id,{
-     
+    //  need to use populate from the postcodes model
           user: req.user.id,
           userName: req.body.userName,
           firstName:req.body.firstName,
@@ -109,23 +112,6 @@ module.exports = {
       console.log(err);
     }
   },
-  // getEditProfile: async (req, res) => {
-  //     const result = await cloudinary.uploader.upload(req.file.path);
-  //   try {
-  //     const thought = await thoughtDiary.findById(req.params.id);
-  //     console.log('this is thoughts' + thought)
-  //     res.render("edit-thought", {
-  //       title: "Thought Diary - Thought",
-  //       layout: "./layouts/dashboard-home.ejs",
-  //       thought:thought,
-  //       user: req.user
-        
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
-
 
 }
 

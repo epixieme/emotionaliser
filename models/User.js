@@ -20,6 +20,12 @@ image: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Thoughts'
 }],
+
+postCodes: [{
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'PostCode'
+}],
+
 city:{
   type: String, 
  

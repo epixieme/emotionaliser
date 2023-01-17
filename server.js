@@ -13,6 +13,7 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
+
 const mainRoutes = require("./routes/main");
 const dashboardRoutes = require("./routes/dashboard");
 const thoughtDiaryRoutes = require("./routes/thoughtDiary");
@@ -36,6 +37,7 @@ require("./config/passport")(passport);
 
 //Connect To Database
 connectDB();
+
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -102,3 +104,5 @@ app.use("/dashboard/tools/thoughtdiary", searchRoutes);
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
+
+

@@ -1623,6 +1623,10 @@ video {
   padding-bottom: 14rem;
 }
 
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2594,6 +2598,10 @@ input[type='file'] {
 
   .md\:pb-56 {
     padding-bottom: 14rem;
+  }
+
+  .md\:pl-4 {
+    padding-left: 1rem;
   }
 
   .md\:text-5xl {

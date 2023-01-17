@@ -141,7 +141,7 @@ module.exports = {
  getThoughtData: async (req, res) => {
     try {
       // get data by logged in user and by id
-      const data = await thoughtDiary.find({id:req.params.id, user:req.user.id});
+      const data = await thoughtDiary.find({ user:req.user.id});
       
       res.json(data)
     } catch (err) {
