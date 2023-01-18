@@ -3,6 +3,7 @@ const userDetails = require("../models/User");
 const cloudinary = require("../middleware/cloudinary");
 const thoughtDiary = require("../models/Thoughts");
 const { CountryCodes } = require("validator/lib/isISO31661Alpha2");
+const postCodeDetails = require("../models/PostCodes");
 
 
 function errorHandling(res, error) {
@@ -15,13 +16,55 @@ module.exports = {
       try {
         const users = await userDetails.findById(req.params.id);
 
-      // const pCodes= await postCodes.findById(req.params.id);
+      const state= await postCodeDetails.aggregate([{
+        $group: {
+          _id: null, 
+          state: {$addToSet: "$state"}, 
+          // zip: {$addToSet: "$zip"}
+        }
+    }])
+
+    const cities= await postCodeDetails.aggregate([
+     
+      {
+        $limit:1000
+      },
+     
+      {
+      $group: {
+        _id: null, 
+       cit:  {$addToSet: "$city"}}
+  },
+  {
+    $sort: { city: -1}
+    }
+  
+])
+
+const zips = await postCodeDetails.aggregate([
+
+  {
+    $limit:1000
+    },
+  {
+  $group: {
+    _id: null, 
+   zip:  {$addToSet: "$zip"}}
+}
+
+])
+
+console.log(cities)
+  
 
         res.render("profile.ejs", {
           title: "User Profile",
           layout: "./layouts/dashboard-home.ejs",
           users:users,
           user:req.user,
+          state:state,
+          cities:cities,
+          zips:zips
        
         });
       } catch (err) {
@@ -30,9 +73,7 @@ module.exports = {
     }, 
     postEditProfile: async (req, res) => {
       try {
-        // Upload image to cloudinary
-    // const result = await cloudinary.uploader.upload(req.file.path);
-  
+
      await userDetails.findByIdAndUpdate(req.params.id,{
     //  need to use populate from the postcodes model
           user: req.user.id,
@@ -44,8 +85,7 @@ module.exports = {
           city: req.body.city,
           county:req.body.county,
           postcode:req.body.postcode,
-          // image: result.secure_url,
-          // cloudinaryId: result.public_id,
+    
         });
      
       //  res.n

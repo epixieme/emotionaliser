@@ -21,10 +21,10 @@ image: {
     ref: 'Thoughts'
 }],
 
-postCodes: [{
-  type: mongoose.Schema.Types.ObjectId,
-  ref: 'PostCode'
-}],
+// postCodes: [{
+//   type: mongoose.Schema.Types.ObjectId,
+//   ref: 'PostCodes'
+// }],
 
 city:{
   type: String, 
