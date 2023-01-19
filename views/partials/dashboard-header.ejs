@@ -2,13 +2,13 @@
 
     <!-- Navbar goes here -->
 		<nav class="bg-white shadow-lg ">
-			<section class="p-16 py-4">
+			<section class="px-4 md:px-16 py-4">
 				<section class="flex justify-between">
 					<section class="flex space-x-7">
 						<section>
 							<!-- Website Logo -->
-              <a href="/dashboard" class="flex text-3xl font-bold font-poppins text-gray-800" >
-                <img src="/images/logo.svg" alt="">
+              <a href="/dashboard" class="flex text-2xl md:text-3xl font-bold font-poppins text-gray-800 items-center" >
+                <img class="" src="/images/logo.svg" alt="">
                <h1 class=""> emotionalize</h1>
               </a>
         
@@ -57,14 +57,14 @@
 			<!-- mobile menu -->
 			<section class="hidden mobile-menu bg-teal-700 text-white">
 				<ul class="">
-					<li class="active current"><a href="/dashboard" class="flex text-sm px-4 py-4 text-white border border-teal-900 font-semibold">Dasboard</a></li>
-					<li><a href="/dashboard/tools" class="flex text-sm px-4 py-4 hover:border-teal-900  transition duration-300">Explore Wellbeing Tools</a></li>
-					<li><a href="#about" class="flex text-sm px-4 py-4 hover:border-teal-900  transition duration-300">Positivity hub</a></li>
-					<li><a href="/dashboard/community" class="flex text-sm px-4 py-4 hover:border-teal-900  transition duration-300">Community </a></li>
+					<li class="active current"><a href="/dashboard" class="flex text-sm px-8 py-4 text-white border border-teal-900 font-semibold">Dasboard</a></li>
+					<li><a href="/dashboard/tools" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Explore Wellbeing Tools</a></li>
+					<li><a href="#about" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Positivity hub</a></li>
+					<li><a href="/dashboard/community" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Community </a></li>
           <li class="bg-teal-900"> 
-            <a class="flex text-sm px-4 py-4 hover:bg-teal-500 transition duration-300" href="/dashboard/profile/<%=user.id%>">Settings</a>
+            <a class="flex text-sm px-8 py-4 hover:bg-teal-500 transition duration-300" href="/dashboard/profile/<%=user.id%>">Settings</a>
         </li>
- <li class="bg-teal-900"><a href="" class="flex text-sm px-4 py-4 hover:bg-teal-500 transition duration-300" a href="/logout">Logout</a></li>
+ <li class="bg-teal-900"><a href="" class="flex text-sm px-8 py-4 hover:bg-teal-500 transition duration-300" a href="/logout">Logout</a></li>
 				</ul>
 			</section>
 			<script>

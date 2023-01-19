@@ -25,20 +25,20 @@
  <h1 class="text-7xl font-black" ></h1>
 
  <!-- x-text is used to display the data -->
-    <p class ="text-xl text-white pt-4 px-8 font-poppins font-bold" x-text="text"></p>
+    <p class ="text-base md:text-xl text-white pt-4  font-poppins font-bold" x-text="text"></p>
   </section>
 
-  <section class="px-16">
+  <section class="px-8 md:px-16">
 <section class="py-8">
   <p class='userid' hidden><%=user._id%></p>
-  <h1 class="text-xl  font-poppins font-semibold">Visualise your Moods</h1>
-  <h2 class="text-base  font-poppins pt-8 text-teal-700 text-decoration-line: underline underline-offset-8">Weekly Trends</h2>
+  <h1 class="text-base md:text-xl font-poppins font-semibold">Visualise your Moods</h1>
+  <!-- <h2 class="text-sm md:text-base font-poppins pt-8 text-teal-700 text-decoration-line: underline underline-offset-8">Weekly Trends</h2> -->
 </section>
 
    
     <!-- <section class=""> -->
      
-    <section class=" p-10  mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
+    <section class="py-2 md:p-10  mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
    
       <canvas id="myChart" style=" height:40vh; width:60vw"></canvas>
    
@@ -88,7 +88,7 @@
   
 
   <section class="">
-    <h1 class="text-xl font-poppins pt-8 font-semibold" >Be Inspired</h1>
+    <h1 class="text-xl font-poppins pt-8 font-semibold text-base md:text-xl" >Be Inspired</h1>
    
    
   </section>
@@ -165,7 +165,7 @@
     </section>
   </section>
       <section class="flex w-full justify-between py-8 flex-col">
-        <p class="text-black text-2xl text-left px-8 py-4"><%=motivations[i].poem%></p>
+        <p class="text-black text-base md:text-xl text-left px-8 py-4"><%=motivations[i].poem%></p>
         <p class="text-gray-700 px-8 text-left"><%=motivations[i].author%></p>
     </section>
     </section>
