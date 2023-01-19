@@ -18,8 +18,8 @@ const postSchema = new mongoose.Schema({
   
   });
   
-  
-//   postSchema.index({city: "text", zip: "text", state: "text"  }, ); //{ unique: true }/// index search
+postSchema.index({ zip: "text" }, ); //{ unique: true }/// index search
+
   //Export the model so it can be reused in other js files
   module.exports = mongoose.model("PostCodes", postSchema); // interface to the db
   

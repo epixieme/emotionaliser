@@ -164,5 +164,15 @@ timedFlashMsg()
 
 
 
+const hamburger = document.querySelector('.hamburger')
 
+hamburger.addEventListener('click', showNavMenu)
+
+function showNavMenu(){
+
+
+  const fullNavMenu = document.querySelector('.mobile-menu')
+  console.log(fullNavMenu)
+	fullNavMenu.classList.toggle("hidden");
+}
 
