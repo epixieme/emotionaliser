@@ -16,7 +16,7 @@
 						<!-- Primary Navbar items -->
 						<ul class="hidden md:flex items-center space-x-4 text-base">
 							
-                  <li class ='current'><a href="/dashboard" class="dashboard text-black hover:text-teal-700 px-2 py-4 transition duration-300 font-semibold"> Home</a></li>
+                  <li class ='current'><a href="/dashboard" class="dashboard text-black hover:text-teal-700 px-2 py-4 transition duration-300 font-semibold">Dashboard</a></li>
                   <li><a href="/dashboard/tools" class=" text-black hover:text-teal-700 px-2 py-4 transition duration-300"> Explore Wellbeing Tools</a></li>
                   <li><a href="/dashboard/bookmarks" class=" text-black hover:text-teal-700 px-2 py-4 transition duration-300 "> Positivity hub </a></li>
                   <li><a href="/dashboard/community" class=" text-black hover:text-teal-700 px-2 py-4 transition duration-300"> Community </a></li>
@@ -57,9 +57,9 @@
 			<!-- mobile menu -->
 			<section class="hidden mobile-menu bg-teal-700 text-white">
 				<ul class="">
-					<li class="active current"><a href="/dashboard" class="flex text-sm px-8 py-4 text-white border border-teal-900 font-semibold">Dasboard</a></li>
+					<li class="active current"><a href="/dashboard" class="flex text-sm px-8 py-4 text-white border border-teal-900 font-semibold">Dashboard</a></li>
 					<li><a href="/dashboard/tools" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Explore Wellbeing Tools</a></li>
-					<li><a href="#about" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Positivity hub</a></li>
+					<li><a href="/dashboard/bookmarks" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Positivity hub</a></li>
 					<li><a href="/dashboard/community" class="flex text-sm px-8 py-4 hover:border-teal-900  transition duration-300">Community </a></li>
           <li class="bg-teal-900"> 
             <a class="flex text-sm px-8 py-4 hover:bg-teal-500 transition duration-300" href="/dashboard/profile/<%=user.id%>">Settings</a>
@@ -67,14 +67,7 @@
  <li class="bg-teal-900"><a href="" class="flex text-sm px-8 py-4 hover:bg-teal-500 transition duration-300" a href="/logout">Logout</a></li>
 				</ul>
 			</section>
-			<script>
-				const btn = document.querySelector("button.mobile-menu-button");
-				const menu = document.querySelector(".mobile-menu");
-
-				btn.addEventListener("click", () => {
-					menu.classList.toggle("hidden");
-				});
-			</script>
+	
 		</nav>
  
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

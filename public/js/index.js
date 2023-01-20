@@ -10,6 +10,17 @@ const rating = document.querySelectorAll(".rating");
 const nav = document.querySelectorAll("nav li");
 const like = document.querySelector(".like");
 
+
+const btn = document.querySelector("button.mobile-menu-button");
+const menu = document.querySelector(".mobile-menu");
+
+btn.addEventListener('click', showNavMenu)
+
+function showNavMenu(){
+
+  menu.classList.toggle("hidden");
+}
+
 // **** range slider feature for thought diary ****
 
 if (slider) {
@@ -40,7 +51,7 @@ async function fetchData(url) {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data" + data);
+   
     // insertData(data);
     createRatingArrows(data);
   } catch (error) {
@@ -104,10 +115,10 @@ function toolTip() {
 
   if (likeOrNot.hidden === true) {
     likeOrNot.hidden = false;
-    console.log(likeOrNot.hidden);
+  
   } else {
     likeOrNot.hidden = true;
-    console.log(likeOrNot.hidden);
+
   }
   // if (like) {
   //   like.addEventListener("click",likeunlike(likeOrNot));
@@ -134,19 +145,17 @@ function timedFlashMsg(){
   // likeMsg.style.display='none'
   let dislikeMsg = document.getElementById('dislikeMsg')
 
-  if(likeMsg.innerText.length === 0){
+  if(likeMsg && likeMsg.innerText.length === 0){
     likeMsg.style.display='none'
    }
 
-   if(dislikeMsg.innerText.length === 0){
+   if(dislikeMsg && dislikeMsg.innerText.length === 0){
     dislikeMsg.style.display='none'
    }
 
   // dislikeMsg.style.display='none'
   setTimeout(() => {
 
-  
-    console.log(likeMsg.innerText)
  
     if(likeMsg){
      likeMsg.style.display='none'
@@ -164,15 +173,7 @@ timedFlashMsg()
 
 
 
-const hamburger = document.querySelector('.hamburger')
-
-hamburger.addEventListener('click', showNavMenu)
-
-function showNavMenu(){
 
 
-  const fullNavMenu = document.querySelector('.mobile-menu')
-  console.log(fullNavMenu)
-	fullNavMenu.classList.toggle("hidden");
-}
+
 
