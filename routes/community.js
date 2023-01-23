@@ -12,6 +12,8 @@ router.get("/communityThoughts",  communityController.getThoughtPosts);
 router.get("/communityMotivations",  communityController.getMotivationtPosts);
 router.put("/communityThoughts/likePost", communityController.likePost);
 router.put("/communityThoughts/deletePost", communityController.deletePost);
+router.put("/communityMotivations/likePost", communityController.likeMotivationsPost);
+router.put("/communityMotivations/deletePost", communityController.deleteMotivationsPost);
 
 
 module.exports = router // export the router

@@ -4,7 +4,8 @@ const router = express.Router();
 const commentsController = require("../controllers/commentsController");
 
 
-router.post("/createComment",  commentsController.createComment);
+router.post("/createThoughtComment",  commentsController.createThoughtsComment);
+router.post("/createMotivationComment",  commentsController.createMotivationsComment);
 
 
 module.exports = router;

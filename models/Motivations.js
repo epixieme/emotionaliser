@@ -40,9 +40,10 @@ image: {
     default:false
   },
 date: {type: Date, default: Date.now},
-  // tags:{
-
-  // }
+likes: {
+  type: Number,
+  required: true,
+},
 });
 
 

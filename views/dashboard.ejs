@@ -1,408 +1,441 @@
+<section
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 font-poppins"
+>
+  <% const date = new Date()%> <% const time = date.getHours()%> <% let greeting
+  = time < 12 ? 'Morning' : time >= 12 && time < 18 ? 'Afternoon': 'Evening'%>
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppins">
 
-  <% const date = new Date()%>
-  <% const time = date.getHours()%>
 
-<% let greeting = time < 12 ? 'Morning' : time >= 12 && time < 18 ? 'Afternoon': 'Evening'%>
-
-<!-- x-data is used for Alpine js data  -->
-  <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0"  
-  x-data="{ 
+  <section
+    class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0"
+    x-data="{ 
     text: '',  
     textArray: ['Good <%=greeting%>, <%=user.userName%>'],
     textIndex: 0,
     charIndex: 0,
-    typeSpeed: 200, }"  
+    typeSpeed: 200, }"
     x-init="
     setInterval(function(){
       let current = $data.textArray[ $data.textIndex ];
       $data.text = current.substring(0, $data.charIndex);
       $data.charIndex += 1;
    }, $data.typeSpeed);"
-    >
+  >
+    <h1 class="text-7xl font-black"></h1>
 
- <h1 class="text-7xl font-black" ></h1>
 
- <!-- x-text is used to display the data -->
-    <p class ="text-base md:text-xl text-white pt-4  font-poppins font-bold" x-text="text"></p>
+    
+    <p
+      class="text-base md:text-xl text-white pt-4 font-poppins font-bold"
+      x-text="text"
+    ></p>
   </section>
 
   <section class="px-8 md:px-16">
-<section class="py-8">
-  <p class='userid' hidden><%=user._id%></p>
-  <h1 class="text-base md:text-xl font-poppins font-semibold">Visualise your Moods</h1>
-  <!-- <h2 class="text-sm md:text-base font-poppins pt-8 text-teal-700 text-decoration-line: underline underline-offset-8">Weekly Trends</h2> -->
-</section>
+    <section class="py-8">
+      <p class="userid" hidden><%=user._id%></p>
+      <h1 class="text-base md:text-xl font-poppins font-semibold">
+        Visualise your Moods
+      </h1>
 
-   
-    <!-- <section class=""> -->
-     
-    <section class="py-2 md:p-10  mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
-   
-      <canvas id="myChart" style=" height:40vh; width:60vw"></canvas>
-   
-  <!-- </section> -->
-</section>
-
- <section class="">
-
-<% console.log(thoughts) %> 
-  <% if(thoughts.length >0){ %>
- <section class="flex flex-col  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-w-5xl shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out">
- 
-
-<section class=" WeeklyDates overflow-hidden grid grid-cols-1 p-8 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-black font-bold w-4xl gap-3">
-<% for(let i=0; i< thoughts.length; i++) {%>
-  <!-- hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-lg h-full w-full  hover:bg-neutral-600 hover:text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 -->
-  <section class="overflow-hidden hover:scale-105 transition duration-300 ease-in-out  "> 
-   <%const date = new Date(thoughts[i].date)%> 
-   <%const d = date.getDate()%>
-   <%const m = date.getMonth()+1%>
-    <p class="text-center text font-normal border-b-2 border-black pb-1 mb-2"><%=`${d}/${m}`%></p>
-   
-    <section class="  h-2 date rounded-md shadow-md row-start-auto pb-2  " >
-      <a class="thoughtRoute" href="/dashboard/tools/thoughtdiary<%thoughts.id%>">
-      <img src='<%=thoughts[i].image%>' alt="" class="object-cover rounded-t-md" style="width:100%;height:153px">
-    </a>
-
-    <!-- links to all items by same category -->
-    <p class="hover:scale-105 transition duration-300 ease-in-out m-5  bg-gray-900 rounded-full  py-1 text-xs font-semibold text-white  category hover:text-white hover:bg-teal-700 text-center " id='likedDisliked'>#<%=thoughts[i].category%></p>
-
-  </section>
- </section> 
-
- 
-      
-        <% } %>
-        
-      </section>
-
-      <% } else { %>
-        <h1 class="text-base">Sorry, There are no thoughts available to display. Please add an entry to your thought diary.</h1>
-            <% } %>
+    </section>
 
 
-  <!-- do a loop over the quotes and math.random for each time you log in or each day  --> 
-  </section>
-  
 
-  <section class="">
-    <h1 class="text-xl font-poppins pt-8 font-semibold text-base md:text-xl" >Be Inspired</h1>
-   
-   
-  </section>
+    <section
+      class="py-2 md:p-10 mb-10 max-w-6xl bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out"
+    >
+      <canvas id="myChart" style="height: 40vh; width: 60vw"></canvas>
 
-  <section class=" motivationSection py-8  mongoDates  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8 ">
- 
-   
-  <% for(let i=0; i<1; i++) {%>   
-    
-  <% if(motivations.length !==0 ){ %>
-      <section class=" bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md  hover:scale-105 transition delay-150 duration-300 ease-in-out">
-     
-      <section class=" motivationsCard bg-motivations rounded-t-md" style="background-image: url('<%= motivations[i].image%>')">
-   
-    
-      <section class="flex justify-end space-x-6 py-8 px-8">
-        <p class="flex circlesBtn space-x-1 hover:scale-105 transition delay-150 duration-300 ease-in-out ">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white" class="w-2 h-2 shadow-neutral-900 shadow-sm rounded-full ">
-          <circle cx="50" cy="50" r="50" />
-        </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white" class="w-2 h-2 shadow-neutral-900 shadow-sm rounded-full">
-          <circle cx="50" cy="50" r="50" />
-        </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white" class="w-2 h-2 shadow-neutral-900 shadow-sm  rounded-full">
-          <circle cx="50" cy="50" r="50" />
-        </svg>
-      </p>
-      <section>
-     
-        <section class =' dropdown rounded-md bg-black text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md' role="alert" id='likeMsg'>
-         <section class=" flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md">
-          <p class="font-bold font-poppins text-base " ><%= like %></p>
+
+    </section>
+
+    <section class="">
+      <% console.log(thoughts) %> <% if(thoughts.length >0){ %>
+      <section
+        class="flex flex-col bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-w-5xl shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out"
+      >
+        <section
+          class="WeeklyDates overflow-hidden grid grid-cols-1 p-8 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 text-black font-bold w-4xl gap-3"
+        >
+          <% for(let i=0; i< thoughts.length; i++) {%>
+
+          <section
+            class="overflow-hidden hover:scale-105 transition duration-300 ease-in-out"
+          >
+            <%const date = new Date(thoughts[i].date)%> <%const d =
+            date.getDate()%> <%const m = date.getMonth()+1%>
+            <p
+              class="text-center text font-normal border-b-2 border-black pb-1 mb-2"
+            >
+              <%=`${d}/${m}`%>
+            </p>
+
+            <section class="h-2 date rounded-md shadow-md row-start-auto pb-2">
+              <a
+                class="thoughtRoute"
+                href="/dashboard/tools/thoughtdiary<%thoughts.id%>"
+              >
+                <img
+                  src="<%=thoughts[i].image%>"
+                  alt=""
+                  class="object-cover rounded-t-md"
+                  style="width: 100%; height: 153px"
+                />
+              </a>
+
          
+              <p
+                class="hover:scale-105 transition duration-300 ease-in-out m-5 bg-gray-900 rounded-full py-1 text-xs font-semibold text-white category hover:text-white hover:bg-teal-700 text-center"
+                id="likedDisliked"
+              >
+                #<%=thoughts[i].category%>
+              </p>
+            </section>
+          </section>
+
+          <% } %>
         </section>
+
+        <% } else { %>
+        <h1 class="text-base">
+          Sorry, There are no thoughts available to display. Please add an entry
+          to your thought diary.
+        </h1>
+        <% } %>
+
+      
+      </section>
+
+      <section class="">
+        <h1
+          class="text-xl font-poppins pt-8 font-semibold text-base md:text-xl"
+        >
+          Be Inspired
+        </h1>
+      </section>
+
+      <section
+        class="motivationSection py-8 mongoDates grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 text-center max-w-4xl pb-8"
+      >
+        <% for(let i=0; i<1; i++) {%> <% if(motivations.length !==0 ){ %>
+        <section
+          class="bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out"
+        >
+          <section
+            class="motivationsCard bg-motivations rounded-t-md"
+            style="background-image: url('<%= motivations[i].image%>')"
+          >
+            <section class="flex justify-end space-x-6 py-8 px-8">
+              <p
+                class="flex circlesBtn space-x-1 hover:scale-105 transition delay-150 duration-300 ease-in-out"
+              >
+                <svg
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  class="w-2 h-2 shadow-neutral-900 shadow-sm rounded-full"
+                >
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
+                <svg
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  class="w-2 h-2 shadow-neutral-900 shadow-sm rounded-full"
+                >
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
+                <svg
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  class="w-2 h-2 shadow-neutral-900 shadow-sm rounded-full"
+                >
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
+              </p>
+              <section>
+                <section
+                  class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  role="alert"
+                  id="likeMsg"
+                >
+                  <section
+                    class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  >
+                    <p class="font-bold font-poppins text-base"><%= like %></p>
+                  </section>
+                </section>
+
+                <section
+                  class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  role="alert"
+                  id="dislikeMsg"
+                >
+                  <section
+                    class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  >
+                    <p class="font-bold font-poppins text-base">
+                      <%= dislike %>
+                    </p>
+                  </section>
+                </section>
+
+                <section class="likeOrNot" hidden>
+                  <section
+                    class="dropdown rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  >
+                    <ul
+                      class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                    >
+                      <form action="/dashboard/like/?_method=PUT" method="POST">
+                        <input
+                          type="text"
+                          value="<%=motivations[i].id%>"
+                          name="id"
+                          hidden
+                        />
+                        <li class="rounded-md hover:bg-teal-700">
+                          <button
+                            type="submit"
+                            class="flex items-center md:pl-4"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="w-6 h-6 py-2 pr-1 hover:fill-teal-700 like"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"
+                              />
+                            </svg>
+                            I like this
+                          </button>
+                        </li>
+                      </form>
+
+                      <form
+                        action="/dashboard/dislike/?_method=PUT"
+                        method="POST"
+                      >
+                        <input
+                          type="text"
+                          value="<%=motivations[i].id%>"
+                          name="id"
+                          hidden
+                        />
+                        <li class="rounded-md hover:bg-teal-700">
+                          <button
+                            type="submit"
+                            class="flex items-center md:pl-4"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="w-6 h-6 py-2 pr-1 hover:fill-teal-700 unlike"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384"
+                              /></svg>I don't like this
+                          </button>
+                        </li>
+                      </form>
+                    </ul>
+                  </section>
+                </section>
+              </section>
+            </section>
+          </section>
+          <section class="flex w-full justify-between py-8 flex-col">
+            <p class="text-black text-base md:text-xl text-left px-8 py-4">
+              <%=motivations[i].poem%>
+            </p>
+            <p class="text-gray-700 px-8 text-left">
+              <%=motivations[i].author%>
+            </p>
+          </section>
+        </section>
+
+        <% } else { %>
+        <h1 class="text-base">
+          Sorry, There are no quotes to display. Try again later.
+        </h1>
+        <% } %> <% } %>
       </section>
 
 
-      <section class =' dropdown rounded-md bg-black text-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md' role="alert" id='dislikeMsg'>
-        <section class=" flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md">
-         <p class="font-bold font-poppins text-base " ><%= dislike %></p>
-       
-       </section>
-     </section>
-
-      <section class="likeOrNot" hidden>
-        <section class ='dropdown rounded-md bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md'>
-          <ul class=" flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md">
-            <form action="/dashboard/like/?_method=PUT" method="POST">
-            <input type="text" value ="<%=motivations[i].id%>" name="id" hidden>
-             <li class ="rounded-md hover:bg-teal-700">
-              <button type="submit" class="flex items-center md:pl-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 py-2 pr-1 hover:fill-teal-700 like">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
-           </svg> I like this
-     
-          </button>
-          </li>
-           </form>
-          
-           <form action="/dashboard/dislike/?_method=PUT" method="POST">
-         <input type="text" value ="<%=motivations[i].id%>" name="id" hidden>
-          <li class ="rounded-md hover:bg-teal-700">
-            <button type="submit" class="flex items-center md:pl-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 py-2 pr-1 hover:fill-teal-700 unlike">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384" />
-           </svg>I don't like this
-          </button>
-          </li>
-           </form>
-          </ul>
-      </section>
-    </section>
-      </section>
     </section>
   </section>
-      <section class="flex w-full justify-between py-8 flex-col">
-        <p class="text-black text-base md:text-xl text-left px-8 py-4"><%=motivations[i].poem%></p>
-        <p class="text-gray-700 px-8 text-left"><%=motivations[i].author%></p>
-    </section>
-    </section>
-      
-  <% } else { %>
-<h1 class="text-base ">Sorry, There are no quotes to display. Try again later.</h1>
-    <% } %>
-      <% } %>
-    
-     
-      
-  
-  
-</section>
-
-<!-- </section> -->
-</section>
-</section>
-
 </section>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-let userid = document.querySelector('.userid')
-let url = "/dashboard/chartData";
+  let userid = document.querySelector(".userid");
+  let url = "/dashboard/chartData";
 
-async function fetchData(url) {
-  try {
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("data " + data.map((item) => item.user === userid.innerText ? item.rating:0))
-    chartData(data);
-  } catch (error) {
-    console.log(error);
+  async function fetchData(url) {
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(
+        "data " +
+          data.map((item) => (item.user === userid.innerText ? item.rating : 0))
+      );
+      chartData(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
 
-fetchData(url);
-async function chartData(data){
+  fetchData(url);
+  async function chartData(data) {
+    let yLabels = {
+      1: "Awful",
+      2: "Very Bad",
+      3: "Bad",
+      4: "Good",
+      5: "Very Good",
+      6: "Great",
+    };
 
- let yLabels = {
-  
-	1 : 'Awful',
-  2 : 'Very Bad',
-  3 : 'Bad',
-  4 : 'Good',
-  5 : 'Very Good',
-  6 : 'Great',
- 
-}
+    const date = data.map((item) => item.date);
 
-  const date = data.map((item) => item.date)
+    const formatDate = data.map((item) =>
+      item.date.slice(0, item.date.indexOf("T"))
+    );
 
-  const formatDate = data.map(item => item.date.slice(0,item.date.indexOf('T')))
+    // formatDate.replace('-','/')
 
-  // formatDate.replace('-','/')
+    // let dateFormat = new Date(formatDate)
+    // console.log(dateFormat.toLocaleDateString("en-US"))
 
-  // let dateFormat = new Date(formatDate)
-  // console.log(dateFormat.toLocaleDateString("en-US"))
-  
-  const ctx = document.getElementById('myChart').getContext("2d");
+    const ctx = document.getElementById("myChart").getContext("2d");
 
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0.2, "rgb(255, 10, 86,0.2)");
+    gradient.addColorStop(1, "rgb(13, 118, 110,0.6)");
 
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: data.map((item) => item.date.slice(0, item.date.indexOf("T"))),
+        datasets: [
+          {
+            pointRadius: 5,
+            tension: 0.5,
+            fill: true,
 
-const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0.2, 'rgb(255, 10, 86,0.2)');
-            gradient.addColorStop(1, 'rgb(13, 118, 110,0.6)');
-
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: data.map((item) => item.date.slice(0,item.date.indexOf('T'))),
-    datasets: [{
-      pointRadius: 5,
-      tension: 0.5,
-      fill:true,
-    
-      data: data.map((item) => item.user === userid.innerText ? item.rating:0),
-      backgroundColor: gradient,
+            data: data.map((item) =>
+              item.user === userid.innerText ? item.rating : 0
+            ),
+            backgroundColor: gradient,
             borderColor: [
-            'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-      'rgb(153, 102, 255)',
-      'rgb(201, 203, 207)'
-               ],
+              "rgb(255, 99, 132)",
+              "rgb(255, 159, 64)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(54, 162, 235)",
+              "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
+            ],
             borderWidth: 3,
-            
-        }]
-
-
-  },
-  options: {
-    
-    animations: {
-      tension: {
-        duration: 5000,
-        easing: 'linear',
-        from: 1,
-        to: 0,
-        loop: true
-      }},
-
-    plugins:{
-     
-      tooltip: {
-                usePointStyle: true,
-                callbacks: {
-                    labelPointStyle: function(context,value) {
-                        return {
-                            pointStyle: 'triangle',
-                            rotation: 0
-                        };
-                    },
-                    label: function(value) {
-                return  y;
-            }
-                }},
-          
-      zoom: {
-        pan: {
-          enabled: true,
-          mode: "x",
-          speed: 10,
-          threshold: 10
-        },
-        zoom: {
-          enabled: true,
-          mode: "y"
-        }
-      },
-      legend: {
-                display: false,
-               
-            }
-      
-    },
-
-  scales: {
-  
-    y: {
-      border: {
-          color: 'red',
-          borderWidth: 3,
-        },
-      ticks: {
-      
-        padding:10,
-        beginAtZero: true,
-                    callback: function(value, index, values) {
-                    return yLabels[value];
-                    },
-          
-                    
-                   
-      },
-      
-      
-    
-      grid: {
-                display:false,
-               
-                
-            },
-            
-    },
-    x: {
-      border: {
-          color: 'red'
-        },
-   
-        ticks: {
-       
-          padding:10,
-          autoSkip: false,
-                    maxRotation: 70,
-                    minRotation: 70,
           },
-           
-      grid: {
-                display:false,
-               
-                
-            },
-       
+        ],
+      },
+      options: {
+        animations: {
+          tension: {
+            duration: 5000,
+            easing: "linear",
+            from: 1,
+            to: 0,
+            loop: true,
+          },
         },
-      
-      
+
+        plugins: {
+          tooltip: {
+            usePointStyle: true,
+            callbacks: {
+              labelPointStyle: function (context, value) {
+                return {
+                  pointStyle: "triangle",
+                  rotation: 0,
+                };
+              },
+              label: function (value) {
+                return y;
+              },
+            },
+          },
+
+          zoom: {
+            pan: {
+              enabled: true,
+              mode: "x",
+              speed: 10,
+              threshold: 10,
+            },
+            zoom: {
+              enabled: true,
+              mode: "y",
+            },
+          },
+          legend: {
+            display: false,
+          },
+        },
+
+        scales: {
+          y: {
+            border: {
+              color: "red",
+              borderWidth: 3,
+            },
+            ticks: {
+              padding: 10,
+              beginAtZero: true,
+              callback: function (value, index, values) {
+                return yLabels[value];
+              },
+            },
+
+            grid: {
+              display: false,
+            },
+          },
+          x: {
+            border: {
+              color: "red",
+            },
+
+            ticks: {
+              padding: 10,
+              autoSkip: false,
+              maxRotation: 70,
+              minRotation: 70,
+            },
+
+            grid: {
+              display: false,
+            },
+          },
+        },
+      },
+    });
   }
-}
 
-});
-
-}
-
-// console.log('user' + thoughts.user)
-
-
-// const filter = user._id.toString() 
-// console.log('userdet' + filter)
-//   const sdk = new ChartsEmbedSDK({
-//     baseUrl: 'https://charts.mongodb.com/charts-emotionaliser-shqds'
-//   });
-
-//   const chart = sdk.createChart({ chartId: '6331f70c-3ec8-447c-8f6b-03072c86d614',
-//   height: "400px",
-//   width:"100%",
-//   showAttribution:false,
-//   background:"transparent",
-//   labels:false,
-//   autoRefresh:true,
-//   // filter: { "user": { "$match": '63c18143c9379120a15b935e' } }
-
- 
-
-// }); 
-
-// async function refresh(){
-//   await chart.render(document.getElementById('chart'));
-//   await chart.setAutoRefresh(true);
-//   await chart.setMaxDataAge(30);
-//   await chart.setFilter({"user": userid.innerText})
-//   const filter = await chart.getFilter()
-
-//   currentFilterDOM.innerText = JSON.stringify(filter);
-
-// }
-
-// refresh()
-
-
-
-
-     
-      
- 
+  
 </script>
 
 <script src="/js/index.js"></script>

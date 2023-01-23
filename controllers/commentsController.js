@@ -9,30 +9,31 @@ function errorHandling(res, error) {
 }
 
 module.exports = {
-createComment:async(req,res) =>{
+createThoughtsComment:async(req,res) =>{
 try{
   const comment = await comments.create({
     comment: req.body.comment,
     likes:0,
     thoughts:req.body.id
-    // thoughts: req.body.t_id,
-    // motivations:req.body.m_id
+  
   })
   res.redirect(`/dashboard/community/communityThoughts`);
     }catch(err){
       console.log(err)
     }
    },
-  //  createMotivationsComment:async(req,res) =>{
-  //   try{
-  //     const motivations = await comments.create({
-  //       comment: req.body.comment,
-  //       likes:0,
-  //       motivations: req.body.id
-  //     })
-  //     res.redirect(`/dashboard/community/communityThoughts`);
-  //       }catch(err){
-  //         console.log(err)
-  //       }
-  //      },
+   createMotivationsComment:async(req,res) =>{
+    try{
+      const comment = await comments.create({
+        comment: req.body.comment,
+        likes:0,
+        motivations:req.body.id
+ 
+      })
+      res.redirect(`/dashboard/community/communityMotivations`);
+        }catch(err){
+          console.log(err)
+        }
+       },
+  
 }

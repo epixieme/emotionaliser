@@ -72,7 +72,21 @@ module.exports = {
       console.log(err);
     }
   },
-
+  likeMotivationsPost: async (req, res) => {
+    try {
+      console.log(req.body.id);
+      await motivationsDetails.findOneAndUpdate(
+        { _id: req.body.id },
+        {
+          $inc: { likes: 1 },
+        }
+      );
+      console.log("Likes +1");
+      res.redirect(`/dashboard/community/communityMotivations`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 
   getMotivationtPosts: async (req, res) => {
 try {
@@ -80,12 +94,15 @@ try {
       const users = await userDetails.find();
       const comments = await commentDetails.find().lean()
       const commentCount = await commentDetails.find().count();
+      const userName = await motivationsDetails.find().populate({path:'user', select:'userName image'})
       res.render("community-motivations", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
+        userName:userName,
         motivations:motivations,
+        likes: 0,
         comments:comments,
         commentCount:commentCount
       });
@@ -103,6 +120,20 @@ try {
         }
       );
       res.redirect(`/dashboard/community/communityThoughts`);
+    } catch (err) {
+      console.log(err);
+      errorHandling(res, err);
+    }
+  },
+  deleteMotivationsPost: async (req, res) => {
+    try {
+      const motivations = await motivationsDetails.findOneAndUpdate(
+        { _id: req.body.id },
+        {
+          public: false,
+        }
+      );
+      res.redirect(`/dashboard/community/communityMotivations`);
     } catch (err) {
       console.log(err);
       errorHandling(res, err);
