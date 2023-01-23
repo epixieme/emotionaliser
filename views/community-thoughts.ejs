@@ -1,4 +1,4 @@
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-20 min-h-screen md:pb-56 font-poppins">
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppins">
   <section class="flex items-center bg-teal-700 bg-[url('/images/hexagons.svg')] p-8 m-0 ">
  
     <p class="px-8 text-white pt-4 text-base font-poppins"><span class="text-xl">Thoughts</span> - A place to share thoughts with the hive mind. Like, support or simply be inspired.</p>
@@ -13,6 +13,7 @@
         <section class="flex flex-col  shadow-md rounded-md p-4 md:px-32 bg-white  py-8 mt-8">
 
 <section class="flex flex-col">
+  <img src=<%=userName[i].user.image%> alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:50%;height:auto">
    <h2 class="text-base font-bold"><%=userName[i].user.userName%></h2>  
     <p class="text-neutral-600"><%=thoughts[i].date.toDateString()%></p>
     <!-- <p class="text-base">Subject: <%=thoughts[i].summary%> </p> -->

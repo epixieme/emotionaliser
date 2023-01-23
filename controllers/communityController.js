@@ -37,7 +37,7 @@ module.exports = {
      
       const thoughts = await thoughtDiary.find({ public: true}).lean();
       const commentCount = await commentDetails.find().count();
-      const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
+      const userName = await thoughtDiary.find().populate({path:'user', select:'userName image'})
       console.log('username' + userName);
 
       res.render("community-thoughts", {
