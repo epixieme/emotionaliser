@@ -1,12 +1,12 @@
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-32 min-h-screen md:pb-56">
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-10 min-h-screen md:pb-56">
   <% if (locals.messages.errors) { %>
     <% messages.errors.forEach( el => { %>
         <div class="alert alert-danger"><%= el.msg %></div>
     <% }) %>    
 <% } %>
 
-<section class="flex align-text-top justify-center w-full">
+<section class="flex align-text-top justify-center w-full px-4">
 
     <section class="w-full max-w-md">
       <form action="/signup" method="POST" class="shadow-md  px-8 pt-6 pb-8 mb-4 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white border-dashed border-4" >
@@ -45,9 +45,9 @@
           </a>
         </section>
       </form>
-      <p class="text-center text-gray-200 text-xs">
+      <p class="text-center text-black text-xs">
         Already have an account?
-        <a class="font-bold" href="/login">Log In</a> 
+        <a class="font-bold text-teal-700" href="/login">Log In</a> 
       </p>
     </section>
 </section>

@@ -33,19 +33,23 @@ module.exports = {
  
       //use the id in the body to get the individual thought id 
      
-      const users = await userDetails.find().lean();
-     
+      const users = await userDetails.find(req.body.id).lean();
+     const recentDate = await commentDetails.findOne().sort({date:-1})
+  
       const thoughts = await thoughtDiary.find({ public: true}).lean();
       const commentCount = await commentDetails.find().count();
-      const userName = await thoughtDiary.find().populate({path:'user', select:'userName image'})
-      console.log('username' + userName);
+      const userPop = await thoughtDiary.find({id:req.body.id}).populate({path:'user', select:'userName image'})
+      const communityUser = await commentDetails.find({id:req.body.user}).populate({path:'user', select:'userName image'})
+
 
       res.render("community-thoughts", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
         user: req.user,
         users: users,
-        userName: userName,
+        userPop: userPop,
+        communityUser:communityUser,
+        recentDate:recentDate,
         thoughts: thoughts,
         likes: 0,
         comments:comments,

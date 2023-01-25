@@ -44,7 +44,7 @@ function feelings() {
 }
 
 // **** weekly thoughts functionality for dashboard ****
-
+// only fetch data if user is logged in
 let apiUrl = "/dashboard/tools/thoughtdiary/thoughtData";
 
 async function fetchData(url) {

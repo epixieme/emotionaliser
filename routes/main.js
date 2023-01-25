@@ -15,4 +15,4 @@ router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 
 
-module.exports = router // export the router
+module.exports = router ;// export the router

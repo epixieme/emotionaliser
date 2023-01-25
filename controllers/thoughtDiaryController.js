@@ -180,9 +180,8 @@ module.exports = {
         user: req.user.id,
 
       });
-      console.log('this is the summary', req.body)
-     res.n
-     res.nModified
+    
+  
       console.log("Post has been added!");
       res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
