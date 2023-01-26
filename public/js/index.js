@@ -112,30 +112,23 @@ if (like) {
 
 function toolTip() {
   const likeOrNot = document.querySelector(".likeOrNot");
-
-  if (likeOrNot.hidden === true) {
-    likeOrNot.hidden = false;
+console.log(likeOrNot.classList.contains('hidden'))
+  if (likeOrNot.classList.contains('hidden')) {
+    likeOrNot.classList.remove("hidden")
   
-  } else {
-    likeOrNot.hidden = true;
-
+  }else{
+    likeOrNot.classList.add("hidden")
   }
-  // if (like) {
-  //   like.addEventListener("click",likeunlike(likeOrNot));
-  // }
+  if (like) {
+    like.addEventListener("click",likeunlike(likeOrNot));
+  }
 
 
 }
 
-
-
-
 function likedislike(){
 const likeOrNot = document.querySelector(".likeOrNot");
-  likeOrNot.hidden = true
-
-
-
+  likeOrNot.classList.add('hidden')
 }
 
 
@@ -156,7 +149,6 @@ function timedFlashMsg(){
   // dislikeMsg.style.display='none'
   setTimeout(() => {
 
- 
     if(likeMsg){
      likeMsg.style.display='none'
     }

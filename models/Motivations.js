@@ -42,7 +42,7 @@ image: {
 date: {type: Date, default: Date.now},
 likes: {
   type: Number,
-  required: true,
+  // required: true,
 },
 });
 

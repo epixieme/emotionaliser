@@ -155,9 +155,9 @@
                   <circle cx="50" cy="50" r="50" />
                 </svg>
               </p>
-              <section>
+              <section class="">
                 <section
-                  class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                  class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md "
                   role="alert"
                   id="likeMsg"
                 >
@@ -182,12 +182,12 @@
                   </section>
                 </section>
 
-                <section class="likeOrNot" hidden>
+                <section class="flex likeOrNot w-full border  border-red-900 hidden">
                   <section
                     class="dropdown rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
                   >
                     <ul
-                      class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+                      class="modal border border-white flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
                     >
                       <form action="/dashboard/like/?_method=PUT" method="POST">
                         <input
