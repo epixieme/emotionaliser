@@ -10,14 +10,12 @@ const rating = document.querySelectorAll(".rating");
 const nav = document.querySelectorAll("nav li");
 const like = document.querySelector(".like");
 
-
 const btn = document.querySelector("button.mobile-menu-button");
 const menu = document.querySelector(".mobile-menu");
 
-btn.addEventListener('click', showNavMenu)
+btn.addEventListener("click", showNavMenu);
 
-function showNavMenu(){
-
+function showNavMenu() {
   menu.classList.toggle("hidden");
 }
 
@@ -51,7 +49,7 @@ async function fetchData(url) {
   try {
     let response = await fetch(url);
     let data = await response.json();
-   
+
     // insertData(data);
     createRatingArrows(data);
   } catch (error) {
@@ -107,65 +105,50 @@ if (like) {
   like.addEventListener("click", likedislike);
 }
 
-
 // dashboard motivational quote
 
 function toolTip() {
   const likeOrNot = document.querySelector(".likeOrNot");
-console.log(likeOrNot.classList.contains('hidden'))
-  if (likeOrNot.classList.contains('hidden')) {
-    likeOrNot.classList.remove("hidden")
-  
-  }else{
-    likeOrNot.classList.add("hidden")
+  console.log(likeOrNot.classList.contains("hidden"));
+  if (likeOrNot.classList.contains("hidden")) {
+    likeOrNot.classList.remove("hidden");
+ 
+  } else {
+    likeOrNot.classList.add("hidden");
   }
   if (like) {
-    like.addEventListener("click",likeunlike(likeOrNot));
+    like.addEventListener("click", likeunlike(likeOrNot));
+  }
+}
+
+function likedislike() {
+  const likeOrNot = document.querySelector(".likeOrNot");
+  likeOrNot.classList.add("hidden");
+}
+
+function timedFlashMsg() {
+  let likeMsg = document.getElementById("likeMsg");
+  // likeMsg.style.display='none'
+  let dislikeMsg = document.getElementById("dislikeMsg");
+
+  if (likeMsg && likeMsg.innerText.length === 0) {
+    likeMsg.style.display = "none";
   }
 
-
-}
-
-function likedislike(){
-const likeOrNot = document.querySelector(".likeOrNot");
-  likeOrNot.classList.add('hidden')
-}
-
-
-function timedFlashMsg(){
-
-  let likeMsg = document.getElementById('likeMsg')
-  // likeMsg.style.display='none'
-  let dislikeMsg = document.getElementById('dislikeMsg')
-
-  if(likeMsg && likeMsg.innerText.length === 0){
-    likeMsg.style.display='none'
-   }
-
-   if(dislikeMsg && dislikeMsg.innerText.length === 0){
-    dislikeMsg.style.display='none'
-   }
+  if (dislikeMsg && dislikeMsg.innerText.length === 0) {
+    dislikeMsg.style.display = "none";
+  }
 
   // dislikeMsg.style.display='none'
   setTimeout(() => {
-
-    if(likeMsg){
-     likeMsg.style.display='none'
+    if (likeMsg) {
+      likeMsg.style.display = "none";
     }
 
-    if(dislikeMsg){
-      dislikeMsg.style.display='none'
-     }
-  
- 
-   }, "3000")
+    if (dislikeMsg) {
+      dislikeMsg.style.display = "none";
+    }
+  }, "3000");
 }
 
-timedFlashMsg()
-
-
-
-
-
-
-
+timedFlashMsg();

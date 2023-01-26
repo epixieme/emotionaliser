@@ -160,9 +160,23 @@ body {
   .bg-motivations{
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center;
-    height:200px
+    background-position: cover;
+    height:300px;
+   
 
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .bg-motivations{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: cover;
+      height:200px;
+     
+  
+    }
+  
   }
 
 
