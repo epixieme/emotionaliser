@@ -2196,12 +2196,6 @@ input[type='file'] {
   opacity: 1;
 }
 
-.dropdown{
-  position: absolute;
-  /* background:black; */
-  min-width:20%;
-}
-
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -2663,4 +2657,6 @@ input[type='file'] {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+
 

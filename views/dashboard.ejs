@@ -117,15 +117,7 @@
         >
    
           <section class="wrapper flex justify-end">
-               <!-- modal starts here -->
-               <!-- <section class="likeOrNot hidden"> -->
-                <!-- <section
-                  class="dropdown rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
-                > -->
-                 
-                <!-- </section> -->
-              <!-- </section> -->
-                  <!-- //********* modal ends here -->
+    
         <!-- //********* circles starthere -->
             <section class="px-8 pt-8 pb-2">
               <p
@@ -234,30 +226,35 @@
       </section>
       <section class="flex justify-end md:p-2">
         <!-- // ejs messages start -->
+
+        <% if(like.length >0){ %>
         <section
-        class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+        class="dropdown "
         role="alert"
         id="likeMsg"
       >
         <section
-          class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+          class="flex flex-col text-white p-4  rounded-md  bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md"
         >
           <p class="font-bold font-poppins text-base"><%= like %></p>
         </section>
       </section>
- 
+      <%}%>
+      <% if(dislike.length > 0){ %>
       <section
-        class="dropdown rounded-md bg-black text-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+        class="dropdown "
         role="alert"
         id="dislikeMsg"
       >
         <section
-          class="flex flex-col text-white p-4 rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md"
+          class="flex flex-col text-white p-4  rounded-md  bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md"
         >
           <p class="font-bold font-poppins text-base"><%= dislike %></p>
-        </section>
+         </section>
       </section>
+      <%}%>
      </section>
+    
       <!-- // ejs messages end -->
       </section>
     </section>
@@ -279,8 +276,8 @@
   </section>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script defer>
   let userid = document.querySelector(".userid");
   let url = "/dashboard/chartData";
 
@@ -437,4 +434,4 @@
   }
 </script>
 
-<script src="/js/index.js"></script>
+<!-- <script src="/js/index.js"></script> -->

@@ -22,8 +22,8 @@ module.exports = {
 
           // get random quotes to show on dashboard
           const randomMotivations = motivations.sort(() => Math.random() - 0.5);
-          const like = req.flash('like')
-          const dislike = req.flash('dislike')
+          const like = await req.flash('like')
+          const dislike = await req.flash('dislike')
           res.render('dashboard',{
             title: "Dashboard",
             layout:'./layouts/dashboard-home.ejs',
@@ -92,9 +92,10 @@ module.exports = {
       }
         
       );
-      req.flash('dislike', "We won't show you this quote again")
-    
+      req.flash('dislike', "We won't show you the previous quote again")
+      // res.locals.dislike = req.flash();
       res.redirect(`/dashboard#likedDisliked`);
+      // res.render('dashboard')
     } catch (err) {
       console.log(err);
     }

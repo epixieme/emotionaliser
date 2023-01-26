@@ -240,10 +240,5 @@ body {
     opacity: 1;
   }
 
-  .dropdown{
-  
-    position: absolute;
-    /* background:black; */
-    min-width:20%;
-  }
+
 
