@@ -1,25 +1,26 @@
 <section
-  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen "
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 "
 >
-<h1
+<section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-8 m-0 ">
+ 
+  <p class="px-8 text-white pt-4 text-base font-poppins">Thought Diary - Useful tools to help with managing your Wellbeing. Record and share your thoughts or motivational quotes. </p>
+</section>
+
+  <!-- <h1
     class="px-16 py-4 text-neutral-300 font-bold  text-4xl flex justify-center"
   >
     <%= users.userName%>
-  </h1>
-  <h1
-    class="px-16 py-4  text-black text-xl flex justify-center"
-  >
-    Thought Diary
-  </h1>
+  </h1> -->
+
 
   
-  <section class="flex flex-col">
+  <section class="flex flex-col pt-4">
 
 
       
-    <section class="flex align-middle justify-center h-screen  ">
+    <section class="flex align-middle justify-center h-screen px-8 md:px-16 ">
       <!-- image could be a github heatmap for each thought map entry -->
-      <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-lg h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
+      <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-neutral-500 shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
       >
         <img
           class="object-cover"
@@ -40,7 +41,7 @@
                </h1>
               
               <% } else { %>
-                <a href="/dashboard/tools/thoughtdiary/0/submit-thought">
+                <a href="/dashboard/tools/thoughtdiary/<%=pages%>/submit-thought">
                 <h1 class="text-center p-4 text-lg hover:bg-neutral-600 hover:text-white text-black">Add Todays Thought</h1>
               </a>
               <% } %>
@@ -50,7 +51,6 @@
       </section>
    
     </section>
-
 
     <section class="px-16 pt-4">
       <section class="flex justify-center py-2"> 
@@ -62,6 +62,7 @@
 <h1></h1>
 
 </section>
+
 <h1 class="text-base font-poppins">Search Results:</h1>
 
 
@@ -92,6 +93,7 @@
 
 
   </section>
+</section>
 
 
 

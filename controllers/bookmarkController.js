@@ -18,7 +18,7 @@ module.exports = {
         }
       );
       console.log("bookmarked");
-
+      req.flash('bookmarked', "Added to Positivity Hub for reflection")
       res.redirect("/dashboard/tools/thoughtdiary");
     } catch (err) {
       errorHandling(res, err);
@@ -27,6 +27,7 @@ module.exports = {
 //  uses thought diary model
   addCommunityBookmark: async (req, res) => {
   
+
     try {
       const community = await userDetails.findOneAndUpdate(
         { _id: req.user},
@@ -122,6 +123,7 @@ module.exports = {
 
       const community = await userDetails.find(req.user).populate('thoughtBookmarks')
       const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
+    
 
       res.render("bookmarks", {
         title: "Bookmarks",

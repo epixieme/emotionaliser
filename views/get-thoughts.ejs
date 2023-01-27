@@ -54,6 +54,7 @@
     </button>
     <%}%>
   </form>
+  <p><%=bookmarked%></p>
   <%if(thought.bookmarked === false){ %>
   <form action="/dashboard/bookmarks/thought/bookmarked/<%=thought.id%>?_method=PUT" method="POST">
     <button type='submit' class="bookmark hover:scale-105 transition delay-150 duration-300 ease-in-out">
@@ -63,6 +64,7 @@
     
     </button>
     </form>
+ 
     <% } else { %>
       <form action="/dashboard/bookmarks/thought/notBookmarked/<%=thought.id%>?_method=PUT" method="POST">
         <button type='submit' class="bookmark hover:scale-105 transition delay-150 duration-300 ease-in-out">

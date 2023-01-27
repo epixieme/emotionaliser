@@ -1,23 +1,24 @@
 <section
-  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56 "
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 "
 >
-  <h1
+<section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-8 m-0 ">
+ 
+  <p class="px-8 text-white pt-4 text-base font-poppins">Thought Diary - Useful tools to help with managing your Wellbeing. Record and share your thoughts or motivational quotes. </p>
+</section>
+
+  <!-- <h1
     class="px-16 py-4 text-neutral-300 font-bold  text-4xl flex justify-center"
   >
     <%= users.userName%>
-  </h1>
-  <h1
-    class="px-16 py-4  text-black text-xl flex justify-center font-semibold"
-  >
-    Thought Diary
-  </h1>
+  </h1> -->
+
 
   
-  <section class="flex flex-col  ">
+  <section class="flex flex-col pt-4">
 
 
       
-    <section class="flex align-middle justify-center h-screen  ">
+    <section class="flex align-middle justify-center h-screen px-8 md:px-16 ">
       <!-- image could be a github heatmap for each thought map entry -->
       <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-neutral-500 shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
       >
@@ -52,47 +53,52 @@
     </section>
 
 
-    <section class="px-16 pt-4">
+    <section class="px-8 md:px-16 pt-4">
       <section class="flex justify-center py-2 "> 
 <form class="flex" action="/dashboard/tools/thoughtdiary/search" method="POST">
         <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base focus:outline-0 ">
         <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white over:scale-105 transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-400">Search</button>
 </form>
 
-<h1></h1>
+
 
 </section>
    
 
       <% for(let i=0; i<thoughts.length; i++) {%>
-        <section class="hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white  mt-5 shadow-md  p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 place-items-center text-black text-base  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
-        
-          <p class=""><%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
+        <section class="flex flex-col justify-center md:justify-between items-center md:flex-row  hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white mt-4 text-black text-base  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
+        <!-- <section class="flex flex-col space-x-8"> -->
+       
       
         <!-- <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" style="width:70%;height:70px" class="flex justify-center"> -->
-        <img class="object-cover rounded-md shadow-md " src="<%=thoughts[i].image%>" alt="" style="width:70%;height:70px"></a>
+          <!-- <section class="flex flex-col md:space-x-12 md:flex-row w-24"> -->
+        <section class="flex flex-col md:flex-row md:p-2 w-full  md:justify-between items-center leading-loose hover:scale-105 transition delay-150 duration-300 ease-in-out   text-black text-base  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-20 ">
+        <img class="object-cover md:w-24 rounded-t-md md:rounded-md shadow-md" src="<%=thoughts[i].image%> " alt="" >
+  
+        <p class="pt-4 md:pt-0"><%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
+      <!-- </section> -->
+      <!-- </a> -->
         <p class=""><a href="/dashboard/tools/thoughtDiary/categories"><%=thoughts[i].category%></a></p>
-        <p class="flex text-center"><%=thoughts[i].summary%></p>
+        <p class=""><%=thoughts[i].summary%></p>
         <p class="rating"><%=thoughts[i].rating%></p>
-        <p class=""><a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>">
+        <p class="pb-4 md:pb-0"><a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700 transform transition duration-500 hover:scale-110 ">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
         </svg>
         </a>
       </p>
     </section>
+    <!-- </section> -->
+    </section>
      
         <%}%>
      <!-- add code back here -->
 
-
-
-
      <% if (pages > 0) { %>
-      <section class="flex justify-center items-center p-4">
+      <section class="flex justify-center items-center p-8">
                   <ul class="pagination text-center flex space-x-7 justify-center w-fit items-center ">
                       <% if (current == 1) { %>
-                          <li class="disabled p-4  bg-neutral-400 text-white">
+                          <li class="disabled p-2 rounded-full bg-neutral-400 text-white">
                             <a class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -114,7 +120,7 @@
                       <% } %>
                       <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
                           <% if (i == current) { %>
-                              <li class="active p-4 bg-teal-700 text-white rounded-md"><a><%= i %></a></li>
+                              <li class="active p-2 bg-teal-700 text-white rounded-md"><a><%= i %></a></li>
                           <% } else { %>
                               <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= i %>"><%= i %></a></li>
                           <% } %>
@@ -123,7 +129,7 @@
                           <% } %>
                       <% } %>
                       <% if (current == pages) { %>
-                          <li class="disabled p-4  bg-neutral-400 text-white"><a> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                          <li class="disabled p-2 rounded-full bg-neutral-400 text-white"><a> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-chevron-right w-6 h-6">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -138,12 +144,6 @@
                   </ul>
                 </section>
               <% } %>
-
-
-
-              
-
-
 
     </section>
   </section>

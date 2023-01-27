@@ -125,12 +125,14 @@ module.exports = {
 
     try {
       const thought = await thoughtDiary.findById(req.params.id);
+      const bookmarked = await req.flash('bookmarked')
       console.log('this is thoughts' + thought)
       res.render("get-thoughts", {
         title: "Thought Diary - Thought",
         layout: "./layouts/dashboard-home.ejs",
         thought:thought,
-        user: req.user
+        user: req.user,
+        bookmarked:bookmarked
         
       });
     } catch (err) {
