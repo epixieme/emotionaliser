@@ -806,8 +806,8 @@ video {
   width: 13rem;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-32 {
@@ -828,8 +828,20 @@ video {
   width: fit-content;
 }
 
-.w-1 {
-  width: 0.25rem;
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .max-w-full {
@@ -870,6 +882,10 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 
 .flex-grow {
@@ -1220,6 +1236,31 @@ video {
   border-color: rgb(19 78 74 / var(--tw-border-opacity));
 }
 
+.border-neutral-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 64 64 / var(--tw-border-opacity));
+}
+
+.border-neutral-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 82 82 / var(--tw-border-opacity));
+}
+
+.border-neutral-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(115 115 115 / var(--tw-border-opacity));
+}
+
+.border-red-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .bg-teal-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 118 110 / var(--tw-bg-opacity));
@@ -1291,22 +1332,6 @@ video {
   background-image: url('/images/wave.svg');
 }
 
-.bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
-  background-image: url('/images/autumn.svg');
-}
-
-.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
-  background-image: url('/images/hexagons.svg');
-}
-
-.bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
-  background-image: url('/images/overlapping-circles.svg');
-}
-
-.bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
-  background-image: url('/images/cogs.svg');
-}
-
 .bg-wave-line {
   background-image: url('/images/wave-line.svg');
 }
@@ -1321,6 +1346,22 @@ video {
 
 .bg-backg-wave-middle {
   background-image: url('/images/wavey.svg');
+}
+
+.bg-\[url\(\'\/images\/autumn\.svg\'\)\] {
+  background-image: url('/images/autumn.svg');
+}
+
+.bg-\[url\(\'\/images\/hexagons\.svg\'\)\] {
+  background-image: url('/images/hexagons.svg');
+}
+
+.bg-\[url\(\'\/images\/overlapping-circles\.svg\'\)\] {
+  background-image: url('/images/overlapping-circles.svg');
+}
+
+.bg-\[url\(\'\/images\/cogs\.svg\'\)\] {
+  background-image: url('/images/cogs.svg');
 }
 
 .bg-\[url\(\'\/images\/circuit-board\.svg\'\)\] {
@@ -2290,6 +2331,10 @@ input[type='file'] {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:rounded-md:hover {
+  border-radius: 0.375rem;
+}
+
 .hover\:border-teal-700:hover {
   --tw-border-opacity: 1;
   border-color: rgb(15 118 110 / var(--tw-border-opacity));
@@ -2438,6 +2483,10 @@ input[type='file'] {
 
   .md\:w-1\/3 {
     width: 33.333333%;
+  }
+
+  .md\:w-44 {
+    width: 11rem;
   }
 
   .md\:grid-cols-7 {

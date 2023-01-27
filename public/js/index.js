@@ -9,7 +9,6 @@ const dateFields = document.querySelectorAll(".dateFields");
 const rating = document.querySelectorAll(".rating");
 const nav = document.querySelectorAll("nav li");
 const like = document.querySelector(".like");
-
 const btn = document.querySelector("button.mobile-menu-button");
 const menu = document.querySelector(".mobile-menu");
 

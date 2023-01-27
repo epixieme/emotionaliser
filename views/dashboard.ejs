@@ -30,7 +30,7 @@
   <section class="px-8 md:px-16">
     <section class="py-8">
       <p class="userid" hidden><%=user._id%></p>
-      <h1 class="text-base md:text-xl font-poppins font-semibold">
+      <h1 class="text-xl font-poppins font-semibold">
         Visualise your Moods
       </h1>
     </section>
@@ -52,17 +52,17 @@
           <% for(let i=0; i< thoughts.length; i++) {%>
 
           <section
-            class="overflow-hidden hover:scale-105 transition duration-300 ease-in-out"
+            class="overflow-hidden hover:scale-105 transition duration-300 ease-in-out md:w-44"
           >
             <%const date = new Date(thoughts[i].date)%> <%const d =
-            date.getDate()%> <%const m = date.getMonth()+1%>
+            ('0' + date.getDate()).slice(-2)%> <%const m = ('0' + (date.getMonth()+1)).slice(-2)%> 
             <p
-              class="text-center text font-normal border-b-2 border-black pb-1 mb-2"
+              class="text-center text-neutral-500 font-normal border-b border-red-500 pb-1 mb-2"
             >
               <%=`${d}/${m}`%>
             </p>
 
-            <section class="h-2 date rounded-md shadow-md row-start-auto pb-2">
+            <section class="h-2 date  border border-neutral-500 row-start-auto pb-2  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-neutral-500  transition delay-150 duration-300 ease-in-out ">
               <a
                 class="thoughtRoute"
                 href="/dashboard/tools/thoughtdiary<%thoughts.id%>"
@@ -74,12 +74,20 @@
                   style="width: 100%; height: 153px"
                 />
               </a>
+              <p
+              class="font-poppins transition duration-300 ease-in-out m-5  rounded-full py-1 text-xs font-semibold text-white category  text-center"
+              id="likedDisliked"
+            >
+           
+              <%=thoughts[i].category%>
+            </p>
 
               <p
-                class="hover:scale-105 transition duration-300 ease-in-out m-5 bg-gray-900 rounded-full py-1 text-xs font-semibold text-white category hover:text-white hover:bg-teal-700 text-center"
+                class="rating  transition duration-300 ease-in-out m-5  rounded-full py-1 text-xs font-semibold text-white category text-center"
                 id="likedDisliked"
               >
-                #<%=thoughts[i].category%>
+             
+                <%=thoughts[i].rating%>
               </p>
             </section>
           </section>
@@ -88,7 +96,7 @@
         </section>
 
         <% } else { %>
-        <h1 class="text-base">
+        <h1 class="text-base font-poppins">
           Sorry, There are no thoughts available to display. Please add an entry
           to your thought diary.
         </h1>
@@ -97,17 +105,19 @@
 
       <section class="">
         <h1
-          class="text-xl font-poppins py-8 font-semibold text-base md:text-xl" id="likedDisliked"
+          class="text-xl font-poppins py-8 font-semibold" id="likedDisliked"
         >
           Be Inspired
         </h1>
       </section>
-
+      <% if(motivations.length !==0 ){ %>
       <!-- // motivations  card start here -->
       <section
         class=" motivationSection mongoDates grid grid-cols-1  text-center max-w-4xl  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md hover:scale-105 transition delay-150 duration-300 ease-in-out"
       >
-        <% for(let i=0; i<1; i++) {%> <% if(motivations.length !==0 ){ %>
+    
+        <% for(let i=0; i<1; i++) {%> 
+    
           <section>
         <section
           class="motivationsCard bg-motivations rounded-t-md bg-no-repeat
@@ -266,14 +276,17 @@
         </section>
       </section>
       <!-- // motivations  card ends here -->
-
-      <% } else { %>
-      <h1 class="text-base">
-        Sorry, There are no quotes to display. Try again later.
-      </h1>
-      <% } %> <% } %>
+    
+         <% } %>
+         <% } else { %>
+          <h1 class="text-base">
+            Sorry, There are no quotes to display. Try again later.
+          </h1>
+          <% } %>
     </section>
+    
   </section>
+  
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
@@ -297,14 +310,17 @@
 
   fetchData(url);
   async function chartData(data) {
-    let yLabels = {
+
+    let yLabs = {
       1: "Awful",
-      2: "Very Bad",
+      2: "V Bad",
       3: "Bad",
       4: "Good",
-      5: "Very Good",
+      5: "V Good",
       6: "Great",
     };
+
+   const yLabels =  data.length > 0 ? yLabs : ""
 
     const date = data.map((item) => item.date);
 
@@ -318,7 +334,7 @@
     // console.log(dateFormat.toLocaleDateString("en-US"))
 
     const ctx = document.getElementById("myChart").getContext("2d");
-
+    Chart.defaults.font.family = "Poppins";
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0.2, "rgb(255, 10, 86,0.2)");
     gradient.addColorStop(1, "rgb(13, 118, 110,0.6)");
@@ -336,6 +352,7 @@
             data: data.map((item) =>
               item.user === userid.innerText ? item.rating : 0
             ),
+
             backgroundColor: gradient,
             borderColor: [
               "rgb(255, 99, 132)",
@@ -373,6 +390,7 @@
               },
               label: function (value) {
                 return y;
+                
               },
             },
           },
@@ -404,7 +422,7 @@
               padding: 10,
               beginAtZero: true,
               callback: function (value, index, values) {
-                return yLabels[value];
+                return yLabels[value]
               },
             },
 
