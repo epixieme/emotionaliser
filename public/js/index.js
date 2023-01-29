@@ -7,6 +7,7 @@ const mongoDates = document.querySelector(".mongoDates");
 const thoughtRoutes = document.querySelectorAll(".thoughtRoute");
 const dateFields = document.querySelectorAll(".dateFields");
 const rating = document.querySelectorAll(".rating");
+
 const nav = document.querySelectorAll("nav li");
 const like = document.querySelector(".like");
 const btn = document.querySelector("button.mobile-menu-button");
@@ -51,6 +52,7 @@ async function fetchData(url) {
 
     // insertData(data);
     createRatingArrows(data);
+
   } catch (error) {
     console.log(error);
   }
@@ -79,16 +81,25 @@ function createRatingArrows(data) {
 
   let arrows = data.map((item) => item.rating);
 
-  let upDown = arrows
+  let upDown = arrows.slice()
     .reverse()
     .map((item, i, a) =>
-      item === a[i + 1] ? noChange : item < a[i + 1] ? down : up
+      item === a[i - 1] ? noChange : item < a[i - 1] ? down : up
     );
+    
+    // let dashUpDown = arrows.slice()
+    // .reverse()
+    // .map((item, i, a) =>
+    //   item === a[i - 1] ? noChange : item < a[i -1] ? down : up
+    // );
 
   upDown.forEach((item, i) => (rating[i].innerHTML = item));
 
+  // dashUpDown.forEach((item, i) => (dashRating[i].innerHTML = item));
+
   // set first date item to nothing instead of arrows as nothing to compare
-  rating[rating.length - 1].innerHTML = "-";
+  rating[0].innerHTML = "-";
+  // dashRating[dashRating.length - 1].innerHTML = "-";
 
   // need to only see data for this req.user
 }
@@ -96,18 +107,21 @@ function createRatingArrows(data) {
 const circlesBtn = document.querySelector(".circlesBtn");
 const motivationSection = document.querySelector(".motivationSection ");
 
+const likeOrNot = document.querySelector(".likeOrNot");
+
 if (circlesBtn) {
   circlesBtn.addEventListener("click", toolTip);
 }
 
-if (like) {
-  like.addEventListener("click", likedislike);
-}
+
+// if (like) {
+//   like.addEventListener("click", likedislike);
+// }
 
 // dashboard motivational quote
-
+//show modal if hidden on click
 function toolTip() {
-  const likeOrNot = document.querySelector(".likeOrNot");
+
   
   if (likeOrNot.classList.contains("hidden")) {
     likeOrNot.classList.remove("hidden");
@@ -115,25 +129,24 @@ function toolTip() {
   } else {
     likeOrNot.classList.add("hidden");
   }
-  if (like) {
-    like.addEventListener("click", likeunlike(likeOrNot));
-  }
+  // if (like) {
+  //   like.addEventListener("click", likeunlike(likeOrNot));
+  // }
 }
 
-function likedislike() {
-  const likeOrNot = document.querySelector(".likeOrNot");
-  likeOrNot.classList.add("hidden");
-}
+// on click of like or dislike then hide like/dislike modal to show the flash messsage
+
+// function likedislike() {
+//   const likeOrNot = document.querySelector(".likeOrNot");
+//   likeOrNot.classList.add("hidden");
+// }
 
 function timedFlashMsg() {
-
-
   let likeMsg = document.getElementById("likeMsg");
-
-
   let dislikeMsg = document.getElementById("dislikeMsg");
+  const bookmarkedMsg = document.getElementById(".bookmarkedMsg")
 
-
+  // set flash messages to fade out
 setTimeout(() => {
     if (likeMsg && likeMsg.innerText.length > 0 ) {
       likeMsg.style.display = "none";

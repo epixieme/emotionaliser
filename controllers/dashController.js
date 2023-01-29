@@ -16,7 +16,8 @@ module.exports = {
       
         try{
        
-          const thoughts = await (await thoughtDiary.find({ user: req.user.id }).sort({date: -1}).limit(7)).reverse()
+          const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({ _id: -1 })
+          console.log('thoughts order' + thoughts)
           const users = await userDetails.find();
           const motivations = await motivationsQuotes.find({id:req.params.id,like:true})
 

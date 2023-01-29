@@ -18,8 +18,10 @@ module.exports = {
         }
       );
       console.log("bookmarked");
-      req.flash('bookmarked', "Added to Positivity Hub for reflection")
-      res.redirect("/dashboard/tools/thoughtdiary");
+      req.flash('bookmarkedMsg', "Added to Positivity Hub for reflection")
+      res.redirect(`/dashboard/tools/thoughtdiary/0/${req.params.id}`);
+    
+     
     } catch (err) {
       errorHandling(res, err);
     }
@@ -88,7 +90,7 @@ module.exports = {
         }
       );
       console.log("unbookmarked");
-      res.redirect("/dashboard/tools/thoughtdiary");
+      res.redirect(`/dashboard/tools/thoughtdiary/1/${req.params.id}`);
     } catch (err) {
       errorHandling(res, err);
     }
