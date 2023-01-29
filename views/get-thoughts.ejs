@@ -1,18 +1,24 @@
 <section
-  class="flex justify-center bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56 font-poppins"
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppins"
 >
-<section class="text-black hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-md  overflow-hidden shadow-lg h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-h-full">
+<section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-8 m-0 ">
  
-  <img class="border object-cover rounded-md" src="<%=thought.image %>"  style="width:100%;height:350px" />
+  <p class="px-8 text-white  text-base font-poppins">Edit Thoughts </p>
+</section>
+
+<section class="flex flex-col items-center justify-center px-4 pt-4">
+<section class="text-black hover:scale-105 transition delay-150 duration-300 ease-in-out max-w-md overflow-hidden shadow-lg h-full  bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 max-h-full">
+ 
+  <img class="border object-cover rounded-md" src="<%=thought.image %>"  style="width:auto;height:300px" />
   <section class="px-8 py-4">
-    <h1 class="block text-2xl  font-bold py-2">Mood</h1>
+    <h1 class="block text-xl  font-bold py-2">Mood</h1>
     <h1 class="text-base font-light"><%=thought.category %></h1>
-    <h1 class="block text-2xl  font-bold py-2">Summary</h1>
+    <h1 class="block text-xl  font-bold py-2">Summary</h1>
     <h1 class="text-base font-light"><%=thought.summary %></h1>
-    <h1 class="block text-2xl font-bold py-2">Details</h1>
+    <h1 class="block text-xl font-bold py-2">Details</h1>
     <h1 class="text-base font-light"><%=thought.details %></h1>
   </section>
-  <section class="flex px-8 pt-4 pb-2 space-x-16">
+  <section class="flex px-8 pt-1 pb-2 space-x-16 justify-center">
     <p class="edit hover:scale-105 transition delay-150 duration-300 ease-in-out"><a href="/dashboard/tools/thoughtdiary/0/edit-thought/<%=thought.id%>">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -78,15 +84,19 @@
 
 
   </section>
+  <section class="flex justify-end p-1">
+    <% if(bookmarkedMsg.length > 0){ %>
   <section
-  class="flex  text-white p-4  rounded-md  bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md"
+  class=" text-white p-4 rounded-md max-w-fit bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md border border-white" id="bookmarkedMsg"
   >
-  <p class="text-black font-bold"><%=bookmarkedMsg%></p>
+  <p class=" font-bold"><%=bookmarkedMsg%></p>
   
   </section>
+  <%}%>
+</section>
 </section>
 
-
+</section>
 </section>
 
 

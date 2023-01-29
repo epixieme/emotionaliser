@@ -19,7 +19,7 @@ module.exports = {
       );
       console.log("bookmarked");
       req.flash('bookmarkedMsg', "Added to Positivity Hub for reflection")
-      res.redirect(`/dashboard/tools/thoughtdiary/0/${req.params.id}`);
+      res.redirect(`/dashboard/tools/thoughtdiary/0/${req.params.id}/#bookmarkedMsg`);
     
      
     } catch (err) {

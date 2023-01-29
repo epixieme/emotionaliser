@@ -144,14 +144,19 @@ function toolTip() {
 function timedFlashMsg() {
   let likeMsg = document.getElementById("likeMsg");
   let dislikeMsg = document.getElementById("dislikeMsg");
-  const bookmarkedMsg = document.getElementById(".bookmarkedMsg")
+  const bookmarkedMsg = document.getElementById("bookmarkedMsg")
 
   // set flash messages to fade out
 setTimeout(() => {
     if (likeMsg && likeMsg.innerText.length > 0 ) {
       likeMsg.style.display = "none";
      
-    }else if (dislikeMsg && dislikeMsg.innerText.length > 0) {
+    }
+    if (bookmarkedMsg && bookmarkedMsg.innerText.length > 0 ) {
+     bookmarkedMsg.style.display = "none";
+     
+    }
+    else if (dislikeMsg && dislikeMsg.innerText.length > 0) {
       dislikeMsg.style.display = "none";
 
     }
