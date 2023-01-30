@@ -1,19 +1,21 @@
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppin">
 
-  <section class="flex items-center bg-teal-700 bg-[url('/images/cogs.svg')] p-8 m-0 ">
+  <section class="flex items-center bg-teal-700 bg-[url('/images/cogs.svg')] p-5 m-0 ">
  
-    <p class="px-8 text-white pt-4 text-base font-poppins"><span class="text-xl">User Settings</span> </p>
+    <p class="px-8 text-white text-base font-poppins"><span class="text-base">User Settings</span> </p>
  </section>
+
+
 
 
 <section class="grid overflow-hidden grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 w-auto p-8" >
 <form class="flex flex-col items-center justify-evenly shadow-md rounded-md bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 py-8 " action="/dashboard/profile/update-photo/<%=user._id%>?_method=PUT"  enctype="multipart/form-data" method="POST">
 
-  <img src=<%=user.image%> alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:50%;height:auto">
+  <img src="<%=user.image%>" alt="" class="rounded-md shadow max-w-full h-auto align-middle border-none object-cover" style="width:60%;height:auto">
   <h1 class="text-2xl py-4"><%=user.userName%></h1>
 
 
-<section class="flex flex-col w-full md:px-24">
+<section class="flex flex-col w-full md:px-24 px-8">
 
 <label for="imgUpload" class="form-label flex">
 
@@ -144,4 +146,5 @@ Update Account</button>
 
 </section>
  
+</section>
 </section>

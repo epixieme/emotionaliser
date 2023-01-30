@@ -1,21 +1,18 @@
 
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 font-poppins">
-   <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-8 m-0 ">
+   <section class="flex items-center bg-teal-700 bg-[url('/images/autumn.svg')] p-5 m-0 ">
  
-   <p class="px-8 text-white pt-4 text-base font-poppins">Positivity Hub - A place to view and reflect on bookmarked community posts, thoughts and motivations.</p>
+   <p class="px-8 text-white text-base font-poppins">Positivity Hub - A place to view and reflect on bookmarked community posts, thoughts and motivations.</p>
 </section>
-<% for(let i=0; i<thoughts.length; i++) {%>
-   <% if(thoughts.length > 0 && thoughts[i].user.toString() ==  user._id){ %>
-   <h1 class="text-black px-8 md:px-16 py-8  text-xl font-poppins font-semibold">My Positive Thoughts</h1>
-   <% }%>
-   <% } %>
+
+
+
+      <h1 class="text-black px-8 md:px-16 py-8 text-xl font-poppins font-semibold">My Positive Thoughts</h1>
+ 
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
-
-    
+   <% if(thoughts.length > 0){ %> 
    <% for(let i=0; i<thoughts.length; i++) {%>
-
-
    <% if(thoughts[i].user.toString() ==  user._id){ %>
      <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
         
@@ -27,19 +24,22 @@
             <!-- <p class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  mt-2">#<%=thoughts[i].category%></p> -->
         </section>
       </section>
-      <% }%>
+   
      <% } %>
+     <% }%>
+
+     <% } else { %>
+
+
   </section>
 
- <% for(let i=0; i<motivations.length; i++) {%>
-      <% if(motivations.length > 0 && motivations[i].user.toString() ==  user._id){ %>
+  <p class="text-base px-8 md:px-16">You have no thought bookmarks. Please bookmark something to reflect on.</p>
+  <% }%>
   <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">My Motivations</h1>
 
-  <% }%>
-    <% } %>
-  
   <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
-   
+   <%console.log("mot length" + motivations.length)%>
+   <% if(motivations.length > 0){ %>
   <% for(let i=0; i<motivations.length; i++) {%>
    <% if(motivations[i].user.toString() ==  user._id ){ %>
    <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
@@ -53,23 +53,29 @@
        </section>
      </section>
 
-     <% }%>
-    <% } %>
+     <% } %>
+     <% } %>
+     <% } else { %>
    </section>
-   <% for(let i=0; i<community.length; i++) {%>
-      <% if(community[i].thoughtBookmarks.length > 0 && community[i].thoughtBookmarks[i].user.toString() ==  user._id){ %>
- <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">Community Posts</h1>
- <% } %>
- <% } %>
- <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
   
+
+      <p class="text-base px-8 md:px-16">You have no motivational bookmarks. Please bookmark something to reflect on.</p>
+
+      <% }%>
+
+ <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">Community Posts</h1>
+
+ <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+
 <!-- either populate or embed in user model the image etc for thoughts -->
    <% for(let i=0; i<community.length; i++) {%>
-     <% console.log('comm len' + community.length + user.userName)%>
+      <%console.log("comm len" + community[i]._id)%>
        <!-- && user.id is not current req.user  or hide bookmark for your own posts-->
-      <% if(community[i].thoughtBookmarks.length > 0 && community[i].thoughtBookmarks[i].user.toString() ==  user._id){ %>
+       
+       <% if(community.length > 0 && community[i].id ){ %>
       
-         <% for(let j=0; j<community[i].thoughtBookmarks.length; j++) {%>
+         <% for(let j=0; j < community[i].thoughtBookmarks.length; j++) {%>
+          
             <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
                <img src="<%=community[i].thoughtBookmarks[j].image%>" alt="" class="object-cover rounded-md" style="width:100%;height:150px">
 
@@ -77,15 +83,21 @@
                   <!-- <p class="font-bold">Author: <%=userName[i].user%></p>   -->
                <p class=" text-black "><%=community[i].thoughtBookmarks[j].summary%></p>
                <!-- <p class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  mt-2">#<%=community[i].thoughtBookmarks[j].category%></p> -->
-       
+     
+              
 </section>
+
  </section>
+ <% } %>
+ <% } %>
       <% } %>
    </section>
-      <% } %>
-      <% } %>
+  
+      
+     
 
 </section>
 </section>
 
 
+</section>
