@@ -25,19 +25,21 @@
         </section>
       </section>
    
+ 
      <% } %>
      <% }%>
-
      <% } else { %>
 
+      <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
 
+  <p class="text-base ">You have no thought bookmarks. Please bookmark something to reflect on.</p>
   </section>
-
-  <p class="text-base px-8 md:px-16">You have no thought bookmarks. Please bookmark something to reflect on.</p>
   <% }%>
+   </section>
+  
   <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">My Motivations</h1>
 
-  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
+  <section class="px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
    <%console.log("mot length" + motivations.length)%>
    <% if(motivations.length > 0){ %>
   <% for(let i=0; i<motivations.length; i++) {%>
@@ -56,24 +58,25 @@
      <% } %>
      <% } %>
      <% } else { %>
+      <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
+      <p class="text-base ">You have no motivational bookmarks. Please bookmark something to reflect on.</p>
+   </section>
+      <% }%>
    </section>
   
-
-      <p class="text-base px-8 md:px-16">You have no motivational bookmarks. Please bookmark something to reflect on.</p>
-
-      <% }%>
+  
 
  <h1 class="text-black px-16 py-8 text-xl font-poppins font-semibold">Community Posts</h1>
 
  <section class=" px-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-7 lg:grid-cols-7 xl:grid-cols-7 gap-4">
-
+   <%console.log('comm' + community)%>
 <!-- either populate or embed in user model the image etc for thoughts -->
    <% for(let i=0; i<community.length; i++) {%>
-      <%console.log("comm len" + community[i]._id)%>
+
        <!-- && user.id is not current req.user  or hide bookmark for your own posts-->
-       
-       <% if(community.length > 0 && community[i].id ){ %>
       
+       <% if(community[i].thoughtBookmarks.length > 0 && community[i].id ){ %>
+        
          <% for(let j=0; j < community[i].thoughtBookmarks.length; j++) {%>
           
             <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
@@ -84,19 +87,23 @@
                <p class=" text-black "><%=community[i].thoughtBookmarks[j].summary%></p>
                <!-- <p class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  mt-2">#<%=community[i].thoughtBookmarks[j].category%></p> -->
      
-              
+             
 </section>
-
  </section>
  <% } %>
- <% } %>
-      <% } %>
+ <% } else { %>
+   <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
+   <p class="text-base ">You have no community bookmarks. Please join a community and bookmark something to reflect on.</p>
+   </section>
+         <% } %>
+     
+               <% } %> 
    </section>
   
-      
-     
 
-</section>
+</section> 
+  
+
 </section>
 
 

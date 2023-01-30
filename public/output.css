@@ -868,6 +868,26 @@ video {
   width: 50%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -916,6 +936,10 @@ video {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
 }
 
 .flex-grow {
@@ -1702,6 +1726,14 @@ video {
 
 .pt-1 {
   padding-top: 0.25rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .text-left {
@@ -2598,6 +2630,14 @@ input[type='file'] {
     width: 6rem;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
+  }
+
   .md\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
@@ -2684,10 +2724,6 @@ input[type='file'] {
     padding: 2rem;
   }
 
-  .md\:p-16 {
-    padding: 4rem;
-  }
-
   .md\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -2744,6 +2780,11 @@ input[type='file'] {
     padding-bottom: 0px;
   }
 
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -2772,11 +2813,6 @@ input[type='file'] {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .md\:before\:-left-5::before {
