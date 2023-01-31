@@ -13,11 +13,11 @@
   
 <section class="max-w-3xl shadow-md rounded-md bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8">
 
-<section class="flex flex-col   border border-red-800">
+<section class="flex flex-col border border-red-800 px-4">
 
-  <section class="flex space-x-2 py-2 items-center  border border-red-800">
+  <section class="flex space-x-4 py-2   border border-red-800">
 
-  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:15%;height:auto">
+  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
    <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>  
 
   </section> 
@@ -29,7 +29,7 @@
 
 <section class="flex space-x-4 py-4 items-center border-b border-neutral-400">
 
-<form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center">
+<form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center px-4">
     <input type="text" value="<%=thoughts[i]._id%>" hidden name="id">
 <button type="submit">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -107,8 +107,8 @@
 </section>
 
 <!-- create comments section -->
-<form action="/dashboard/community/comments/createThoughtComment" method="POST" class="commentBox py-4 ">
-  <input type="text" class="border border-neutral-400 p-4 rounded-md w-80 focus:outline-none" placeholder="Write a response" name="comment">
+<form action="/dashboard/community/comments/createThoughtComment" method="POST" class="commentBox py-4 px-4">
+  <input type="text" class="border border-neutral-400 p-4 rounded-md w-64 focus:outline-none" placeholder="Write a response" name="comment">
   <input type="text" value="<%=thoughts[i]._id%>" hidden name="id">
   <input type="text" value="<%=user.id%>" hidden name="user">
   <button type="submit" class="bg-teal-700 text-white p-4 rounded-md"> Submit
@@ -123,10 +123,10 @@
   <% if(comments[j].thoughts && comments[j].thoughts.toString() == thoughts[i]._id ){ %>
     <section class="py-4 flex justify-center" id ="<%=recentDate.date.toString() === comments[j].date.toString()? 'replies':''%>">
 <section class="flex px-4 ">
-  <section class="userImages border border-red-800 w-16">
+  <section class="userImages  w-16">
   <img src="<%=communityUser[j].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
 </section>
- <section class="flex flex-col justify-center px-4 border border-red-900 w-56 md:w-96">
+ <section class="flex flex-col justify-center px-4 pb-2  border-b border-neutral-400 w-56 md:w-96">
 
   <section class="flex space-x-2 py-2 items-center ">
        
