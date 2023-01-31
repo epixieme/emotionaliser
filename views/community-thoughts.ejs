@@ -4,23 +4,25 @@
     <p class="px-8 text-white text-base font-poppins">Thoughts - A place to share thoughts with the hive mind. Like, support or simply be inspired.</p>
  </section>
  
-<section class="px-4 md:px-32 flex justify-end ">
+<!-- <section class="px-4 md:px-32 flex justify-end "> -->
  <!-- <a class="bg-teal-700 py-4 px-8 rounded-md text-base text-white">New post</a> -->
-</section>
-<section class="px-4 md:px-32 pt-4 ">
+
+<section class="flex justify-center flex-col items-center ">
 
     <% for(let i=0; i<thoughts.length; i++) {%> 
   
-<section class="flex flex-col  shadow-md rounded-md p-4 md:px-32 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20   py-8 mt-8">
+<section class="max-w-3xl shadow-md rounded-md bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8">
 
-<section class="flex flex-col">
+<section class="flex flex-col   border border-red-800">
 
-  <section class="flex space-x-2 py-2 items-center">
+  <section class="flex space-x-2 py-2 items-center  border border-red-800">
 
-  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:7%;height:60%">
+  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:15%;height:auto">
    <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>  
 
   </section> 
+
+
     <p class="text-neutral-600 py-2"><%=thoughts[i].date.toDateString()%></p>
     <p class="text-base truncate py-2"><%=thoughts[i].details%> </p>
 </section>
@@ -119,22 +121,23 @@
 <% for(let j=0; j<comments.length; j++) { %>
 
   <% if(comments[j].thoughts && comments[j].thoughts.toString() == thoughts[i]._id ){ %>
-    <section class=" py-4 flex justify-center px-8" id ="<%=recentDate.date.toString() === comments[j].date.toString()? 'replies':''%>">
-<section class="flex ">
-  <img src="<%=communityUser[j].user.image %>" style="width:7%;height:60%" class='rounded-lg object-cover'>
-  
- <section class="flex flex-col  w-5/6">
+    <section class="py-4 flex justify-center" id ="<%=recentDate.date.toString() === comments[j].date.toString()? 'replies':''%>">
+<section class="flex px-4 ">
+  <section class="userImages border border-red-800 w-16">
+  <img src="<%=communityUser[j].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
+</section>
+ <section class="flex flex-col justify-center px-4 border border-red-900 w-56 md:w-96">
 
-  <section class="px-8 flex space-x-2 py-2 items-center">
+  <section class="flex space-x-2 py-2 items-center ">
        
     <p class="font-bold"><%=communityUser[j].user.userName %></p>
     <p><%=comments[j].date.toLocaleString() %></p>
   
   </section>
-  <section class=" px-8 py-2">
-        <p><%=comments[j].comment %></p>
+  <section class="flex py-2">
+        <p class="break-all"><%=comments[j].comment %></p>
   </section>
-  <form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="pl-8 like flex  space-x-1 items-center w-ma">
+  <form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="like flex  space-x-1 items-center w-ma">
     <input type="text" value="<%=thoughts[i]._id%>" hidden name="id">
   <button type="submit">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -148,12 +151,6 @@
      
        </section>
 
-      
-      
-
-
-     
-
 
 </section>
  
@@ -163,6 +160,7 @@
 <% } %> 
 
 </section>
+<!-- </section> -->
 </section>
 <!-- like route
 comment route
