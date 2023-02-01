@@ -52,6 +52,7 @@ module.exports = {
         recentDate:recentDate,
         thoughts: thoughts,
         likes: 0,
+        commentLikes: 0,
         comments:comments,
         commentCount:commentCount
         
@@ -99,14 +100,17 @@ try {
       const comments = await commentDetails.find().lean()
       const commentCount = await commentDetails.find().count();
       const userName = await motivationsDetails.find().populate({path:'user', select:'userName image'})
+      const userPop = await motivationsDetails.find({id:req.body.id}).populate({path:'user', select:'userName image'})
       res.render("community-motivations", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
+        userPop:userPop,
         user: req.user,
         users: users,
         userName:userName,
         motivations:motivations,
         likes: 0,
+        commentLikes: 0,
         comments:comments,
         commentCount:commentCount
       });
@@ -142,6 +146,7 @@ try {
       console.log(err);
       errorHandling(res, err);
     }
-  },
+  }
+
 
 };

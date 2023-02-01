@@ -124,7 +124,7 @@ module.exports = {
       );
 
       const community = await userDetails.find(req.user).populate('thoughtBookmarks')
-      console.log("community bookmarks"  + community)
+    
 
       const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
     

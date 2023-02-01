@@ -13,7 +13,7 @@ createThoughtsComment:async(req,res) =>{
 try{
   const comment = await comments.create({
     comment: req.body.comment,
-    likes:0,
+    commentLikes:0,
     thoughts:req.body.id,
     user:req.user.id
   
@@ -36,5 +36,38 @@ try{
           console.log(err)
         }
        },
-  
+
+  likeThoughtComment: async (req, res) => {
+    try {
+      console.log(req.body.id);
+      await comments.findOneAndUpdate(
+        { _id: req.body.id },
+        {
+          $inc: { commentLikes: 1 },
+        }
+      );
+      console.log("Likes +1");
+      res.redirect(`/dashboard/community/communityThoughts`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+
+  likeMotivationComment: async (req, res) => {
+    try {
+      console.log(req.body.id);
+      await comments.findOneAndUpdate(
+        { _id: req.body.id },
+        {
+          $inc: { commentLikes: 1 },
+        }
+      );
+      
+      console.log("Likes +1");
+      res.redirect(`/dashboard/community/communityThoughts`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 }

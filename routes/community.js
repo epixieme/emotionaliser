@@ -16,4 +16,5 @@ router.put("/communityMotivations/likePost", communityController.likeMotivations
 router.put("/communityMotivations/deletePost", communityController.deleteMotivationsPost);
 
 
+
 module.exports = router // export the router

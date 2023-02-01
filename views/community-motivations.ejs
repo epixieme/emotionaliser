@@ -1,34 +1,39 @@
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppins">
-  <section class="flex items-center bg-teal-700 bg-[url('/images/hexagons.svg')] p-8 m-0 ">
+  <section class="flex items-center bg-teal-700 bg-[url('/images/hexagons.svg')] p-5 m-0 ">
  
-    <p class="px-8 text-white pt-4 text-base font-poppins"><span class="text-xl">motivations</span> - A place to share motivations with the hive mind. Like, support or simply be inspired.</p>
+    <p class="px-8 text-white text-base font-poppins">motivations - A place to share motivations with the hive mind. Like, support or simply be inspired.</p>
  </section>
  
-<section class="px-4 md:px-32 flex justify-end ">
+<!-- <section class="px-4 md:px-32 flex justify-end "> -->
  <!-- <a class="bg-teal-700 py-4 px-8 rounded-md text-base text-white">New post</a> -->
-</section>
-<section class="px-4 md:px-32 py-16 ">
+
+<section class="flex justify-center flex-col items-center px-8 md:px-64 pb-4">
 
     <% for(let i=0; i<motivations.length; i++) {%> 
-        <section class="flex flex-col  shadow-md rounded-md p-4 md:px-32 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20   py-8 mt-8">
+  
+<section class="w-full shadow-md rounded-md bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8 md:mx-32">
 
-<section class="flex flex-col">
-  <section class="flex space-x-2 py-2 items-center">
-  <img src=<%=userName[i].user.image%> alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:5%;height:auto">
-   <h2 class="text-base font-bold"><%=userName[i].user.userName%></h2>  
-  </section>
+<section class="flex flex-col px-4 w-80 md:w-96">
+
+  <section class="flex space-x-4 py-2">
+
+  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
+   <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>  
+
+  </section> 
+
+
     <p class="text-neutral-600 py-2"><%=motivations[i].date.toDateString()%></p>
-
-    <p class="text-base truncate py-2"><%=motivations[i].poem%> </p>
-    <p class=" truncate py-2 text-xsm text-neutral-700">Author: <%=motivations[i].author%> </p>
+    <p class="text-base py-2 break-all"><%=motivations[i].poem%> </p>
+    <p class="text-sm text-neutral-600  py-2 break-all"><%=motivations[i].author%> </p>
 </section>
 
 <section class="flex space-x-4 py-4 items-center border-b border-neutral-400">
 
-<form action="/dashboard/community/communityMotivations/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center">
+<form action="/dashboard/community/communitymotivations/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center pl-4">
     <input type="text" value="<%=motivations[i]._id%>" hidden name="id">
 <button type="submit">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6   hover:text-teal-700">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
   </svg>
 </button>
@@ -38,7 +43,7 @@
 <!-- this counts the number of commments -->
 <form action="" class="comments flex space-x-1 items-center">
 <p>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6   hover:text-teal-700">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
   </svg>
   </p>
@@ -66,12 +71,12 @@
 </svg>
 </button>
 </form>
-<% console.log(user.thoughtBookmarks) %> 
+
 
 <!-- if no id then turn it to neutral color and unbookmarked -->
 <% } else { %>
 
-<form action="/dashboard/bookmarks/community/communityMotivations/bookmarked?_method=PUT" method="POST" class="bookmark flex items-center">
+<form action="/dashboard/bookmarks/community/communitymotivations/bookmarked?_method=PUT" method="POST" class="bookmark flex items-center">
   <input type="text" value="<%=motivations[i]._id%>" hidden name="id">
   <button type="submit">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700">
@@ -79,17 +84,16 @@
 </svg>
 </button>
 </form>
+
 <% } %>
 <!-- </section> -->
 <!-- share button -->
 
 
-
-
   <% if(motivations[i].user.toString() === user.id ){ %>
     
   <!-- delete button -->
-<form action="/dashboard/community/communityMotivations/deleteMotivationsPost?_method=PUT" method="POST" class="delete flex">
+<form action="/dashboard/community/communitymotivations/deletePost?_method=PUT" method="POST" class="delete flex">
   <input type="text" value="<%=motivations[i]._id%>" hidden name="id">
     <button type="submit" class="">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -104,9 +108,10 @@
 </section>
 
 <!-- create comments section -->
-<form action="/dashboard/community/comments/createMotivationComment" method="POST" class="commentBox py-4 ">
-  <input type="text" class="border border-neutral-400 p-4 rounded-md w-80 focus:outline-none" placeholder="Write a response" name="comment">
+<form action="/dashboard/community/comments/createMotivationComment" method="POST" class="commentBox py-4 px-4">
+  <input type="text" class="border border-neutral-400 p-4 rounded-md w-48 md:w-64 focus:outline-none" placeholder="Write a response" name="comment">
   <input type="text" value="<%=motivations[i]._id%>" hidden name="id">
+  <input type="text" value="<%=user.id%>" hidden name="user">
   <button type="submit" class="bg-teal-700 text-white p-4 rounded-md"> Submit
  </button>
 </form>
@@ -115,16 +120,48 @@
 <!-- Display comments section -->
 <!-- if id matches id then display comments -->
 <% for(let j=0; j<comments.length; j++) { %>
-  <% if(comments[j].motivations && comments[j].motivations.toString() == motivations[i]._id ){ %>
-<p><%=comments[j].comment %></p>
 
+  <% if(comments[j].motivations && comments[j].motivations.toString() == motivations[i]._id ){ %>
+    <section class="py-4 flex justify-center" id ="<%=recentDate.date.toString() === comments[j].date.toString()? 'replies':''%>">
+<section class="flex px-4 ">
+  <section class="userImages  w-16">
+  <img src="<%=communityUser[j].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
+</section>
+ <section class="flex flex-col justify-center px-4 pb-2  border-b border-neutral-400 w-56 md:w-96">
+
+  <section class="flex space-x-2 py-2 items-center ">
+       
+    <p class="font-bold"><%=communityUser[j].user.userName %></p>
+    <p><%=comments[j].date.toLocaleString() %></p>
+  
+  </section>
+  <section class="flex py-2">
+        <p class="break-all"><%=comments[j].comment %></p>
+  </section>
+  <form action="/dashboard/community/comments/likeComment?_method=PUT" method="post" class="like flex  space-x-1 items-center w-ma">
+    <input type="text" value="<%=comments[j]._id%>" name="id" hidden>
+  <button type="submit">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:text-teal-700">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+  </svg>
+  </button>        
+  <h3 class="col-3" id=""><%= comments[j].commentLikes %></h3>
+  </form>
+     </section>
+
+     
+       </section>
+
+
+</section>
  
   <% } } %>
     
 </section>
 <% } %> 
-  
+
 </section>
+<!-- </section> -->
 </section>
 <!-- like route
 comment route

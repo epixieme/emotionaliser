@@ -16,8 +16,7 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56"
   <section class="flex align-middle justify-center h-screen px-8  ">
     <!-- image could be a github heatmap for each thought map entry -->
     <section
-      class="hover:scale-110 transition  duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg h-full w-full rounded-md  h-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
-    >
+      class="hover:scale-110 transition  duration-300 ease-in-out max-w-sm overflow-hidden  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md" >
       <img
         class="object-cover"
         src="/images/motquotes.svg"
@@ -45,40 +44,29 @@ class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56"
   </section>
   <section class="flex justify-center">
 
-  <section class="mongoDates px-16 py-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 text-center max-w-7xl ">
+  <section class="mongoDates px-16 py-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 text-center max-w-7xl">
 
-  
-  
       <% for(let i=0; i< motivations.length; i++) {%>
-        <a href="/dashboard/tools/motivations/<%=motivations[i].id%>"> <section class=" hover:scale-105 transition delay-150 duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md">
-          <img src="<%=motivations[i].image%>" alt="" style="width:100%;height:150px" class="rounded-t-md object-cover">
-   
-        <p class="text-black text-left p-2"><%=motivations[i].poem%></p>
-        <section class="flex justify-between">
-          <p class="text-neutral-500 p-2"><%=motivations[i].author%></p>
-
-         
-         
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:fill-teal-700">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-          </svg> -->
-         
-          
-      
-   
-
+       
+           <section class=" col-span-1 flex flex-col hover:scale-105 transition delay-150 duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md max-h-full">
+            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
+          <img src="<%=motivations[i].image%>" alt="" style="width:100%;height:200px" class="rounded-t-md object-fit">
+        </a>
+          <section class="mb-4 flex flex-wrap">
+            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
+         <p class="text-black text-left p-2"><%=motivations[i].poem%></p>
+         <p class="text-neutral-500 p-2"><%=motivations[i].author%></p>
+        </a>
         </section>
         </section>
-      </a>
+  
         <%}%>
     
       </section>
   </section>
 
 
-  
-  
-
 <!-- </section> -->
 </section>
 </section>
+

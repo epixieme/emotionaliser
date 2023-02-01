@@ -82,9 +82,9 @@ function createRatingArrows(data) {
   let arrows = data.map((item) => item.rating);
 
   let upDown = arrows.slice()
-    .reverse()
+   
     .map((item, i, a) =>
-      item === a[i - 1] ? noChange : item > a[i - 1] ? up : down
+      item === a[i + 1] ? noChange : item > a[i - 1] ? up : down
     );
     
     // let dashUpDown = arrows.slice()
