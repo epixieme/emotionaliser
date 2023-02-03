@@ -1,35 +1,40 @@
-# emotionaliser
-
-<img width="1401" alt="emotionaliser" src="https://user-images.githubusercontent.com/39728053/192013956-0bd3f165-5a9b-41dc-8e49-b1377733578e.png">
-
-<section></section
-
-Emotionaliser
-
-[![emotionaliser] (https://user-images.githubusercontent.com/39728053/180803418-81498b29-fee6-405a-b545-2a398778ffe6.mp4)
-This is a full stack CRUD application.
-
-Features
+# Emotionalise
 
 
-Users create their daily emotions to the app (like a thought diary).
-Ability to Search the database.
-Ability to submit, edit and update using content editable fields or delete the document.
-Views to see weekly emotions.
-Using Node.js, EJS, Express.js, Mongoose and MVC.
 
-Installation
 
-To run this project you must install node.
+https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4
 
-Run the following from a terminal if on Mac or command prompt on windows
+
+
+This is a full-stack Wellbeing CRUD application designed with Vanilla Javascript, EJS, a touch of Apline, Tailwind, Node.js, MongoDB and Mongoose.
+https://ill-pear-walrus-tutu.cyclic.app/
+## Features
+
+- Dashboard showing weekly mood stats.
+- Wellbeing tools - Thought Diary and Motivational Quotes CRUD feature.
+- Positivity Hub allowing users to view bookmarks that help with instilling postive emotions.
+- Community pages for posting thoughts and quotes to share and discuss.
+- Profile settings editor - upload a profile picture and edit personal details.
+
+## Installation
+To run this project you must install node and express.
+
+Fork and clone the repo and then run the following from a terminal if on Mac or command prompt on windows:
+
+```
 npm i
 
+```
 This will install the required package.json file
 
-Create your .env and set up cloudinary and mongodb. Add your settings to the .env file.
+Create your .env files and set up cloudinary and mongoDb then add the settings to your .env like so.
 
-Advisable to set up a .gitignore file so that your .env file is not made public to GitHub.
-
-
-
+```
+PORT = any port number
+DB_STRING = your mongodb connection
+CLOUD_NAME =''
+API_KEY =''
+API_SECRET =''
+```
+Create your .gitignore file so you aren't giving away any secrets and add your .env and node_modules.
