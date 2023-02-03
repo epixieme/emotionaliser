@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -410,54 +413,13 @@ video {
   height: auto;
 }
 
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
-::-webkit-backdrop {
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -593,6 +555,10 @@ video {
   visibility: visible;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .static {
   position: static;
 }
@@ -610,7 +576,6 @@ video {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -852,7 +817,6 @@ video {
 }
 
 .w-fit {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -902,7 +866,6 @@ video {
 }
 
 .max-w-fit {
-  max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
@@ -931,37 +894,20 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@-webkit-keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
 .animate-bounce {
-  -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 
 .resize {
@@ -1863,8 +1809,7 @@ video {
 }
 
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .bg-blend-darken {
@@ -1950,9 +1895,9 @@ video {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1981,19 +1926,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform:translateY(50%)
-  }
-
-  ,
-        100% {
-    opacity:1;
-    transform:translateY(0%)
-  }
-}
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -2008,21 +1940,7 @@ video {
 }
 
 .fadeInUp{
-  -webkit-animation: fadeInUp 1s;
-          animation: fadeInUp 1s;
-}
-
-@-webkit-keyframes scale {
-  0% {
-    opacity: 0;
-    transform:scale(0.5)
-  }
-
-  ,
-        100% {
-    opacity:1;
-    transform:scale(1.2)
-  }
+  animation: fadeInUp 1s;
 }
 
 @keyframes scale {
@@ -2039,18 +1957,7 @@ video {
 }
 
 .scale{
-  -webkit-animation: scale 1s;
-          animation: scale 1s;
-}
-
-@-webkit-keyframes moveToRight {
-  0% {
-    transform: translateX(-300px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+  animation: scale 1s;
 }
 
 @keyframes moveToRight {
@@ -2064,17 +1971,7 @@ video {
 }
 
 .moveToRight{
-  -webkit-animation: moveToRight 3s ease-in-out;
-          animation: moveToRight 3s ease-in-out;
-  @-webkit-keyframes moveToRight {
-    0% {
-      transform:translateX(-100px);
-    }
-
-    100% {
-      transform:translateX(0);
-    }
-  }
+  animation: moveToRight 3s ease-in-out;
   @keyframes moveToRight {
     0% {
       transform:translateX(-100px);
@@ -2085,18 +1982,7 @@ video {
     }
   }
   .moveToRight{
-    -webkit-animation: moveToRight 1s ease-in-out;
-            animation: moveToRight 1s ease-in-out;
-  }
-}
-
-@-webkit-keyframes moveToLeft {
-  0% {
-    transform: translateX(500px);
-  }
-
-  100% {
-    transform: translateX(0);
+    animation: moveToRight 1s ease-in-out;
   }
 }
 
@@ -2111,17 +1997,7 @@ video {
 }
 
 .moveToLeft{
-  -webkit-animation: moveToLeft 3s ease-in-out;
-          animation: moveToLeft 3s ease-in-out;
-  @-webkit-keyframes moveToLeft {
-    0% {
-      transform: translateX(100px);
-    }
-
-    100% {
-      transform: translateX(0px);
-    }
-  }
+  animation: moveToLeft 3s ease-in-out;
   @keyframes moveToLeft {
     0% {
       transform: translateX(100px);
@@ -2132,8 +2008,7 @@ video {
     }
   }
   .moveToLeft{
-    -webkit-animation: moveToLeft 1s ease-in-out;
-            animation: moveToLeft 1s ease-in-out;
+    animation: moveToLeft 1s ease-in-out;
   }
 }
 
@@ -2223,17 +2098,6 @@ body {
   }
 }
 
-input[type=file]::-webkit-file-upload-button {
-  border: 1px solid #0D766E;
-  margin-top: 10px;
-  padding: .5em .8em;
-  border-radius: 10px;
-  background-color: transparent;
-  -webkit-transition: 1s;
-  transition: 1s;
-  color:#4E4D4C;
-}
-
 input[type=file]::file-selector-button {
   border: 1px solid #0D766E;
   margin-top: 10px;
@@ -2244,12 +2108,6 @@ input[type=file]::file-selector-button {
   color:#4E4D4C;
 }
 
-input[type=file]::-webkit-file-upload-button:hover {
-  background-color: transparent;
-  border: 2px solid white;
-  color:white;
-}
-
 input[type=file]::file-selector-button:hover {
   background-color: transparent;
   border: 2px solid white;
@@ -2258,10 +2116,6 @@ input[type=file]::file-selector-button:hover {
 
 input[type='file'] {
   font-size: 0;
-}
-
-::-webkit-file-upload-button {
-  font-size: initial;
 }
 
 ::file-selector-button {
