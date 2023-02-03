@@ -65,7 +65,7 @@ try{
       );
       
       console.log("Likes +1");
-      res.redirect(`/dashboard/community/communityThoughts`);
+      res.redirect(`/dashboard/community/communityMotivations`);
     } catch (err) {
       console.log(err);
     }

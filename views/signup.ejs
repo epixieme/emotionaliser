@@ -1,13 +1,18 @@
 
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-10 min-h-screen md:pb-56">
+
+
+
+<section class="flex flex-col items-center align-text-top justify-center w-full px-4 ">
   <% if (locals.messages.errors) { %>
+    <section class="flex justify-center">
+    <section class="bg-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md rounded-md p-4 text-black font-semibold mb-4 md:max-h-52 ">
     <% messages.errors.forEach( el => { %>
-        <div class="alert alert-danger"><%= el.msg %></div>
-    <% }) %>    
+        <section class="alert alert-danger"><%= el.msg %></section>
+    <% }) %>  
+  </section>  
+</section>
 <% } %>
-
-<section class="flex align-text-top justify-center w-full px-4">
-
     <section class="w-full max-w-md">
       <form action="/signup" method="POST" class="shadow-md  px-8 pt-6 pb-8 mb-4 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-white border-dashed border-4" >
         <section class="mb-4">
@@ -37,15 +42,17 @@
        
         </section>
         <section class="flex items-center justify-between">
+          <section class="hover:scale-105 transition duration-300 transform">
           <button class="bg-teal-700 hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
             Sign Up
           </button>
+        </section>
           <a class="inline-block align-baseline font-bold text-sm text-teal-700 hover:text-teal-900" href="#">
             Forgot Password?
           </a>
         </section>
       </form>
-      <p class="text-center text-black text-xs">
+      <p class="text-center text-black text-xs ">
         Already have an account?
         <a class="font-bold text-teal-700" href="/login">Log In</a> 
       </p>

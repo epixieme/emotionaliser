@@ -6,9 +6,9 @@
     <p class=" text-gray-800 md:text-xl text-base  leading-relaxed font-light font-poppins " x-intersect="$el.classList.add('fadeInUp')" >A place for all of your well being purposes. Find a community, 
         help yourself using our support toolkit or just unwind in our meditation zone.</p>
       
-<section class="flex flex-col">
+<section class="flex flex-col hover:scale-105 transition duration-300 transform">
 
-<button class="py-4 px-2 w-52 rounded-3xl text-orange-100 font-bold bg-teal-700 text-xl hover:bg-teal-900   border-white border-dotted border-2 animate-bounce ">Start Your Journey</button>
+<button class="py-4 px-2 w-52 rounded-3xl text-orange-100 font-bold bg-teal-700 text-xl hover:bg-teal-900   border-white border-dotted border-2 animate-bounce "><a class=""  href="/signup">Start Your Journey</a></button>
 
 </section>
 </section>
@@ -97,7 +97,7 @@
 
 
 
-<section class ="md:flex md:flex-row tools h-72  mx-auto mt-10 px-4 md:px-40">
+<section class ="md:flex md:flex-row tools h-72  mx-auto mt-10 px-4 md:px-40" x-intersect="$el.classList.add('moveToRight')">
     <section class="w-auto flex flex-col md:flex-row  items-center space-x-8">
         <img src="images/thoughts.png" alt="" style="width:200px;height:200px">
         <section>
@@ -107,12 +107,12 @@
     </section>
 </section>
 
-<section class ="md:flex md:flex-row tools h-72  mx-auto mt-10 px-4 md:px-40">
+<section class ="md:flex md:flex-row tools h-72  mx-auto mt-10 px-4 md:px-40" x-intersect="$el.classList.add('moveToLeft')">
     <section class="w-auto flex flex-col md:flex-row items-center space-x-8">
         <img src="images/inspire.png" alt="" style="width:200px;height:200px">
         <section>
             <h2 class="text-xl font-poppins leading-loose">Be Inspired</h2>
-            <p class="text-base  font-poppins font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet eum consequuntur nesciunt itaque veritatis voluptatum alias dignissimos perferendis ipsum, ut, laudantium dolor ratione distinctio consequatur id nihil officia dolorem libero.</p>
+            <p class="text-base  font-poppins font-light">Take inspiration and courage from actively discovering, posting and reflecting on motivational quotes.</p>
         </section>
    
     </section>
@@ -120,7 +120,7 @@
    
 </section>
 
-<section class ="flex md:flex-row tools h-72 mx-auto mt-10 px-4 md:px-40">
+<section class ="flex md:flex-row tools h-72 mx-auto mt-10 px-4 md:px-40" x-intersect="$el.classList.add('moveToRight')">
     <section class="w-auto flex flex-col md:flex-row items-center space-x-8">
         <img src="images/meditate.png" alt="" style="width:200px;height:200px">
         <section>

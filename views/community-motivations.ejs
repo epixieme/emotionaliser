@@ -1,7 +1,7 @@
 <section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 font-poppins">
   <section class="flex items-center bg-teal-700 bg-[url('/images/hexagons.svg')] p-5 m-0 ">
  
-    <p class="px-8 text-white text-base font-poppins">motivations - A place to share motivations with the hive mind. Like, support or simply be inspired.</p>
+    <p class="px-8 text-white text-base font-poppins">Motivations - A place to share motivations with the hive mind. Like, support or simply be inspired.</p>
  </section>
  
 <!-- <section class="px-4 md:px-32 flex justify-end "> -->
@@ -125,13 +125,13 @@
     <section class="py-4 flex justify-center" id ="<%=recentDate.date.toString() === comments[j].date.toString()? 'replies':''%>">
 <section class="flex px-4 ">
   <section class="userImages  w-16">
-  <img src="<%=communityUser[j].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
+  <img src="<%=communityUser[i].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
 </section>
  <section class="flex flex-col justify-center px-4 pb-2  border-b border-neutral-400 w-56 md:w-96">
 
   <section class="flex space-x-2 py-2 items-center ">
        
-    <p class="font-bold"><%=communityUser[j].user.userName %></p>
+    <p class="font-bold"><%=communityUser[i].user.userName %></p>
     <p><%=comments[j].date.toLocaleString() %></p>
   
   </section>

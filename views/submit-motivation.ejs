@@ -3,55 +3,61 @@
 link to your own quotes -->
 <section>
 
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover pt-28 min-h-screen md:pb-56">
-  
+<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56">
+  <section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 mb-4 ">
+ 
+    <p class="px-8 text-white  text-base font-poppins">Submit A Motivational Quote </p>
+  </section>  
     <section class="flex justify-center ">
     
-    <section class="w-full max-w-2xl">
+    <section class="w-full max-w-2xl px-4">
       
-        <form action="/dashboard/tools/motivations/submit-motivation" enctype="multipart/form-data" method="post" class="font-poppins px-8 pt-6 pb-8 mb-4 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md text-white max-w-7xl ">
+        <form action="/dashboard/tools/motivations/submit-motivation" enctype="multipart/form-data" method="post" class="font-poppins px-8 pt-6 pb-4 mb-4 bg-black rounded-lg border bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-lg  text-white max-w-7xl ">
         
            
-          <label class="block  text-white text-base mb-2" for="poem">
+          <label class="block  text-neutral-700 text-base mb-2" for="poem">
           Add Your Quote Below:
             </label>
             <section>
-                <textarea class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Quote Text" name="poem" maxlength="100"></textarea>
+                <textarea class="text-sm font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Quote Text" name="poem" maxlength="100"></textarea>
           </section>
-          <label class="block  text-white font-bold mb-2 text-base" for="password">
+          <label class="block  text-neutral-700  mb-2 text-base" for="password">
            Author
               </label>
               <section>
-                  <input class="text-base font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Author Name" name="author">
+                  <input class="text-sm font-light shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="poem" type="text" placeholder="Add Author Name" name="author">
             </section>
             <section class="mb-4">
-            
-          <div class="mb-3 text-base">
+              <section class="mb-4">
+                <label class="block text-neutral-700  mb-2 text-base" for="summary">
+               Make public to the community?
+                </label>
+                <input class="shadow border rounded" value="true" id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public">
+              </section>
+       
+    
+          <section class="flex justify-start items-center space-x-4 pb-4">
             <section class="tooltip">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-            </svg>
-            <section class="mb-4">
-              <label class="block text-white  mb-2 text-base" for="summary">
-             Make public to the community?
-              </label>
-              <input class="shadow border rounded" value="true" id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public">
-            </section>
-      
-          <span class="tooltiptext text-sm">  Upload an image that suits your quote</span>
-            </section>
-            <label for="imgUpload" class="form-label flex">
-            </label>
-            <input type="file" class="form-control" id="imageUpload" name="file">
-          </div>
-    
-    
-          <section class="flex items-center justify-between">
-            <button class="bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6  hover:text-teal-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+              </svg>
+            <span class="tooltiptext bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md text-sm">  Upload an image that suits your quote</span>
+              </section>
+              <div class="flex items-center mb-3 text-base">
+           
+                <label for="imgUpload" class="form-label flex">
+                </label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+      </section>  
+              <section class="flex justify-center w-full border-t border-t-neutral-500 pt-4">
+          
+
+            <button class="bg-transparent hover:scale-105 hover:text-white hover:border-white transition delay-150 duration-1000 ease-in-out text-light text-neutral-700 border border-teal-700 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
              Done
             </button>
-           
           </section>
+         
         </form>
       </section>
       

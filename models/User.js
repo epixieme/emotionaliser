@@ -24,17 +24,17 @@ image: {
 city:{
   type: String, 
  
-  default:"No City"
+  default:"City"
 },
 county:{
   type: String, 
 
-  default:"No County"
+  default:"County"
 },
-postCode:{
+postcode:{
   type: String, 
 
-  default:"No PostCode"
+  default:"PostCode"
 },
 delete:{
   type:Boolean,

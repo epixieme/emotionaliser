@@ -35,7 +35,7 @@
 
     @keyframes moveToRight {
         0% {
-            transform: translateX(-30px);
+            transform: translateX(-300px);
         }
         100% {
             transform: translateX(0);
@@ -43,7 +43,7 @@
     }
 
     .moveToRight{
-        animation: moveToRight 1s ease-in-out;
+        animation: moveToRight 3s ease-in-out;
           @keyframes moveToRight {
         0% {
         
@@ -61,14 +61,23 @@
         animation: moveToRight 1s ease-in-out;
     }
 }
+
+@keyframes moveToLeft {
+  0% {
+      transform: translateX(500px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
 .moveToLeft{
-    animation: moveToLeft 1s ease-in-out;
+    animation: moveToLeft 3s ease-in-out;
       @keyframes moveToLeft {
     0% {
-        transform: translateX(0px);
+        transform: translateX(100px);
     }
     100% {
-        transform: translateX(-100px);
+        transform: translateX(0px);
     }
 }
 
@@ -181,18 +190,19 @@ body {
 
 
   input[type=file]::file-selector-button {
-    border: 1px solid white;
+    border: 1px solid #0D766E;
     margin-top: 10px;
     padding: .5em .8em;
     border-radius: 10px;
     background-color: transparent;
     transition: 1s;
-    color:white;
+    color:#4E4D4C;
   }
   
   input[type=file]::file-selector-button:hover {
     background-color: transparent;
-    border: 2px solid #0D766E;
+    border: 2px solid white;
+    color:white;
   }
   
   input[type='file'] { 
@@ -210,7 +220,8 @@ body {
    
     visibility: hidden;
     width: 220px;
-    background-color:#374151;
+    /* background-color:#374151; */
+ 
     color: #fff;
     text-align: center;
     border-radius: 6px;

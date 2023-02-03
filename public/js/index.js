@@ -87,11 +87,6 @@ function createRatingArrows(data) {
       item === a[i + 1] ? noChange : item > a[i - 1] ? up : down
     );
     
-    // let dashUpDown = arrows.slice()
-    // .reverse()
-    // .map((item, i, a) =>
-    //   item === a[i - 1] ? noChange : item < a[i -1] ? down : up
-    // );
 
   upDown.forEach((item, i) => (rating[i].innerHTML = item));
 
@@ -164,3 +159,23 @@ setTimeout(() => {
 }
 
 timedFlashMsg();
+
+
+// // Keep a dictionary of sound urls by animal
+// const audioURLs = {
+//   "cats": "http://soundbible.com/mp3/Cat_Meow_2-Cat_Stevens-2034822903.mp3",
+//   "dogs": "http://soundbible.com/mp3/small-dog-barking_daniel-simion.mp3"
+// }
+
+// // When we detect a click on the button...
+// callButt.addEventListener("click", function(){
+//   // Retrieve the selected animal
+//  let selectedOption = animalSelector.value;
+  
+//   // Check its sound URL from the dictionary
+//  let  audioURL = audioURLs[selectedOption];
+  
+//   // Update the player audio file and play it
+//   player.src = audioURL;
+//   player.play();
+// });

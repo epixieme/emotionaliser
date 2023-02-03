@@ -17,7 +17,7 @@
      <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
         
             <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" style="width:100%;height:150px" >
-               <img src="<%=thoughts[i].image%>" class="object-cover rounded-md" style="width:100%;height:150px">
+               <img src="<%=thoughts[i].image%>" class="object-cover rounded-t-md" style="width:100%;height:150px">
             </a>
             <section class="p-4 flex flex-col items-start">
             <p class=" text-black "><%=thoughts[i].summary%></p>
@@ -30,7 +30,7 @@
      <% }%>
      <% } else { %>
 
-      <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
+      <section class="md:w-96 border-2 border-neutral-300 rounded-lg p-4 mb-4">
 
   <p class="text-base ">You have no thought bookmarks. Please bookmark something to reflect on.</p>
   </section>
@@ -46,11 +46,11 @@
    <% if(motivations[i].user.toString() ==  user._id ){ %>
    <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>" style="width:100%;height:150px">
-              <img src="<%=motivations[i].image%>" class="object-cover rounded-md" style="width:100%;height:150px">
+              <img src="<%=motivations[i].image%>" class="object-fit rounded-t-md" style="width:100%;height:150px">
            </a>
            <section class="p-4">
            <p class="text-black"><%=motivations[i].poem%></p>
-           <p class="text-neutral-600"><%=motivations[i].author%></p>
+           <p class="text-neutral-600 pt-2"><%=motivations[i].author%></p>
 
        </section>
      </section>
@@ -58,7 +58,7 @@
      <% } %>
      <% } %>
      <% } else { %>
-      <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
+      <section class="md:w-96 border-2 border-neutral-300 rounded-lg p-4 mb-4">
       <p class="text-base ">You have no motivational bookmarks. Please bookmark something to reflect on.</p>
    </section>
       <% }%>
@@ -80,7 +80,7 @@
          <% for(let j=0; j < community[i].thoughtBookmarks.length; j++) {%>
           
             <section class="hover:scale-105 transition duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md ">
-               <img src="<%=community[i].thoughtBookmarks[j].image%>" alt="" class="object-cover rounded-md" style="width:100%;height:150px">
+               <img src="<%=community[i].thoughtBookmarks[j].image%>" alt="" class="object-cover rounded-t-md" style="width:100%;height:150px">
 
                <section class="p-4 flex flex-col items-start">
                   <!-- <p class="font-bold">Author: <%=userName[i].user%></p>   -->
@@ -92,7 +92,7 @@
  </section>
  <% } %>
  <% } else { %>
-   <section class="md:w-96 border-2 border-red-900 rounded-lg p-4 mb-4">
+   <section class="md:w-96 border-2 border-neutral-300 rounded-lg p-4 mb-4">
    <p class="text-base ">You have no community bookmarks. Please join a community and bookmark something to reflect on.</p>
    </section>
          <% } %>

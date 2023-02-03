@@ -19,28 +19,28 @@ module.exports = {
         layout: "./layouts/dashboard-home.ejs",
         user: user,
         users: users,
-
       });
     } catch (err) {
       console.log(err);
     }
   },
   getThoughtPosts: async (req, res) => {
-
     try {
-      const comments = await commentDetails.find().lean()
+      const comments = await commentDetails.find().lean();
 
- 
-      //use the id in the body to get the individual thought id 
-     
+      //use the id in the body to get the individual thought id
+
       const users = await userDetails.find(req.body.id).lean();
-     const recentDate = await commentDetails.findOne().sort({date:-1})
-  
-      const thoughts = await thoughtDiary.find({ public: true}).lean();
-      const commentCount = await commentDetails.find().count();
-      const userPop = await thoughtDiary.find({id:req.body.id}).populate({path:'user', select:'userName image'})
-      const communityUser = await commentDetails.find({id:req.body.user}).populate({path:'user', select:'userName image'})
+      const recentDate = await commentDetails.findOne().sort({ date: -1 });
 
+      const thoughts = await thoughtDiary.find({ public: true }).lean();
+      const commentCount = await commentDetails.find().count();
+      const userPop = await thoughtDiary
+        .find({ id: req.body.id })
+        .populate({ path: "user", select: "userName image" });
+      const communityUser = await commentDetails
+        .find({ id: req.body.user })
+        .populate({ path: "user", select: "userName image" });
 
       res.render("community-thoughts", {
         title: "Community Forum",
@@ -48,14 +48,13 @@ module.exports = {
         user: req.user,
         users: users,
         userPop: userPop,
-        communityUser:communityUser,
-        recentDate:recentDate,
+        communityUser: communityUser,
+        recentDate: recentDate,
         thoughts: thoughts,
         likes: 0,
         commentLikes: 0,
-        comments:comments,
-        commentCount:commentCount
-        
+        comments: comments,
+        commentCount: commentCount,
       });
     } catch (err) {
       console.log(err);
@@ -94,25 +93,37 @@ module.exports = {
   },
 
   getMotivationtPosts: async (req, res) => {
-try {
-      const motivations = await motivationsDetails.find({ public: true}).lean();
+    try {
+      const motivations = await motivationsDetails
+        .find({ public: true })
+        .lean();
       const users = await userDetails.find();
-      const comments = await commentDetails.find().lean()
+      const comments = await commentDetails.find().lean();
       const commentCount = await commentDetails.find().count();
-      const userName = await motivationsDetails.find().populate({path:'user', select:'userName image'})
-      const userPop = await motivationsDetails.find({id:req.body.id}).populate({path:'user', select:'userName image'})
+      const userName = await motivationsDetails
+        .find()
+        .populate({ path: "user", select: "userName image" });
+      const userPop = await motivationsDetails
+        .find({ id: req.body.id })
+        .populate({ path: "user", select: "userName image" });
+      const recentDate = await commentDetails.findOne().sort({ date: -1 });
+      const communityUser = await commentDetails
+        .find({ id: req.body.user })
+        .populate({ path: "user", select: "userName image" });
       res.render("community-motivations", {
         title: "Community Forum",
         layout: "./layouts/dashboard-home.ejs",
-        userPop:userPop,
+        userPop: userPop,
         user: req.user,
         users: users,
-        userName:userName,
-        motivations:motivations,
+        userName: userName,
+        motivations: motivations,
         likes: 0,
         commentLikes: 0,
-        comments:comments,
-        commentCount:commentCount
+        comments: comments,
+        commentCount: commentCount,
+        recentDate: recentDate,
+        communityUser: communityUser,
       });
     } catch (err) {
       console.log(err);
@@ -146,7 +157,5 @@ try {
       console.log(err);
       errorHandling(res, err);
     }
-  }
-
-
+  },
 };

@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
   
   commentLikes: {
     type: Number,
-    required: true,
+    // required: true,
   },
   thoughts: {
     type: mongoose.Schema.Types.ObjectId,
