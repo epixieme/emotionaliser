@@ -43,7 +43,7 @@
     }
 
     .moveToRight{
-        animation: moveToRight 3s ease-in-out;
+        animation: moveToRight 1s ease-in-out;
           @keyframes moveToRight {
         0% {
         
@@ -71,7 +71,7 @@
   }
 }
 .moveToLeft{
-    animation: moveToLeft 3s ease-in-out;
+    animation: moveToLeft 1s ease-in-out;
       @keyframes moveToLeft {
     0% {
         transform: translateX(100px);
