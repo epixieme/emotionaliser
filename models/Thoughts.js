@@ -55,6 +55,6 @@ const thoughtSchema = new mongoose.Schema({
 });
 
 
-thoughtSchema.index({ summary: "text", description: "text" }, ); //{ unique: true }/// index search
+thoughtSchema.index({ summary: "text", description: "text", date:"text" }, ); //{ unique: true }/// index search
 //Export the model so it can be reused in other js files
 module.exports = mongoose.model("Thoughts", thoughtSchema); // interface to the db
