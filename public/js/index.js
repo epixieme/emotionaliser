@@ -161,21 +161,22 @@ setTimeout(() => {
 timedFlashMsg();
 
 
-// // Keep a dictionary of sound urls by animal
-// const audioURLs = {
-//   "cats": "http://soundbible.com/mp3/Cat_Meow_2-Cat_Stevens-2034822903.mp3",
-//   "dogs": "http://soundbible.com/mp3/small-dog-barking_daniel-simion.mp3"
-// }
-
-// // When we detect a click on the button...
-// callButt.addEventListener("click", function(){
-//   // Retrieve the selected animal
-//  let selectedOption = animalSelector.value;
+// Keep a dictionary of sound urls by animal
+const audioURLs = {
+  "wind": "https://res.cloudinary.com/dwjacjfgx/video/upload/v1675429719/wind_mxmwbd.mp3",
+  "dogs": "http://soundbible.com/mp3/small-dog-barking_daniel-simion.mp3"
+}
+ let start = document.querySelector('.startBtn')
+ 
+// When we detect a click on the button...
+start.addEventListener("click", function(){
+  // Retrieve the selected animal
+ let selectedOption = animalSelector.value;
   
-//   // Check its sound URL from the dictionary
-//  let  audioURL = audioURLs[selectedOption];
+  // Check its sound URL from the dictionary
+ let  audioURL = audioURLs[selectedOption];
   
-//   // Update the player audio file and play it
-//   player.src = audioURL;
-//   player.play();
-// });
+  // Update the player audio file and play it
+  player.src = audioURL;
+  player.play();
+});
