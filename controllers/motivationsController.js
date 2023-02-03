@@ -7,7 +7,7 @@ module.exports = {
 
     getMotivations: async (req, res) => {
       const motivations = await motivationQuotes.find({ user: req.user.id })
-  
+      const bookmarkedMsg = await req.flash('bookmarkedMsg')
       try {
         // const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
         // const users = await userDetails.find();
@@ -15,7 +15,8 @@ module.exports = {
           title: "Motivational Quotes",
           layout: "./layouts/dashboard-home.ejs",
           user:req.user,
-          motivations:motivations
+          motivations:motivations,
+          bookmarkedMsg:bookmarkedMsg
         //   users:users,
         //   user:req.user
         });
@@ -65,13 +66,15 @@ module.exports = {
       getMotivation: async (req, res) => {
 
         try {
+          const bookmarkedMsg = await req.flash('bookmarkedMsg')
           const motivation =  await motivationQuotes.findById(req.params.id);
         
           res.render("get-motivation", {
             title: "Motivational Quotes - Quote",
             layout: "./layouts/dashboard-home.ejs",
             motivation:motivation,
-            user: req.user
+            user: req.user,
+            bookmarkedMsg:bookmarkedMsg
             
           });
         } catch (err) {

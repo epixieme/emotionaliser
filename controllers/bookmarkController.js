@@ -75,8 +75,8 @@ module.exports = {
         }
       );
       console.log("bookmarked");
-
-      res.redirect("/dashboard/tools/motivations");
+      req.flash('bookmarkedMsg', "Added to Positivity Hub for reflection")
+      res.redirect(`http://localhost:3000/dashboard/tools/motivations/${req.params.id}/#bookmarkedMsg`);
     } catch (err) {
       errorHandling(res, err);
     }

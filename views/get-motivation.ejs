@@ -78,11 +78,21 @@
         </form>
       <% } %>
 
-
+   
   </section>
+  <section class="flex justify-end p-1">
+    <% if(bookmarkedMsg.length > 0){ %>
+  <section
+  class=" text-white p-4 rounded-md max-w-fit bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md border border-white" id="bookmarkedMsg"
+  >
+  <p class=" font-bold"><%=bookmarkedMsg%></p>
+  
+  </section>
+  <%}%>
+  </section>
+</section>
+</section>
 
-</section>
-</section>
 </section>
 
 

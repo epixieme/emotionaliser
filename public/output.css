@@ -1364,12 +1364,20 @@ video {
   background-size: contain;
 }
 
+.bg-auto {
+  background-size: auto;
+}
+
 .bg-clip-padding {
   background-clip: padding-box;
 }
 
 .bg-top {
   background-position: top;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
