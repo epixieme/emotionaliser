@@ -38,3 +38,4 @@ API_KEY =''
 API_SECRET =''
 ```
 Create your .gitignore file so you aren't giving away any secrets and add your .env and node_modules.
+[mobile (1).webm](https://user-images.githubusercontent.com/39728053/216703268-ceb132ca-4e2b-4ecf-aab3-eb3ce4255be7.webm)
