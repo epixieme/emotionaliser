@@ -2423,12 +2423,12 @@ input[type='file'] {
     margin-right: 8rem;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:flex {
@@ -2507,20 +2507,20 @@ input[type='file'] {
     border-radius: 0.375rem;
   }
 
-  .md\:rounded-tl-md {
-    border-top-left-radius: 0.375rem;
-  }
-
-  .md\:rounded-bl-md {
-    border-bottom-left-radius: 0.375rem;
-  }
-
   .md\:rounded-tr-md {
     border-top-right-radius: 0.375rem;
   }
 
   .md\:rounded-br-md {
     border-bottom-right-radius: 0.375rem;
+  }
+
+  .md\:rounded-tl-md {
+    border-top-left-radius: 0.375rem;
+  }
+
+  .md\:rounded-bl-md {
+    border-bottom-left-radius: 0.375rem;
   }
 
   .md\:bg-top {
@@ -2539,11 +2539,6 @@ input[type='file'] {
     padding: 2rem;
   }
 
-  .md\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
   .md\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
@@ -2552,6 +2547,11 @@ input[type='file'] {
   .md\:px-64 {
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .md\:px-8 {
