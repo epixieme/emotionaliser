@@ -1,5 +1,9 @@
 # Emotionalise
 
+
+https://user-images.githubusercontent.com/39728053/216629303-2630aaeb-348a-40b9-8b40-36c3165498eb.mp4
+
+
 This is a full-stack Wellbeing CRUD application designed with Vanilla Javascript, EJS, a touch of Apline, Tailwind, Node.js, MongoDB and Mongoose.
 https://ill-pear-walrus-tutu.cyclic.app/
 ## Features
