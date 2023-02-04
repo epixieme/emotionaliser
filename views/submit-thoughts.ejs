@@ -1,72 +1,142 @@
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56">
-  <section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 mb-4 ">
-   
-    <p class="px-8 text-white  text-base font-poppins">Submit A Thought</p>
-  </section>  
-<section class="flex justify-center">
-
-<section class="w-full max-w-xl p-4">
-  
-    <form action="/dashboard/tools/thoughtdiary/submit-thought" enctype="multipart/form-data" method="post" class="font-poppins   px-8 pt-6 pb-8 mb-4 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border  shadow-neutral-500 shadow-lg   text-black">
-      <section class="mb-6">
-        <label class="block text-2xl text-black font-bold mb-2" for="password">
-
-        </label>
-        <section>
-          <input class="slidetext p-2 text-base bg-transparent border-none outline-none" name="category" type="text" value="Awful" readonly/>
+<section
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56"
+>
+  <section
+    class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 mb-4"
+  >
+    <p class="px-8 text-white text-base font-poppins">Submit A Thought</p>
+  </section>
+  <section class="flex justify-center">
+    <section class="w-full max-w-xl p-4">
+      <form
+        action="/dashboard/tools/thoughtdiary/submit-thought"
+        enctype="multipart/form-data"
+        method="post"
+        class="font-poppins px-8 pt-6 pb-8 mb-4 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border shadow-neutral-500 shadow-lg text-black"
+      >
+        <section class="mb-6">
+          <label
+            class="block text-2xl text-black font-bold mb-2"
+            for="password"
+          >
+          </label>
+          <section>
+            <input
+              class="slidetext p-2 text-base bg-transparent border-none outline-none"
+              name="category"
+              type="text"
+              value="Awful"
+              readonly
+            />
+          </section>
+          <section>
+            <input
+              class="moodrating p-2 text-2xl bg-transparent border-none outline-none"
+              name="rating"
+              type="text"
+              value="1"
+              readonly
+              hidden
+            />
+          </section>
+          <div class="gdas-menu-left">
+            <input
+              type="range"
+              min="1"
+              max="6"
+              value="1"
+              step=".1"
+              class="gdas-range w-full h-2 bg-gray-200"
+              id="myRange"
+              id="category"
+            />
+          </div>
         </section>
-        <section>
-          <input class="moodrating p-2 text-2xl bg-transparent border-none outline-none" name="rating" type="text" value="1" readonly hidden/>
+        <section class="mb-4">
+          <label class="block text-black mb-2 text-base" for="summary">
+            Summarise how you feel?
+          </label>
+          <input
+            class="font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="summary"
+            type="text"
+            placeholder="Summary"
+            aria-placeholder="Summary"
+            name="summary"
+          />
         </section>
-        <div class="gdas-menu-left">
-          <input type="range" min="1" max="6" value="1" step=".1" class="gdas-range w-full h-2 bg-gray-200  " id="myRange"  id="category"/>
-        </div>
-      </section>
-      <section class="mb-4">
-        <label class="block text-black  mb-2 text-base" for="summary">
-        Summarise how you feel?
-        </label>
-        <input class="font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary" type="text" placeholder="Summary"  aria-placeholder="Summary" name="summary">
-      </section>
-      <section class="mb-6">
-        <label class="block text-black  text-base mb-2" for="details">
-        Tell me a little more about how you feel?
-        </label>
-        <textarea class=" font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="details" type="details" placeholder="Details" name="details"></textarea>
-      </section>
-    
+        <section class="mb-6">
+          <label class="block text-black text-base mb-2" for="details">
+            Tell me a little more about how you feel?
+          </label>
+          <textarea
+            class="font-light text-base shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="details"
+            type="details"
+            placeholder="Details"
+            name="details"
+          ></textarea>
+        </section>
 
-      <section class="mb-4">
-        <label class="block text-black  mb-2 text-base" for="summary">
-       Make public to the community?
-        </label>
-        <input class="shadow border rounded" value="true" id="summary" type="checkbox" alt='Make public' placeholder="Make public"  aria-placeholder="Make public" name="public">
-      </section>
+        <section class="mb-4">
+          <label class="block text-black mb-2 text-base" for="summary">
+            Make public to the community?
+          </label>
+          <input
+            class="shadow border rounded"
+            value="true"
+            id="summary"
+            type="checkbox"
+            alt="Make public"
+            placeholder="Make public"
+            aria-placeholder="Make public"
+            name="public"
+          />
+        </section>
 
-      <section class="flex justify-start items-center space-x-4 pb-4">
-        <section class="tooltip">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-          </svg>
-        <span class="tooltiptext bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md text-sm"> Upload an image to help best describe your mood.</span>
+        <section class="flex justify-start items-center space-x-4 pb-4">
+          <section class="tooltip">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 hover:text-teal-700"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+            </svg>
+            <span
+              class="tooltiptext bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 shadow-md text-sm"
+            >
+              Upload an image to help best describe your mood.</span
+            >
           </section>
           <div class="flex items-center mb-3 text-base">
-       
-            <label for="imgUpload" class="form-label flex">
-            </label>
-            <input type="file" class="form-control" id="imageUpload" name="file">
+            <label for="imgUpload" class="form-label flex"> </label>
+            <input
+              type="file"
+              class="form-control"
+              id="imageUpload"
+              name="file"
+            />
           </div>
-  </section>  
-          <section class="flex justify-center w-full border-t border-t-neutral-500 pt-4">
-      
-
-        <button class="bg-transparent hover:scale-105 hover:text-white hover:border-white transition delay-150 duration-1000 ease-in-out text-light text-neutral-700 border border-teal-700 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base" type="submit">
-         Done
-        </button>
-      </section>
-     
-    </form>
- 
+        </section>
+        <section
+          class="flex justify-center w-full border-t border-t-neutral-500 pt-4"
+        >
+          <button
+            class="bg-transparent hover:scale-105 hover:text-white hover:border-white transition delay-150 duration-1000 ease-in-out text-light text-neutral-700 border border-teal-700 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base"
+            type="submit"
+          >
+            Done
+          </button>
+        </section>
+      </form>
+    </section>
   </section>
-</section>
 </section>

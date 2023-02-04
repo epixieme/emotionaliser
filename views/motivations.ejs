@@ -1,72 +1,70 @@
-
 <section
-class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56"
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56"
 >
-<section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 m-0 ">
- 
-  <p class="px-8 text-white  text-base font-poppins">  Motivational Quotes - Helps us with a quick and timely burst of wisdom to get our focus back, offering the inspiration needed for the day or occasion. </p>
-</section>
+  <section
+    class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 m-0"
+  >
+    <p class="px-8 text-white text-base font-poppins">
+      Motivational Quotes - Helps us with a quick and timely burst of wisdom to
+      get our focus back, offering the inspiration needed for the day or
+      occasion.
+    </p>
+  </section>
 
+  <section class="flex flex-col pt-4">
+    <section class="flex align-middle justify-center h-screen px-8">
+      <!-- image could be a github heatmap for each thought map entry -->
+      <section
+        class="hover:scale-110 transition duration-300 ease-in-out max-w-sm overflow-hidden bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md"
+      >
+        <img
+          class="object-cover"
+          src="/images/motquotes.svg"
+          alt="Sunset in the mountains"
+          style="width: 100%; height: 280px"
+        />
+        <section class="hover:bg-neutral-600">
+          <a href="/dashboard/tools/motivations/submit-motivation">
+            <h1 class="text-center p-4 text-lg hover:text-white">
+              Add a Quote
+            </h1>
+          </a>
+        </section>
+      </section>
+    </section>
+    <section class="flex justify-center">
+      <section
+        class="mongoDates md:px-8 pt-8 px-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 text-center max-w-7xl"
+      >
+        <% for(let i=0; i< motivations.length; i++) {%>
 
-
-<section class="flex flex-col pt-4 ">
-
-
-    
-  <section class="flex align-middle justify-center h-screen px-8  ">
-    <!-- image could be a github heatmap for each thought map entry -->
-    <section
-      class="hover:scale-110 transition  duration-300 ease-in-out max-w-sm overflow-hidden  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md" >
-      <img
-        class="object-cover"
-        src="/images/motquotes.svg"
-        alt="Sunset in the mountains"
-        style="width: 100%; height: 280px"
-      />
-      <section class=" hover:bg-neutral-600">
-
-   
-         
-             </h1>
-            
-        
-              <a href="/dashboard/tools/motivations/submit-motivation">
-              <h1 class="text-center p-4 text-lg hover:text-white">Add a Quote</h1>
+        <section
+          class="col-span-1 flex flex-col hover:scale-105 transition delay-150 duration-300 ease-in-out bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md max-h-full"
+        >
+          <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
+            <img
+              src="<%=motivations[i].image%>"
+              alt=""
+              style="width: 100%; height: 200px"
+              class="rounded-t-md object-fit"
+            />
+          </a>
+          <section class="mb-4 flex flex-wrap pt-4">
+            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
+              <p class="text-black text-left px-4 py-4">
+                <%=motivations[i].poem%>
+              </p>
+              <p class="text-neutral-500 px-4 pt-4">
+                <%=motivations[i].author%>
+              </p>
             </a>
-          
-      
+          </section>
+        </section>
 
+        <%}%>
       </section>
     </section>
 
-    
- 
+    <!-- </section> -->
   </section>
-  <section class="flex justify-center">
-
-  <section class="mongoDates md:px-8 py-4 px-8 py-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 text-center max-w-7xl">
-
-      <% for(let i=0; i< motivations.length; i++) {%>
-       
-           <section class=" col-span-1 flex flex-col hover:scale-105 transition delay-150 duration-300 ease-in-out  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-500 shadow-md max-h-full">
-            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
-          <img src="<%=motivations[i].image%>" alt="" style="width:100%;height:200px" class="rounded-t-md object-fit">
-        </a>
-          <section class="mb-4 flex flex-wrap">
-            <a href="/dashboard/tools/motivations/<%=motivations[i].id%>">
-         <p class="text-black text-left p-2"><%=motivations[i].poem%></p>
-         <p class="text-neutral-500 p-2"><%=motivations[i].author%></p>
-        </a>
-        </section>
-        </section>
-  
-        <%}%>
-    
-      </section>
-  </section>
-
-
-<!-- </section> -->
 </section>
-</section>
-

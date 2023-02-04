@@ -1074,6 +1074,11 @@ video {
   scroll-behavior: smooth;
 }
 
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 .break-all {
   word-break: break-all;
 }
@@ -2525,10 +2530,6 @@ input[type='file'] {
 
   .md\:rounded-br-md {
     border-bottom-right-radius: 0.375rem;
-  }
-
-  .md\:border-none {
-    border-style: none;
   }
 
   .md\:bg-top {

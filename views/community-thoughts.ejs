@@ -11,7 +11,7 @@
 
     <% for(let i=0; i<thoughts.length; i++) {%> 
   
-<section class="w-full shadow-md rounded-md bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8 md:mx-32">
+<section class="w-full shadow-lg rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8 md:mx-32 border border-white">
 
 <section class="flex flex-col px-4 w-80 md:w-96">
 
@@ -24,10 +24,10 @@
 
 
     <p class="text-neutral-600 py-2"><%=thoughts[i].date.toDateString()%></p>
-    <p class="text-base py-2 break-all"><%=thoughts[i].details%> </p>
+    <p class="text-base py-2 break-normal"><%=thoughts[i].details%> </p>
 </section>
 
-<section class="flex space-x-4 py-4 items-center border-b border-neutral-400">
+<section class="flex space-x-4 py-4 items-center border-b border-white">
 
 <form action="/dashboard/community/communityThoughts/likePost?_method=PUT" method="post" class="like flex space-x-1 items-center pl-4">
     <input type="text" value="<%=thoughts[i]._id%>" hidden name="id">
@@ -40,7 +40,7 @@
 </form>
 
 <!-- this counts the number of commments -->
-<form action="" class="comments flex space-x-1 items-center">
+<section  class="comments flex space-x-1 items-center">
 <p>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6   hover:text-teal-700">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
@@ -55,7 +55,7 @@
     
    <p><%=commentsArray.length%></p> 
    
-</form>
+    </section>
 
 
 <%if(user.thoughtBookmarks.includes(thoughts[i]._id)){ %>
@@ -126,7 +126,7 @@
   <section class="userImages  w-16">
   <img src="<%=communityUser[j].user.image %>" style="width:100%;height:40px" class='rounded-lg object-cover'>
 </section>
- <section class="flex flex-col justify-center px-4 pb-2  border-b border-neutral-400 w-56 md:w-96">
+ <section class="flex flex-col justify-center px-4 pb-2  border-b border-white w-56 md:w-96">
 
   <section class="flex space-x-2 py-2 items-center ">
        

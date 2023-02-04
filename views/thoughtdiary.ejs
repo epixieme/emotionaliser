@@ -1,143 +1,135 @@
 <section
-  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 "
->
-<section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 m-0 ">
- 
-  <p class="px-8 text-white  text-base font-poppins">Thought Diary - Recording thoughts has proven a useful mechanism for reducing anxiety, breaking away from a nonstop cycle of obsessive thinking and brooding.</p>
-</section>  
-  <section class="flex flex-col pt-4">
-
-    <section class="flex align-middle justify-center h-screen px-8 md:px-16 ">
-  
-      <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-neutral-500 shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
-      >
-        <img
-          class="object-cover"
-          src="/images/thoughts.svg"
-          alt="Sunset in the mountains"
-          style="width: 100%; height: 300px"
-        />
-        <section class=" ">
-
-          <%# for(let i=0; i<thoughts.length; i++) {%>
-           
-            <% if(thoughtDate != null && new Date(thoughtDate.date).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB')){ %>
-               
-              <h1 class="text-center p-4 text-lg hover:bg-neutral-600 hover:text-white text-black">Todays thought has already been submitted 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-              </svg>
+   class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover  min-h-screen md:pb-56 "
+   >
+   <section class="flex items-center bg-teal-700 bg-[url('/images/circuit-board.svg')] p-5 m-0 ">
+      <p class="px-8 text-white  text-base font-poppins">Thought Diary - Recording thoughts has proven a useful mechanism for reducing anxiety, breaking away from a nonstop cycle of obsessive thinking and brooding.</p>
+   </section>
+   <section class="flex flex-col pt-4">
+      <section class="flex align-middle justify-center h-screen px-8 md:px-16 ">
+         <section class=" text black hover:text-black hover:scale-105 transition duration-300 ease-in-out max-w-sm rounded-lg overflow-hidden shadow-neutral-500 shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
+            >
+            <img
+               class="object-cover"
+               src="/images/thoughts.svg"
+               alt="Sunset in the mountains"
+               style="width: 100%; height: 300px"
+               />
+            <section class=" ">
+               <%# for(let i=0; i<thoughts.length; i++) {%>
+               <% if(thoughtDate != null && new Date(thoughtDate.date).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB')){ %>
+               <h1 class="text-center p-4 text-lg hover:bg-neutral-600 hover:text-white text-black">
+                  Todays thought has already been submitted 
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
                </h1>
-              
-              <% } else { %>
-                <a href="/dashboard/tools/thoughtdiary/<%=pages%>/submit-thought">
-                <h1 class="text-center p-4 text-lg hover:bg-neutral-600 hover:text-white text-black">Add Todays Thought</h1>
-              </a>
-              <% } %>
-        
-          <%#}%>
-        </section>
+               <% } else { %>
+               <a href="/dashboard/tools/thoughtdiary/<%=pages%>/submit-thought">
+                  <h1 class="text-center p-4 text-lg hover:bg-neutral-600 hover:text-white text-black">Add Todays Thought</h1>
+               </a>
+               <% } %>
+               <%#}%>
+            </section>
+         </section>
       </section>
-   
-    </section>
-
-
-    <section class="px-8 md:px-16 pt-4">
-      <section class="flex justify-center py-2 "> 
-<form class="flex" action="/dashboard/tools/thoughtdiary/search" method="POST">
-        <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base focus:outline-0 ">
-        <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white  transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-400">Search</button>
-</form>
-
-
-
-</section>
-   
-      <% for(let i=0; i<thoughts.length; i++) {%>
-        <section class="flex hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white mt-4 text-black text-base  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
-        <section class="grid grid-cols-1 md:grid-cols-5 gap-4 w-full items-center md:px-8 md:py-2">
-        
-         <a class="flex flex-wrap md:w-16 md:h-16" href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>">
-        <img class="normalImage object-fit hidden md:flex rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:50px" alt="" >
-        <img class="mobileImage object-fit flex lg:hidden md:hidden  rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:200px" alt="" >
-         </a>
-         <!-- <section class="flex justify-center"> -->
-        <p class="pt-4 text-sm md:text-base px-8 md:pt-0 text-left"><span class="font-semibold">Date:</span> <%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
-      <!-- </section> -->
-      <!-- <section class="flex justify-center"> -->
-        <p class= " text-sm md:text-basemd:border-none lg:border-none border-b border-neutral-500 text-left px-8 pb-4 md:pb-0"><span class="font-semibold">Mood:</span> <%=thoughts[i].category%></p>
-        <!-- </section> -->
-        <!-- <section class="flex justify-center"> -->
-        <p class="px-8 text-sm md:text-base "><%=thoughts[i].summary%></p>
-        <!-- </section> -->
-        <!-- <section class="flex justify-center"> -->
-        <p class="flex justify-end items-center">
-          <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" class="hidden md:flex">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700 transform transition duration-500 hover:scale-110 ">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-        </svg>
-        </a>
-      </p>
-      <!-- </section> -->
-    </section>
- 
-    </section>
-     
-        <%}%>
-     <!-- add code back here -->
-
-     <% if (pages > 0) { %>
-      <section class="flex justify-center items-center p-8">
-                  <ul class="pagination text-center flex space-x-7 justify-center w-fit items-center ">
-                      <% if (current == 1) { %>
-                          <li class="disabled p-2 rounded-full bg-neutral-400 text-white">
-                            <a class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-left w-6 h-6">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg>
-                        </a>
-                      </li>
-                      <% } else { %>
-                          <li class ="p-4"><a href="/dashboard/tools/thoughtdiary/1">  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-left w-6 h-6">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg></a></li>
-                      <% } %>
-                      <%let i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-                      <% if (i !== 1) { %>
-                          <li class="disabled p-4"><a>...</a></li>
-                      <% } %>
-                      <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
-                          <% if (i == current) { %>
-                              <li class="active p-2 bg-teal-700 text-white rounded-md"><a><%= i %></a></li>
-                          <% } else { %>
-                              <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= i %>"><%= i %></a></li>
-                          <% } %>
-                          <% if (i == Number(current) + 4 && i < pages) { %>
-                              <li class="disabled p-4"><a>...</a></li>
-                          <% } %>
-                      <% } %>
-                      <% if (current == pages) { %>
-                          <li class="disabled p-2 rounded-full bg-neutral-400 text-white"><a> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right w-6 h-6">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                          </svg></a></li>
-                      <% } else { %>
-                          <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= pages %>"> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right w-6 h-6">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                          </svg></a></li>
-                      <% } %>
-                  </ul>
-                </section>
-              <% } %>
-
-    </section>
-  </section>
-
+      <section class="px-8 md:px-16 pt-4">
+         <section class="flex justify-center py-2 ">
+            <form class="flex" action="/dashboard/tools/thoughtdiary/search" method="POST">
+               <input type="search" name="searchTerm" id="" class="py-2  px-2 w-64 rounded-l-md  flex justify-center items-center shadow-lg text-base focus:outline-0 ">
+               <button type="submit" class="px-4 text-base shadow rounded-r-md hover:bg-neutral-600 hover:text-white  transition duration-300 ease-in-out max-w-sm overflow-hidden shadow-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-neutral-400">Search</button>
+            </form>
+         </section>
+         <% for(let i=0; i<thoughts.length; i++) {%>
+         <section class="flex hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white mt-4 text-black text-base  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
+            <section class="grid grid-cols-1 md:grid-cols-5 gap-4 w-full items-center md:px-8 md:py-2">
+               <a class="flex flex-wrap md:w-16 md:h-16" href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>">
+               <img class="normalImage object-fit hidden md:flex rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:50px" alt="" >
+               <img class="mobileImage object-fit flex lg:hidden md:hidden  rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:200px" alt="" >
+               </a>
+               <!-- <section class="flex justify-center"> -->
+               <p class="pt-4 text-sm md:text-base px-8 md:pt-0 text-left"><span class="font-semibold">Date:</span> <%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
+               <!-- </section> -->
+               <!-- <section class="flex justify-center"> -->
+               <p class= " text-sm md:text-basemd:border-none lg:border-none border-b border-neutral-500 text-left px-8 pb-4 md:pb-0"><span class="font-semibold">Mood:</span> <%=thoughts[i].category%></p>
+               <!-- </section> -->
+               <!-- <section class="flex justify-center"> -->
+               <p class="px-8 text-sm md:text-base "><%=thoughts[i].summary%></p>
+               <!-- </section> -->
+               <!-- <section class="flex justify-center"> -->
+               <p class="flex justify-end items-center">
+                  <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" class="hidden md:flex">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700 transform transition duration-500 hover:scale-110 ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                     </svg>
+                  </a>
+               </p>
+               <!-- </section> -->
+            </section>
+         </section>
+         <%}%>
+         <!-- add code back here -->
+         <% if (pages > 0) { %>
+         <section class="flex justify-center items-center p-8">
+            <ul class="pagination text-center flex space-x-7 justify-center w-fit items-center ">
+               <% if (current == 1) { %>
+               <li class="disabled p-2 rounded-full bg-neutral-400 text-white">
+                  <a class="">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-left w-6 h-6">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                     </svg>
+                  </a>
+               </li>
+               <% } else { %>
+               <li class ="p-4">
+                  <a href="/dashboard/tools/thoughtdiary/1">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-left w-6 h-6">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                     </svg>
+                  </a>
+               </li>
+               <% } %>
+               <%let i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+               <% if (i !== 1) { %>
+               <li class="disabled p-4"><a>...</a></li>
+               <% } %>
+               <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+               <% if (i == current) { %>
+               <li class="active p-2 bg-teal-700 text-white rounded-md"><a><%= i %></a></li>
+               <% } else { %>
+               <li class="p-4"><a href="/dashboard/tools/thoughtdiary/<%= i %>"><%= i %></a></li>
+               <% } %>
+               <% if (i == Number(current) + 4 && i < pages) { %>
+               <li class="disabled p-4"><a>...</a></li>
+               <% } %>
+               <% } %>
+               <% if (current == pages) { %>
+               <li class="disabled p-2 rounded-full bg-neutral-400 text-white">
+                  <a>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-right w-6 h-6">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                     </svg>
+                  </a>
+               </li>
+               <% } else { %>
+               <li class="p-4">
+                  <a href="/dashboard/tools/thoughtdiary/<%= pages %>">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-right w-6 h-6">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                     </svg>
+                  </a>
+               </li>
+               <% } %>
+            </ul>
+         </section>
+         <% } %>
+      </section>
+   </section>
 </section>
