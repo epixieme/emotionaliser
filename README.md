@@ -6,7 +6,7 @@
   <tr>
   <td width="50%">https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4 </td>
   <td width="50%">
-![dashboard](https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png)</td>
+<img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png"></td>
   </tr>
 </table>
 
