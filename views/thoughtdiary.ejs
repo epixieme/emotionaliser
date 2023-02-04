@@ -55,15 +55,22 @@
    
       <% for(let i=0; i<thoughts.length; i++) {%>
         <section class="flex hover:scale-105 transition delay-150 duration-300 ease-in-out  even:bg-transparent odd:bg-neutral-400  even:text-neutral-500 odd:text-white mt-4 text-black text-base  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-20  border-white  border-dashed border-2 shadow-neutral-500 shadow-md">
-        <section class="grid grid-cols-1 md:grid-cols-5 gap-4 w-full items-center md:px-8 md:py-2 text-center">
+        <section class="grid grid-cols-1 md:grid-cols-5 gap-4 w-full items-center md:px-8 md:py-2">
         
          <a class="flex flex-wrap md:w-16 md:h-16" href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>">
         <img class="normalImage object-fit hidden md:flex rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:50px" alt="" >
         <img class="mobileImage object-fit flex lg:hidden md:hidden  rounded-t-md md:rounded-md shadow-md " src="<%=thoughts[i].image%>" style="width:100%;height:200px" alt="" >
          </a>
-        <p class="pt-4 md:pt-0"><%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
-        <p class=""><%=thoughts[i].category%></p>
-        <p class=""><%=thoughts[i].summary%></p>
+         <!-- <section class="flex justify-center"> -->
+        <p class="pt-4 text-sm md:text-base px-8 md:pt-0 text-left"><span class="font-semibold">Date:</span> <%=thoughts[i].date.toLocaleDateString('en-GB')%></p>
+      <!-- </section> -->
+      <!-- <section class="flex justify-center"> -->
+        <p class= " text-sm md:text-basemd:border-none lg:border-none border-b border-neutral-500 text-left px-8 pb-4 md:pb-0"><span class="font-semibold">Mood:</span> <%=thoughts[i].category%></p>
+        <!-- </section> -->
+        <!-- <section class="flex justify-center"> -->
+        <p class="px-8 text-sm md:text-base "><%=thoughts[i].summary%></p>
+        <!-- </section> -->
+        <!-- <section class="flex justify-center"> -->
         <p class="flex justify-end items-center">
           <a href="/dashboard/tools/thoughtdiary/0/<%=thoughts[i].id%>" class="hidden md:flex">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  hover:text-teal-700 transform transition duration-500 hover:scale-110 ">
@@ -71,6 +78,7 @@
         </svg>
         </a>
       </p>
+      <!-- </section> -->
     </section>
  
     </section>
