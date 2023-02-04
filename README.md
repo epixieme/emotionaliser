@@ -5,7 +5,7 @@
 
 https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4
 
-[mobile (1).webm](https://user-images.githubusercontent.com/39728053/216703268-ceb132ca-4e2b-4ecf-aab3-eb3ce4255be7.webm)
+
 
 This is a full-stack Wellbeing CRUD application designed with Vanilla Javascript, EJS, a touch of Apline, Tailwind, Node.js, MongoDB and Mongoose.
 https://ill-pear-walrus-tutu.cyclic.app/
