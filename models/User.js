@@ -3,45 +3,44 @@ const mongoose = require("mongoose");
 const thoughtDiary = require("../models/Thoughts").schema;
 
 const UserSchema = new mongoose.Schema({
-  firstName:{type: String,
-  default:""},
-  lastName:{type: String,
-  default:""},
-  userName: { type: String, unique: true, required: "This field is required"},
+  firstName: { type: String, default: "" },
+  lastName: { type: String, default: "" },
+  userName: { type: String, unique: true, required: "This field is required" },
   email: { type: String, unique: true, required: "This field is required" },
   password: String,
   // for file uploads of user picture
-image: {
-  type: String,
-  // required: "This field is required",
-  default:"/images/placeholder.png"
-},
- thoughtBookmarks: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Thoughts'
-}],
+  image: {
+    type: String,
+    // required: "This field is required",
+    default: "/images/placeholder.png",
+  },
+  thoughtBookmarks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Thoughts",
+    },
+  ],
 
-city:{
-  type: String, 
- 
-  default:"City"
-},
-county:{
-  type: String, 
+  city: {
+    type: String,
 
-  default:"County"
-},
-postcode:{
-  type: String, 
+    default: "City",
+  },
+  county: {
+    type: String,
 
-  default:"PostCode"
-},
-delete:{
-  type:Boolean,
-  default:false
-},
-thoughtSchema:[thoughtDiary]
+    default: "County",
+  },
+  postcode: {
+    type: String,
 
+    default: "PostCode",
+  },
+  delete: {
+    type: Boolean,
+    default: false,
+  },
+  thoughtSchema: [thoughtDiary],
 });
 
 // Password hash middleware.

@@ -1,9 +1,7 @@
-
 //*******************************************
 // HOMEPAGE CONTROLLER
 // ******************************************
 
- 
 // const Category = require("../models/Category"); // get the Category js file from models dir
 // const Emotion = require("../models/Emotion"); // get the Emotion js file from models dir
 
@@ -19,17 +17,16 @@ function errorHandling(res, error) {
 
 // can use exports which is a reference to module.exports allowing us to write shorter code.
 
-
 // or we can use an object with multiple methods
 
 module.exports = {
-  homepage: async (req,res)=>{
-      console.log(req.user)
-      try{
-        res.render('home')
-          // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
-      }catch(err){
-          console.log(err)
-      }
+  homepage: async (req, res) => {
+    console.log(req.user);
+    try {
+      res.render("home");
+      // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+    } catch (err) {
+      console.log(err);
+    }
   },
-}
+};

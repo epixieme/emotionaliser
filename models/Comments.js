@@ -1,24 +1,23 @@
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
- 
-  comment:{
-    type:String,
+  comment: {
+    type: String,
     required: true,
   },
-  date: {type: Date, default: Date.now},
-  
+  date: { type: Date, default: Date.now },
+
   commentLikes: {
     type: Number,
     // required: true,
   },
   thoughts: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Thoughts", 
+    ref: "Thoughts",
   },
   motivations: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Motivations", 
+    ref: "Motivations",
   },
   createdAt: {
     type: Date,
@@ -28,7 +27,6 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  
 });
 
 module.exports = mongoose.model("Comment", commentSchema);

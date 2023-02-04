@@ -52,7 +52,6 @@ async function fetchData(url) {
 
     // insertData(data);
     createRatingArrows(data);
-
   } catch (error) {
     console.log(error);
   }
@@ -81,20 +80,19 @@ function createRatingArrows(data) {
 
   let arrows = data.map((item) => item.rating);
 
-  let upDown = arrows.slice()
-   
+  let upDown = arrows
+    .slice()
+
     .map((item, i, a) =>
       item === a[i + 1] ? noChange : item > a[i - 1] ? up : down
     );
-    
 
   upDown.forEach((item, i) => (rating[i].innerHTML = item));
 
-  // dashUpDown.forEach((item, i) => (dashRating[i].innerHTML = item));
 
   // set first date item to nothing instead of arrows as nothing to compare
   rating[0].innerHTML = "-";
-  // dashRating[dashRating.length - 1].innerHTML = "-";
+
 
   // need to only see data for this req.user
 }
@@ -109,74 +107,36 @@ if (circlesBtn) {
 }
 
 
-// if (like) {
-//   like.addEventListener("click", likedislike);
-// }
-
 // dashboard motivational quote
 //show modal if hidden on click
 function toolTip() {
-
-  
   if (likeOrNot.classList.contains("hidden")) {
     likeOrNot.classList.remove("hidden");
- 
   } else {
     likeOrNot.classList.add("hidden");
   }
-  // if (like) {
-  //   like.addEventListener("click", likeunlike(likeOrNot));
-  // }
+ 
 }
 
 // on click of like or dislike then hide like/dislike modal to show the flash messsage
 
-// function likedislike() {
-//   const likeOrNot = document.querySelector(".likeOrNot");
-//   likeOrNot.classList.add("hidden");
-// }
-
 function timedFlashMsg() {
   let likeMsg = document.getElementById("likeMsg");
   let dislikeMsg = document.getElementById("dislikeMsg");
-  const bookmarkedMsg = document.getElementById("bookmarkedMsg")
+  const bookmarkedMsg = document.getElementById("bookmarkedMsg");
 
   // set flash messages to fade out
-setTimeout(() => {
-    if (likeMsg && likeMsg.innerText.length > 0 ) {
+  setTimeout(() => {
+    if (likeMsg && likeMsg.innerText.length > 0) {
       likeMsg.style.display = "none";
-     
     }
-    if (bookmarkedMsg && bookmarkedMsg.innerText.length > 0 ) {
-     bookmarkedMsg.style.display = "none";
-     
-    }
-    else if (dislikeMsg && dislikeMsg.innerText.length > 0) {
+    if (bookmarkedMsg && bookmarkedMsg.innerText.length > 0) {
+      bookmarkedMsg.style.display = "none";
+    } else if (dislikeMsg && dislikeMsg.innerText.length > 0) {
       dislikeMsg.style.display = "none";
-
     }
   }, "3000");
 }
 
 timedFlashMsg();
 
-
-// Keep a dictionary of sound urls by animal
-const audioURLs = {
-  "wind": "https://res.cloudinary.com/dwjacjfgx/video/upload/v1675429719/wind_mxmwbd.mp3",
-  "dogs": "http://soundbible.com/mp3/small-dog-barking_daniel-simion.mp3"
-}
- let start = document.querySelector('.startBtn')
- 
-// When we detect a click on the button...
-start.addEventListener("click", function(){
-  // Retrieve the selected animal
- let selectedOption = animalSelector.value;
-  
-  // Check its sound URL from the dictionary
- let  audioURL = audioURLs[selectedOption];
-  
-  // Update the player audio file and play it
-  player.src = audioURL;
-  player.play();
-});

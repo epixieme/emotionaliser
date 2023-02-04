@@ -1,38 +1,46 @@
-<section class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 font-poppin">
+<section
+  class="bg-grey-900 bg-backg-wave bg-no-repeat bg-cover min-h-screen md:pb-56 font-poppin"
+>
+  <section
+    class="flex items-center bg-teal-700 bg-[url('/images/cogs.svg')] p-8 m-0"
+  >
+    <p class="px-8 text-white pt-4 text-base font-poppins">
+      <span class="text-xl">User Settings</span>
+    </p>
+  </section>
 
-    <section class="flex items-center bg-teal-700 bg-[url('/images/cogs.svg')] p-8 m-0 ">
-   
-      <p class="px-8 text-white pt-4 text-base font-poppins"><span class="text-xl">User Settings</span> </p>
-   </section>
-  
-  
-  <section class="grid overflow-hidden grid-cols-1 md:grid-cols-1  p-8" >
-
-    <div class="box">
-      <section class="flex flex-col items-center justify-evenly  bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md p-8">
-    
+  <section class="grid overflow-hidden grid-cols-1 md:grid-cols-1 p-8">
+    <section class="box">
+      <section
+        class="flex flex-col items-center justify-evenly bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 shadow-md p-8"
+      >
         <section class="mb-4">
-            <h1 class="text-xl">
-      Are you sure you want to delete your account?  Deletion will mean you no longer have access to your account and all data will be non-recoverable.
-            </h1>
-     
-        <form action="/dashboard/profile/delete-profile/<%=user._id%>?_method=DELETE"  enctype="multipart/form-data" method="POST" class="w-auto flex justify-center space-x-8 md:justify-end  py-8 md:px-32" >
-    
-            <button type="submit"class='mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-red-600 border border-red-600 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base'>Confirm Delete</button>
-            <a href="/dashboard/profile/<%=user._id%>" class="mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base">cancel</a>
-            </form>
-       
-  
-     
-  
+          <h1 class="text-xl">
+            Are you sure you want to delete your account? Deletion will mean you
+            no longer have access to your account and all data will be
+            non-recoverable.
+          </h1>
 
- 
+          <form
+            action="/dashboard/profile/delete-profile/<%=user._id%>?_method=DELETE"
+            enctype="multipart/form-data"
+            method="POST"
+            class="w-auto flex justify-center space-x-8 md:justify-end py-8 md:px-32"
+          >
+            <button
+              type="submit"
+              class="mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-red-600 border border-red-600 rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base"
+            >
+              Confirm Delete
+            </button>
+            <a
+              href="/dashboard/profile/<%=user._id%>"
+              class="mt-8 bg-transparent hover:scale-105 hover:text-black hover:border-teal-700 transition delay-150 duration-1000 ease-in-out text-light text-white border border-white rounded-lg py-2 px-4 focus:outline-none focus:shadow-outline text-base"
+              >cancel</a
+            >
+          </form>
+        </section>
+      </section>
+    </section>
   </section>
-</div>
-    
-  
-  
-  
-  </section>
-   
-  </section>
+</section>

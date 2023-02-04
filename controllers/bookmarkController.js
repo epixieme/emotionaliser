@@ -2,52 +2,45 @@ const thoughtDiary = require("../models/Thoughts");
 const userDetails = require("../models/User");
 const motivationDetails = require("../models/Motivations");
 
-
 function errorHandling(res, error) {
   res.status(500).send({ message: error.message || "Error Occured" });
 }
 
 module.exports = {
   addBookmark: async (req, res) => {
-  
     try {
       const thoughts = await thoughtDiary.findOneAndUpdate(
-        { _id: req.params.id }, 
+        { _id: req.params.id },
         {
           bookmarked: true,
         }
       );
       console.log("bookmarked");
-      req.flash('bookmarkedMsg', "Added to Positivity Hub for reflection")
-      res.redirect(`/dashboard/tools/thoughtdiary/0/${req.params.id}/#bookmarkedMsg`);
-    
-     
+      req.flash("bookmarkedMsg", "Added to Positivity Hub for reflection");
+      res.redirect(
+        `/dashboard/tools/thoughtdiary/0/${req.params.id}/#bookmarkedMsg`
+      );
     } catch (err) {
       errorHandling(res, err);
     }
   },
-//  uses thought diary model
+  //  uses thought diary model
   addCommunityBookmark: async (req, res) => {
-  
-
     try {
       const community = await userDetails.findOneAndUpdate(
-        { _id: req.user},
-      
+        { _id: req.user },
+
         //  {$push: {thoughtBookmarks:req.body.id}},
-        { $addToSet: {thoughtBookmarks:req.body.id}}
-       
+        { $addToSet: { thoughtBookmarks: req.body.id } }
+
         //  { upsert: true }
-)
+      );
 
-  console.log("community" + community);
+      console.log("community" + community);
 
-  res.redirect("/dashboard/community/communityThoughts");
+      res.redirect("/dashboard/community/communityThoughts");
 
-
-
-    // community.bookmarks.push(req.body.id)
-    
+      // community.bookmarks.push(req.body.id)
     } catch (err) {
       errorHandling(res, err);
     }
@@ -57,7 +50,7 @@ module.exports = {
     try {
       const motivations = await userDetails.findOneAndUpdate(
         { _id: req.user },
-        {$pull: {thoughtBookmarks:req.body.id}}
+        { $pull: { thoughtBookmarks: req.body.id } }
       );
       console.log("unbookmarked");
       res.redirect("/dashboard/community/communityThoughts");
@@ -66,7 +59,6 @@ module.exports = {
     }
   },
   addMotivationBookmark: async (req, res) => {
-   
     try {
       const motivations = await motivationDetails.findOneAndUpdate(
         { _id: req.params.id },
@@ -75,8 +67,10 @@ module.exports = {
         }
       );
       console.log("bookmarked");
-      req.flash('bookmarkedMsg', "Added to Positivity Hub for reflection")
-      res.redirect(`http://localhost:3000/dashboard/tools/motivations/${req.params.id}/#bookmarkedMsg`);
+      req.flash("bookmarkedMsg", "Added to Positivity Hub for reflection");
+      res.redirect(
+        `http://localhost:3000/dashboard/tools/motivations/${req.params.id}/#bookmarkedMsg`
+      );
     } catch (err) {
       errorHandling(res, err);
     }
@@ -113,21 +107,23 @@ module.exports = {
   getBookmarked: async (req, res) => {
     try {
       const thoughts = await thoughtDiary.find({
-        bookmarked: true
+        bookmarked: true,
       });
       const motivations = await motivationDetails.find({
-        bookmarked:true
+        bookmarked: true,
       });
 
-      const motivation = await motivationDetails.findById(
-        req.user,{bookmarked: true} 
-      );
+      const motivation = await motivationDetails.findById(req.user, {
+        bookmarked: true,
+      });
 
-      const community = await userDetails.find(req.user).populate('thoughtBookmarks')
-    
+      const community = await userDetails
+        .find(req.user)
+        .populate("thoughtBookmarks");
 
-      const userName = await thoughtDiary.find().populate({path:'user', select:'userName'})
-    
+      const userName = await thoughtDiary
+        .find()
+        .populate({ path: "user", select: "userName" });
 
       res.render("bookmarks", {
         title: "Bookmarks",
@@ -135,10 +131,9 @@ module.exports = {
         thoughts: thoughts,
         motivations: motivations,
         motivation: motivation,
-        community:community,
+        community: community,
         user: req.user,
-        userName:userName
-        
+        userName: userName,
       });
     } catch (err) {
       errorHandling(res, err);

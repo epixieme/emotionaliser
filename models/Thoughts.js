@@ -4,7 +4,7 @@ const thoughtSchema = new mongoose.Schema({
   image: {
     type: String,
     required: "This field is required",
-    default:"No file"
+    default: "No file",
   },
   summary: {
     type: String,
@@ -17,7 +17,7 @@ const thoughtSchema = new mongoose.Schema({
   // this will be a chosen category form html select
   category: {
     type: String,
-    enum: ["Great","Very Good","Good","Bad","Very Bad","Awful"],
+    enum: ["Great", "Very Good", "Good", "Bad", "Very Bad", "Awful"],
     required: "This field is required",
   },
   // this is not working
@@ -29,32 +29,29 @@ const thoughtSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  level:{
-   type:String,
-   default:"1"
+  level: {
+    type: String,
+    default: "1",
   },
-  date: {type: Date, default: Date.now},
-  submitted:{
-    type:Boolean,
-    default:true
+  date: { type: Date, default: Date.now },
+  submitted: {
+    type: Boolean,
+    default: true,
   },
-  bookmarked:{
-    type:Boolean,
-    default:false
+  bookmarked: {
+    type: Boolean,
+    default: false,
   },
-  public:{
-    type:Boolean,
-    default:false
+  public: {
+    type: Boolean,
+    default: false,
   },
   likes: {
     type: Number,
     required: true,
   },
-
-
 });
 
-
-thoughtSchema.index({ summary: "text", description: "text", date:"text" }, ); //{ unique: true }/// index search
+thoughtSchema.index({ summary: "text", description: "text", date: "text" }); //{ unique: true }/// index search
 //Export the model so it can be reused in other js files
 module.exports = mongoose.model("Thoughts", thoughtSchema); // interface to the db
