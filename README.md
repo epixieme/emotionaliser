@@ -6,13 +6,13 @@ https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-
 
 
 
-<table width="100%">
+<table width="100%" style="vertical-align: top;>
   <tr>
-  <td width="50%" style="horizontal-align: top;">
+  <td width="50%" style="vertical-align: top;">
    <img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png"></td>
 
   </td>
-  <td width="50%">
+  <td width="50%" style="vertical-align: top;>
    <img src ="https://user-images.githubusercontent.com/39728053/216772644-61eb7933-908d-4bb3-82aa-a7bc78fdff6b.png"></td>
 
   </tr>
