@@ -2,13 +2,15 @@
 
 
 
+https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-92cc-43a63b12390a.mp4
+
+
+
 <table width="100%">
   <tr>
   <td width="50%">
    
-<video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
-    <source src="https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4" type="video/mp4"/>
-    </video>
+
   </td>
   <td width="50%">
 <img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png"></td>
