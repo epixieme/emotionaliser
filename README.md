@@ -5,7 +5,7 @@
 <table width="100%">
   <tr>
   <td width="50%">
-    <video width="320" height="240" controls>
+    <video  controls>
     
       <source src="https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4" type="video/mp4">
     </video>
