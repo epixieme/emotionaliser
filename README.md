@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-
 
 
 
-<table width="100%" style="vertical-align: top;>
+<table width="100%">
   <tr>
   <td width="50%" style="vertical-align: top;">
    <img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png"></td>
