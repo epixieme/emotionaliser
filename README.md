@@ -7,7 +7,7 @@
   <td width="50%">
    
 <video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
-    <source src="https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/39728053/216643063-36be6827-991e-41e4-9068-cd5747e1fc54.mp4" type="video/mp4"/>
     </video>
   </td>
   <td width="50%">
