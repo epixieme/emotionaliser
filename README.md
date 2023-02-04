@@ -7,8 +7,7 @@ https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-
 <table width="100%">
   <tr>
   <td width="50%" style="vertical-align: top">
-   <img src ="
-https://user-images.githubusercontent.com/39728053/216773241-3871b9d0-25cd-4d1a-952e-431c52a2a2b9.png"></td>
+   <img src ="https://user-images.githubusercontent.com/39728053/216773241-3871b9d0-25cd-4d1a-952e-431c52a2a2b9.png"></td>
 
   </td>
   <td width="50%" style="vertical-align: top">
