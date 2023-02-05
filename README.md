@@ -22,11 +22,11 @@ https://ill-pear-walrus-tutu.cyclic.app/
 <table width="100%">
   <tr>
   <td width="50%" align="top">
-   <img src ="https://user-images.githubusercontent.com/39728053/216773241-3871b9d0-25cd-4d1a-952e-431c52a2a2b9.png" style="height:auto;width:100%"></td>
+   <img src ="https://user-images.githubusercontent.com/39728053/216773241-3871b9d0-25cd-4d1a-952e-431c52a2a2b9.png" style="height:300px;width:100%"></td>
 
   </td>
   <td width="50%" align="top">
-   <img src = "https://user-images.githubusercontent.com/39728053/216773119-17519509-557e-44ae-a41c-e37a9e2b8be6.png" style="height:auto;width:100%"></td>
+   <img src = "https://user-images.githubusercontent.com/39728053/216773119-17519509-557e-44ae-a41c-e37a9e2b8be6.png" style="height:300px;width:100%"></td>
 
   </tr>
 </table>
@@ -36,11 +36,11 @@ https://ill-pear-walrus-tutu.cyclic.app/
 <table width="100%">
   <tr>
   <td width="50%" >
-   <img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png" align="top" style="height:auto;width:100%"></td>
+   <img src ="https://user-images.githubusercontent.com/39728053/216771795-129d4b30-c388-41f9-913b-732c79ad88fd.png" align="top" style="height:300px;width:100%"></td>
 
   </td>
   <td width="50%" >
-   <img src = "https://user-images.githubusercontent.com/39728053/216772644-61eb7933-908d-4bb3-82aa-a7bc78fdff6b.png" align="top" style="height:auto;width:100%"></td>
+   <img src = "https://user-images.githubusercontent.com/39728053/216772644-61eb7933-908d-4bb3-82aa-a7bc78fdff6b.png" align="top" style="height:300px;width:100%"></td>
 
   </tr>
 </table>
