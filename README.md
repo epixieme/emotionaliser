@@ -18,7 +18,6 @@ https://ill-pear-walrus-tutu.cyclic.app/
 
 ## Images
 
-
 <table width="100%">
   <tr>
   <td width="50%" align="top">
