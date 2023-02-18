@@ -1,7 +1,5 @@
 # Emotionalise
 
-
-
 https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-92cc-43a63b12390a.mp4
 
 
