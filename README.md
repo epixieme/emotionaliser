@@ -27,8 +27,6 @@ https://ill-pear-walrus-tutu.cyclic.app/
   </tr>
 </table>
 
-
-
 <table width="100%">
   <tr>
   <td width="50%" >
