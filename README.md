@@ -7,8 +7,8 @@ This is a full-stack Wellbeing CRUD application designed with Vanilla Javascript
 https://ill-pear-walrus-tutu.cyclic.app/
 ## Features
 
-- Dashboard showing weekly mood stats.
-- Wellbeing tools - Thought Diary and Motivational Quotes CRUD feature.
+- Dashboard showing weekly mood stats and randomily displayed quote with logic to display based on like or dislike.
+- Wellbeing tools - Thought Diary and Motivational Quotes CRUD features.
 - Positivity Hub allowing users to view bookmarks that help with instilling postive emotions.
 - Community pages for posting thoughts and quotes to share and discuss.
 - Profile settings editor - upload a profile picture and edit personal details.
