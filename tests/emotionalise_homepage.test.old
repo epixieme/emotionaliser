@@ -1,0 +1,16 @@
+const mongoose = require('mongoose')
+const supertest = require('supertest')
+const app = require('../app')
+
+const homepage = supertest(app)
+
+test('notes are returned as json', async () => {
+  await homepage
+    .get('/')
+    .expect(200)
+    // .expect('Content-Type', /application\/json/)
+})
+
+afterAll(async () => {
+  await mongoose.connection.close()
+})

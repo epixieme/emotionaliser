@@ -25,7 +25,7 @@ const communityRoutes = require("./routes/community");
 const commentRoutes = require("./routes/comments");
 
 
-
+mongoose.set('strictQuery', false)
 
 // const port = process.env.PORT || 2000;
 
@@ -106,3 +106,4 @@ app.listen(process.env.PORT, () => {
 });
 
 
+module.exports = app
