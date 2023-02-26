@@ -1,12 +1,16 @@
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
+const request = require('superagent');
 
+const user1 = request.agent(app);
 const api = supertest(app)
+
+
 
 test('notes are returned as json', async () => {
   await api
-    .get('/dashboard/tools/thoughtdiary/thoughtData"')
+    .get('/dashboard/tools/thoughtdiary/thoughtData')
     .expect(200)
     // .expect('Content-Type', /application\/json/)
 }, 100000)

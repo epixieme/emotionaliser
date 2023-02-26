@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
 
-const homepage = supertest(app)
+const dashboard = supertest(app)
 
 test('notes are returned as json', async () => {
-  await homepage
-    .get('/')
-    .expect(200)
+  await dashboard
+    .get('/dashboard')
+    .expect(302)
     // .expect('Content-Type', /application\/json/)
 })
 
