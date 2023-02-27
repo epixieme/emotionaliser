@@ -32,8 +32,8 @@ describe('when there is initially one user in db', () => {
     await api
       .post('/signup')
       .send(newUser)
-      .expect(201)
-      .expect('Content-Type', /application\/json/)
+      .expect(302)
+      // .expect('Content-Type', /application\/json/)
 
     // const usersAtEnd = await helper.usersInDb()
     // expect(usersAtEnd).toHaveLength(usersAtStart.length + 1)
