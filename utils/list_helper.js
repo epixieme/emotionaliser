@@ -25,7 +25,7 @@ const reducer = (sum, item) => {
     return blogs
     .reduce((accumulator, currentValue, index) => accumulator.blogs > currentValue.blogs
     ? {author:accumulator.author, blogs:accumulator.blogs}
-    : {author:currentValue.author, blogs:currentValue.blogs} );
+    : {author:currentValue.author, blogs:currentValue.blogs});
  
     }
 

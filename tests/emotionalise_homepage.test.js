@@ -1,25 +1,44 @@
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
+const request = require('superagent');
+const server = request.agent(app);
 
-const homepage = supertest(app)
+// const homepage = supertest(app)
+const User = require('../models/user')
+const api = supertest(app)
+//...
 
-test('homepage route should be sucessful with response 200', async () => {
-  await homepage
-    .get('/')
-    .expect(200)
-    // .expect('Content-Type', /application\/json/)
-})
+describe('when there is initially one user in db', () => {
+  beforeEach(async () => {
+    await User.deleteMany({})
 
+    // const user = new User({ username: 'root', password: 'password' })
 
-test('dashboard route should redirect with response 302', async () => {
-  await homepage
-    .get('/dashboard')
-    .expect(302)
-    // .expect('Content-Type', /application\/json/)
-})
+    // await user.save()
+  })
 
+  test('creation succeeds with a fresh username', async () => {
+    // const usersAtStart = await helper.usersInDb()
 
-afterAll(async () => {
-  await mongoose.connection.close()
+    const newUser = {
+      userName: 'mluukkai',
+      email: 'test.user@tu.com',
+      password: 'salainen',
+      confirmPassword:'salainen',
+    
+    }
+
+    await api
+      .post('/signup')
+      .send(newUser)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+
+    // const usersAtEnd = await helper.usersInDb()
+    // expect(usersAtEnd).toHaveLength(usersAtStart.length + 1)
+
+    // const usernames = usersAtEnd.map(u => u.username)
+    // expect(usernames).toContain(newUser.username)
+  })
 })

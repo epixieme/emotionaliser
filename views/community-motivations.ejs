@@ -2,6 +2,8 @@
   <section class="flex items-center bg-teal-700 bg-[url('/images/hexagons.svg')] p-5 m-0 ">
      <p class="px-8 text-white text-base font-poppins">Motivations - A place to share motivations with the hive mind. Like, support or simply be inspired.</p>
   </section>
+
+
   <!-- <section class="px-4 md:px-32 flex justify-end "> -->
   <!-- <a class="bg-teal-700 py-4 px-8 rounded-md text-base text-white">New post</a> -->
   <section class="flex justify-center flex-col items-center px-8 md:px-64 pb-4">
@@ -9,8 +11,14 @@
      <section class="w-full shadow-lg rounded-md bg-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  md:px-32  py-8 mt-8 md:mx-32 border border-white">
         <section class="flex flex-col px-4 w-80 md:w-96">
            <section class="flex space-x-4 py-2">
-              <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
+            <% if (userPop[i].user) { %>
+              <img src="<%= userPop[i].user.image %>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
               <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>
+              <%} else { %>
+               <img src="https://picsum.photos/200" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
+               <h2 class="text-base font-bold">Inactive User</h2>
+               <% } %>
+       
            </section>
            <p class="text-neutral-600 py-2"><%=motivations[i].date.toDateString()%></p>
            <p class="text-base py-2 break-normal"><%=motivations[i].poem%> </p>

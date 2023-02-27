@@ -16,11 +16,14 @@
 <section class="flex flex-col px-4 w-80 md:w-96">
 
   <section class="flex space-x-4 py-2">
-
-  <img src="<%=userPop[i].user.image%>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
-   <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>  
-
-  </section> 
+    <% if (userPop[i].user) { %>
+      <img src="<%= userPop[i].user.image %>" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
+      <h2 class="text-base font-bold"><%=userPop[i].user.userName%></h2>
+      <%} else { %>
+       <img src="https://picsum.photos/200" alt="" class="rounded-lg shadow max-w-full h-auto align-middle border-none object-cover" style="width:60px;height:40px">
+       <h2 class="text-base font-bold">Inactive User</h2>
+       <% } %>
+   </section>
 
 
     <p class="text-neutral-600 py-2"><%=thoughts[i].date.toDateString()%></p>
