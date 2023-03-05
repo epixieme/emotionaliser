@@ -42,6 +42,9 @@ https://ill-pear-walrus-tutu.cyclic.app/
 A learning curve was to install and implement Alpine.js. I chose this lightweight framework because I wanted to add a library that complimented and fitted the profile of Tailwind.
 I also wanted something that could be implemented with EJS and wasn't too complicated given I had chosen to use embedded JavaScript.
 
+## Testing
+Integration tests using Supertest.
+
 ## A Installation
 To run this project you must install node and express.
 
