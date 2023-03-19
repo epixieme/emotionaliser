@@ -67,5 +67,3 @@ API_SECRET =''
 ```
 Create your .gitignore file so you aren't giving away any secrets and add your .env and node_modules.
 
-
-
