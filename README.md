@@ -5,7 +5,6 @@ https://user-images.githubusercontent.com/39728053/216772553-a36a867e-fd19-463b-
 This is a full-stack Wellbeing CRUD application designed with Vanilla Javascript, EJS, a touch of Apline.js, Tailwind, Node.js, MongoDB and Mongoose.
 https://ill-pear-walrus-tutu.cyclic.app/
 ## Features
-
 - Dashboard showing weekly mood stats and randomily displayed quote with logic to display based on like or dislike.
 - Wellbeing tools - Thought Diary and Motivational Quotes CRUD features.
 - Positivity Hub allowing users to view bookmarks that help with instilling postive emotions.
