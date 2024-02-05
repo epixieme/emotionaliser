@@ -14,9 +14,6 @@ module.exports = {
       const perPage = 9;
       const page = req.params.page || 1;
       const count = await thoughtDiary.find({ user: req.user.id }).count();
-      console.log(page);
-
-      // console.log('this is the page' + page)
       const thoughts = await thoughtDiary
         .find({ user: req.user.id })
         .skip(perPage * page - perPage)
@@ -25,7 +22,7 @@ module.exports = {
       const thoughtDate = await thoughtDiary
         .findOne({ user: req.user.id })
         .sort({ date: -1 });
-      // const thoughtsPerPage = await thoughtDiary.find().skip((perPage * page) - perPage).limit(perPage).sort({date: -1});
+      
 
       res.render("thoughtdiary.ejs", {
         title: "Thought Diary",

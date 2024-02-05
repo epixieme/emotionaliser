@@ -7,8 +7,7 @@ module.exports = {
     const motivations = await motivationQuotes.find({ user: req.user.id });
     const bookmarkedMsg = await req.flash("bookmarkedMsg");
     try {
-      // const thoughts = await thoughtDiary.find({ user: req.user.id }).sort({submitted: -1}).limit(7)
-      // const users = await userDetails.find();
+    
       res.render("motivations", {
         title: "Motivational Quotes",
         layout: "./layouts/dashboard-home.ejs",
